@@ -27,7 +27,7 @@ Partial Class StartUp
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(362, 104)
+        Me.Button1.Location = New System.Drawing.Point(133, 312)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 0
@@ -41,7 +41,7 @@ Partial Class StartUp
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button1)
         Me.Name = "StartUp"
-        Me.Text = "Start Up"
+        Me.Text = "Start-Up"
         Me.ResumeLayout(False)
 
     End Sub
