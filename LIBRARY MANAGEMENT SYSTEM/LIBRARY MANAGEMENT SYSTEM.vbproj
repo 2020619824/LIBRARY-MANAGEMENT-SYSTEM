@@ -73,21 +73,59 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Book Details.Designer.vb">
+      <DependentUpon>Book Details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Book Details.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Book Issue Information.Designer.vb">
+      <DependentUpon>Book Issue Information.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Book Issue Information.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Book Return Information.Designer.vb">
+      <DependentUpon>Book Return Information.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb" />
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <Compile Include="Book Return Information.vb">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.vb">
+    <Compile Include="Borrower Information.Designer.vb">
+      <DependentUpon>Borrower Information.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Borrower Information.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Late Return Information.Designer.vb">
+      <DependentUpon>Late Return Information.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Late Return Information.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu List.Designer.vb">
+      <DependentUpon>Menu List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menu List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start-up.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start-up.Designer.vb">
+      <DependentUpon>Start-up.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.vb">
+      <DependentUpon>Registration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -105,16 +143,49 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="User Information.Designer.vb">
+      <DependentUpon>User Information.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Information.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Book Details.resx">
+      <DependentUpon>Book Details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Book Issue Information.resx">
+      <DependentUpon>Book Issue Information.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Book Return Information.resx">
+      <DependentUpon>Book Return Information.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Borrower Information.resx">
+      <DependentUpon>Borrower Information.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Late Return Information.resx">
+      <DependentUpon>Late Return Information.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu List.resx">
+      <DependentUpon>Menu List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start-up.resx">
+      <DependentUpon>Start-up.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Information.resx">
+      <DependentUpon>User Information.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
