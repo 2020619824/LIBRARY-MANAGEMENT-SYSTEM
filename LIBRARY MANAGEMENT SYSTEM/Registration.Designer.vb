@@ -22,16 +22,32 @@ Partial Class Registration
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Red
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(324, 191)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(153, 69)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Exit"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Registration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button2)
         Me.Name = "Registration"
         Me.Text = "Registration"
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents Button2 As Button
 End Class
