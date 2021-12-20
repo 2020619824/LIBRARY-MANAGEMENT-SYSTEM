@@ -1,0 +1,1 @@
+﻿INSERT INTO BOOK VALUES (9780439023481,2008,'The Hunger Game','Collins, Suzanne','Scholastic Press','Fiction')
