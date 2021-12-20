@@ -28,8 +28,10 @@ Public Class BookDetails
         txtAuthor.Clear()
         txtPublisher.Clear()
         txtCategory.Clear()
+        DataGridViewListofBook.ClearSelection()
     End Sub
 
+    '!!If same isbn inserted, need to check and tell the user
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         If txtISBN.Text = "" Or txtYear.Text = "" Or txtAuthor.Text = "" Or txtTitle.Text = "" Or txtPublisher.Text = "" Or txtCategory.Text = "" Then
             MsgBox("Missing Information")
@@ -88,7 +90,7 @@ Public Class BookDetails
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        If key = 0 Then
+        If key = 0 Or (txtISBN.Text = "" Or txtYear.Text = "" Or txtAuthor.Text = "" Or txtTitle.Text = "" Or txtPublisher.Text = "" Or txtCategory.Text = "") Then
             MsgBox("Missing Information")
         Else
             Con.Open()
@@ -99,6 +101,49 @@ Public Class BookDetails
             MsgBox("Book Deleted")
             Con.Close()
             DisplayTable()
+            ClearTextBoxes()
+        End If
+    End Sub
+
+    '!!Check validation for search by isbn (!integer tell user to input correctly)
+    Private Sub btnSearchBook_Click(sender As Object, e As EventArgs) Handles btnSearchBook.Click
+        Dim decSearchISBN As Decimal
+        Dim strSearchAuthor As String
+        Dim strSearchTitle As String
+
+        If txtSearchBook.Text = "" Then
+            MsgBox("Missing Information")
+        Else
+            Con.Open()
+            Dim query
+            If cboSearchBy.SelectedIndex = 0 Then
+                decSearchISBN = CDec(txtSearchBook.Text)
+                query = "select * from book where ISBN=" & decSearchISBN & ""
+            ElseIf cboSearchBy.SelectedIndex = 1 Then
+                strSearchAuthor = txtSearchBook.Text
+                query = "select * from book where Author='" & strSearchAuthor & "'"
+            ElseIf cboSearchBy.SelectedIndex = 2 Then
+                strSearchTitle = txtSearchBook.Text
+                query = "select * from book where Title='" & strSearchTitle & "'"
+
+            Else
+            End If
+            Dim adapter As SqlDataAdapter
+            Dim cmd As SqlCommand
+            cmd = New SqlCommand(query, Con)
+            cmd.ExecuteNonQuery()
+            adapter = New SqlDataAdapter(cmd)
+            Dim builder = New SqlCommandBuilder(adapter)
+            Dim ds = New DataSet()
+            adapter.Fill(ds)
+            DataGridViewListofBook.DataSource = ds.Tables(0)
+            If DataGridViewListofBook.Rows.Count = 0 Then
+                MsgBox("Sorry, not found")
+            Else
+                MsgBox(DataGridViewListofBook.Rows.Count & " Book found!")
+            End If
+
+            Con.Close()
             ClearTextBoxes()
         End If
     End Sub

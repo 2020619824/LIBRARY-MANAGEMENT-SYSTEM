@@ -48,8 +48,9 @@ Partial Class BookDetails
         Me.txtAuthor = New System.Windows.Forms.TextBox()
         Me.txtPublisher = New System.Windows.Forms.TextBox()
         Me.txtCategory = New System.Windows.Forms.TextBox()
+        Me.btnSearchBook = New System.Windows.Forms.Button()
         Me.ISBNDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.YearOfPublicationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TitleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AuthorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PublisherDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,12 +63,13 @@ Partial Class BookDetails
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnSearchBook)
         Me.GroupBox1.Controls.Add(Me.cboSearchBy)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtSearchBook)
-        Me.GroupBox1.Location = New System.Drawing.Point(37, 36)
+        Me.GroupBox1.Location = New System.Drawing.Point(37, 24)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(602, 55)
+        Me.GroupBox1.Size = New System.Drawing.Size(602, 72)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Search Book"
@@ -76,7 +78,7 @@ Partial Class BookDetails
         '
         Me.cboSearchBy.FormattingEnabled = True
         Me.cboSearchBy.Items.AddRange(New Object() {"ISBN", "Author", "Book Title"})
-        Me.cboSearchBy.Location = New System.Drawing.Point(465, 22)
+        Me.cboSearchBy.Location = New System.Drawing.Point(323, 27)
         Me.cboSearchBy.Name = "cboSearchBy"
         Me.cboSearchBy.Size = New System.Drawing.Size(119, 24)
         Me.cboSearchBy.TabIndex = 2
@@ -85,7 +87,7 @@ Partial Class BookDetails
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(421, 25)
+        Me.Label1.Location = New System.Drawing.Point(293, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(24, 17)
         Me.Label1.TabIndex = 1
@@ -93,9 +95,9 @@ Partial Class BookDetails
         '
         'txtSearchBook
         '
-        Me.txtSearchBook.Location = New System.Drawing.Point(16, 22)
+        Me.txtSearchBook.Location = New System.Drawing.Point(20, 27)
         Me.txtSearchBook.Name = "txtSearchBook"
-        Me.txtSearchBook.Size = New System.Drawing.Size(380, 22)
+        Me.txtSearchBook.Size = New System.Drawing.Size(267, 22)
         Me.txtSearchBook.TabIndex = 0
         '
         'DataGridViewListofBook
@@ -104,7 +106,7 @@ Partial Class BookDetails
         Me.DataGridViewListofBook.AllowUserToDeleteRows = False
         Me.DataGridViewListofBook.AutoGenerateColumns = False
         Me.DataGridViewListofBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewListofBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ISBNDataGridViewTextBoxColumn, Me.YearOfPublicationDataGridViewTextBoxColumn, Me.TitleDataGridViewTextBoxColumn, Me.AuthorDataGridViewTextBoxColumn, Me.PublisherDataGridViewTextBoxColumn, Me.CategoryDataGridViewTextBoxColumn})
+        Me.DataGridViewListofBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ISBNDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.TitleDataGridViewTextBoxColumn, Me.AuthorDataGridViewTextBoxColumn, Me.PublisherDataGridViewTextBoxColumn, Me.CategoryDataGridViewTextBoxColumn})
         Me.DataGridViewListofBook.DataSource = Me.BookBindingSource
         Me.DataGridViewListofBook.Location = New System.Drawing.Point(37, 390)
         Me.DataGridViewListofBook.Name = "DataGridViewListofBook"
@@ -269,6 +271,15 @@ Partial Class BookDetails
         Me.txtCategory.Size = New System.Drawing.Size(255, 22)
         Me.txtCategory.TabIndex = 17
         '
+        'btnSearchBook
+        '
+        Me.btnSearchBook.Location = New System.Drawing.Point(472, 18)
+        Me.btnSearchBook.Name = "btnSearchBook"
+        Me.btnSearchBook.Size = New System.Drawing.Size(112, 41)
+        Me.btnSearchBook.TabIndex = 18
+        Me.btnSearchBook.Text = "Search"
+        Me.btnSearchBook.UseVisualStyleBackColor = True
+        '
         'ISBNDataGridViewTextBoxColumn
         '
         Me.ISBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN"
@@ -278,14 +289,14 @@ Partial Class BookDetails
         Me.ISBNDataGridViewTextBoxColumn.ReadOnly = True
         Me.ISBNDataGridViewTextBoxColumn.Width = 125
         '
-        'YearOfPublicationDataGridViewTextBoxColumn
+        'DataGridViewTextBoxColumn1
         '
-        Me.YearOfPublicationDataGridViewTextBoxColumn.DataPropertyName = "YearofPublication"
-        Me.YearOfPublicationDataGridViewTextBoxColumn.HeaderText = "Year of Publication"
-        Me.YearOfPublicationDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.YearOfPublicationDataGridViewTextBoxColumn.Name = "YearOfPublicationDataGridViewTextBoxColumn"
-        Me.YearOfPublicationDataGridViewTextBoxColumn.ReadOnly = True
-        Me.YearOfPublicationDataGridViewTextBoxColumn.Width = 125
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "YearofPublication"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Year of Publication"
+        Me.DataGridViewTextBoxColumn1.MinimumWidth = 6
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 125
         '
         'TitleDataGridViewTextBoxColumn
         '
@@ -348,7 +359,7 @@ Partial Class BookDetails
         Me.Controls.Add(Me.DataGridViewListofBook)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "BookDetails"
-        Me.Text = "s"
+        Me.Text = "Book Details"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridViewListofBook, System.ComponentModel.ISupportInitialize).EndInit()
@@ -384,8 +395,10 @@ Partial Class BookDetails
     Friend WithEvents txtAuthor As TextBox
     Friend WithEvents txtPublisher As TextBox
     Friend WithEvents txtCategory As TextBox
-    Friend WithEvents ISBNDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents YearOfPublicationDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnSearchBook As Button
+    Friend WithEvents ISBNDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents TitleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AuthorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PublisherDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
