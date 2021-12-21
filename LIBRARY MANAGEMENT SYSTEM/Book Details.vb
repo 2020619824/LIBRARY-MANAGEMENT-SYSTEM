@@ -82,7 +82,7 @@ Public Class BookDetails
             Dim cmd As SqlCommand
             cmd = New SqlCommand(query, Con)
             cmd.ExecuteNonQuery()
-            MsgBox("Book Edited")
+            MsgBox("Book Updated")
             Con.Close()
             DisplayTable()
             ClearTextBoxes()
@@ -138,7 +138,7 @@ Public Class BookDetails
             adapter.Fill(ds)
             DataGridViewListofBook.DataSource = ds.Tables(0)
             If DataGridViewListofBook.Rows.Count = 0 Then
-                MsgBox("Sorry, not found")
+                MsgBox("Sorry, no book found")
             Else
                 MsgBox(DataGridViewListofBook.Rows.Count & " Book found!")
             End If
