@@ -135,6 +135,7 @@
     <Compile Include="Menu List.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CommandSQL.vb" />
     <Compile Include="Start-up.vb">
       <SubType>Form</SubType>
     </Compile>

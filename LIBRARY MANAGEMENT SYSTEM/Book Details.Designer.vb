@@ -336,8 +336,8 @@ Partial Class BookDetails
         '
         'BookDetails
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(675, 697)
         Me.Controls.Add(Me.txtCategory)
         Me.Controls.Add(Me.txtPublisher)

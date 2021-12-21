@@ -9,16 +9,17 @@ Public Class BookDetails
     Dim Con = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Desktop\CS110\SEMESTER 3\CSC301\GROUP PROJECT\PROJECT\LIBRARY MANAGEMENT SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True")
 
     Private Sub DisplayTable()
-        Con.Open()
+        'Con.Open()
         Dim query = "select * from Book"
-        Dim adapter As SqlDataAdapter
-        Dim cmd = New SqlCommand(query, Con)
-        adapter = New SqlDataAdapter(cmd)
-        Dim builder = New SqlCommandBuilder(adapter)
-        Dim ds = New DataSet()
-        adapter.Fill(ds)
-        DataGridViewListofBook.DataSource = ds.Tables(0)
-        Con.Close()
+        'Dim adapter As SqlDataAdapter
+        'Dim cmd = New SqlCommand(query, Con)
+        'adapter = New SqlDataAdapter(cmd)
+        'Dim builder = New SqlCommandBuilder(adapter)
+        'Dim ds = New DataSet()
+        'adapter.Fill(ds)
+        'DataGridViewListofBook.DataSource = ds.Tables(0)
+        'Con.Close()
+        SQLCommandView(query, DataGridViewListofBook)
     End Sub
 
     Private Sub ClearTextBoxes()
@@ -36,13 +37,14 @@ Public Class BookDetails
         If txtISBN.Text = "" Or txtYear.Text = "" Or txtAuthor.Text = "" Or txtTitle.Text = "" Or txtPublisher.Text = "" Or txtCategory.Text = "" Then
             MsgBox("Missing Information")
         Else
-            Con.Open()
+            'Con.Open()
             Dim query = "insert into book values(" & txtISBN.Text & "," & txtYear.Text & ",'" & txtTitle.Text & "','" & txtAuthor.Text & "','" & txtPublisher.Text & "','" & txtCategory.Text & "')"
-            Dim cmd As SqlCommand
-            cmd = New SqlCommand(query, Con)
-            cmd.ExecuteNonQuery()
+            'Dim cmd As SqlCommand
+            'cmd = New SqlCommand(query, Con)
+            'cmd.ExecuteNonQuery()
             MsgBox("Book Saved")
-            Con.Close()
+            'Con.Close()
+            SQLCommandBasic(query)
             DisplayTable()
             ClearTextBoxes()
         End If

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class BookReturnInformation
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,44 +20,140 @@ Partial Class BookReturnInformation
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.cboBorrowerName = New System.Windows.Forms.ComboBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnSearchBorrower = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btnReturn = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(36, 28)
+        Me.Label1.Location = New System.Drawing.Point(30, 108)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(116, 17)
+        Me.Label1.Size = New System.Drawing.Size(124, 17)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Borrower's Name"
+        Me.Label1.Text = "Borrower's Name :"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(36, 68)
+        Me.Label2.Location = New System.Drawing.Point(55, 148)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(91, 17)
+        Me.Label2.Size = New System.Drawing.Size(99, 17)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Borrower's IC"
+        Me.Label2.Text = "Borrower's IC :"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(160, 105)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(466, 22)
+        Me.TextBox1.TabIndex = 2
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(160, 145)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(466, 22)
+        Me.TextBox2.TabIndex = 3
+        '
+        'cboBorrowerName
+        '
+        Me.cboBorrowerName.FormattingEnabled = True
+        Me.cboBorrowerName.Location = New System.Drawing.Point(33, 42)
+        Me.cboBorrowerName.Name = "cboBorrowerName"
+        Me.cboBorrowerName.Size = New System.Drawing.Size(432, 24)
+        Me.cboBorrowerName.TabIndex = 4
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.btnSearchBorrower)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.cboBorrowerName)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Location = New System.Drawing.Point(35, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(657, 191)
+        Me.GroupBox1.TabIndex = 5
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Search Borrower's Name"
+        '
+        'btnSearchBorrower
+        '
+        Me.btnSearchBorrower.Location = New System.Drawing.Point(511, 31)
+        Me.btnSearchBorrower.Name = "btnSearchBorrower"
+        Me.btnSearchBorrower.Size = New System.Drawing.Size(115, 45)
+        Me.btnSearchBorrower.TabIndex = 5
+        Me.btnSearchBorrower.Text = "Search"
+        Me.btnSearchBorrower.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(35, 218)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(657, 303)
+        Me.DataGridView1.TabIndex = 6
+        '
+        'btnReturn
+        '
+        Me.btnReturn.Location = New System.Drawing.Point(562, 543)
+        Me.btnReturn.Name = "btnReturn"
+        Me.btnReturn.Size = New System.Drawing.Size(130, 66)
+        Me.btnReturn.TabIndex = 7
+        Me.btnReturn.Text = "Return"
+        Me.btnReturn.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(35, 543)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(195, 66)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Go to Late Return Page"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'BookReturnInformation
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.ClientSize = New System.Drawing.Size(725, 631)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnReturn)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Name = "BookReturnInformation"
         Me.Text = "Book Return Information"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents cboBorrowerName As ComboBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents btnSearchBorrower As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents btnReturn As Button
+    Friend WithEvents Button1 As Button
 End Class
