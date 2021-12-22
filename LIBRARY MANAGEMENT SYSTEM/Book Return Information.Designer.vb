@@ -24,14 +24,15 @@ Partial Class BookReturnInformation
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtBorrowerName = New System.Windows.Forms.TextBox()
+        Me.txtBorrowerIC = New System.Windows.Forms.TextBox()
         Me.cboBorrowerName = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnSearchBorrower = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnReturn = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnReturnBook = New System.Windows.Forms.Button()
+        Me.btnLateReturn = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -54,19 +55,19 @@ Partial Class BookReturnInformation
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Borrower's IC :"
         '
-        'TextBox1
+        'txtBorrowerName
         '
-        Me.TextBox1.Location = New System.Drawing.Point(160, 105)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(466, 22)
-        Me.TextBox1.TabIndex = 2
+        Me.txtBorrowerName.Location = New System.Drawing.Point(160, 105)
+        Me.txtBorrowerName.Name = "txtBorrowerName"
+        Me.txtBorrowerName.Size = New System.Drawing.Size(466, 22)
+        Me.txtBorrowerName.TabIndex = 2
         '
-        'TextBox2
+        'txtBorrowerIC
         '
-        Me.TextBox2.Location = New System.Drawing.Point(160, 145)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(466, 22)
-        Me.TextBox2.TabIndex = 3
+        Me.txtBorrowerIC.Location = New System.Drawing.Point(160, 148)
+        Me.txtBorrowerIC.Name = "txtBorrowerIC"
+        Me.txtBorrowerIC.Size = New System.Drawing.Size(466, 22)
+        Me.txtBorrowerIC.TabIndex = 3
         '
         'cboBorrowerName
         '
@@ -78,12 +79,12 @@ Partial Class BookReturnInformation
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtBorrowerName)
         Me.GroupBox1.Controls.Add(Me.btnSearchBorrower)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.cboBorrowerName)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.txtBorrowerIC)
         Me.GroupBox1.Location = New System.Drawing.Point(35, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(657, 191)
@@ -102,9 +103,14 @@ Partial Class BookReturnInformation
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(35, 218)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(657, 303)
@@ -112,28 +118,38 @@ Partial Class BookReturnInformation
         '
         'btnReturn
         '
-        Me.btnReturn.Location = New System.Drawing.Point(562, 543)
+        Me.btnReturn.Location = New System.Drawing.Point(561, 543)
         Me.btnReturn.Name = "btnReturn"
         Me.btnReturn.Size = New System.Drawing.Size(130, 66)
         Me.btnReturn.TabIndex = 7
         Me.btnReturn.Text = "Return"
         Me.btnReturn.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnReturnBook
         '
-        Me.Button1.Location = New System.Drawing.Point(35, 543)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(195, 66)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Go to Late Return Page"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnReturnBook.Location = New System.Drawing.Point(35, 543)
+        Me.btnReturnBook.Name = "btnReturnBook"
+        Me.btnReturnBook.Size = New System.Drawing.Size(161, 66)
+        Me.btnReturnBook.TabIndex = 8
+        Me.btnReturnBook.Text = "Return Book"
+        Me.btnReturnBook.UseVisualStyleBackColor = True
+        '
+        'btnLateReturn
+        '
+        Me.btnLateReturn.Location = New System.Drawing.Point(281, 543)
+        Me.btnLateReturn.Name = "btnLateReturn"
+        Me.btnLateReturn.Size = New System.Drawing.Size(195, 66)
+        Me.btnLateReturn.TabIndex = 9
+        Me.btnLateReturn.Text = "Go to Late Return Page"
+        Me.btnLateReturn.UseVisualStyleBackColor = True
         '
         'BookReturnInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(725, 631)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(722, 631)
+        Me.Controls.Add(Me.btnLateReturn)
+        Me.Controls.Add(Me.btnReturnBook)
         Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
@@ -148,12 +164,13 @@ Partial Class BookReturnInformation
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtBorrowerName As TextBox
+    Friend WithEvents txtBorrowerIC As TextBox
     Friend WithEvents cboBorrowerName As ComboBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnSearchBorrower As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnReturn As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnReturnBook As Button
+    Friend WithEvents btnLateReturn As Button
 End Class

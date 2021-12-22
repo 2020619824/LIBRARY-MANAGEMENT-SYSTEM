@@ -24,4 +24,17 @@ Module CommandSQL
         Con.Close()
     End Sub
 
+    Public Sub SQLCommandViewCMB(ByVal strQuery As String, ByVal tempCMB As ComboBox)
+        Con.Open()
+        Dim query = strQuery
+        Dim adapter As SqlDataAdapter
+        Dim cmd = New SqlCommand(query, Con)
+        adapter = New SqlDataAdapter(cmd)
+        Dim tbl = New DataTable()
+        adapter.Fill(tbl)
+        tempCMB.DataSource = tbl
+        tempCMB.DisplayMember = ""
+        Con.Close()
+    End Sub
+
 End Module

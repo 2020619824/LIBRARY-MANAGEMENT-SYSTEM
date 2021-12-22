@@ -49,12 +49,6 @@ Partial Class BookDetails
         Me.txtAuthor = New System.Windows.Forms.TextBox()
         Me.txtPublisher = New System.Windows.Forms.TextBox()
         Me.txtCategory = New System.Windows.Forms.TextBox()
-        Me.ISBNDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.YearofPublication = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TitleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AuthorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PublisherDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CategoryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridViewListofBook, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,10 +107,9 @@ Partial Class BookDetails
         '
         Me.DataGridViewListofBook.AllowUserToAddRows = False
         Me.DataGridViewListofBook.AllowUserToDeleteRows = False
-        Me.DataGridViewListofBook.AutoGenerateColumns = False
+        Me.DataGridViewListofBook.BackgroundColor = System.Drawing.SystemColors.ButtonFace
+        Me.DataGridViewListofBook.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridViewListofBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewListofBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ISBNDataGridViewTextBoxColumn, Me.YearofPublication, Me.TitleDataGridViewTextBoxColumn, Me.AuthorDataGridViewTextBoxColumn, Me.PublisherDataGridViewTextBoxColumn, Me.CategoryDataGridViewTextBoxColumn})
-        Me.DataGridViewListofBook.DataSource = Me.BookBindingSource
         Me.DataGridViewListofBook.Location = New System.Drawing.Point(37, 390)
         Me.DataGridViewListofBook.Name = "DataGridViewListofBook"
         Me.DataGridViewListofBook.ReadOnly = True
@@ -280,60 +273,6 @@ Partial Class BookDetails
         Me.txtCategory.Size = New System.Drawing.Size(255, 22)
         Me.txtCategory.TabIndex = 17
         '
-        'ISBNDataGridViewTextBoxColumn
-        '
-        Me.ISBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN"
-        Me.ISBNDataGridViewTextBoxColumn.HeaderText = "ISBN"
-        Me.ISBNDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.ISBNDataGridViewTextBoxColumn.Name = "ISBNDataGridViewTextBoxColumn"
-        Me.ISBNDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ISBNDataGridViewTextBoxColumn.Width = 125
-        '
-        'YearofPublication
-        '
-        Me.YearofPublication.DataPropertyName = "YearofPublication"
-        Me.YearofPublication.HeaderText = "Year of Publication"
-        Me.YearofPublication.MinimumWidth = 6
-        Me.YearofPublication.Name = "YearofPublication"
-        Me.YearofPublication.ReadOnly = True
-        Me.YearofPublication.Width = 125
-        '
-        'TitleDataGridViewTextBoxColumn
-        '
-        Me.TitleDataGridViewTextBoxColumn.DataPropertyName = "Title"
-        Me.TitleDataGridViewTextBoxColumn.HeaderText = "Title"
-        Me.TitleDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.TitleDataGridViewTextBoxColumn.Name = "TitleDataGridViewTextBoxColumn"
-        Me.TitleDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TitleDataGridViewTextBoxColumn.Width = 125
-        '
-        'AuthorDataGridViewTextBoxColumn
-        '
-        Me.AuthorDataGridViewTextBoxColumn.DataPropertyName = "Author"
-        Me.AuthorDataGridViewTextBoxColumn.HeaderText = "Author"
-        Me.AuthorDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.AuthorDataGridViewTextBoxColumn.Name = "AuthorDataGridViewTextBoxColumn"
-        Me.AuthorDataGridViewTextBoxColumn.ReadOnly = True
-        Me.AuthorDataGridViewTextBoxColumn.Width = 125
-        '
-        'PublisherDataGridViewTextBoxColumn
-        '
-        Me.PublisherDataGridViewTextBoxColumn.DataPropertyName = "Publisher"
-        Me.PublisherDataGridViewTextBoxColumn.HeaderText = "Publisher"
-        Me.PublisherDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PublisherDataGridViewTextBoxColumn.Name = "PublisherDataGridViewTextBoxColumn"
-        Me.PublisherDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PublisherDataGridViewTextBoxColumn.Width = 125
-        '
-        'CategoryDataGridViewTextBoxColumn
-        '
-        Me.CategoryDataGridViewTextBoxColumn.DataPropertyName = "Category"
-        Me.CategoryDataGridViewTextBoxColumn.HeaderText = "Category"
-        Me.CategoryDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.CategoryDataGridViewTextBoxColumn.Name = "CategoryDataGridViewTextBoxColumn"
-        Me.CategoryDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CategoryDataGridViewTextBoxColumn.Width = 125
-        '
         'BookDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
@@ -399,10 +338,4 @@ Partial Class BookDetails
     Friend WithEvents YearOfPublicationDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnSearchBook As Button
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents ISBNDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents YearofPublication As DataGridViewTextBoxColumn
-    Friend WithEvents TitleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AuthorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PublisherDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CategoryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

@@ -112,6 +112,11 @@
     <Compile Include="Borrower Information.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Database1DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Late Return Information.Designer.vb">
       <DependentUpon>Late Return Information.vb</DependentUpon>
     </Compile>
@@ -122,6 +127,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>List_Book_Details.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="List_Borrowed_Book.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List_Borrowed_Book.xsd</DependentUpon>
     </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
@@ -211,6 +221,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Database1DataSet.xsc">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet.xss">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
     <None Include="List_Book_Details.xsc">
       <DependentUpon>List_Book_Details.xsd</DependentUpon>
     </None>
@@ -221,6 +242,17 @@
     </None>
     <None Include="List_Book_Details.xss">
       <DependentUpon>List_Book_Details.xsd</DependentUpon>
+    </None>
+    <None Include="List_Borrowed_Book.xsc">
+      <DependentUpon>List_Borrowed_Book.xsd</DependentUpon>
+    </None>
+    <None Include="List_Borrowed_Book.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>List_Borrowed_Book.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="List_Borrowed_Book.xss">
+      <DependentUpon>List_Borrowed_Book.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
