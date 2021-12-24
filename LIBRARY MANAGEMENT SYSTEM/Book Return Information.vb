@@ -68,6 +68,7 @@ Public Class BookReturnInformation
                 and Bw.BorrowerName='" & cboBorrowerName.SelectedValue.ToString() & "'"
 
         SQLCommandView(query, DataGridView1)
+
     End Sub
 
     Private Sub AddColumn()
@@ -76,25 +77,56 @@ Public Class BookReturnInformation
         newColumn.Name = "SelectToReturnBook"
         newColumn.Width = 80
         DataGridView1.Columns.Insert(0, newColumn)
+
+    End Sub
+
+    Private Sub BookReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataGridView1.ColumnHeadersVisible = False
+        AddColumn()
+    End Sub
+
+    Dim key = 0
+    Dim ISBN = 0
+    Private Sub DataGridViewListofBook_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.CellMouseClick
+
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+            'Dim chkC As DataGridViewCheckBoxColumn = DataGridView1.Columns(e.ColumnIndex)
+
+            'DataGridView1.SelectedCells = row.Cells(0).Value.ToString
+            ISBN = row.Cells(1).Value.ToString
+
+            'key = Convert.ToBoolean(row.Cells(0).Value.ToString)
+
+        End If
+    End Sub
+
+    Private Sub btnReturnBook_Click(sender As Object, e As EventArgs) Handles btnReturnBook.Click
+
+        Dim query
+
+        'SQL Date Format: YYYYMMDD
+        Dim dateSQLFormat = Date.Today.Year.ToString
+        dateSQLFormat += Date.Today.Month.ToString
+        dateSQLFormat += Date.Today.Day.ToString
+
+        Dim borrowerIC = txtBorrowerIC.Text
+        Dim i As Integer
+        For i = 0 To DataGridView1.Rows.Count - 1
+            If CBool(DataGridView1.Rows(i).Cells(0).Value) = True Then
+                query = "update borrow set ReturnDate='" & dateSQLFormat & "' where ISBN=" & DataGridView1.Rows(i).Cells(1).Value.ToString & " and BorrowerIC=" & borrowerIC & ""
+                SQLCommandBasic(query)
+                MsgBox("Return Date Updated")
+            End If
+        Next
+    End Sub
+
+    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
+
         DataGridView1.ReadOnly = False
         For Each dgvc As DataGridViewColumn In DataGridView1.Columns
             dgvc.ReadOnly = True
         Next
         DataGridView1.Columns(0).ReadOnly = False
-    End Sub
-
-    Private Sub BookReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AddColumn()
-        DataGridView1.ColumnHeadersVisible = False
-    End Sub
-
-    Private Sub btnReturnBook_Click(sender As Object, e As EventArgs) Handles btnReturnBook.Click
-        Dim row As DataGridViewRow = DataGridView1.Rows(0)
-        Dim query
-
-        'query = "update borrow set ReturnDate='23/12/2021' where ISBN=9780439023481 and BorrowerIC=1002"
-        If row.Cells(0).Value.ToString = True Then
-            SQLCommandBasic(query)
-        End If
     End Sub
 End Class
