@@ -142,6 +142,7 @@ Partial Class BookReturnInformation
         Me.btnLateReturn.TabIndex = 9
         Me.btnLateReturn.Text = "Go to Late Return Page"
         Me.btnLateReturn.UseVisualStyleBackColor = True
+        Me.btnLateReturn.Visible = False
         '
         'BookReturnInformation
         '
