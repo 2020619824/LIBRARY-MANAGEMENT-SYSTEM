@@ -32,6 +32,8 @@ Partial Class BookIssueInformation
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.btnReturn = New System.Windows.Forms.Button()
+        Me.btnIssueBook = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,10 +47,10 @@ Partial Class BookIssueInformation
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(269, 22)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(124, 25)
+        Me.Label1.Size = New System.Drawing.Size(138, 29)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Book Issue "
         '
@@ -70,7 +72,7 @@ Partial Class BookIssueInformation
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(23, 106)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(615, 210)
@@ -112,7 +114,7 @@ Partial Class BookIssueInformation
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(368, 135)
+        Me.Label6.Location = New System.Drawing.Point(358, 135)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(71, 16)
         Me.Label6.TabIndex = 4
@@ -122,21 +124,43 @@ Partial Class BookIssueInformation
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(40, 163)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(218, 22)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(218, 26)
         Me.DateTimePicker1.TabIndex = 5
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(371, 163)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(361, 154)
         Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 22)
+        Me.DateTimePicker2.Size = New System.Drawing.Size(218, 26)
         Me.DateTimePicker2.TabIndex = 6
+        '
+        'btnReturn
+        '
+        Me.btnReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReturn.Location = New System.Drawing.Point(152, 360)
+        Me.btnReturn.Name = "btnReturn"
+        Me.btnReturn.Size = New System.Drawing.Size(129, 31)
+        Me.btnReturn.TabIndex = 4
+        Me.btnReturn.Text = "Return"
+        Me.btnReturn.UseVisualStyleBackColor = True
+        '
+        'btnIssueBook
+        '
+        Me.btnIssueBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIssueBook.Location = New System.Drawing.Point(384, 360)
+        Me.btnIssueBook.Name = "btnIssueBook"
+        Me.btnIssueBook.Size = New System.Drawing.Size(129, 31)
+        Me.btnIssueBook.TabIndex = 5
+        Me.btnIssueBook.Text = "Issue Book"
+        Me.btnIssueBook.UseVisualStyleBackColor = True
         '
         'BookIssueInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(661, 424)
+        Me.Controls.Add(Me.btnIssueBook)
+        Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
@@ -159,4 +183,6 @@ Partial Class BookIssueInformation
     Friend WithEvents Label5 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents btnReturn As Button
+    Friend WithEvents btnIssueBook As Button
 End Class
