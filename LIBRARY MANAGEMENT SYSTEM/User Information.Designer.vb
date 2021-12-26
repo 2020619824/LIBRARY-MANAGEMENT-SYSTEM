@@ -142,7 +142,7 @@ Partial Class UserInformation
         '
         'btnSearchBook
         '
-        Me.btnSearchBook.Location = New System.Drawing.Point(472, 27)
+        Me.btnSearchBook.Location = New System.Drawing.Point(472, 21)
         Me.btnSearchBook.Name = "btnSearchBook"
         Me.btnSearchBook.Size = New System.Drawing.Size(112, 41)
         Me.btnSearchBook.TabIndex = 18

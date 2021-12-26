@@ -26,4 +26,8 @@ Public Class UserInformation
         Dim query = "select StaffID, StaffName, PhoneNo, Username from Users"
         SQLCommandView(query, DataGridViewListOfUsers)
     End Sub
+
+    Private Sub btnSearchBook_Click(sender As Object, e As EventArgs) Handles btnSearchBook.Click
+
+    End Sub
 End Class
