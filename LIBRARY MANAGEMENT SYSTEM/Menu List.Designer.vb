@@ -22,11 +22,12 @@ Partial Class MenuList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtTime = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtDate = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.cmdExit = New System.Windows.Forms.Button()
@@ -36,15 +37,16 @@ Partial Class MenuList
         Me.cmdDisplayBookReturn = New System.Windows.Forms.Button()
         Me.cmdBookIssue = New System.Windows.Forms.Button()
         Me.cmdDisplayLateReturn = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.txtTime)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.txtDate)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Location = New System.Drawing.Point(24, 27)
@@ -62,12 +64,12 @@ Partial Class MenuList
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Current time :"
         '
-        'TextBox3
+        'txtTime
         '
-        Me.TextBox3.Location = New System.Drawing.Point(21, 258)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(124, 22)
-        Me.TextBox3.TabIndex = 5
+        Me.txtTime.Location = New System.Drawing.Point(21, 258)
+        Me.txtTime.Name = "txtTime"
+        Me.txtTime.Size = New System.Drawing.Size(124, 22)
+        Me.txtTime.TabIndex = 5
         '
         'Label2
         '
@@ -77,12 +79,12 @@ Partial Class MenuList
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Current date :"
         '
-        'TextBox2
+        'txtDate
         '
-        Me.TextBox2.Location = New System.Drawing.Point(21, 173)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(124, 22)
-        Me.TextBox2.TabIndex = 3
+        Me.txtDate.Location = New System.Drawing.Point(21, 173)
+        Me.txtDate.Name = "txtDate"
+        Me.txtDate.Size = New System.Drawing.Size(124, 22)
+        Me.txtDate.TabIndex = 3
         '
         'Label1
         '
@@ -162,6 +164,9 @@ Partial Class MenuList
         Me.cmdDisplayLateReturn.Text = "Late Return"
         Me.cmdDisplayLateReturn.UseVisualStyleBackColor = True
         '
+        'Timer1
+        '
+        '
         'MenuList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -185,9 +190,9 @@ Partial Class MenuList
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtTime As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtDate As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents cmdExit As Button
@@ -197,4 +202,5 @@ Partial Class MenuList
     Friend WithEvents cmdDisplayBookReturn As Button
     Friend WithEvents cmdBookIssue As Button
     Friend WithEvents cmdDisplayLateReturn As Button
+    Friend WithEvents Timer1 As Timer
 End Class
