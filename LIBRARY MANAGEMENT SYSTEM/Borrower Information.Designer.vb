@@ -44,7 +44,7 @@ Partial Class BorrowerInformation
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(26, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 16)
+        Me.Label1.Size = New System.Drawing.Size(51, 17)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Label1"
         '
@@ -52,6 +52,7 @@ Partial Class BorrowerInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Red
         Me.ClientSize = New System.Drawing.Size(726, 357)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cnbReturn)
