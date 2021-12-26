@@ -23,19 +23,19 @@ Partial Class MenuList
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.cmdExit = New System.Windows.Forms.Button()
+        Me.cmdDisplayUser = New System.Windows.Forms.Button()
+        Me.cmdDisplayBookDetails = New System.Windows.Forms.Button()
+        Me.cmdDisplayBorrowers = New System.Windows.Forms.Button()
+        Me.cmdDisplayBookReturn = New System.Windows.Forms.Button()
+        Me.cmdBookIssue = New System.Windows.Forms.Button()
+        Me.cmdDisplayLateReturn = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,83 +54,20 @@ Partial Class MenuList
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Login Information"
         '
-        'Button1
+        'Label3
         '
-        Me.Button1.Location = New System.Drawing.Point(24, 378)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(168, 39)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Exit"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Label3.Location = New System.Drawing.Point(18, 232)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(100, 23)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Current time :"
         '
-        'Button2
+        'TextBox3
         '
-        Me.Button2.Location = New System.Drawing.Point(251, 27)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(166, 62)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "User"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(251, 160)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(166, 62)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Book Details"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(251, 294)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(166, 62)
-        Me.Button4.TabIndex = 4
-        Me.Button4.Text = "Borrowers"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(519, 160)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(166, 62)
-        Me.Button5.TabIndex = 5
-        Me.Button5.Text = "Book Return"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(519, 27)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(166, 62)
-        Me.Button6.TabIndex = 6
-        Me.Button6.Text = "Book Issue"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(519, 294)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(166, 62)
-        Me.Button7.TabIndex = 7
-        Me.Button7.Text = "Late Return"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(21, 92)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(124, 22)
-        Me.TextBox1.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.Location = New System.Drawing.Point(18, 66)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 23)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Current user :"
+        Me.TextBox3.Location = New System.Drawing.Point(21, 258)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(124, 22)
+        Me.TextBox3.TabIndex = 5
         '
         'Label2
         '
@@ -147,33 +84,96 @@ Partial Class MenuList
         Me.TextBox2.Size = New System.Drawing.Size(124, 22)
         Me.TextBox2.TabIndex = 3
         '
-        'Label3
+        'Label1
         '
-        Me.Label3.Location = New System.Drawing.Point(18, 232)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 23)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Current time :"
+        Me.Label1.Location = New System.Drawing.Point(18, 66)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(100, 23)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Current user :"
         '
-        'TextBox3
+        'TextBox1
         '
-        Me.TextBox3.Location = New System.Drawing.Point(21, 258)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(124, 22)
-        Me.TextBox3.TabIndex = 5
+        Me.TextBox1.Location = New System.Drawing.Point(21, 92)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(124, 22)
+        Me.TextBox1.TabIndex = 1
+        '
+        'cmdExit
+        '
+        Me.cmdExit.Location = New System.Drawing.Point(24, 378)
+        Me.cmdExit.Name = "cmdExit"
+        Me.cmdExit.Size = New System.Drawing.Size(168, 39)
+        Me.cmdExit.TabIndex = 1
+        Me.cmdExit.Text = "Exit"
+        Me.cmdExit.UseVisualStyleBackColor = True
+        '
+        'cmdDisplayUser
+        '
+        Me.cmdDisplayUser.Location = New System.Drawing.Point(251, 27)
+        Me.cmdDisplayUser.Name = "cmdDisplayUser"
+        Me.cmdDisplayUser.Size = New System.Drawing.Size(166, 62)
+        Me.cmdDisplayUser.TabIndex = 2
+        Me.cmdDisplayUser.Text = "User"
+        Me.cmdDisplayUser.UseVisualStyleBackColor = True
+        '
+        'cmdDisplayBookDetails
+        '
+        Me.cmdDisplayBookDetails.Location = New System.Drawing.Point(251, 160)
+        Me.cmdDisplayBookDetails.Name = "cmdDisplayBookDetails"
+        Me.cmdDisplayBookDetails.Size = New System.Drawing.Size(166, 62)
+        Me.cmdDisplayBookDetails.TabIndex = 3
+        Me.cmdDisplayBookDetails.Text = "Book Details"
+        Me.cmdDisplayBookDetails.UseVisualStyleBackColor = True
+        '
+        'cmdDisplayBorrowers
+        '
+        Me.cmdDisplayBorrowers.Location = New System.Drawing.Point(251, 294)
+        Me.cmdDisplayBorrowers.Name = "cmdDisplayBorrowers"
+        Me.cmdDisplayBorrowers.Size = New System.Drawing.Size(166, 62)
+        Me.cmdDisplayBorrowers.TabIndex = 4
+        Me.cmdDisplayBorrowers.Text = "Borrowers"
+        Me.cmdDisplayBorrowers.UseVisualStyleBackColor = True
+        '
+        'cmdDisplayBookReturn
+        '
+        Me.cmdDisplayBookReturn.Location = New System.Drawing.Point(519, 160)
+        Me.cmdDisplayBookReturn.Name = "cmdDisplayBookReturn"
+        Me.cmdDisplayBookReturn.Size = New System.Drawing.Size(166, 62)
+        Me.cmdDisplayBookReturn.TabIndex = 5
+        Me.cmdDisplayBookReturn.Text = "Book Return"
+        Me.cmdDisplayBookReturn.UseVisualStyleBackColor = True
+        '
+        'cmdBookIssue
+        '
+        Me.cmdBookIssue.Location = New System.Drawing.Point(519, 27)
+        Me.cmdBookIssue.Name = "cmdBookIssue"
+        Me.cmdBookIssue.Size = New System.Drawing.Size(166, 62)
+        Me.cmdBookIssue.TabIndex = 6
+        Me.cmdBookIssue.Text = "Book Issue"
+        Me.cmdBookIssue.UseVisualStyleBackColor = True
+        '
+        'cmdDisplayLateReturn
+        '
+        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(519, 294)
+        Me.cmdDisplayLateReturn.Name = "cmdDisplayLateReturn"
+        Me.cmdDisplayLateReturn.Size = New System.Drawing.Size(166, 62)
+        Me.cmdDisplayLateReturn.TabIndex = 7
+        Me.cmdDisplayLateReturn.Text = "Late Return"
+        Me.cmdDisplayLateReturn.UseVisualStyleBackColor = True
         '
         'MenuList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(731, 450)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.cmdDisplayLateReturn)
+        Me.Controls.Add(Me.cmdBookIssue)
+        Me.Controls.Add(Me.cmdDisplayBookReturn)
+        Me.Controls.Add(Me.cmdDisplayBorrowers)
+        Me.Controls.Add(Me.cmdDisplayBookDetails)
+        Me.Controls.Add(Me.cmdDisplayUser)
+        Me.Controls.Add(Me.cmdExit)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "MenuList"
         Me.Text = "Menu List"
@@ -190,11 +190,11 @@ Partial Class MenuList
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button7 As Button
+    Friend WithEvents cmdExit As Button
+    Friend WithEvents cmdDisplayUser As Button
+    Friend WithEvents cmdDisplayBookDetails As Button
+    Friend WithEvents cmdDisplayBorrowers As Button
+    Friend WithEvents cmdDisplayBookReturn As Button
+    Friend WithEvents cmdBookIssue As Button
+    Friend WithEvents cmdDisplayLateReturn As Button
 End Class
