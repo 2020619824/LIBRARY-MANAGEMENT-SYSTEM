@@ -22,29 +22,46 @@ Partial Class BorrowerInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.cnbReturn = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button1
+        'cnbReturn
         '
-        Me.Button1.Location = New System.Drawing.Point(224, 70)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.cnbReturn.BackColor = System.Drawing.Color.Black
+        Me.cnbReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cnbReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cnbReturn.ForeColor = System.Drawing.Color.Red
+        Me.cnbReturn.Location = New System.Drawing.Point(574, 280)
+        Me.cnbReturn.Name = "cnbReturn"
+        Me.cnbReturn.Size = New System.Drawing.Size(127, 43)
+        Me.cnbReturn.TabIndex = 6
+        Me.cnbReturn.Text = "Return"
+        Me.cnbReturn.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(26, 23)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(48, 16)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Label1"
         '
         'BorrowerInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(726, 357)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.cnbReturn)
         Me.Name = "BorrowerInformation"
         Me.Text = "Borrower Information"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents cnbReturn As Button
+    Friend WithEvents Label1 As Label
 End Class
