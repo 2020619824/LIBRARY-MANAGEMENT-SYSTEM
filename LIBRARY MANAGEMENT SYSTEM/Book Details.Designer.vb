@@ -22,16 +22,12 @@ Partial Class BookDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnSearchBook = New System.Windows.Forms.Button()
         Me.cboSearchBy = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearchBook = New System.Windows.Forms.TextBox()
         Me.DataGridViewListofBook = New System.Windows.Forms.DataGridView()
-        Me.BookBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.List_Book_Details = New LIBRARY_MANAGEMENT_SYSTEM.List_Book_Details()
-        Me.BookTableAdapter = New LIBRARY_MANAGEMENT_SYSTEM.List_Book_DetailsTableAdapters.BookTableAdapter()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -51,8 +47,6 @@ Partial Class BookDetails
         Me.txtCategory = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridViewListofBook, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BookBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.List_Book_Details, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -111,26 +105,13 @@ Partial Class BookDetails
         Me.DataGridViewListofBook.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridViewListofBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewListofBook.Location = New System.Drawing.Point(37, 390)
+        Me.DataGridViewListofBook.MultiSelect = False
         Me.DataGridViewListofBook.Name = "DataGridViewListofBook"
         Me.DataGridViewListofBook.ReadOnly = True
         Me.DataGridViewListofBook.RowHeadersWidth = 51
         Me.DataGridViewListofBook.RowTemplate.Height = 24
         Me.DataGridViewListofBook.Size = New System.Drawing.Size(602, 270)
         Me.DataGridViewListofBook.TabIndex = 1
-        '
-        'BookBindingSource
-        '
-        Me.BookBindingSource.DataMember = "Book"
-        Me.BookBindingSource.DataSource = Me.List_Book_Details
-        '
-        'List_Book_Details
-        '
-        Me.List_Book_Details.DataSetName = "List_Book_Details"
-        Me.List_Book_Details.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'BookTableAdapter
-        '
-        Me.BookTableAdapter.ClearBeforeFill = True
         '
         'btnAdd
         '
@@ -303,8 +284,6 @@ Partial Class BookDetails
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridViewListofBook, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BookBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.List_Book_Details, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -312,9 +291,6 @@ Partial Class BookDetails
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DataGridViewListofBook As DataGridView
-    Friend WithEvents List_Book_Details As List_Book_Details
-    Friend WithEvents BookBindingSource As BindingSource
-    Friend WithEvents BookTableAdapter As List_Book_DetailsTableAdapters.BookTableAdapter
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnDelete As Button

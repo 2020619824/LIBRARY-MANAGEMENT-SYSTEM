@@ -1,24 +1,10 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class BookDetails
-    Private Sub BookDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'List_Book_Details.Book' table. You can move, or remove it, as needed.
-
-    End Sub
-
     Dim Con = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Desktop\CS110\SEMESTER 3\CSC301\GROUP PROJECT\PROJECT\LIBRARY MANAGEMENT SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True")
 
     Private Sub DisplayTable()
-        'Con.Open()
         Dim query = "select * from Book"
-        'Dim adapter As SqlDataAdapter
-        'Dim cmd = New SqlCommand(query, Con)
-        'adapter = New SqlDataAdapter(cmd)
-        'Dim builder = New SqlCommandBuilder(adapter)
-        'Dim ds = New DataSet()
-        'adapter.Fill(ds)
-        'DataGridViewListofBook.DataSource = ds.Tables(0)
-        'Con.Close()
         SQLCommandView(query, DataGridViewListofBook)
     End Sub
 
@@ -32,24 +18,58 @@ Public Class BookDetails
         DataGridViewListofBook.ClearSelection()
     End Sub
 
+    Private Function ValidatePKBook() As Boolean
+        Dim data As Decimal
+        data = CDec(txtISBN.Text)
+        Dim i
+        For i = 0 To DataGridViewListofBook.Rows.Count - 1
+            If CDec(DataGridViewListofBook.Rows(i).Cells(0).Value) = data Then
+                MsgBox("Sorry, the book is already exist")
+                Return False
+            End If
+        Next
+        Return True
+    End Function
+
+    Dim decSearchISBN As Decimal
+    Private Function ValidateISBN() As Boolean
+        If Not Decimal.TryParse(txtSearchBook.Text, decSearchISBN) Then
+            MsgBox("Please input the ISBN correctly")
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Function ValidateUpdatedBook() As Boolean
+        Dim data As Decimal
+        data = CDec(txtISBN.Text)
+        Dim i
+        For i = 0 To DataGridViewListofBook.Rows.Count - 1
+            If DataGridViewListofBook.Rows(i).Index = key Then
+                MsgBox("Sorry, the book is already updated")
+                Return False
+            ElseIf CDec(DataGridViewListofBook.Rows(i).Cells(0).Value) = data Then
+                MsgBox("Sorry, the book is already exist")
+                Return False
+            End If
+        Next
+        Return True
+    End Function
+
     '!!If same isbn inserted, need to check and tell the user
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         If txtISBN.Text = "" Or txtYear.Text = "" Or txtAuthor.Text = "" Or txtTitle.Text = "" Or txtPublisher.Text = "" Or txtCategory.Text = "" Then
             MsgBox("Missing Information")
         Else
-            'Con.Open()
-            Dim query = "insert into book values(" & txtISBN.Text & "," & txtYear.Text & ",'" & txtTitle.Text & "','" & txtAuthor.Text & "','" & txtPublisher.Text & "','" & txtCategory.Text & "')"
-            'Dim cmd As SqlCommand
-            'cmd = New SqlCommand(query, Con)
-            'cmd.ExecuteNonQuery()
-            MsgBox("Book Saved")
-            'Con.Close()
-            SQLCommandBasic(query)
-            DisplayTable()
-            ClearTextBoxes()
+            If ValidatePKBook() Then
+                Dim query = "insert into book values(" & txtISBN.Text & "," & txtYear.Text & ",'" & txtTitle.Text & "','" & txtAuthor.Text & "','" & txtPublisher.Text & "','" & txtCategory.Text & "')"
+                SQLCommandBasic(query)
+                MsgBox("Book Saved")
+                DisplayTable()
+                ClearTextBoxes()
+            End If
         End If
     End Sub
-
 
     Private Sub btnListofBooks_Click(sender As Object, e As EventArgs) Handles btnListofBooks.Click
         DisplayTable()
@@ -78,16 +98,14 @@ Public Class BookDetails
         If txtISBN.Text = "" Or txtYear.Text = "" Or txtAuthor.Text = "" Or txtTitle.Text = "" Or txtPublisher.Text = "" Or txtCategory.Text = "" Then
             MsgBox("Missing Information")
         Else
-            Con.Open()
-            Dim query = "update Book set ISBN=" & txtISBN.Text & ",YearofPublication=" & txtYear.Text & ",Title='" & txtTitle.Text & "',Author='" &
+            If ValidateUpdatedBook() Then
+                Dim query = "update Book set ISBN=" & txtISBN.Text & ",YearofPublication=" & txtYear.Text & ",Title='" & txtTitle.Text & "',Author='" &
                         txtAuthor.Text & "',Publisher='" & txtPublisher.Text & "',Category='" & txtCategory.Text & "' where ISBN=" & key & ""
-            Dim cmd As SqlCommand
-            cmd = New SqlCommand(query, Con)
-            cmd.ExecuteNonQuery()
-            MsgBox("Book Updated")
-            Con.Close()
-            DisplayTable()
-            ClearTextBoxes()
+                SQLCommandBasic(query)
+                MsgBox("Book Updated")
+                DisplayTable()
+                ClearTextBoxes()
+            End If
         End If
     End Sub
 
@@ -95,13 +113,9 @@ Public Class BookDetails
         If key = 0 Or (txtISBN.Text = "" Or txtYear.Text = "" Or txtAuthor.Text = "" Or txtTitle.Text = "" Or txtPublisher.Text = "" Or txtCategory.Text = "") Then
             MsgBox("Missing Information")
         Else
-            Con.Open()
             Dim query = "delete from Book where ISBN=" & key & ""
-            Dim cmd As SqlCommand
-            cmd = New SqlCommand(query, Con)
-            cmd.ExecuteNonQuery()
+            SQLCommandBasic(query)
             MsgBox("Book Deleted")
-            Con.Close()
             DisplayTable()
             ClearTextBoxes()
         End If
@@ -109,43 +123,42 @@ Public Class BookDetails
 
     '!!Check validation for search by isbn (!integer tell user to input correctly)
     Private Sub btnSearchBook_Click(sender As Object, e As EventArgs) Handles btnSearchBook.Click
-        Dim decSearchISBN As Decimal
         Dim strSearchAuthor As String
         Dim strSearchTitle As String
+
+        Dim blnInvalidISBN As Boolean
+        blnInvalidISBN = False
 
         If txtSearchBook.Text = "" Then
             MsgBox("Missing Information")
         Else
-            Con.Open()
-            Dim query
+            Dim query = ""
             If cboSearchBy.SelectedIndex = 0 Then
-                decSearchISBN = CDec(txtSearchBook.Text)
-                query = "select * from book where ISBN=" & decSearchISBN & ""
+                'decSearchISBN = CDec(txtSearchBook.Text)
+                If ValidateISBN() Then
+                    query = "select * from book where ISBN=" & decSearchISBN & ""
+                    SQLCommandView(query, DataGridViewListofBook)
+                Else
+                    blnInvalidISBN = True
+                End If
             ElseIf cboSearchBy.SelectedIndex = 1 Then
                 strSearchAuthor = txtSearchBook.Text
                 query = "select * from book where Author='" & strSearchAuthor & "'"
+                SQLCommandView(query, DataGridViewListofBook)
             ElseIf cboSearchBy.SelectedIndex = 2 Then
                 strSearchTitle = txtSearchBook.Text
                 query = "select * from book where Title='" & strSearchTitle & "'"
-
-            Else
-            End If
-            Dim adapter As SqlDataAdapter
-            Dim cmd As SqlCommand
-            cmd = New SqlCommand(query, Con)
-            cmd.ExecuteNonQuery()
-            adapter = New SqlDataAdapter(cmd)
-            Dim builder = New SqlCommandBuilder(adapter)
-            Dim ds = New DataSet()
-            adapter.Fill(ds)
-            DataGridViewListofBook.DataSource = ds.Tables(0)
-            If DataGridViewListofBook.Rows.Count = 0 Then
-                MsgBox("Sorry, no book found")
-            Else
-                MsgBox(DataGridViewListofBook.Rows.Count & " Book found!")
+                SQLCommandView(query, DataGridViewListofBook)
             End If
 
-            Con.Close()
+            If blnInvalidISBN = False Then
+                If DataGridViewListofBook.Rows.Count = 0 Then
+                    MsgBox("Sorry, no book found")
+                Else
+                    MsgBox(DataGridViewListofBook.Rows.Count & " Book found!")
+                End If
+            End If
+
             ClearTextBoxes()
         End If
     End Sub

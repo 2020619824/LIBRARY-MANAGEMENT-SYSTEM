@@ -57,15 +57,19 @@ Partial Class BookReturnInformation
         '
         'txtBorrowerName
         '
+        Me.txtBorrowerName.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.txtBorrowerName.Location = New System.Drawing.Point(160, 105)
         Me.txtBorrowerName.Name = "txtBorrowerName"
+        Me.txtBorrowerName.ReadOnly = True
         Me.txtBorrowerName.Size = New System.Drawing.Size(466, 22)
         Me.txtBorrowerName.TabIndex = 2
         '
         'txtBorrowerIC
         '
+        Me.txtBorrowerIC.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.txtBorrowerIC.Location = New System.Drawing.Point(160, 148)
         Me.txtBorrowerIC.Name = "txtBorrowerIC"
+        Me.txtBorrowerIC.ReadOnly = True
         Me.txtBorrowerIC.Size = New System.Drawing.Size(466, 22)
         Me.txtBorrowerIC.TabIndex = 3
         '
@@ -113,21 +117,21 @@ Partial Class BookReturnInformation
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(657, 303)
+        Me.DataGridView1.Size = New System.Drawing.Size(941, 303)
         Me.DataGridView1.TabIndex = 6
         '
         'btnReturn
         '
-        Me.btnReturn.Location = New System.Drawing.Point(561, 543)
+        Me.btnReturn.Location = New System.Drawing.Point(890, 24)
         Me.btnReturn.Name = "btnReturn"
-        Me.btnReturn.Size = New System.Drawing.Size(130, 66)
+        Me.btnReturn.Size = New System.Drawing.Size(86, 179)
         Me.btnReturn.TabIndex = 7
         Me.btnReturn.Text = "Return"
         Me.btnReturn.UseVisualStyleBackColor = True
         '
         'btnReturnBook
         '
-        Me.btnReturnBook.Location = New System.Drawing.Point(35, 543)
+        Me.btnReturnBook.Location = New System.Drawing.Point(713, 116)
         Me.btnReturnBook.Name = "btnReturnBook"
         Me.btnReturnBook.Size = New System.Drawing.Size(161, 66)
         Me.btnReturnBook.TabIndex = 8
@@ -136,11 +140,11 @@ Partial Class BookReturnInformation
         '
         'btnLateReturn
         '
-        Me.btnLateReturn.Location = New System.Drawing.Point(281, 543)
+        Me.btnLateReturn.Location = New System.Drawing.Point(713, 43)
         Me.btnLateReturn.Name = "btnLateReturn"
-        Me.btnLateReturn.Size = New System.Drawing.Size(195, 66)
+        Me.btnLateReturn.Size = New System.Drawing.Size(161, 66)
         Me.btnLateReturn.TabIndex = 9
-        Me.btnLateReturn.Text = "Go to Late Return Page"
+        Me.btnLateReturn.Text = "Go to Late" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Return Page"
         Me.btnLateReturn.UseVisualStyleBackColor = True
         Me.btnLateReturn.Visible = False
         '
@@ -148,13 +152,14 @@ Partial Class BookReturnInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(722, 631)
+        Me.ClientSize = New System.Drawing.Size(1012, 554)
         Me.Controls.Add(Me.btnLateReturn)
         Me.Controls.Add(Me.btnReturnBook)
         Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "BookReturnInformation"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Book Return Information"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
