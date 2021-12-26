@@ -61,21 +61,6 @@ Public Class BookReturnInformation
         SQLCommandView(query, DataGridView1)
     End Sub
 
-    Private Sub btnSearchBorrower_Click(sender As Object, e As EventArgs) Handles btnSearchBorrower.Click
-        FillBorrowerName()
-        DataGridView1.ColumnHeadersVisible = True
-    End Sub
-
-    Private Sub cboBorrowerName_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cboBorrowerName.SelectionChangeCommitted
-        GetBorrowerName()
-        GetBorrowerIC()
-    End Sub
-
-    Private Sub cboBorrowerName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBorrowerName.SelectedIndexChanged
-        ListOfBorrrowedBook()
-        LateReturnBook()
-    End Sub
-
     Private Sub AddColumn()
         Dim newColumn As New DataGridViewCheckBoxColumn
         newColumn.HeaderText = "Select To Return Book"
@@ -84,6 +69,24 @@ Public Class BookReturnInformation
         DataGridView1.Columns.Insert(0, newColumn)
 
     End Sub
+
+    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
+
+        DataGridView1.ReadOnly = False
+        For Each dgvc As DataGridViewColumn In DataGridView1.Columns
+            dgvc.ReadOnly = True
+        Next
+        DataGridView1.Columns(0).ReadOnly = False
+    End Sub
+
+    Private Function TodayDate() As String
+        'SQL Date Format: YYYYMMDD
+        Dim dateSQLFormat = Date.Today.Year.ToString
+        dateSQLFormat += Date.Today.Month.ToString
+        dateSQLFormat += Date.Today.Day.ToString
+
+        Return dateSQLFormat
+    End Function
 
     Private Sub LateReturnStatus()
         Dim query
@@ -116,57 +119,52 @@ Public Class BookReturnInformation
         LateReturnStatus()
     End Sub
 
+    Private Sub btnSearchBorrower_Click(sender As Object, e As EventArgs) Handles btnSearchBorrower.Click
+        FillBorrowerName()
+        DataGridView1.ColumnHeadersVisible = True
+    End Sub
+
+    Private Sub cboBorrowerName_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cboBorrowerName.SelectionChangeCommitted
+        GetBorrowerName()
+        GetBorrowerIC()
+    End Sub
+
+    Private Sub cboBorrowerName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBorrowerName.SelectedIndexChanged
+        ListOfBorrrowedBook()
+        LateReturnBook()
+    End Sub
+
     Private Sub btnReturnBook_Click(sender As Object, e As EventArgs) Handles btnReturnBook.Click
 
         Dim query
-        Dim messageDisplayed As Boolean
-        Dim notReturned As Boolean
-        notReturned = False
-        messageDisplayed = False
+        Dim updateMessageDisplayed As Boolean
+        Dim fineMessageDisplayed As Boolean
+        updateMessageDisplayed = False
+        fineMessageDisplayed = False
         Dim borrowerIC = txtBorrowerIC.Text
-
-        Dim j As Integer
-        For j = 0 To DataGridView1.Rows.Count - 1
-            If CBool(DataGridView1.Rows(j).Cells(0).Value) = True And CStr(DataGridView1.Rows(j).Cells(8).Value) = "Yes" Then
-                MsgBox("Please Settle The Fines Before Return")
-                notReturned = True
-                If CStr(DataGridView1.Rows(j).Cells(8).Value) = "No" Then
-                    notReturned = False
-                End If
-            End If
-        Next
 
         Dim i As Integer
         For i = 0 To DataGridView1.Rows.Count - 1
-            If CBool(DataGridView1.Rows(i).Cells(0).Value) = True And Not (notReturned) Then
-                query = "update borrow set ReturnDate='" & TodayDate() & "' where ISBN=" & DataGridView1.Rows(i).Cells(1).Value.ToString &
+            If CBool(DataGridView1.Rows(i).Cells(0).Value) = True Then
+                If CStr(DataGridView1.Rows(i).Cells(8).Value) = "Yes" Then
+                    If Not (fineMessageDisplayed) Then
+                        MsgBox("Please Settle The Fines Before Return")
+                        fineMessageDisplayed = True
+                    End If
+                Else
+                    query = "update borrow set ReturnDate='" & TodayDate() & "' where ISBN=" & DataGridView1.Rows(i).Cells(1).Value.ToString &
                         " and BorrowerIC=" & borrowerIC & " and LateReturnStatus='No'"
-                SQLCommandBasic(query)
-                If (Not (messageDisplayed)) Then
-                    MsgBox("Return Date Updated")
-                    messageDisplayed = True
+                    SQLCommandBasic(query)
+                    If (Not (updateMessageDisplayed)) Then
+                        MsgBox("Return Date Updated")
+                        updateMessageDisplayed = True
+                    End If
                 End If
             End If
         Next
 
-        ListOfBorrrowedBook()
+        If DataGridView1.Rows.Count <> 0 Then
+            ListOfBorrrowedBook()
+        End If
     End Sub
-
-    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-
-        DataGridView1.ReadOnly = False
-        For Each dgvc As DataGridViewColumn In DataGridView1.Columns
-            dgvc.ReadOnly = True
-        Next
-        DataGridView1.Columns(0).ReadOnly = False
-    End Sub
-
-    Private Function TodayDate() As String
-        'SQL Date Format: YYYYMMDD
-        Dim dateSQLFormat = Date.Today.Year.ToString
-        dateSQLFormat += Date.Today.Month.ToString
-        dateSQLFormat += Date.Today.Day.ToString
-
-        Return dateSQLFormat
-    End Function
 End Class
