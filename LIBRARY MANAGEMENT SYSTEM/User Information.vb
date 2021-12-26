@@ -8,7 +8,7 @@ Public Class UserInformation
     End Sub
 
     Private Sub cmdReturn_Click(sender As Object, e As EventArgs) Handles cmdReturn.Click
-
+        Me.Close()
     End Sub
 
     Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles cmdUpdate.Click
