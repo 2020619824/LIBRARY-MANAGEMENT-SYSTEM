@@ -130,6 +130,11 @@
     <Compile Include="Late Return Information.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LateReturnBooksInformation.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LateReturnBooksInformation.xsd</DependentUpon>
+    </Compile>
     <Compile Include="List_Book_Details.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -254,6 +259,17 @@
     </None>
     <None Include="Database1DataSet1.xss">
       <DependentUpon>Database1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LateReturnBooksInformation.xsc">
+      <DependentUpon>LateReturnBooksInformation.xsd</DependentUpon>
+    </None>
+    <None Include="LateReturnBooksInformation.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LateReturnBooksInformation.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LateReturnBooksInformation.xss">
+      <DependentUpon>LateReturnBooksInformation.xsd</DependentUpon>
     </None>
     <None Include="List_Book_Details.xsc">
       <DependentUpon>List_Book_Details.xsd</DependentUpon>

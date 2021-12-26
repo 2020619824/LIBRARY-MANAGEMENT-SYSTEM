@@ -24,35 +24,38 @@ Partial Class LateReturnInformation
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.List_Borrowed_Book = New LIBRARY_MANAGEMENT_SYSTEM.List_Borrowed_Book()
         Me.ListBorrowedBookBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.List_Borrowed_Book = New LIBRARY_MANAGEMENT_SYSTEM.List_Borrowed_Book()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnSearchBook = New System.Windows.Forms.Button()
         Me.cboSearchBy = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearchBook = New System.Windows.Forms.TextBox()
+        Me.LateReturnBooksInformation = New LIBRARY_MANAGEMENT_SYSTEM.LateReturnBooksInformation()
+        Me.LateReturnBooksInformationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.List_Borrowed_Book, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListBorrowedBookBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.List_Borrowed_Book, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.LateReturnBooksInformation, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LateReturnBooksInformationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
-        Me.DataGridView1.DataSource = Me.ListBorrowedBookBindingSource
+        Me.DataGridView1.DataSource = Me.LateReturnBooksInformationBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(26, 151)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
@@ -60,22 +63,15 @@ Partial Class LateReturnInformation
         Me.DataGridView1.Size = New System.Drawing.Size(762, 369)
         Me.DataGridView1.TabIndex = 0
         '
-        'List_Borrowed_Book
-        '
-        Me.List_Borrowed_Book.DataSetName = "List_Borrowed_Book"
-        Me.List_Borrowed_Book.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ListBorrowedBookBindingSource
         '
         Me.ListBorrowedBookBindingSource.DataSource = Me.List_Borrowed_Book
         Me.ListBorrowedBookBindingSource.Position = 0
         '
-        'Column1
+        'List_Borrowed_Book
         '
-        Me.Column1.HeaderText = "Column1"
-        Me.Column1.MinimumWidth = 6
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 125
+        Me.List_Borrowed_Book.DataSetName = "List_Borrowed_Book"
+        Me.List_Borrowed_Book.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'GroupBox2
         '
@@ -93,32 +89,26 @@ Partial Class LateReturnInformation
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Fines Payment"
         '
-        'Label3
+        'TextBox3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(14, 68)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(157, 17)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Total amount late fine : "
+        Me.TextBox3.Location = New System.Drawing.Point(17, 233)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(241, 22)
+        Me.TextBox3.TabIndex = 6
         '
-        'Button1
+        'TextBox2
         '
-        Me.Button1.Location = New System.Drawing.Point(94, 300)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(108, 47)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Generate Receipt"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TextBox2.Location = New System.Drawing.Point(17, 162)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(241, 22)
+        Me.TextBox2.TabIndex = 5
         '
-        'Label4
+        'TextBox1
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(14, 142)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(140, 17)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Insert fine payment : "
+        Me.TextBox1.Location = New System.Drawing.Point(17, 88)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(241, 22)
+        Me.TextBox1.TabIndex = 4
         '
         'Label5
         '
@@ -129,26 +119,32 @@ Partial Class LateReturnInformation
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Date payment : "
         '
-        'TextBox1
+        'Label4
         '
-        Me.TextBox1.Location = New System.Drawing.Point(17, 88)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(241, 22)
-        Me.TextBox1.TabIndex = 4
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(14, 142)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(140, 17)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Insert fine payment : "
         '
-        'TextBox2
+        'Button1
         '
-        Me.TextBox2.Location = New System.Drawing.Point(17, 162)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(241, 22)
-        Me.TextBox2.TabIndex = 5
+        Me.Button1.Location = New System.Drawing.Point(94, 300)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(108, 47)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Generate Receipt"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'Label3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(17, 233)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(241, 22)
-        Me.TextBox3.TabIndex = 6
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(14, 68)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(157, 17)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Total amount late fine : "
         '
         'GroupBox1
         '
@@ -197,6 +193,16 @@ Partial Class LateReturnInformation
         Me.txtSearchBook.Size = New System.Drawing.Size(267, 22)
         Me.txtSearchBook.TabIndex = 0
         '
+        'LateReturnBooksInformation
+        '
+        Me.LateReturnBooksInformation.DataSetName = "LateReturnBooksInformation"
+        Me.LateReturnBooksInformation.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'LateReturnBooksInformationBindingSource
+        '
+        Me.LateReturnBooksInformationBindingSource.DataSource = Me.LateReturnBooksInformation
+        Me.LateReturnBooksInformationBindingSource.Position = 0
+        '
         'LateReturnInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -208,18 +214,19 @@ Partial Class LateReturnInformation
         Me.Name = "LateReturnInformation"
         Me.Text = "Late Return Information"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.List_Borrowed_Book, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ListBorrowedBookBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.List_Borrowed_Book, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.LateReturnBooksInformation, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LateReturnBooksInformationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents ListBorrowedBookBindingSource As BindingSource
     Friend WithEvents List_Borrowed_Book As List_Borrowed_Book
     Friend WithEvents GroupBox2 As GroupBox
@@ -235,4 +242,6 @@ Partial Class LateReturnInformation
     Friend WithEvents cboSearchBy As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtSearchBook As TextBox
+    Friend WithEvents LateReturnBooksInformationBindingSource As BindingSource
+    Friend WithEvents LateReturnBooksInformation As LateReturnBooksInformation
 End Class
