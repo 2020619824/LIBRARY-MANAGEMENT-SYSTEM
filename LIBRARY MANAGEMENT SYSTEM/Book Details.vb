@@ -8,6 +8,11 @@ Public Class BookDetails
         SQLCommandView(query, DataGridViewListofBook)
     End Sub
 
+    Private Sub DisplayHeader()
+        Dim query = "select * from Book where ISBN is null"
+        SQLCommandView(query, DataGridViewListofBook)
+    End Sub
+
     Private Sub ClearTextBoxes()
         txtISBN.Clear()
         txtYear.Clear()
@@ -16,6 +21,18 @@ Public Class BookDetails
         txtPublisher.Clear()
         txtCategory.Clear()
         DataGridViewListofBook.ClearSelection()
+    End Sub
+
+    Private Sub Reset()
+        txtISBN.Clear()
+        txtYear.Clear()
+        txtTitle.Clear()
+        txtAuthor.Clear()
+        txtPublisher.Clear()
+        txtCategory.Clear()
+        txtSearchBook.Clear()
+        cboSearchBy.SelectedIndex = 0
+        DataGridViewListofBook.DataSource.Clear()
     End Sub
 
     Private Function ValidatePKBook() As Boolean
@@ -163,7 +180,12 @@ Public Class BookDetails
         End If
     End Sub
 
-    Private Sub BookDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
+        Reset()
+        Me.Close()
+    End Sub
 
+    Private Sub BookDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisplayHeader()
     End Sub
 End Class
