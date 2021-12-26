@@ -22,11 +22,8 @@ Partial Class UserInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtPhoneNumber = New System.Windows.Forms.TextBox()
-        Me.UserBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.User_dataSet = New LIBRARY_MANAGEMENT_SYSTEM.User_dataSet()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -43,27 +40,10 @@ Partial Class UserInformation
         Me.cmdDelete = New System.Windows.Forms.Button()
         Me.cmdListOfUsers = New System.Windows.Forms.Button()
         Me.cmdReturn = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.StaffIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StaffNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PhonenoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UsernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PasswordDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Database1DataSet = New LIBRARY_MANAGEMENT_SYSTEM.Database1DataSet()
-        Me.Database1DataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Database1DataSet1 = New LIBRARY_MANAGEMENT_SYSTEM.Database1DataSet1()
-        Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.UserTableAdapter = New LIBRARY_MANAGEMENT_SYSTEM.Database1DataSet1TableAdapters.UserTableAdapter()
-        Me.UserTableAdapter1 = New LIBRARY_MANAGEMENT_SYSTEM.User_dataSetTableAdapters.UserTableAdapter()
+        Me.DataGridViewListOfUsers = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.UserBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.User_dataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Database1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Database1DataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Database1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridViewListOfUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -85,21 +65,10 @@ Partial Class UserInformation
         '
         'txtPhoneNumber
         '
-        Me.txtPhoneNumber.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserBindingSource1, "Password", True))
         Me.txtPhoneNumber.Location = New System.Drawing.Point(143, 192)
         Me.txtPhoneNumber.Name = "txtPhoneNumber"
         Me.txtPhoneNumber.Size = New System.Drawing.Size(174, 22)
         Me.txtPhoneNumber.TabIndex = 9
-        '
-        'UserBindingSource1
-        '
-        Me.UserBindingSource1.DataMember = "User"
-        Me.UserBindingSource1.DataSource = Me.User_dataSet
-        '
-        'User_dataSet
-        '
-        Me.User_dataSet.DataSetName = "User_dataSet"
-        Me.User_dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label2
         '
@@ -139,7 +108,6 @@ Partial Class UserInformation
         '
         'txtStaffID
         '
-        Me.txtStaffID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserBindingSource1, "Staff_ID", True))
         Me.txtStaffID.Location = New System.Drawing.Point(143, 142)
         Me.txtStaffID.Name = "txtStaffID"
         Me.txtStaffID.Size = New System.Drawing.Size(174, 22)
@@ -147,7 +115,6 @@ Partial Class UserInformation
         '
         'txtUsername
         '
-        Me.txtUsername.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserBindingSource1, "Username", True))
         Me.txtUsername.Location = New System.Drawing.Point(143, 52)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(174, 22)
@@ -155,7 +122,6 @@ Partial Class UserInformation
         '
         'txtStaffName
         '
-        Me.txtStaffName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserBindingSource1, "Staff_Name", True))
         Me.txtStaffName.Location = New System.Drawing.Point(143, 93)
         Me.txtStaffName.Name = "txtStaffName"
         Me.txtStaffName.Size = New System.Drawing.Size(174, 22)
@@ -172,7 +138,7 @@ Partial Class UserInformation
         Me.GroupBox2.Size = New System.Drawing.Size(602, 72)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Search Book"
+        Me.GroupBox2.Text = "Search User"
         '
         'btnSearchBook
         '
@@ -244,94 +210,25 @@ Partial Class UserInformation
         Me.cmdReturn.Text = "Return"
         Me.cmdReturn.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'DataGridViewListOfUsers
         '
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.StaffIDDataGridViewTextBoxColumn, Me.StaffNameDataGridViewTextBoxColumn, Me.PhonenoDataGridViewTextBoxColumn, Me.UsernameDataGridViewTextBoxColumn, Me.PasswordDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.UserBindingSource1
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 380)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(679, 291)
-        Me.DataGridView1.TabIndex = 14
-        '
-        'StaffIDDataGridViewTextBoxColumn
-        '
-        Me.StaffIDDataGridViewTextBoxColumn.DataPropertyName = "Staff_ID"
-        Me.StaffIDDataGridViewTextBoxColumn.HeaderText = "Staff_ID"
-        Me.StaffIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.StaffIDDataGridViewTextBoxColumn.Name = "StaffIDDataGridViewTextBoxColumn"
-        Me.StaffIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'StaffNameDataGridViewTextBoxColumn
-        '
-        Me.StaffNameDataGridViewTextBoxColumn.DataPropertyName = "Staff_Name"
-        Me.StaffNameDataGridViewTextBoxColumn.HeaderText = "Staff_Name"
-        Me.StaffNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.StaffNameDataGridViewTextBoxColumn.Name = "StaffNameDataGridViewTextBoxColumn"
-        Me.StaffNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'PhonenoDataGridViewTextBoxColumn
-        '
-        Me.PhonenoDataGridViewTextBoxColumn.DataPropertyName = "Phone_no"
-        Me.PhonenoDataGridViewTextBoxColumn.HeaderText = "Phone_no"
-        Me.PhonenoDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PhonenoDataGridViewTextBoxColumn.Name = "PhonenoDataGridViewTextBoxColumn"
-        Me.PhonenoDataGridViewTextBoxColumn.Width = 125
-        '
-        'UsernameDataGridViewTextBoxColumn
-        '
-        Me.UsernameDataGridViewTextBoxColumn.DataPropertyName = "Username"
-        Me.UsernameDataGridViewTextBoxColumn.HeaderText = "Username"
-        Me.UsernameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.UsernameDataGridViewTextBoxColumn.Name = "UsernameDataGridViewTextBoxColumn"
-        Me.UsernameDataGridViewTextBoxColumn.Width = 125
-        '
-        'PasswordDataGridViewTextBoxColumn
-        '
-        Me.PasswordDataGridViewTextBoxColumn.DataPropertyName = "Password"
-        Me.PasswordDataGridViewTextBoxColumn.HeaderText = "Password"
-        Me.PasswordDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PasswordDataGridViewTextBoxColumn.Name = "PasswordDataGridViewTextBoxColumn"
-        Me.PasswordDataGridViewTextBoxColumn.Width = 125
-        '
-        'Database1DataSet
-        '
-        Me.Database1DataSet.DataSetName = "Database1DataSet"
-        Me.Database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Database1DataSetBindingSource
-        '
-        Me.Database1DataSetBindingSource.DataSource = Me.Database1DataSet
-        Me.Database1DataSetBindingSource.Position = 0
-        '
-        'Database1DataSet1
-        '
-        Me.Database1DataSet1.DataSetName = "Database1DataSet1"
-        Me.Database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'UserBindingSource
-        '
-        Me.UserBindingSource.DataMember = "User"
-        Me.UserBindingSource.DataSource = Me.Database1DataSet1
-        '
-        'UserTableAdapter
-        '
-        Me.UserTableAdapter.ClearBeforeFill = True
-        '
-        'UserTableAdapter1
-        '
-        Me.UserTableAdapter1.ClearBeforeFill = True
+        Me.DataGridViewListOfUsers.AllowUserToAddRows = False
+        Me.DataGridViewListOfUsers.AllowUserToDeleteRows = False
+        Me.DataGridViewListOfUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewListOfUsers.Location = New System.Drawing.Point(13, 382)
+        Me.DataGridViewListOfUsers.Name = "DataGridViewListOfUsers"
+        Me.DataGridViewListOfUsers.ReadOnly = True
+        Me.DataGridViewListOfUsers.RowHeadersWidth = 51
+        Me.DataGridViewListOfUsers.RowTemplate.Height = 24
+        Me.DataGridViewListOfUsers.Size = New System.Drawing.Size(601, 303)
+        Me.DataGridViewListOfUsers.TabIndex = 14
         '
         'UserInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(701, 697)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DataGridViewListOfUsers)
         Me.Controls.Add(Me.cmdReturn)
         Me.Controls.Add(Me.cmdListOfUsers)
         Me.Controls.Add(Me.cmdDelete)
@@ -342,15 +239,9 @@ Partial Class UserInformation
         Me.Text = "User Information"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.UserBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.User_dataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Database1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Database1DataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Database1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewListOfUsers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -373,18 +264,5 @@ Partial Class UserInformation
     Friend WithEvents cmdDelete As Button
     Friend WithEvents cmdListOfUsers As Button
     Friend WithEvents cmdReturn As Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Database1DataSet As Database1DataSet
-    Friend WithEvents Database1DataSetBindingSource As BindingSource
-    Friend WithEvents Database1DataSet1 As Database1DataSet1
-    Friend WithEvents UserBindingSource As BindingSource
-    Friend WithEvents UserTableAdapter As Database1DataSet1TableAdapters.UserTableAdapter
-    Friend WithEvents StaffIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents StaffNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PhonenoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents UsernameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PasswordDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents User_dataSet As User_dataSet
-    Friend WithEvents UserBindingSource1 As BindingSource
-    Friend WithEvents UserTableAdapter1 As User_dataSetTableAdapters.UserTableAdapter
+    Friend WithEvents DataGridViewListOfUsers As DataGridView
 End Class
