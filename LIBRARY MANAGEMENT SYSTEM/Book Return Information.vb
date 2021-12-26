@@ -1,9 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Public Class BookReturnInformation
-    'yg korang punya
+
     Dim Con = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True")
-    'yg din punya
-    'Dim Con = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Desktop\CS110\SEMESTER 3\CSC301\GROUP PROJECT\PROJECT\LIBRARY MANAGEMENT SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True")
+
     Private Sub FillBorrowerName()
         Con.Open()
         Dim query = "select Distinct BW.BorrowerName
