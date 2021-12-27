@@ -22,10 +22,7 @@ Partial Class LateReturnInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ListBorrowedBookBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.List_Borrowed_Book = New LIBRARY_MANAGEMENT_SYSTEM.List_Borrowed_Book()
+        Me.DataGridViewLateReturnFine = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -39,39 +36,21 @@ Partial Class LateReturnInformation
         Me.cboSearchBy = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearchBook = New System.Windows.Forms.TextBox()
-        Me.LateReturnBooksInformation = New LIBRARY_MANAGEMENT_SYSTEM.LateReturnBooksInformation()
-        Me.LateReturnBooksInformationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ListBorrowedBookBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.List_Borrowed_Book, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridViewLateReturnFine, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.LateReturnBooksInformation, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LateReturnBooksInformationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DataGridViewLateReturnFine
         '
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.DataSource = Me.LateReturnBooksInformationBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(26, 151)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(762, 369)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'ListBorrowedBookBindingSource
-        '
-        Me.ListBorrowedBookBindingSource.DataSource = Me.List_Borrowed_Book
-        Me.ListBorrowedBookBindingSource.Position = 0
-        '
-        'List_Borrowed_Book
-        '
-        Me.List_Borrowed_Book.DataSetName = "List_Borrowed_Book"
-        Me.List_Borrowed_Book.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.DataGridViewLateReturnFine.AllowUserToOrderColumns = True
+        Me.DataGridViewLateReturnFine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewLateReturnFine.Location = New System.Drawing.Point(26, 151)
+        Me.DataGridViewLateReturnFine.Name = "DataGridViewLateReturnFine"
+        Me.DataGridViewLateReturnFine.RowHeadersWidth = 51
+        Me.DataGridViewLateReturnFine.RowTemplate.Height = 24
+        Me.DataGridViewLateReturnFine.Size = New System.Drawing.Size(762, 369)
+        Me.DataGridViewLateReturnFine.TabIndex = 0
         '
         'GroupBox2
         '
@@ -193,16 +172,6 @@ Partial Class LateReturnInformation
         Me.txtSearchBook.Size = New System.Drawing.Size(267, 22)
         Me.txtSearchBook.TabIndex = 0
         '
-        'LateReturnBooksInformation
-        '
-        Me.LateReturnBooksInformation.DataSetName = "LateReturnBooksInformation"
-        Me.LateReturnBooksInformation.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'LateReturnBooksInformationBindingSource
-        '
-        Me.LateReturnBooksInformationBindingSource.DataSource = Me.LateReturnBooksInformation
-        Me.LateReturnBooksInformationBindingSource.Position = 0
-        '
         'LateReturnInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -210,25 +179,19 @@ Partial Class LateReturnInformation
         Me.ClientSize = New System.Drawing.Size(1125, 576)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DataGridViewLateReturnFine)
         Me.Name = "LateReturnInformation"
         Me.Text = "Late Return Information"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ListBorrowedBookBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.List_Borrowed_Book, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewLateReturnFine, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.LateReturnBooksInformation, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LateReturnBooksInformationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents ListBorrowedBookBindingSource As BindingSource
-    Friend WithEvents List_Borrowed_Book As List_Borrowed_Book
+    Friend WithEvents DataGridViewLateReturnFine As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Label3 As Label
@@ -242,6 +205,4 @@ Partial Class LateReturnInformation
     Friend WithEvents cboSearchBy As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtSearchBook As TextBox
-    Friend WithEvents LateReturnBooksInformationBindingSource As BindingSource
-    Friend WithEvents LateReturnBooksInformation As LateReturnBooksInformation
 End Class

@@ -34,7 +34,7 @@
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        txtTime.Text = Date.Now.ToString("hh:mm:ss")
+        txtTime.Text = Date.Now.ToString("hh:mm")
         txtDate.Text = Date.Now.ToString("dd MMM yyyy")
     End Sub
 End Class
