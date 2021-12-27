@@ -35,7 +35,7 @@ Partial Class UserInformation
         Me.btnSearchBook = New System.Windows.Forms.Button()
         Me.cboSearchBy = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtSearchBook = New System.Windows.Forms.TextBox()
+        Me.txtSearchUser = New System.Windows.Forms.TextBox()
         Me.cmdUpdate = New System.Windows.Forms.Button()
         Me.cmdDelete = New System.Windows.Forms.Button()
         Me.cmdListOfUsers = New System.Windows.Forms.Button()
@@ -132,7 +132,7 @@ Partial Class UserInformation
         Me.GroupBox2.Controls.Add(Me.btnSearchBook)
         Me.GroupBox2.Controls.Add(Me.cboSearchBy)
         Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.txtSearchBook)
+        Me.GroupBox2.Controls.Add(Me.txtSearchUser)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 28)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(602, 72)
@@ -157,6 +157,7 @@ Partial Class UserInformation
         Me.cboSearchBy.Name = "cboSearchBy"
         Me.cboSearchBy.Size = New System.Drawing.Size(119, 24)
         Me.cboSearchBy.TabIndex = 2
+        Me.cboSearchBy.Text = "Staff ID"
         '
         'Label1
         '
@@ -167,12 +168,12 @@ Partial Class UserInformation
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "By"
         '
-        'txtSearchBook
+        'txtSearchUser
         '
-        Me.txtSearchBook.Location = New System.Drawing.Point(20, 27)
-        Me.txtSearchBook.Name = "txtSearchBook"
-        Me.txtSearchBook.Size = New System.Drawing.Size(267, 22)
-        Me.txtSearchBook.TabIndex = 0
+        Me.txtSearchUser.Location = New System.Drawing.Point(20, 27)
+        Me.txtSearchUser.Name = "txtSearchUser"
+        Me.txtSearchUser.Size = New System.Drawing.Size(267, 22)
+        Me.txtSearchUser.TabIndex = 0
         '
         'cmdUpdate
         '
@@ -214,12 +215,14 @@ Partial Class UserInformation
         '
         Me.DataGridViewListOfUsers.AllowUserToAddRows = False
         Me.DataGridViewListOfUsers.AllowUserToDeleteRows = False
+        Me.DataGridViewListOfUsers.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.DataGridViewListOfUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewListOfUsers.Location = New System.Drawing.Point(13, 382)
         Me.DataGridViewListOfUsers.Name = "DataGridViewListOfUsers"
         Me.DataGridViewListOfUsers.ReadOnly = True
         Me.DataGridViewListOfUsers.RowHeadersWidth = 51
         Me.DataGridViewListOfUsers.RowTemplate.Height = 24
+        Me.DataGridViewListOfUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewListOfUsers.Size = New System.Drawing.Size(601, 303)
         Me.DataGridViewListOfUsers.TabIndex = 14
         '
@@ -251,7 +254,7 @@ Partial Class UserInformation
     Friend WithEvents btnSearchBook As Button
     Friend WithEvents cboSearchBy As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtSearchBook As TextBox
+    Friend WithEvents txtSearchUser As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
