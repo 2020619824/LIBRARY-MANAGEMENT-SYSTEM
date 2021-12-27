@@ -49,7 +49,7 @@ Public Class BookReturnInformation
         Con.Close()
     End Sub
 
-    Private Sub ListOfBorrrowedBook()
+    Private Sub DisplayBorrrowedBook()
         Dim query
         query = "select B.ISBN, B.YearofPublication, B.Title, B.Author, B.Publisher,
                 Br.IssueDate, Br.DueDate, Br.LateReturnStatus
@@ -62,6 +62,16 @@ Public Class BookReturnInformation
         SQLCommandView(query, DataGridView1)
     End Sub
 
+    Private Sub DisplayHeader()
+        Dim query = "select B.ISBN, B.YearofPublication, B.Title, B.Author, B.Publisher,
+                Br.IssueDate, Br.DueDate, Br.LateReturnStatus
+                from Book B, Borrow Br, Borrower Bw
+                where B.ISBN = Br.ISBN
+                and Bw.BorrowerIC = Br.BorrowerIC
+                and B.ISBN is null"
+        SQLCommandView(query, DataGridView1)
+    End Sub
+
     Private Sub AddColumn()
         Dim newColumn As New DataGridViewCheckBoxColumn
         newColumn.HeaderText = "Select To Return Book"
@@ -69,6 +79,10 @@ Public Class BookReturnInformation
         newColumn.Width = 80
         DataGridView1.Columns.Insert(0, newColumn)
 
+    End Sub
+
+    Private Sub RemoveColumn()
+        DataGridView1.Columns.RemoveAt(0)
     End Sub
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
@@ -114,25 +128,51 @@ Public Class BookReturnInformation
         End If
     End Sub
 
+    Private Sub Reset()
+        txtBorrowerName.Clear()
+        txtBorrowerIC.Clear()
+        cboBorrowerName.Text = String.Empty
+        btnLateReturn.Visible = False
+        Con.Open()
+        Dim query = "select Distinct BW.BorrowerName
+                    from Borrow B, Borrower BW
+                    where B.BorrowerIC = BW.BorrowerIC
+                    and BW.BorrowerIC is null"
+        Dim adapter As SqlDataAdapter
+        Dim cmd = New SqlCommand(query, Con)
+        adapter = New SqlDataAdapter(cmd)
+        Dim tbl = New DataTable()
+        adapter.Fill(tbl)
+        cboBorrowerName.DataSource = tbl
+        cboBorrowerName.DisplayMember = "BorrowerName"
+        cboBorrowerName.ValueMember = "BorrowerName"
+        Con.Close()
+    End Sub
+
     Private Sub BookReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DataGridView1.ColumnHeadersVisible = False
         AddColumn()
+        DisplayHeader()
         LateReturnStatus()
     End Sub
 
     Private Sub btnSearchBorrower_Click(sender As Object, e As EventArgs) Handles btnSearchBorrower.Click
         FillBorrowerName()
-        DataGridView1.ColumnHeadersVisible = True
+        DisplayHeader()
+        txtBorrowerName.Clear()
+        txtBorrowerIC.Clear()
+        btnLateReturn.Visible = False
+        MsgBox(cboBorrowerName.Items.Count & " Borrower found!")
     End Sub
 
     Private Sub cboBorrowerName_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cboBorrowerName.SelectionChangeCommitted
         GetBorrowerName()
         GetBorrowerIC()
+        DisplayBorrrowedBook()
+        LateReturnBook()
     End Sub
 
     Private Sub cboBorrowerName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBorrowerName.SelectedIndexChanged
-        ListOfBorrrowedBook()
-        LateReturnBook()
+
     End Sub
 
     Private Sub btnReturnBook_Click(sender As Object, e As EventArgs) Handles btnReturnBook.Click
@@ -165,7 +205,21 @@ Public Class BookReturnInformation
         Next
 
         If DataGridView1.Rows.Count <> 0 Then
-            ListOfBorrrowedBook()
+            DisplayBorrrowedBook()
         End If
     End Sub
+
+    Private Sub btnLateReturn_Click(sender As Object, e As EventArgs) Handles btnLateReturn.Click
+        Reset()
+        RemoveColumn()
+        Me.Hide()
+        LateReturnInformation.ShowDialog()
+    End Sub
+
+    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
+        Reset()
+        RemoveColumn()
+        Me.Close()
+    End Sub
+
 End Class
