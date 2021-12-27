@@ -26,16 +26,16 @@ Partial Class LateReturnInformation
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtTotalAmountLateFine = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnSearchBook = New System.Windows.Forms.Button()
+        Me.cmdSearchLateReturnFines = New System.Windows.Forms.Button()
         Me.cboSearchBy = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtSearchBook = New System.Windows.Forms.TextBox()
+        Me.txtSearchLateReturnInformation = New System.Windows.Forms.TextBox()
         CType(Me.DataGridViewLateReturnFine, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -49,6 +49,7 @@ Partial Class LateReturnInformation
         Me.DataGridViewLateReturnFine.Name = "DataGridViewLateReturnFine"
         Me.DataGridViewLateReturnFine.RowHeadersWidth = 51
         Me.DataGridViewLateReturnFine.RowTemplate.Height = 24
+        Me.DataGridViewLateReturnFine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewLateReturnFine.Size = New System.Drawing.Size(762, 369)
         Me.DataGridViewLateReturnFine.TabIndex = 0
         '
@@ -56,7 +57,7 @@ Partial Class LateReturnInformation
         '
         Me.GroupBox2.Controls.Add(Me.TextBox3)
         Me.GroupBox2.Controls.Add(Me.TextBox2)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.txtTotalAmountLateFine)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.Button1)
@@ -70,29 +71,29 @@ Partial Class LateReturnInformation
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(17, 233)
+        Me.TextBox3.Location = New System.Drawing.Point(18, 368)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(241, 22)
         Me.TextBox3.TabIndex = 6
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(17, 162)
+        Me.TextBox2.Location = New System.Drawing.Point(18, 297)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(241, 22)
         Me.TextBox2.TabIndex = 5
         '
-        'TextBox1
+        'txtTotalAmountLateFine
         '
-        Me.TextBox1.Location = New System.Drawing.Point(17, 88)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(241, 22)
-        Me.TextBox1.TabIndex = 4
+        Me.txtTotalAmountLateFine.Location = New System.Drawing.Point(18, 223)
+        Me.txtTotalAmountLateFine.Name = "txtTotalAmountLateFine"
+        Me.txtTotalAmountLateFine.Size = New System.Drawing.Size(241, 22)
+        Me.txtTotalAmountLateFine.TabIndex = 4
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(14, 213)
+        Me.Label5.Location = New System.Drawing.Point(15, 348)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(108, 17)
         Me.Label5.TabIndex = 3
@@ -101,7 +102,7 @@ Partial Class LateReturnInformation
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(14, 142)
+        Me.Label4.Location = New System.Drawing.Point(15, 277)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(140, 17)
         Me.Label4.TabIndex = 2
@@ -109,7 +110,7 @@ Partial Class LateReturnInformation
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(94, 300)
+        Me.Button1.Location = New System.Drawing.Point(102, 417)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(108, 47)
         Me.Button1.TabIndex = 1
@@ -119,7 +120,7 @@ Partial Class LateReturnInformation
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(14, 68)
+        Me.Label3.Location = New System.Drawing.Point(15, 203)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(157, 17)
         Me.Label3.TabIndex = 0
@@ -127,10 +128,10 @@ Partial Class LateReturnInformation
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnSearchBook)
+        Me.GroupBox1.Controls.Add(Me.cmdSearchLateReturnFines)
         Me.GroupBox1.Controls.Add(Me.cboSearchBy)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txtSearchBook)
+        Me.GroupBox1.Controls.Add(Me.txtSearchLateReturnInformation)
         Me.GroupBox1.Location = New System.Drawing.Point(26, 50)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(762, 72)
@@ -138,14 +139,14 @@ Partial Class LateReturnInformation
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Search Late Return Information"
         '
-        'btnSearchBook
+        'cmdSearchLateReturnFines
         '
-        Me.btnSearchBook.Location = New System.Drawing.Point(472, 18)
-        Me.btnSearchBook.Name = "btnSearchBook"
-        Me.btnSearchBook.Size = New System.Drawing.Size(112, 41)
-        Me.btnSearchBook.TabIndex = 18
-        Me.btnSearchBook.Text = "Search"
-        Me.btnSearchBook.UseVisualStyleBackColor = True
+        Me.cmdSearchLateReturnFines.Location = New System.Drawing.Point(472, 18)
+        Me.cmdSearchLateReturnFines.Name = "cmdSearchLateReturnFines"
+        Me.cmdSearchLateReturnFines.Size = New System.Drawing.Size(112, 41)
+        Me.cmdSearchLateReturnFines.TabIndex = 18
+        Me.cmdSearchLateReturnFines.Text = "Search"
+        Me.cmdSearchLateReturnFines.UseVisualStyleBackColor = True
         '
         'cboSearchBy
         '
@@ -165,12 +166,12 @@ Partial Class LateReturnInformation
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "By"
         '
-        'txtSearchBook
+        'txtSearchLateReturnInformation
         '
-        Me.txtSearchBook.Location = New System.Drawing.Point(20, 27)
-        Me.txtSearchBook.Name = "txtSearchBook"
-        Me.txtSearchBook.Size = New System.Drawing.Size(267, 22)
-        Me.txtSearchBook.TabIndex = 0
+        Me.txtSearchLateReturnInformation.Location = New System.Drawing.Point(20, 27)
+        Me.txtSearchLateReturnInformation.Name = "txtSearchLateReturnInformation"
+        Me.txtSearchLateReturnInformation.Size = New System.Drawing.Size(267, 22)
+        Me.txtSearchLateReturnInformation.TabIndex = 0
         '
         'LateReturnInformation
         '
@@ -198,11 +199,11 @@ Partial Class LateReturnInformation
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtTotalAmountLateFine As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btnSearchBook As Button
+    Friend WithEvents cmdSearchLateReturnFines As Button
     Friend WithEvents cboSearchBy As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtSearchBook As TextBox
+    Friend WithEvents txtSearchLateReturnInformation As TextBox
 End Class

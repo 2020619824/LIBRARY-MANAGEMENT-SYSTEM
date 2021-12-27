@@ -102,7 +102,7 @@ Partial Class Login
         Me.lbltitleLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltitleLogin.Location = New System.Drawing.Point(29, 23)
         Me.lbltitleLogin.Name = "lbltitleLogin"
-        Me.lbltitleLogin.Size = New System.Drawing.Size(495, 22)
+        Me.lbltitleLogin.Size = New System.Drawing.Size(518, 24)
         Me.lbltitleLogin.TabIndex = 6
         Me.lbltitleLogin.Text = "Welcome, Please enter your Username and Password."
         '
