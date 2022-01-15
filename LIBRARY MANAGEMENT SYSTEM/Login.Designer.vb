@@ -89,7 +89,7 @@ Partial Class Login
         Me.cnbReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cnbReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cnbReturn.ForeColor = System.Drawing.Color.Red
-        Me.cnbReturn.Location = New System.Drawing.Point(623, 151)
+        Me.cnbReturn.Location = New System.Drawing.Point(623, 169)
         Me.cnbReturn.Name = "cnbReturn"
         Me.cnbReturn.Size = New System.Drawing.Size(127, 43)
         Me.cnbReturn.TabIndex = 5
@@ -111,7 +111,7 @@ Partial Class Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Red
-        Me.ClientSize = New System.Drawing.Size(785, 224)
+        Me.ClientSize = New System.Drawing.Size(779, 244)
         Me.Controls.Add(Me.lbltitleLogin)
         Me.Controls.Add(Me.cnbReturn)
         Me.Controls.Add(Me.txtLoginMesage)
