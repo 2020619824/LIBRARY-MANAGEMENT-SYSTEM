@@ -11,6 +11,7 @@ Public Class BookDetails
     Private Sub DisplayHeader()
         Dim query = "select * from Book where ISBN is null"
         SQLCommandView(query, DataGridViewListofBook)
+        DataGridViewListofBook().Columns(1).HeaderText = "Year"
     End Sub
 
     Dim key = 0
@@ -269,5 +270,4 @@ Public Class BookDetails
         Reset()
         Me.Close()
     End Sub
-
 End Class

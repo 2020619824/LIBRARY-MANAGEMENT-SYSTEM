@@ -70,6 +70,8 @@ Public Class BookReturnInformation
                 and Bw.BorrowerIC = Br.BorrowerIC
                 and B.ISBN is null"
         SQLCommandView(query, DataGridView1)
+        DataGridView1().Columns(2).HeaderText = "Year"
+        DataGridView1().Columns(8).HeaderText = "Late Return Status"
     End Sub
 
     Private Sub AddColumn()
@@ -96,8 +98,8 @@ Public Class BookReturnInformation
 
     Private Function TodayDate() As String
         'SQL Date Format: YYYYMMDD
-        Dim dateSQLFormat = Date.Today.Year.ToString
-        dateSQLFormat += Date.Today.Month.ToString
+        Dim dateSQLFormat = Date.Today.Year.ToString & "-"
+        dateSQLFormat += Date.Today.Month.ToString & "-"
         dateSQLFormat += Date.Today.Day.ToString
 
         Return dateSQLFormat
