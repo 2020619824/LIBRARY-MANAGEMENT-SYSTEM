@@ -119,7 +119,7 @@ Public Class BookReturnInformation
         Dim i As Integer
         For i = 0 To DataGridView1.Rows.Count - 1
             If CStr(DataGridView1.Rows(i).Cells(8).Value) = "Yes" And Not (yesDisplayed) Then
-                MsgBox("You have late return fines that need to be settled")
+                MyMessageBox.ShowMessage("You have late return fines that need to be settled")
                 btnLateReturn.Visible = True
                 yesDisplayed = True
             End If
@@ -163,7 +163,7 @@ Public Class BookReturnInformation
         txtBorrowerName.Clear()
         txtBorrowerIC.Clear()
         btnLateReturn.Visible = False
-        MsgBox(cboBorrowerName.Items.Count & " Borrower found!")
+        MyMessageBox.ShowMessage(cboBorrowerName.Items.Count & " Borrower found!")
     End Sub
 
     Private Sub cboBorrowerName_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cboBorrowerName.SelectionChangeCommitted
@@ -191,7 +191,7 @@ Public Class BookReturnInformation
             If CBool(DataGridView1.Rows(i).Cells(0).Value) = True Then
                 If CStr(DataGridView1.Rows(i).Cells(8).Value) = "Yes" Then
                     If Not (fineMessageDisplayed) Then
-                        MsgBox("Please Settle The Fines Before Return")
+                        MyMessageBox.ShowMessage("Please Settle The Fines Before Return")
                         fineMessageDisplayed = True
                     End If
                 Else
@@ -199,7 +199,7 @@ Public Class BookReturnInformation
                         " and BorrowerIC=" & borrowerIC & " and LateReturnStatus='No'"
                     SQLCommandBasic(query)
                     If (Not (updateMessageDisplayed)) Then
-                        MsgBox("Return Date Updated")
+                        MyMessageBox.ShowMessage("Return Date Updated")
                         updateMessageDisplayed = True
                     End If
                 End If

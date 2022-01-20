@@ -38,6 +38,7 @@ Partial Class BookReturnInformation
         Me.btnReturn = New System.Windows.Forms.Button()
         Me.btnReturnBook = New System.Windows.Forms.Button()
         Me.btnLateReturn = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -104,7 +105,7 @@ Partial Class BookReturnInformation
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtBorrowerIC)
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(35, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(35, 137)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(682, 191)
         Me.GroupBox1.TabIndex = 5
@@ -128,6 +129,8 @@ Partial Class BookReturnInformation
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        Me.DataGridView1.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White
@@ -139,7 +142,7 @@ Partial Class BookReturnInformation
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
@@ -148,7 +151,7 @@ Partial Class BookReturnInformation
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
@@ -156,7 +159,7 @@ Partial Class BookReturnInformation
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.White
-        Me.DataGridView1.Location = New System.Drawing.Point(35, 218)
+        Me.DataGridView1.Location = New System.Drawing.Point(34, 353)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -176,7 +179,7 @@ Partial Class BookReturnInformation
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(987, 364)
+        Me.DataGridView1.Size = New System.Drawing.Size(987, 377)
         Me.DataGridView1.TabIndex = 6
         '
         'btnReturn
@@ -185,7 +188,7 @@ Partial Class BookReturnInformation
         Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReturn.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReturn.ForeColor = System.Drawing.Color.Black
-        Me.btnReturn.Location = New System.Drawing.Point(891, 128)
+        Me.btnReturn.Location = New System.Drawing.Point(891, 253)
         Me.btnReturn.Name = "btnReturn"
         Me.btnReturn.Size = New System.Drawing.Size(106, 60)
         Me.btnReturn.TabIndex = 7
@@ -198,7 +201,7 @@ Partial Class BookReturnInformation
         Me.btnReturnBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReturnBook.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReturnBook.ForeColor = System.Drawing.Color.Black
-        Me.btnReturnBook.Location = New System.Drawing.Point(752, 128)
+        Me.btnReturnBook.Location = New System.Drawing.Point(752, 253)
         Me.btnReturnBook.Name = "btnReturnBook"
         Me.btnReturnBook.Size = New System.Drawing.Size(124, 60)
         Me.btnReturnBook.TabIndex = 8
@@ -211,7 +214,7 @@ Partial Class BookReturnInformation
         Me.btnLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnLateReturn.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLateReturn.ForeColor = System.Drawing.Color.Black
-        Me.btnLateReturn.Location = New System.Drawing.Point(752, 35)
+        Me.btnLateReturn.Location = New System.Drawing.Point(752, 160)
         Me.btnLateReturn.Name = "btnLateReturn"
         Me.btnLateReturn.Size = New System.Drawing.Size(245, 79)
         Me.btnLateReturn.TabIndex = 9
@@ -219,19 +222,31 @@ Partial Class BookReturnInformation
         Me.btnLateReturn.UseVisualStyleBackColor = False
         Me.btnLateReturn.Visible = False
         '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Bebas Neue", 64.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(12, 9)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(1041, 121)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = "BOOK RETURN INFORMATION"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'BookReturnInformation
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(1065, 617)
+        Me.ClientSize = New System.Drawing.Size(1065, 761)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnLateReturn)
         Me.Controls.Add(Me.btnReturnBook)
         Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BookReturnInformation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Book Return Information"
@@ -253,4 +268,5 @@ Partial Class BookReturnInformation
     Friend WithEvents btnReturn As Button
     Friend WithEvents btnReturnBook As Button
     Friend WithEvents btnLateReturn As Button
+    Friend WithEvents Label3 As Label
 End Class

@@ -51,6 +51,7 @@ Partial Class BookDetails
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridViewListofBook, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -63,7 +64,7 @@ Partial Class BookDetails
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtSearchBook)
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(37, 24)
+        Me.GroupBox1.Location = New System.Drawing.Point(37, 131)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(657, 72)
         Me.GroupBox1.TabIndex = 0
@@ -119,6 +120,8 @@ Partial Class BookDetails
         '
         Me.DataGridViewListofBook.AllowUserToAddRows = False
         Me.DataGridViewListofBook.AllowUserToDeleteRows = False
+        Me.DataGridViewListofBook.AllowUserToResizeColumns = False
+        Me.DataGridViewListofBook.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White
@@ -130,7 +133,7 @@ Partial Class BookDetails
         Me.DataGridViewListofBook.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
@@ -139,7 +142,7 @@ Partial Class BookDetails
         Me.DataGridViewListofBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
@@ -147,7 +150,7 @@ Partial Class BookDetails
         Me.DataGridViewListofBook.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewListofBook.EnableHeadersVisualStyles = False
         Me.DataGridViewListofBook.GridColor = System.Drawing.Color.White
-        Me.DataGridViewListofBook.Location = New System.Drawing.Point(37, 445)
+        Me.DataGridViewListofBook.Location = New System.Drawing.Point(37, 526)
         Me.DataGridViewListofBook.MultiSelect = False
         Me.DataGridViewListofBook.Name = "DataGridViewListofBook"
         Me.DataGridViewListofBook.ReadOnly = True
@@ -166,7 +169,7 @@ Partial Class BookDetails
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
         Me.DataGridViewListofBook.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewListofBook.RowTemplate.Height = 24
-        Me.DataGridViewListofBook.Size = New System.Drawing.Size(657, 270)
+        Me.DataGridViewListofBook.Size = New System.Drawing.Size(657, 244)
         Me.DataGridViewListofBook.TabIndex = 1
         '
         'btnAdd
@@ -174,7 +177,7 @@ Partial Class BookDetails
         Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnAdd.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(544, 125)
+        Me.btnAdd.Location = New System.Drawing.Point(544, 219)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(130, 46)
         Me.btnAdd.TabIndex = 2
@@ -186,7 +189,7 @@ Partial Class BookDetails
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnUpdate.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(544, 183)
+        Me.btnUpdate.Location = New System.Drawing.Point(544, 277)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(130, 46)
         Me.btnUpdate.TabIndex = 3
@@ -198,7 +201,7 @@ Partial Class BookDetails
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnDelete.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(544, 241)
+        Me.btnDelete.Location = New System.Drawing.Point(544, 335)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(130, 46)
         Me.btnDelete.TabIndex = 4
@@ -210,7 +213,7 @@ Partial Class BookDetails
         Me.btnListofBooks.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnListofBooks.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnListofBooks.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnListofBooks.Location = New System.Drawing.Point(544, 299)
+        Me.btnListofBooks.Location = New System.Drawing.Point(544, 393)
         Me.btnListofBooks.Name = "btnListofBooks"
         Me.btnListofBooks.Size = New System.Drawing.Size(130, 59)
         Me.btnListofBooks.TabIndex = 5
@@ -222,7 +225,7 @@ Partial Class BookDetails
         Me.btnReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReturn.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReturn.Location = New System.Drawing.Point(544, 370)
+        Me.btnReturn.Location = New System.Drawing.Point(544, 464)
         Me.btnReturn.Name = "btnReturn"
         Me.btnReturn.Size = New System.Drawing.Size(130, 46)
         Me.btnReturn.TabIndex = 6
@@ -244,7 +247,7 @@ Partial Class BookDetails
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.GroupBox2.Location = New System.Drawing.Point(37, 125)
+        Me.GroupBox2.Location = New System.Drawing.Point(37, 219)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(468, 291)
         Me.GroupBox2.TabIndex = 18
@@ -371,12 +374,24 @@ Partial Class BookDetails
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "ISBN :"
         '
+        'Label8
+        '
+        Me.Label8.Font = New System.Drawing.Font("Bebas Neue", 64.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(12, 7)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(711, 121)
+        Me.Label8.TabIndex = 19
+        Me.Label8.Text = "BOOKS DETAILS"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'BookDetails
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(735, 740)
+        Me.ClientSize = New System.Drawing.Size(735, 805)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.btnListofBooks)
         Me.Controls.Add(Me.btnDelete)
@@ -386,6 +401,7 @@ Partial Class BookDetails
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BookDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Book Details"
@@ -424,4 +440,5 @@ Partial Class BookDetails
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label8 As Label
 End Class
