@@ -12,7 +12,7 @@ Module CommandSQL
             cmd.ExecuteNonQuery()
             Con.Close()
         Catch ex As Exception
-            MsgBox("CONNECTION ERROR")
+            MyMessageBox.ShowMessage("Connection Error")
         End Try
     End Sub
 
@@ -29,21 +29,7 @@ Module CommandSQL
             TempDataGridView.DataSource = ds.Tables(0)
             Con.Close()
         Catch ex As Exception
-            MsgBox("CONNECTION ERROR")
+            MyMessageBox.ShowMessage("Connection Error")
         End Try
     End Sub
-
-    Public Sub SQLCommandViewCMB(ByVal strQuery As String, ByVal tempCMB As ComboBox)
-        Con.Open()
-        Dim query = strQuery
-        Dim adapter As SqlDataAdapter
-        Dim cmd = New SqlCommand(query, Con)
-        adapter = New SqlDataAdapter(cmd)
-        Dim tbl = New DataTable()
-        adapter.Fill(tbl)
-        tempCMB.DataSource = tbl
-        tempCMB.DisplayMember = ""
-        Con.Close()
-    End Sub
-
 End Module

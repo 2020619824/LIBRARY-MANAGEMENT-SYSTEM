@@ -4,74 +4,97 @@ Public Class BookReturnInformation
     Dim Con = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True")
 
     Private Sub FillBorrowerName()
-        Con.Open()
-        Dim query = "select Distinct BW.BorrowerName
+        Try
+            Con.Open()
+            Dim query = "select Distinct BW.BorrowerName
                     from Borrow B, Borrower BW
-                    where B.BorrowerIC = BW.BorrowerIC"
-        Dim adapter As SqlDataAdapter
-        Dim cmd = New SqlCommand(query, Con)
-        adapter = New SqlDataAdapter(cmd)
-        Dim tbl = New DataTable()
-        adapter.Fill(tbl)
-        cboBorrowerName.DataSource = tbl
-        cboBorrowerName.DisplayMember = "BorrowerName"
-        cboBorrowerName.ValueMember = "BorrowerName"
-        Con.Close()
+                    where B.BorrowerIC = BW.BorrowerIC
+                    and B.ReturnDate is null"
+            Dim adapter As SqlDataAdapter
+            Dim cmd = New SqlCommand(query, Con)
+            adapter = New SqlDataAdapter(cmd)
+            Dim tbl = New DataTable()
+            adapter.Fill(tbl)
+            cboBorrowerName.DataSource = tbl
+            cboBorrowerName.DisplayMember = "BorrowerName"
+            cboBorrowerName.ValueMember = "BorrowerName"
+            Con.Close()
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
     End Sub
 
     Private Sub GetBorrowerName()
-        Con.Open()
-        Dim query = "select BorrowerName from Borrower
+        Try
+            Con.Open()
+            Dim query = "select BorrowerName from Borrower
                     where BorrowerName='" & cboBorrowerName.SelectedValue.ToString() & "'"
 
-        Dim cmd = New SqlCommand(query, Con)
-        Dim dt = New DataTable()
-        Dim reader As SqlDataReader
-        reader = cmd.ExecuteReader()
-        While reader.Read
-            txtBorrowerName.Text = "" + reader(0).ToString
-        End While
-        Con.Close()
+            Dim cmd = New SqlCommand(query, Con)
+            Dim dt = New DataTable()
+            Dim reader As SqlDataReader
+            reader = cmd.ExecuteReader()
+            While reader.Read
+                txtBorrowerName.Text = "" + reader(0).ToString
+            End While
+            Con.Close()
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
     End Sub
 
     Private Sub GetBorrowerIC()
-        Con.Open()
-        Dim query = "select BorrowerIC from Borrower
+        Try
+            Con.Open()
+            Dim query = "select BorrowerIC from Borrower
                     where BorrowerName='" & cboBorrowerName.SelectedValue.ToString() & "'"
 
-        Dim cmd = New SqlCommand(query, Con)
-        Dim dt = New DataTable()
-        Dim reader As SqlDataReader
-        reader = cmd.ExecuteReader()
-        While reader.Read
-            txtBorrowerIC.Text = "" + reader(0).ToString
-        End While
-        Con.Close()
+            Dim cmd = New SqlCommand(query, Con)
+            Dim dt = New DataTable()
+            Dim reader As SqlDataReader
+            reader = cmd.ExecuteReader()
+            While reader.Read
+                txtBorrowerIC.Text = "" + reader(0).ToString
+            End While
+            Con.Close()
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
     End Sub
 
     Private Sub DisplayBorrrowedBook()
-        Dim query
-        query = "select B.ISBN, B.YearofPublication, B.Title, B.Author, B.Publisher,
-                Br.IssueDate, Br.DueDate, Br.LateReturnStatus
-                from Book B, Borrow Br, Borrower Bw
+        Try
+            Dim query = "select B.ISBN, B.YearofPublication, B.Title, B.Author, B.Publisher,
+                Br.IssueDate, Br.DueDate, Br.LateReturnStatus, L.LateReturnFines
+                from Book B, Borrow Br, Borrower Bw, LateReturnFines L
                 where B.ISBN = Br.ISBN
                 and Bw.BorrowerIC = Br.BorrowerIC
+                and Br.BorrowID = L.BorrowID
                 and Bw.BorrowerName='" & cboBorrowerName.SelectedValue.ToString() &
-                "' and Br.ReturnDate is null"
-
-        SQLCommandView(query, DataGridView1)
+                    "' and Br.ReturnDate is null"
+            SQLCommandView(query, DataGridView1)
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
     End Sub
 
     Private Sub DisplayHeader()
-        Dim query = "select B.ISBN, B.YearofPublication, B.Title, B.Author, B.Publisher,
-                Br.IssueDate, Br.DueDate, Br.LateReturnStatus
-                from Book B, Borrow Br, Borrower Bw
+        Try
+            Dim query = "select B.ISBN, B.YearofPublication, B.Title, B.Author, B.Publisher,
+                Br.IssueDate, Br.DueDate, Br.LateReturnStatus, L.LateReturnFines
+                from Book B, Borrow Br, Borrower Bw, LateReturnFines L
                 where B.ISBN = Br.ISBN
                 and Bw.BorrowerIC = Br.BorrowerIC
+                and Br.BorrowID = L.BorrowID
                 and B.ISBN is null"
-        SQLCommandView(query, DataGridView1)
-        DataGridView1().Columns(2).HeaderText = "Year"
-        DataGridView1().Columns(8).HeaderText = "Late Return Status"
+            SQLCommandView(query, DataGridView1)
+
+            DataGridView1().Columns(2).HeaderText = "Year"
+            DataGridView1().Columns(8).HeaderText = "Late Return Status"
+            DataGridView1().Columns(9).HeaderText = "Late Return Fines"
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
     End Sub
 
     Private Sub AddColumn()
@@ -80,7 +103,6 @@ Public Class BookReturnInformation
         newColumn.Name = "SelectToReturnBook"
         newColumn.Width = 80
         DataGridView1.Columns.Insert(0, newColumn)
-
     End Sub
 
     Private Sub RemoveColumn()
@@ -106,10 +128,26 @@ Public Class BookReturnInformation
     End Function
 
     Private Sub LateReturnStatus()
-        Dim query
-        query = "update Borrow set LateReturnStatus='Yes' where DueDate<'" & TodayDate() & "'"
+        Dim query = "update Borrow set LateReturnStatus='Yes' where DueDate<'" & TodayDate() & "'"
         SQLCommandBasic(query)
+        query = "update LateReturnFines set latereturnfines = 10 WHERE borrowid IN (SELECT borrowid FROM borrow WHERE latereturnstatus = 'yes')"
+        SQLCommandBasic(query)
+
         query = "update Borrow set LateReturnStatus='No' where DueDate>='" & TodayDate() & "'"
+        SQLCommandBasic(query)
+        query = "update LateReturnFines set latereturnfines = 0 WHERE borrowid IN (SELECT borrowid FROM borrow WHERE latereturnstatus = 'no')"
+        SQLCommandBasic(query)
+    End Sub
+
+    Public Sub LateReturn()
+        Dim query = "Insert into LateReturnFines (BorrowID,LateReturnFines,Payment,DateOfPayment)
+                    select BorrowID,10,null,null from borrow B where latereturnstatus = 'Yes' 
+                    and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
+        SQLCommandBasic(query)
+
+        query = "Insert into LateReturnFines (BorrowID,LateReturnFines,Payment,DateOfPayment)
+                select BorrowID,0,null,null from borrow B where latereturnstatus = 'No'
+                and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
         SQLCommandBasic(query)
     End Sub
 
@@ -135,26 +173,31 @@ Public Class BookReturnInformation
         txtBorrowerIC.Clear()
         cboBorrowerName.Text = String.Empty
         btnLateReturn.Visible = False
-        Con.Open()
-        Dim query = "select Distinct BW.BorrowerName
+        Try
+            Con.Open()
+            Dim query = "select Distinct BW.BorrowerName
                     from Borrow B, Borrower BW
                     where B.BorrowerIC = BW.BorrowerIC
                     and BW.BorrowerIC is null"
-        Dim adapter As SqlDataAdapter
-        Dim cmd = New SqlCommand(query, Con)
-        adapter = New SqlDataAdapter(cmd)
-        Dim tbl = New DataTable()
-        adapter.Fill(tbl)
-        cboBorrowerName.DataSource = tbl
-        cboBorrowerName.DisplayMember = "BorrowerName"
-        cboBorrowerName.ValueMember = "BorrowerName"
-        Con.Close()
+            Dim adapter As SqlDataAdapter
+            Dim cmd = New SqlCommand(query, Con)
+            adapter = New SqlDataAdapter(cmd)
+            Dim tbl = New DataTable()
+            adapter.Fill(tbl)
+            cboBorrowerName.DataSource = tbl
+            cboBorrowerName.DisplayMember = "BorrowerName"
+            cboBorrowerName.ValueMember = "BorrowerName"
+            Con.Close()
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
     End Sub
 
     Private Sub BookReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddColumn()
         DisplayHeader()
         LateReturnStatus()
+        LateReturn()
     End Sub
 
     Private Sub btnSearchBorrower_Click(sender As Object, e As EventArgs) Handles btnSearchBorrower.Click
