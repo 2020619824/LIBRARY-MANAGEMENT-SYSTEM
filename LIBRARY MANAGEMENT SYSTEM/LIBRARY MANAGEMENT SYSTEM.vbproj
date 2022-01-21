@@ -170,6 +170,12 @@
     <Compile Include="MyMessageBox.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SplashScreen.Designer.vb">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Start-up.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start-up.resx">
       <DependentUpon>Start-up.vb</DependentUpon>
@@ -344,6 +353,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\READOBRITE PUBLIC LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\READOBRITE PUBLIC LOGO 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\READOBRITE PUBLIC LOGO 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\READOBRITE PUBLIC LOGO 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\READOBRITE PUBLIC LOGO 5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
