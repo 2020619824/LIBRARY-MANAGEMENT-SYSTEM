@@ -45,7 +45,7 @@ Partial Class SplashScreen
         '
         'loadingBar
         '
-        Me.loadingBar.BackColor = System.Drawing.Color.White
+        Me.loadingBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
         Me.loadingBar.Controls.Add(Me.progressBar)
         Me.loadingBar.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.loadingBar.Location = New System.Drawing.Point(0, 293)
