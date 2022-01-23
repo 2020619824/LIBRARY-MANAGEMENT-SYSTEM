@@ -69,7 +69,7 @@ Partial Class MyMessageBox
         'lblMessage
         '
         Me.lblMessage.BackColor = System.Drawing.Color.Transparent
-        Me.lblMessage.Font = New System.Drawing.Font("Arial Narrow", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMessage.Font = New System.Drawing.Font("Arial Narrow", 13.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMessage.ForeColor = System.Drawing.Color.White
         Me.lblMessage.Location = New System.Drawing.Point(158, 9)
         Me.lblMessage.Name = "lblMessage"
@@ -129,10 +129,10 @@ Partial Class MyMessageBox
         '
         'picLibraryLogo
         '
-        Me.picLibraryLogo.Image = Global.LIBRARY_MANAGEMENT_SYSTEM.My.Resources.Resources.eg_logo
-        Me.picLibraryLogo.Location = New System.Drawing.Point(13, 13)
+        Me.picLibraryLogo.Image = Global.LIBRARY_MANAGEMENT_SYSTEM.My.Resources.Resources.READOBRITE_PUBLIC_LOGO_4
+        Me.picLibraryLogo.Location = New System.Drawing.Point(24, 13)
         Me.picLibraryLogo.Name = "picLibraryLogo"
-        Me.picLibraryLogo.Size = New System.Drawing.Size(139, 128)
+        Me.picLibraryLogo.Size = New System.Drawing.Size(128, 128)
         Me.picLibraryLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picLibraryLogo.TabIndex = 2
         Me.picLibraryLogo.TabStop = False
@@ -141,7 +141,7 @@ Partial Class MyMessageBox
         '
         Me.AcceptButton = Me.btnOK
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(399, 160)
         Me.ControlBox = False

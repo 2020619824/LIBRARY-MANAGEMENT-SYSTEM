@@ -234,7 +234,7 @@ Public Class BookReturnInformation
             If CBool(DataGridView1.Rows(i).Cells(0).Value) = True Then
                 If CStr(DataGridView1.Rows(i).Cells(8).Value) = "Yes" Then
                     If Not (fineMessageDisplayed) Then
-                        MyMessageBox.ShowMessage("Please Settle The Fines Before Return")
+                        MyMessageBox.ShowMessage("Please settle the fines before return it")
                         fineMessageDisplayed = True
                     End If
                 Else
