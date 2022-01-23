@@ -32,7 +32,7 @@ Partial Class BookDetails
         Me.cboSearchBy = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearchBook = New System.Windows.Forms.TextBox()
-        Me.DataGridViewListofBook = New System.Windows.Forms.DataGridView()
+        Me.dgvBookDetails = New System.Windows.Forms.DataGridView()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -53,7 +53,7 @@ Partial Class BookDetails
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridViewListofBook, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBookDetails, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -116,21 +116,21 @@ Partial Class BookDetails
         Me.txtSearchBook.Size = New System.Drawing.Size(286, 27)
         Me.txtSearchBook.TabIndex = 0
         '
-        'DataGridViewListofBook
+        'dgvBookDetails
         '
-        Me.DataGridViewListofBook.AllowUserToAddRows = False
-        Me.DataGridViewListofBook.AllowUserToDeleteRows = False
-        Me.DataGridViewListofBook.AllowUserToResizeColumns = False
-        Me.DataGridViewListofBook.AllowUserToResizeRows = False
+        Me.dgvBookDetails.AllowUserToAddRows = False
+        Me.dgvBookDetails.AllowUserToDeleteRows = False
+        Me.dgvBookDetails.AllowUserToResizeColumns = False
+        Me.dgvBookDetails.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridViewListofBook.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridViewListofBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridViewListofBook.BackgroundColor = System.Drawing.Color.Black
-        Me.DataGridViewListofBook.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.DataGridViewListofBook.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
+        Me.dgvBookDetails.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvBookDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvBookDetails.BackgroundColor = System.Drawing.Color.Black
+        Me.dgvBookDetails.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvBookDetails.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -138,8 +138,8 @@ Partial Class BookDetails
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewListofBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridViewListofBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvBookDetails.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvBookDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -147,13 +147,13 @@ Partial Class BookDetails
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewListofBook.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridViewListofBook.EnableHeadersVisualStyles = False
-        Me.DataGridViewListofBook.GridColor = System.Drawing.Color.White
-        Me.DataGridViewListofBook.Location = New System.Drawing.Point(37, 526)
-        Me.DataGridViewListofBook.MultiSelect = False
-        Me.DataGridViewListofBook.Name = "DataGridViewListofBook"
-        Me.DataGridViewListofBook.ReadOnly = True
+        Me.dgvBookDetails.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvBookDetails.EnableHeadersVisualStyles = False
+        Me.dgvBookDetails.GridColor = System.Drawing.Color.White
+        Me.dgvBookDetails.Location = New System.Drawing.Point(37, 526)
+        Me.dgvBookDetails.MultiSelect = False
+        Me.dgvBookDetails.Name = "dgvBookDetails"
+        Me.dgvBookDetails.ReadOnly = True
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -161,16 +161,16 @@ Partial Class BookDetails
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewListofBook.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridViewListofBook.RowHeadersWidth = 51
+        Me.dgvBookDetails.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvBookDetails.RowHeadersWidth = 51
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.Black
         DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridViewListofBook.RowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridViewListofBook.RowTemplate.Height = 24
-        Me.DataGridViewListofBook.Size = New System.Drawing.Size(657, 244)
-        Me.DataGridViewListofBook.TabIndex = 1
+        Me.dgvBookDetails.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvBookDetails.RowTemplate.Height = 24
+        Me.dgvBookDetails.Size = New System.Drawing.Size(657, 244)
+        Me.dgvBookDetails.TabIndex = 1
         '
         'btnAdd
         '
@@ -397,7 +397,7 @@ Partial Class BookDetails
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.DataGridViewListofBook)
+        Me.Controls.Add(Me.dgvBookDetails)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -407,7 +407,7 @@ Partial Class BookDetails
         Me.Text = "Book Details"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridViewListofBook, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBookDetails, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
@@ -415,7 +415,7 @@ Partial Class BookDetails
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridViewListofBook As DataGridView
+    Friend WithEvents dgvBookDetails As DataGridView
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnDelete As Button

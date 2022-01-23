@@ -155,7 +155,7 @@ Partial Class MyMessageBox
         Me.MinimizeBox = False
         Me.Name = "MyMessageBox"
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MyMessageBox"
         Me.OK.ResumeLayout(False)
         Me.YesNo.ResumeLayout(False)

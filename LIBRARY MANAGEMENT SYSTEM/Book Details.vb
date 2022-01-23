@@ -5,20 +5,20 @@ Public Class BookDetails
 
     Private Sub DisplayTable()
         Dim query = "select * from Book"
-        SQLCommandView(query, DataGridViewListofBook)
+        SQLCommandView(query, dgvBookDetails)
     End Sub
 
     Private Sub DisplayHeader()
         Dim query = "select * from Book where ISBN is null"
-        SQLCommandView(query, DataGridViewListofBook)
-        DataGridViewListofBook().Columns(1).HeaderText = "Year"
+        SQLCommandView(query, dgvBookDetails)
+        dgvBookDetails().Columns(1).HeaderText = "Year"
     End Sub
 
     Dim key = 0
-    Private Sub DataGridViewListofBook_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridViewListofBook.CellMouseClick
+    Private Sub DataGridViewListofBook_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBookDetails.CellMouseClick
 
         If e.RowIndex >= 0 Then
-            Dim row As DataGridViewRow = DataGridViewListofBook.Rows(e.RowIndex)
+            Dim row As DataGridViewRow = dgvBookDetails.Rows(e.RowIndex)
 
             txtISBN.Text = row.Cells(0).Value.ToString
             txtYear.Text = row.Cells(1).Value.ToString
@@ -39,7 +39,7 @@ Public Class BookDetails
         txtAuthor.Clear()
         txtPublisher.Clear()
         txtCategory.Clear()
-        DataGridViewListofBook.ClearSelection()
+        dgvBookDetails.ClearSelection()
     End Sub
 
     Private Sub Reset()
@@ -52,7 +52,7 @@ Public Class BookDetails
         txtCategory.Clear()
         txtSearchBook.Clear()
         cboSearchBy.SelectedIndex = 0
-        DataGridViewListofBook.DataSource.Clear()
+        dgvBookDetails.DataSource.Clear()
     End Sub
     Private Sub ResetKey()
         key = 0
@@ -104,8 +104,8 @@ Public Class BookDetails
             If ValidateISBN() And ValidateYear() Then
                 decISBN = CDec(txtISBN.Text)
                 Dim i
-                For i = 0 To DataGridViewListofBook.Rows.Count - 1
-                    If CDec(DataGridViewListofBook.Rows(i).Cells(0).Value) = decISBN Then
+                For i = 0 To dgvBookDetails.Rows.Count - 1
+                    If CDec(dgvBookDetails.Rows(i).Cells(0).Value) = decISBN Then
                         MyMessageBox.ShowMessage("Sorry, the book is already exist")
                         ClearTextBoxes()
                         Return False
@@ -136,12 +136,12 @@ Public Class BookDetails
                 strCategory = txtCategory.Text
 
                 Dim i
-                For i = 0 To DataGridViewListofBook.Rows.Count - 1
-                    If CDec(DataGridViewListofBook.Rows(i).Cells(0).Value) = decISBN And CInt(DataGridViewListofBook.Rows(i).Cells(1).Value) = intYear And
-                    DataGridViewListofBook.Rows(i).Cells(2).Value.ToString = strTitle And DataGridViewListofBook.Rows(i).Cells(3).Value.ToString = strAuthor And
-                    DataGridViewListofBook.Rows(i).Cells(4).Value.ToString = strPublisher And DataGridViewListofBook.Rows(i).Cells(5).Value.ToString = strCategory Then
+                For i = 0 To dgvBookDetails.Rows.Count - 1
+                    If CDec(dgvBookDetails.Rows(i).Cells(0).Value) = decISBN And CInt(dgvBookDetails.Rows(i).Cells(1).Value) = intYear And
+                    dgvBookDetails.Rows(i).Cells(2).Value.ToString = strTitle And dgvBookDetails.Rows(i).Cells(3).Value.ToString = strAuthor And
+                    dgvBookDetails.Rows(i).Cells(4).Value.ToString = strPublisher And dgvBookDetails.Rows(i).Cells(5).Value.ToString = strCategory Then
                         MyMessageBox.ShowMessage("Nothing to update")
-                        DataGridViewListofBook.ClearSelection()
+                        dgvBookDetails.ClearSelection()
                         Return False
                     End If
                 Next
@@ -151,7 +151,7 @@ Public Class BookDetails
 
             If key = 0 Then
                 MyMessageBox.ShowMessage("Please select the book to update")
-                DataGridViewListofBook.ClearSelection()
+                dgvBookDetails.ClearSelection()
                 Return False
             End If
 
@@ -202,25 +202,25 @@ Public Class BookDetails
             If cboSearchBy.SelectedIndex = 0 Then
                 If ValidateSearchByISBN() Then
                     query = "select * from book where ISBN=" & decSearchISBN & ""
-                    SQLCommandView(query, DataGridViewListofBook)
+                    SQLCommandView(query, dgvBookDetails)
                 Else
                     blnInvalidISBN = True
                 End If
             ElseIf cboSearchBy.SelectedIndex = 1 Then
                 strSearchAuthor = txtSearchBook.Text
                 query = "select * from book where Author='" & strSearchAuthor & "'"
-            SQLCommandView(query, DataGridViewListofBook)
+            SQLCommandView(query, dgvBookDetails)
             ElseIf cboSearchBy.SelectedIndex = 2 Then
                 strSearchTitle = txtSearchBook.Text
                 query = "select * from book where Title='" & strSearchTitle & "'"
-                SQLCommandView(query, DataGridViewListofBook)
+                SQLCommandView(query, dgvBookDetails)
             End If
 
             If blnInvalidISBN = False Then
-                If DataGridViewListofBook.Rows.Count = 0 Then
+                If dgvBookDetails.Rows.Count = 0 Then
                     MyMessageBox.ShowMessage("Sorry, no book found")
                 Else
-                    MyMessageBox.ShowMessage(DataGridViewListofBook.Rows.Count & " Book found!")
+                    MyMessageBox.ShowMessage(dgvBookDetails.Rows.Count & " Book found!")
                     'MsgBox(DataGridViewListofBook.Rows.Count & " Book found!")
                 End If
             End If
