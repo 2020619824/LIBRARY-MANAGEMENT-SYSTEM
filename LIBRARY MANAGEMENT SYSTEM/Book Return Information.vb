@@ -72,7 +72,7 @@ Public Class BookReturnInformation
                 and Br.BorrowID = L.BorrowID
                 and Bw.BorrowerName='" & cboBorrowerName.SelectedValue.ToString() &
                     "' and Br.ReturnDate is null"
-            SQLCommandView(query, DataGridView1)
+            SQLCommandView(query, dgvBookReturnInfo)
         Catch ex As Exception
             MyMessageBox.ShowMessage("Connection Error")
         End Try
@@ -87,11 +87,11 @@ Public Class BookReturnInformation
                 and Bw.BorrowerIC = Br.BorrowerIC
                 and Br.BorrowID = L.BorrowID
                 and B.ISBN is null"
-            SQLCommandView(query, DataGridView1)
+            SQLCommandView(query, dgvBookReturnInfo)
 
-            DataGridView1().Columns(2).HeaderText = "Year"
-            DataGridView1().Columns(8).HeaderText = "Late Return Status"
-            DataGridView1().Columns(9).HeaderText = "Late Return Fines"
+            dgvBookReturnInfo().Columns(2).HeaderText = "Year"
+            dgvBookReturnInfo().Columns(8).HeaderText = "Late Return Status"
+            dgvBookReturnInfo().Columns(9).HeaderText = "Late Return Fines"
         Catch ex As Exception
             MyMessageBox.ShowMessage("Connection Error")
         End Try
@@ -102,20 +102,20 @@ Public Class BookReturnInformation
         newColumn.HeaderText = "Select To Return Book"
         newColumn.Name = "SelectToReturnBook"
         newColumn.Width = 80
-        DataGridView1.Columns.Insert(0, newColumn)
+        dgvBookReturnInfo.Columns.Insert(0, newColumn)
     End Sub
 
     Private Sub RemoveColumn()
-        DataGridView1.Columns.RemoveAt(0)
+        dgvBookReturnInfo.Columns.RemoveAt(0)
     End Sub
 
-    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
+    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles dgvBookReturnInfo.Click
 
-        DataGridView1.ReadOnly = False
-        For Each dgvc As DataGridViewColumn In DataGridView1.Columns
+        dgvBookReturnInfo.ReadOnly = False
+        For Each dgvc As DataGridViewColumn In dgvBookReturnInfo.Columns
             dgvc.ReadOnly = True
         Next
-        DataGridView1.Columns(0).ReadOnly = False
+        dgvBookReturnInfo.Columns(0).ReadOnly = False
     End Sub
 
     Private Function TodayDate() As String
@@ -155,8 +155,8 @@ Public Class BookReturnInformation
         Dim yesDisplayed As Boolean
         yesDisplayed = False
         Dim i As Integer
-        For i = 0 To DataGridView1.Rows.Count - 1
-            If CStr(DataGridView1.Rows(i).Cells(8).Value) = "Yes" And Not (yesDisplayed) Then
+        For i = 0 To dgvBookReturnInfo.Rows.Count - 1
+            If CStr(dgvBookReturnInfo.Rows(i).Cells(8).Value) = "Yes" And Not (yesDisplayed) Then
                 MyMessageBox.ShowMessage("You have late return fines that need to be settled")
                 btnLateReturn.Visible = True
                 yesDisplayed = True
@@ -216,10 +216,6 @@ Public Class BookReturnInformation
         LateReturnBook()
     End Sub
 
-    Private Sub cboBorrowerName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBorrowerName.SelectedIndexChanged
-
-    End Sub
-
     Private Sub btnReturnBook_Click(sender As Object, e As EventArgs) Handles btnReturnBook.Click
 
         Dim query
@@ -230,15 +226,15 @@ Public Class BookReturnInformation
         Dim borrowerIC = txtBorrowerIC.Text
 
         Dim i As Integer
-        For i = 0 To DataGridView1.Rows.Count - 1
-            If CBool(DataGridView1.Rows(i).Cells(0).Value) = True Then
-                If CStr(DataGridView1.Rows(i).Cells(8).Value) = "Yes" Then
+        For i = 0 To dgvBookReturnInfo.Rows.Count - 1
+            If CBool(dgvBookReturnInfo.Rows(i).Cells(0).Value) = True Then
+                If CStr(dgvBookReturnInfo.Rows(i).Cells(8).Value) = "Yes" Then
                     If Not (fineMessageDisplayed) Then
                         MyMessageBox.ShowMessage("Please settle the fines before return it")
                         fineMessageDisplayed = True
                     End If
                 Else
-                    query = "update borrow set ReturnDate='" & TodayDate() & "' where ISBN=" & DataGridView1.Rows(i).Cells(1).Value.ToString &
+                    query = "update borrow set ReturnDate='" & TodayDate() & "' where ISBN=" & dgvBookReturnInfo.Rows(i).Cells(1).Value.ToString &
                         " and BorrowerIC=" & borrowerIC & " and LateReturnStatus='No'"
                     SQLCommandBasic(query)
                     If (Not (updateMessageDisplayed)) Then
@@ -249,7 +245,7 @@ Public Class BookReturnInformation
             End If
         Next
 
-        If DataGridView1.Rows.Count <> 0 Then
+        If dgvBookReturnInfo.Rows.Count <> 0 Then
             DisplayBorrrowedBook()
         End If
     End Sub
