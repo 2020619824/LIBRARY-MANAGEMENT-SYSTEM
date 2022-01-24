@@ -103,4 +103,12 @@ Public Class LateReturnInformation
 
         End Try
     End Sub
+
+    Private Sub cmdGenerateReceipt_Click(sender As Object, e As EventArgs) Handles cmdGenerateReceipt.Click
+        pdReceipt.Print()
+    End Sub
+
+    Private Sub pdReceipt_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles pdReceipt.PrintPage
+        e.Graphics.DrawString()
+    End Sub
 End Class

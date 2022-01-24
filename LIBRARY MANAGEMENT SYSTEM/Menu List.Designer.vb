@@ -43,13 +43,16 @@ Partial Class MenuList
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtTime)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtDate)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(24, 27)
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial Narrow", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.GroupBox1.Location = New System.Drawing.Point(24, 134)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(168, 329)
         Me.GroupBox1.TabIndex = 0
@@ -68,7 +71,7 @@ Partial Class MenuList
         '
         Me.txtTime.Location = New System.Drawing.Point(21, 258)
         Me.txtTime.Name = "txtTime"
-        Me.txtTime.Size = New System.Drawing.Size(124, 22)
+        Me.txtTime.Size = New System.Drawing.Size(124, 27)
         Me.txtTime.TabIndex = 5
         '
         'Label2
@@ -83,7 +86,7 @@ Partial Class MenuList
         '
         Me.txtDate.Location = New System.Drawing.Point(21, 173)
         Me.txtDate.Name = "txtDate"
-        Me.txtDate.Size = New System.Drawing.Size(124, 22)
+        Me.txtDate.Size = New System.Drawing.Size(124, 27)
         Me.txtDate.TabIndex = 3
         '
         'Label1
@@ -98,71 +101,93 @@ Partial Class MenuList
         '
         Me.TextBox1.Location = New System.Drawing.Point(21, 92)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(124, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(124, 27)
         Me.TextBox1.TabIndex = 1
         '
         'cmdExit
         '
-        Me.cmdExit.Location = New System.Drawing.Point(24, 378)
+        Me.cmdExit.BackColor = System.Drawing.Color.DarkRed
+        Me.cmdExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdExit.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdExit.Location = New System.Drawing.Point(24, 485)
         Me.cmdExit.Name = "cmdExit"
         Me.cmdExit.Size = New System.Drawing.Size(168, 39)
         Me.cmdExit.TabIndex = 1
         Me.cmdExit.Text = "Exit"
-        Me.cmdExit.UseVisualStyleBackColor = True
+        Me.cmdExit.UseVisualStyleBackColor = False
         '
         'cmdDisplayUser
         '
-        Me.cmdDisplayUser.Location = New System.Drawing.Point(251, 27)
+        Me.cmdDisplayUser.BackColor = System.Drawing.Color.DarkRed
+        Me.cmdDisplayUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdDisplayUser.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdDisplayUser.Location = New System.Drawing.Point(251, 134)
         Me.cmdDisplayUser.Name = "cmdDisplayUser"
         Me.cmdDisplayUser.Size = New System.Drawing.Size(166, 62)
         Me.cmdDisplayUser.TabIndex = 2
         Me.cmdDisplayUser.Text = "User"
-        Me.cmdDisplayUser.UseVisualStyleBackColor = True
+        Me.cmdDisplayUser.UseVisualStyleBackColor = False
         '
         'cmdDisplayBookDetails
         '
-        Me.cmdDisplayBookDetails.Location = New System.Drawing.Point(251, 160)
+        Me.cmdDisplayBookDetails.BackColor = System.Drawing.Color.DarkRed
+        Me.cmdDisplayBookDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdDisplayBookDetails.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdDisplayBookDetails.Location = New System.Drawing.Point(251, 267)
         Me.cmdDisplayBookDetails.Name = "cmdDisplayBookDetails"
         Me.cmdDisplayBookDetails.Size = New System.Drawing.Size(166, 62)
         Me.cmdDisplayBookDetails.TabIndex = 3
         Me.cmdDisplayBookDetails.Text = "Book Details"
-        Me.cmdDisplayBookDetails.UseVisualStyleBackColor = True
+        Me.cmdDisplayBookDetails.UseVisualStyleBackColor = False
         '
         'cmdDisplayBorrowers
         '
-        Me.cmdDisplayBorrowers.Location = New System.Drawing.Point(251, 294)
+        Me.cmdDisplayBorrowers.BackColor = System.Drawing.Color.DarkRed
+        Me.cmdDisplayBorrowers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdDisplayBorrowers.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdDisplayBorrowers.Location = New System.Drawing.Point(251, 401)
         Me.cmdDisplayBorrowers.Name = "cmdDisplayBorrowers"
         Me.cmdDisplayBorrowers.Size = New System.Drawing.Size(166, 62)
         Me.cmdDisplayBorrowers.TabIndex = 4
         Me.cmdDisplayBorrowers.Text = "Borrowers"
-        Me.cmdDisplayBorrowers.UseVisualStyleBackColor = True
+        Me.cmdDisplayBorrowers.UseVisualStyleBackColor = False
         '
         'cmdDisplayBookReturn
         '
-        Me.cmdDisplayBookReturn.Location = New System.Drawing.Point(519, 160)
+        Me.cmdDisplayBookReturn.BackColor = System.Drawing.Color.DarkRed
+        Me.cmdDisplayBookReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdDisplayBookReturn.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdDisplayBookReturn.Location = New System.Drawing.Point(519, 267)
         Me.cmdDisplayBookReturn.Name = "cmdDisplayBookReturn"
         Me.cmdDisplayBookReturn.Size = New System.Drawing.Size(166, 62)
         Me.cmdDisplayBookReturn.TabIndex = 5
         Me.cmdDisplayBookReturn.Text = "Book Return"
-        Me.cmdDisplayBookReturn.UseVisualStyleBackColor = True
+        Me.cmdDisplayBookReturn.UseVisualStyleBackColor = False
         '
         'cmdBookIssue
         '
-        Me.cmdBookIssue.Location = New System.Drawing.Point(519, 27)
+        Me.cmdBookIssue.BackColor = System.Drawing.Color.DarkRed
+        Me.cmdBookIssue.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdBookIssue.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdBookIssue.ForeColor = System.Drawing.Color.Black
+        Me.cmdBookIssue.Location = New System.Drawing.Point(519, 134)
         Me.cmdBookIssue.Name = "cmdBookIssue"
         Me.cmdBookIssue.Size = New System.Drawing.Size(166, 62)
         Me.cmdBookIssue.TabIndex = 6
         Me.cmdBookIssue.Text = "Book Issue"
-        Me.cmdBookIssue.UseVisualStyleBackColor = True
+        Me.cmdBookIssue.UseVisualStyleBackColor = False
         '
         'cmdDisplayLateReturn
         '
-        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(519, 294)
+        Me.cmdDisplayLateReturn.BackColor = System.Drawing.Color.DarkRed
+        Me.cmdDisplayLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdDisplayLateReturn.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(519, 401)
         Me.cmdDisplayLateReturn.Name = "cmdDisplayLateReturn"
         Me.cmdDisplayLateReturn.Size = New System.Drawing.Size(166, 62)
         Me.cmdDisplayLateReturn.TabIndex = 7
         Me.cmdDisplayLateReturn.Text = "Late Return"
-        Me.cmdDisplayLateReturn.UseVisualStyleBackColor = True
+        Me.cmdDisplayLateReturn.UseVisualStyleBackColor = False
         '
         'Timer1
         '
@@ -171,7 +196,8 @@ Partial Class MenuList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(731, 450)
+        Me.BackColor = System.Drawing.Color.Black
+        Me.ClientSize = New System.Drawing.Size(717, 543)
         Me.Controls.Add(Me.cmdDisplayLateReturn)
         Me.Controls.Add(Me.cmdBookIssue)
         Me.Controls.Add(Me.cmdDisplayBookReturn)

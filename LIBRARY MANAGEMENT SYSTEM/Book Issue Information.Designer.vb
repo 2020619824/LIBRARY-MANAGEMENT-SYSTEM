@@ -47,10 +47,10 @@ Partial Class BookIssueInformation
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(269, 22)
+        Me.Label1.Font = New System.Drawing.Font("Bebas", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(264, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(138, 29)
+        Me.Label1.Size = New System.Drawing.Size(158, 42)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Book Issue "
         '
@@ -82,16 +82,18 @@ Partial Class BookIssueInformation
         '
         'DateTimePicker2
         '
+        Me.DateTimePicker2.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker2.Location = New System.Drawing.Point(361, 163)
         Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(218, 26)
+        Me.DateTimePicker2.Size = New System.Drawing.Size(218, 22)
         Me.DateTimePicker2.TabIndex = 6
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Location = New System.Drawing.Point(40, 163)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(218, 26)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(218, 22)
         Me.DateTimePicker1.TabIndex = 5
         '
         'Label6
