@@ -1,6 +1,6 @@
 ﻿Public Class MenuList
     Private Sub cmdExit_Click(sender As Object, e As EventArgs) Handles cmdExit.Click
-        Me.Close()
+        Application.Exit()
     End Sub
 
     Private Sub cmdDisplayUser_Click(sender As Object, e As EventArgs) Handles cmdDisplayUser.Click
@@ -12,7 +12,6 @@
     End Sub
 
     Private Sub cmdDisplayBorrowers_Click(sender As Object, e As EventArgs) Handles cmdDisplayBorrowers.Click
-
         BorrowerInformation.ShowDialog()
     End Sub
 
@@ -37,4 +36,5 @@
         txtTime.Text = Date.Now.ToString("hh:mm")
         txtDate.Text = Date.Now.ToString("dd MMM yyyy")
     End Sub
+
 End Class
