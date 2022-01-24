@@ -118,39 +118,6 @@ Public Class BookReturnInformation
         dgvBookReturnInfo.Columns(0).ReadOnly = False
     End Sub
 
-    Private Function TodayDate() As String
-        'SQL Date Format: YYYYMMDD
-        Dim dateSQLFormat = Date.Today.Year.ToString & "-"
-        dateSQLFormat += Date.Today.Month.ToString & "-"
-        dateSQLFormat += Date.Today.Day.ToString
-
-        Return dateSQLFormat
-    End Function
-
-    Private Sub LateReturnStatus()
-        Dim query = "update Borrow set LateReturnStatus='Yes' where DueDate<'" & TodayDate() & "'"
-        SQLCommandBasic(query)
-        query = "update LateReturnFines set latereturnfines = 10 WHERE borrowid IN (SELECT borrowid FROM borrow WHERE latereturnstatus = 'yes')"
-        SQLCommandBasic(query)
-
-        query = "update Borrow set LateReturnStatus='No' where DueDate>='" & TodayDate() & "'"
-        SQLCommandBasic(query)
-        query = "update LateReturnFines set latereturnfines = 0 WHERE borrowid IN (SELECT borrowid FROM borrow WHERE latereturnstatus = 'no')"
-        SQLCommandBasic(query)
-    End Sub
-
-    Public Sub LateReturn()
-        Dim query = "Insert into LateReturnFines (BorrowID,LateReturnFines,Payment,DateOfPayment)
-                    select BorrowID,10,null,null from borrow B where latereturnstatus = 'Yes' 
-                    and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
-        SQLCommandBasic(query)
-
-        query = "Insert into LateReturnFines (BorrowID,LateReturnFines,Payment,DateOfPayment)
-                select BorrowID,0,null,null from borrow B where latereturnstatus = 'No'
-                and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
-        SQLCommandBasic(query)
-    End Sub
-
     Private Sub LateReturnBook()
         Dim yesDisplayed As Boolean
         yesDisplayed = False
@@ -196,8 +163,6 @@ Public Class BookReturnInformation
     Private Sub BookReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddColumn()
         DisplayHeader()
-        LateReturnStatus()
-        LateReturn()
     End Sub
 
     Private Sub btnSearchBorrower_Click(sender As Object, e As EventArgs) Handles btnSearchBorrower.Click
