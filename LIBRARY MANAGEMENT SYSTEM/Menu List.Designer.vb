@@ -144,7 +144,7 @@ Partial Class MenuList
         Me.cmdDisplayBookDetails.Image = CType(resources.GetObject("cmdDisplayBookDetails.Image"), System.Drawing.Image)
         Me.cmdDisplayBookDetails.Location = New System.Drawing.Point(250, 3)
         Me.cmdDisplayBookDetails.Name = "cmdDisplayBookDetails"
-        Me.cmdDisplayBookDetails.Size = New System.Drawing.Size(163, 36)
+        Me.cmdDisplayBookDetails.Size = New System.Drawing.Size(171, 36)
         Me.cmdDisplayBookDetails.TabIndex = 3
         Me.cmdDisplayBookDetails.Text = "Book Details"
         Me.cmdDisplayBookDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -202,9 +202,9 @@ Partial Class MenuList
         Me.cmdDisplayLateReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayLateReturn.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayLateReturn.Image = CType(resources.GetObject("cmdDisplayLateReturn.Image"), System.Drawing.Image)
-        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(410, 3)
+        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(419, 3)
         Me.cmdDisplayLateReturn.Name = "cmdDisplayLateReturn"
-        Me.cmdDisplayLateReturn.Size = New System.Drawing.Size(163, 36)
+        Me.cmdDisplayLateReturn.Size = New System.Drawing.Size(154, 36)
         Me.cmdDisplayLateReturn.TabIndex = 7
         Me.cmdDisplayLateReturn.Text = "Late Return"
         Me.cmdDisplayLateReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -218,7 +218,7 @@ Partial Class MenuList
         Me.Label4.BackColor = System.Drawing.Color.Black
         Me.Label4.Font = New System.Drawing.Font("Bebas Neue", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(271, 295)
+        Me.Label4.Location = New System.Drawing.Point(247, 312)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(394, 92)
         Me.Label4.TabIndex = 8

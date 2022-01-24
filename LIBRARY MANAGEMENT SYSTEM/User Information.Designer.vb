@@ -40,11 +40,11 @@ Partial Class UserInformation
         Me.cmdDelete = New System.Windows.Forms.Button()
         Me.cmdListOfUsers = New System.Windows.Forms.Button()
         Me.cmdReturn = New System.Windows.Forms.Button()
-        Me.DataGridViewListOfUsers = New System.Windows.Forms.DataGridView()
+        Me.dgvListOfUsers = New System.Windows.Forms.DataGridView()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridViewListOfUsers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvListOfUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -190,7 +190,7 @@ Partial Class UserInformation
         Me.cmdUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdUpdate.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdUpdate.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.cmdUpdate.Location = New System.Drawing.Point(462, 202)
+        Me.cmdUpdate.Location = New System.Drawing.Point(480, 205)
         Me.cmdUpdate.Name = "cmdUpdate"
         Me.cmdUpdate.Size = New System.Drawing.Size(142, 50)
         Me.cmdUpdate.TabIndex = 10
@@ -203,7 +203,7 @@ Partial Class UserInformation
         Me.cmdDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdDelete.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDelete.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.cmdDelete.Location = New System.Drawing.Point(462, 266)
+        Me.cmdDelete.Location = New System.Drawing.Point(480, 269)
         Me.cmdDelete.Name = "cmdDelete"
         Me.cmdDelete.Size = New System.Drawing.Size(142, 50)
         Me.cmdDelete.TabIndex = 11
@@ -216,7 +216,7 @@ Partial Class UserInformation
         Me.cmdListOfUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdListOfUsers.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdListOfUsers.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.cmdListOfUsers.Location = New System.Drawing.Point(462, 330)
+        Me.cmdListOfUsers.Location = New System.Drawing.Point(480, 333)
         Me.cmdListOfUsers.Name = "cmdListOfUsers"
         Me.cmdListOfUsers.Size = New System.Drawing.Size(142, 50)
         Me.cmdListOfUsers.TabIndex = 12
@@ -229,27 +229,27 @@ Partial Class UserInformation
         Me.cmdReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdReturn.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdReturn.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.cmdReturn.Location = New System.Drawing.Point(462, 391)
+        Me.cmdReturn.Location = New System.Drawing.Point(480, 394)
         Me.cmdReturn.Name = "cmdReturn"
         Me.cmdReturn.Size = New System.Drawing.Size(142, 50)
         Me.cmdReturn.TabIndex = 13
         Me.cmdReturn.Text = "Return"
         Me.cmdReturn.UseVisualStyleBackColor = False
         '
-        'DataGridViewListOfUsers
+        'dgvListOfUsers
         '
-        Me.DataGridViewListOfUsers.AllowUserToAddRows = False
-        Me.DataGridViewListOfUsers.AllowUserToDeleteRows = False
-        Me.DataGridViewListOfUsers.BackgroundColor = System.Drawing.SystemColors.ButtonFace
-        Me.DataGridViewListOfUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewListOfUsers.Location = New System.Drawing.Point(21, 470)
-        Me.DataGridViewListOfUsers.Name = "DataGridViewListOfUsers"
-        Me.DataGridViewListOfUsers.ReadOnly = True
-        Me.DataGridViewListOfUsers.RowHeadersWidth = 51
-        Me.DataGridViewListOfUsers.RowTemplate.Height = 24
-        Me.DataGridViewListOfUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewListOfUsers.Size = New System.Drawing.Size(601, 303)
-        Me.DataGridViewListOfUsers.TabIndex = 14
+        Me.dgvListOfUsers.AllowUserToAddRows = False
+        Me.dgvListOfUsers.AllowUserToDeleteRows = False
+        Me.dgvListOfUsers.BackgroundColor = System.Drawing.SystemColors.ButtonFace
+        Me.dgvListOfUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListOfUsers.Location = New System.Drawing.Point(21, 470)
+        Me.dgvListOfUsers.Name = "dgvListOfUsers"
+        Me.dgvListOfUsers.ReadOnly = True
+        Me.dgvListOfUsers.RowHeadersWidth = 51
+        Me.dgvListOfUsers.RowTemplate.Height = 24
+        Me.dgvListOfUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvListOfUsers.Size = New System.Drawing.Size(601, 303)
+        Me.dgvListOfUsers.TabIndex = 14
         '
         'Label6
         '
@@ -269,7 +269,7 @@ Partial Class UserInformation
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(634, 806)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.DataGridViewListOfUsers)
+        Me.Controls.Add(Me.dgvListOfUsers)
         Me.Controls.Add(Me.cmdReturn)
         Me.Controls.Add(Me.cmdListOfUsers)
         Me.Controls.Add(Me.cmdDelete)
@@ -282,7 +282,7 @@ Partial Class UserInformation
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.DataGridViewListOfUsers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvListOfUsers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -306,6 +306,6 @@ Partial Class UserInformation
     Friend WithEvents cmdDelete As Button
     Friend WithEvents cmdListOfUsers As Button
     Friend WithEvents cmdReturn As Button
-    Friend WithEvents DataGridViewListOfUsers As DataGridView
+    Friend WithEvents dgvListOfUsers As DataGridView
     Friend WithEvents Label6 As Label
 End Class

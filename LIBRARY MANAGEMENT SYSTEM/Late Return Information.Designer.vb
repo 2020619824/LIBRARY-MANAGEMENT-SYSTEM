@@ -22,7 +22,7 @@ Partial Class LateReturnInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.DataGridViewLateReturnFine = New System.Windows.Forms.DataGridView()
+        Me.dgvLateReturnFine = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -38,22 +38,24 @@ Partial Class LateReturnInformation
         Me.txtSearchLateReturnInformation = New System.Windows.Forms.TextBox()
         Me.pdReceipt = New System.Drawing.Printing.PrintDocument()
         Me.Label2 = New System.Windows.Forms.Label()
-        CType(Me.DataGridViewLateReturnFine, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvLateReturnFine, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'DataGridViewLateReturnFine
+        'dgvLateReturnFine
         '
-        Me.DataGridViewLateReturnFine.AllowUserToOrderColumns = True
-        Me.DataGridViewLateReturnFine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewLateReturnFine.Location = New System.Drawing.Point(24, 237)
-        Me.DataGridViewLateReturnFine.Name = "DataGridViewLateReturnFine"
-        Me.DataGridViewLateReturnFine.RowHeadersWidth = 51
-        Me.DataGridViewLateReturnFine.RowTemplate.Height = 24
-        Me.DataGridViewLateReturnFine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewLateReturnFine.Size = New System.Drawing.Size(762, 369)
-        Me.DataGridViewLateReturnFine.TabIndex = 0
+        Me.dgvLateReturnFine.AllowUserToOrderColumns = True
+        Me.dgvLateReturnFine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvLateReturnFine.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
+        Me.dgvLateReturnFine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvLateReturnFine.Location = New System.Drawing.Point(24, 237)
+        Me.dgvLateReturnFine.Name = "dgvLateReturnFine"
+        Me.dgvLateReturnFine.RowHeadersWidth = 51
+        Me.dgvLateReturnFine.RowTemplate.Height = 24
+        Me.dgvLateReturnFine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvLateReturnFine.Size = New System.Drawing.Size(600, 369)
+        Me.dgvLateReturnFine.TabIndex = 0
         '
         'GroupBox2
         '
@@ -66,30 +68,30 @@ Partial Class LateReturnInformation
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.GroupBox2.Location = New System.Drawing.Point(816, 136)
+        Me.GroupBox2.Location = New System.Drawing.Point(646, 136)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(295, 470)
+        Me.GroupBox2.Size = New System.Drawing.Size(465, 470)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Fines Payment"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(18, 368)
+        Me.TextBox3.Location = New System.Drawing.Point(23, 190)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(241, 27)
         Me.TextBox3.TabIndex = 6
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(18, 297)
+        Me.TextBox2.Location = New System.Drawing.Point(23, 119)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(241, 27)
         Me.TextBox2.TabIndex = 5
         '
         'txtTotalAmountLateFine
         '
-        Me.txtTotalAmountLateFine.Location = New System.Drawing.Point(18, 223)
+        Me.txtTotalAmountLateFine.Location = New System.Drawing.Point(23, 45)
         Me.txtTotalAmountLateFine.Name = "txtTotalAmountLateFine"
         Me.txtTotalAmountLateFine.Size = New System.Drawing.Size(241, 27)
         Me.txtTotalAmountLateFine.TabIndex = 4
@@ -97,7 +99,7 @@ Partial Class LateReturnInformation
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(15, 348)
+        Me.Label5.Location = New System.Drawing.Point(20, 170)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(136, 20)
         Me.Label5.TabIndex = 3
@@ -106,7 +108,7 @@ Partial Class LateReturnInformation
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(15, 277)
+        Me.Label4.Location = New System.Drawing.Point(20, 99)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(179, 20)
         Me.Label4.TabIndex = 2
@@ -129,7 +131,7 @@ Partial Class LateReturnInformation
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(15, 203)
+        Me.Label3.Location = New System.Drawing.Point(20, 25)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(199, 20)
         Me.Label3.TabIndex = 0
@@ -141,11 +143,11 @@ Partial Class LateReturnInformation
         Me.GroupBox1.Controls.Add(Me.cboSearchBy)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtSearchLateReturnInformation)
-        Me.GroupBox1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial Narrow", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(24, 136)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(762, 72)
+        Me.GroupBox1.Size = New System.Drawing.Size(600, 72)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Search Late Return Information"
@@ -169,7 +171,7 @@ Partial Class LateReturnInformation
         Me.cboSearchBy.Items.AddRange(New Object() {"Borrower's name", "IC number"})
         Me.cboSearchBy.Location = New System.Drawing.Point(323, 27)
         Me.cboSearchBy.Name = "cboSearchBy"
-        Me.cboSearchBy.Size = New System.Drawing.Size(119, 28)
+        Me.cboSearchBy.Size = New System.Drawing.Size(119, 30)
         Me.cboSearchBy.TabIndex = 2
         '
         'Label1
@@ -177,7 +179,7 @@ Partial Class LateReturnInformation
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(293, 30)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(30, 20)
+        Me.Label1.Size = New System.Drawing.Size(26, 22)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "By"
         '
@@ -211,10 +213,10 @@ Partial Class LateReturnInformation
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.DataGridViewLateReturnFine)
+        Me.Controls.Add(Me.dgvLateReturnFine)
         Me.Name = "LateReturnInformation"
         Me.Text = "Late Return Information"
-        CType(Me.DataGridViewLateReturnFine, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvLateReturnFine, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -224,7 +226,7 @@ Partial Class LateReturnInformation
 
     End Sub
 
-    Friend WithEvents DataGridViewLateReturnFine As DataGridView
+    Friend WithEvents dgvLateReturnFine As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents cmdGenerateReceipt As Button
     Friend WithEvents Label3 As Label

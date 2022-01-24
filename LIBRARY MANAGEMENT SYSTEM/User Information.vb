@@ -10,14 +10,14 @@ Public Class UserInformation
 
     Private Sub DisplayTable()
         Dim query = "select * from Users"
-        SQLCommandView(query, DataGridViewListOfUsers)
+        SQLCommandView(query, dgvListOfUsers)
     End Sub
     Private Sub ClearTextBoxes()
         txtUsername.Clear()
         txtStaffID.Clear()
         txtStaffName.Clear()
         txtPhoneNumber.Clear()
-        DataGridViewListOfUsers.ClearSelection()
+        dgvListOfUsers.ClearSelection()
     End Sub
 
     Private Sub Reset()
@@ -27,7 +27,7 @@ Public Class UserInformation
         txtPhoneNumber.Clear()
         txtSearchUser.Clear()
         cboSearchBy.SelectedIndex = 0
-        DataGridViewListOfUsers.DataSource.Clear()
+        dgvListOfUsers.DataSource.Clear()
     End Sub
 
 
@@ -42,12 +42,12 @@ Public Class UserInformation
 
     Private Sub cmdListOfUsers_Click(sender As Object, e As EventArgs) Handles cmdListOfUsers.Click
         Dim query = "select StaffID, StaffName, PhoneNo, Username from Users"
-        SQLCommandView(query, DataGridViewListOfUsers)
+        SQLCommandView(query, dgvListOfUsers)
         ClearTextBoxes()
     End Sub
 
     Dim key = 0
-    Private Sub DataGridViewListOfUsers_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewListOfUsers.CellClick
+    Private Sub DataGridViewListOfUsers_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListOfUsers.CellClick
 
         Try
             If con.State = ConnectionState.Open Then
@@ -56,8 +56,8 @@ Public Class UserInformation
             End If
             con.Open()
 
-            i = Convert.ToInt32(DataGridViewListOfUsers.SelectedCells.Item(0).Value.ToString())
-            key = Convert.ToInt32(DataGridViewListOfUsers.SelectedCells.Item(0).Value.ToString())
+            i = Convert.ToInt32(dgvListOfUsers.SelectedCells.Item(0).Value.ToString())
+            key = Convert.ToInt32(dgvListOfUsers.SelectedCells.Item(0).Value.ToString())
             cmd = con.CreateCommand()
             cmd.CommandType = CommandType.Text
             cmd.CommandText = " select * from Users where StaffID = " & i & ""
@@ -89,7 +89,7 @@ Public Class UserInformation
             SQLCommandBasic(query)
             MsgBox("User Information Updated")
             query = "select StaffID, StaffName, PhoneNo, Username from Users"
-            SQLCommandView(query, DataGridViewListOfUsers)
+            SQLCommandView(query, dgvListOfUsers)
             ClearTextBoxes()
         End If
 
@@ -105,7 +105,7 @@ Public Class UserInformation
             SQLCommandBasic(query)
             MsgBox("User Deleted")
             query = "select StaffID, StaffName, PhoneNo, Username from Users"
-            SQLCommandView(query, DataGridViewListOfUsers)
+            SQLCommandView(query, dgvListOfUsers)
             ClearTextBoxes()
         End If
 
@@ -127,23 +127,23 @@ Public Class UserInformation
 
                 If ValidateStaffID() Then
                     query = "select StaffID, StaffName, PhoneNo, Username from Users where StaffID=" & decSearchStaffID & ""
-                    SQLCommandView(query, DataGridViewListOfUsers)
+                    SQLCommandView(query, dgvListOfUsers)
                 Else
                     blnInvalidStaffID = True
                 End If
             ElseIf cboSearchBy.SelectedIndex = 1 Then
                 strSearchUsername = txtSearchUser.Text
                 query = "select StaffID, StaffName, PhoneNo, Username from Users where Username='" & strSearchUsername & ""
-                SQLCommandView(query, DataGridViewListOfUsers)
+                SQLCommandView(query, dgvListOfUsers)
             End If
 
 
 
             If blnInvalidStaffID = False Then
-                If DataGridViewListOfUsers.Rows.Count = 0 Then
+                If dgvListOfUsers.Rows.Count = 0 Then
                     MsgBox("Sorry, no user found")
                 Else
-                    MsgBox(DataGridViewListOfUsers.Rows.Count & " User found!")
+                    MsgBox(dgvListOfUsers.Rows.Count & " User found!")
                 End If
             End If
 
@@ -163,11 +163,15 @@ Public Class UserInformation
         Dim dt As New DataTable()
         Dim da As New SqlDataAdapter(cmd)
         da.Fill(dt)
-        DataGridViewListOfUsers.DataSource = dt
+        dgvListOfUsers.DataSource = dt
 
     End Sub
 
     Private Sub cboSearchBy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSearchBy.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub UserInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
