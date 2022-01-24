@@ -44,11 +44,11 @@ Partial Class BorrowerInformation
         '
         'cnbReturn
         '
-        Me.cnbReturn.BackColor = System.Drawing.Color.Red
+        Me.cnbReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cnbReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cnbReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cnbReturn.ForeColor = System.Drawing.Color.Black
-        Me.cnbReturn.Location = New System.Drawing.Point(509, 574)
+        Me.cnbReturn.Location = New System.Drawing.Point(434, 599)
         Me.cnbReturn.Name = "cnbReturn"
         Me.cnbReturn.Size = New System.Drawing.Size(118, 54)
         Me.cnbReturn.TabIndex = 6
@@ -58,19 +58,19 @@ Partial Class BorrowerInformation
         'lblTitleBorrower
         '
         Me.lblTitleBorrower.AutoSize = True
-        Me.lblTitleBorrower.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitleBorrower.ForeColor = System.Drawing.Color.White
-        Me.lblTitleBorrower.Location = New System.Drawing.Point(34, 23)
+        Me.lblTitleBorrower.Font = New System.Drawing.Font("Bebas Neue", 39.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitleBorrower.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblTitleBorrower.Location = New System.Drawing.Point(22, 20)
         Me.lblTitleBorrower.Name = "lblTitleBorrower"
-        Me.lblTitleBorrower.Size = New System.Drawing.Size(158, 32)
+        Me.lblTitleBorrower.Size = New System.Drawing.Size(546, 79)
         Me.lblTitleBorrower.TabIndex = 7
-        Me.lblTitleBorrower.Text = "Borrower's"
+        Me.lblTitleBorrower.Text = "BORROWERS INFORMATION"
         '
         'lbllblBorrowerName
         '
         Me.lbllblBorrowerName.AutoSize = True
         Me.lbllblBorrowerName.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbllblBorrowerName.Location = New System.Drawing.Point(87, 78)
+        Me.lbllblBorrowerName.Location = New System.Drawing.Point(42, 72)
         Me.lbllblBorrowerName.Name = "lbllblBorrowerName"
         Me.lbllblBorrowerName.Size = New System.Drawing.Size(53, 17)
         Me.lbllblBorrowerName.TabIndex = 8
@@ -80,7 +80,7 @@ Partial Class BorrowerInformation
         '
         Me.lbllblBorrowerIC.AutoSize = True
         Me.lbllblBorrowerIC.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbllblBorrowerIC.Location = New System.Drawing.Point(112, 116)
+        Me.lbllblBorrowerIC.Location = New System.Drawing.Point(67, 110)
         Me.lbllblBorrowerIC.Name = "lbllblBorrowerIC"
         Me.lbllblBorrowerIC.Size = New System.Drawing.Size(28, 17)
         Me.lbllblBorrowerIC.TabIndex = 9
@@ -92,7 +92,7 @@ Partial Class BorrowerInformation
         Me.lbllblPhoneNum.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lbllblPhoneNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbllblPhoneNum.ForeColor = System.Drawing.Color.White
-        Me.lbllblPhoneNum.Location = New System.Drawing.Point(40, 248)
+        Me.lbllblPhoneNum.Location = New System.Drawing.Point(40, 290)
         Me.lbllblPhoneNum.Name = "lbllblPhoneNum"
         Me.lbllblPhoneNum.Size = New System.Drawing.Size(111, 17)
         Me.lbllblPhoneNum.TabIndex = 10
@@ -104,7 +104,7 @@ Partial Class BorrowerInformation
         Me.lbllblAddress.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lbllblAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbllblAddress.ForeColor = System.Drawing.Color.White
-        Me.lbllblAddress.Location = New System.Drawing.Point(82, 290)
+        Me.lbllblAddress.Location = New System.Drawing.Point(81, 334)
         Me.lbllblAddress.Name = "lbllblAddress"
         Me.lbllblAddress.Size = New System.Drawing.Size(68, 17)
         Me.lbllblAddress.TabIndex = 11
@@ -116,9 +116,9 @@ Partial Class BorrowerInformation
         Me.lblBorrowerAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblBorrowerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBorrowerAddress.ForeColor = System.Drawing.Color.Black
-        Me.lblBorrowerAddress.Location = New System.Drawing.Point(155, 290)
+        Me.lblBorrowerAddress.Location = New System.Drawing.Point(151, 333)
         Me.lblBorrowerAddress.Name = "lblBorrowerAddress"
-        Me.lblBorrowerAddress.Size = New System.Drawing.Size(472, 67)
+        Me.lblBorrowerAddress.Size = New System.Drawing.Size(401, 67)
         Me.lblBorrowerAddress.TabIndex = 12
         '
         'lblBorrowerPhoneNumber
@@ -127,9 +127,9 @@ Partial Class BorrowerInformation
         Me.lblBorrowerPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblBorrowerPhoneNumber.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBorrowerPhoneNumber.ForeColor = System.Drawing.Color.Black
-        Me.lblBorrowerPhoneNumber.Location = New System.Drawing.Point(157, 248)
+        Me.lblBorrowerPhoneNumber.Location = New System.Drawing.Point(151, 289)
         Me.lblBorrowerPhoneNumber.Name = "lblBorrowerPhoneNumber"
-        Me.lblBorrowerPhoneNumber.Size = New System.Drawing.Size(470, 31)
+        Me.lblBorrowerPhoneNumber.Size = New System.Drawing.Size(401, 31)
         Me.lblBorrowerPhoneNumber.TabIndex = 13
         '
         'lblBorrowerIC
@@ -138,7 +138,7 @@ Partial Class BorrowerInformation
         Me.lblBorrowerIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblBorrowerIC.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBorrowerIC.ForeColor = System.Drawing.Color.Black
-        Me.lblBorrowerIC.Location = New System.Drawing.Point(146, 116)
+        Me.lblBorrowerIC.Location = New System.Drawing.Point(101, 110)
         Me.lblBorrowerIC.Name = "lblBorrowerIC"
         Me.lblBorrowerIC.Size = New System.Drawing.Size(396, 23)
         Me.lblBorrowerIC.TabIndex = 14
@@ -149,7 +149,7 @@ Partial Class BorrowerInformation
         Me.lblBorrowerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblBorrowerName.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBorrowerName.ForeColor = System.Drawing.Color.Black
-        Me.lblBorrowerName.Location = New System.Drawing.Point(146, 77)
+        Me.lblBorrowerName.Location = New System.Drawing.Point(101, 71)
         Me.lblBorrowerName.Name = "lblBorrowerName"
         Me.lblBorrowerName.Size = New System.Drawing.Size(396, 25)
         Me.lblBorrowerName.TabIndex = 15
@@ -164,21 +164,22 @@ Partial Class BorrowerInformation
         Me.GroupBox1.Controls.Add(Me.lbllblBorrowerName)
         Me.GroupBox1.Controls.Add(Me.lbllblBorrowerIC)
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(40, 69)
+        Me.GroupBox1.Location = New System.Drawing.Point(36, 102)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(587, 155)
+        Me.GroupBox1.Size = New System.Drawing.Size(516, 155)
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Search Borrower's Name"
         '
         'btnSearchBorrower
         '
-        Me.btnSearchBorrower.BackColor = System.Drawing.Color.Red
+        Me.btnSearchBorrower.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnSearchBorrower.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchBorrower.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchBorrower.ForeColor = System.Drawing.Color.Black
-        Me.btnSearchBorrower.Location = New System.Drawing.Point(430, 18)
+        Me.btnSearchBorrower.Location = New System.Drawing.Point(375, 18)
         Me.btnSearchBorrower.Name = "btnSearchBorrower"
-        Me.btnSearchBorrower.Size = New System.Drawing.Size(112, 41)
+        Me.btnSearchBorrower.Size = New System.Drawing.Size(122, 40)
         Me.btnSearchBorrower.TabIndex = 18
         Me.btnSearchBorrower.Text = "Search"
         Me.btnSearchBorrower.UseVisualStyleBackColor = False
@@ -188,27 +189,27 @@ Partial Class BorrowerInformation
         Me.txtSearchBorrowersName.ForeColor = System.Drawing.Color.Black
         Me.txtSearchBorrowersName.Location = New System.Drawing.Point(42, 27)
         Me.txtSearchBorrowersName.Name = "txtSearchBorrowersName"
-        Me.txtSearchBorrowersName.Size = New System.Drawing.Size(376, 22)
+        Me.txtSearchBorrowersName.Size = New System.Drawing.Size(317, 22)
         Me.txtSearchBorrowersName.TabIndex = 0
         '
         'DataGridViewBorrower
         '
         Me.DataGridViewBorrower.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.DataGridViewBorrower.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewBorrower.Location = New System.Drawing.Point(40, 373)
+        Me.DataGridViewBorrower.Location = New System.Drawing.Point(36, 415)
         Me.DataGridViewBorrower.Name = "DataGridViewBorrower"
         Me.DataGridViewBorrower.RowHeadersWidth = 51
         Me.DataGridViewBorrower.RowTemplate.Height = 24
-        Me.DataGridViewBorrower.Size = New System.Drawing.Size(587, 178)
+        Me.DataGridViewBorrower.Size = New System.Drawing.Size(516, 178)
         Me.DataGridViewBorrower.TabIndex = 17
         '
         'cnbReturnBook
         '
-        Me.cnbReturnBook.BackColor = System.Drawing.Color.Red
+        Me.cnbReturnBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cnbReturnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cnbReturnBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cnbReturnBook.ForeColor = System.Drawing.Color.Black
-        Me.cnbReturnBook.Location = New System.Drawing.Point(43, 575)
+        Me.cnbReturnBook.Location = New System.Drawing.Point(36, 599)
         Me.cnbReturnBook.Name = "cnbReturnBook"
         Me.cnbReturnBook.Size = New System.Drawing.Size(118, 54)
         Me.cnbReturnBook.TabIndex = 18
@@ -217,11 +218,11 @@ Partial Class BorrowerInformation
         '
         'cnbLateReturnPage
         '
-        Me.cnbLateReturnPage.BackColor = System.Drawing.Color.Red
+        Me.cnbLateReturnPage.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cnbLateReturnPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cnbLateReturnPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cnbLateReturnPage.ForeColor = System.Drawing.Color.Black
-        Me.cnbLateReturnPage.Location = New System.Drawing.Point(167, 575)
+        Me.cnbLateReturnPage.Location = New System.Drawing.Point(160, 599)
         Me.cnbLateReturnPage.Name = "cnbLateReturnPage"
         Me.cnbLateReturnPage.Size = New System.Drawing.Size(118, 54)
         Me.cnbLateReturnPage.TabIndex = 19
@@ -233,7 +234,7 @@ Partial Class BorrowerInformation
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(671, 658)
+        Me.ClientSize = New System.Drawing.Size(597, 676)
         Me.Controls.Add(Me.cnbLateReturnPage)
         Me.Controls.Add(Me.cnbReturnBook)
         Me.Controls.Add(Me.DataGridViewBorrower)
