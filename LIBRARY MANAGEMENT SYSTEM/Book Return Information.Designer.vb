@@ -22,11 +22,11 @@ Partial Class BookReturnInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtBorrowerName = New System.Windows.Forms.TextBox()
@@ -34,12 +34,13 @@ Partial Class BookReturnInformation
         Me.cboBorrowerName = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnSearchBorrower = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvBookReturnInfo = New System.Windows.Forms.DataGridView()
         Me.btnReturn = New System.Windows.Forms.Button()
         Me.btnReturnBook = New System.Windows.Forms.Button()
         Me.btnLateReturn = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBookReturnInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -104,7 +105,7 @@ Partial Class BookReturnInformation
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtBorrowerIC)
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(35, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(35, 137)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(682, 191)
         Me.GroupBox1.TabIndex = 5
@@ -113,77 +114,83 @@ Partial Class BookReturnInformation
         '
         'btnSearchBorrower
         '
-        Me.btnSearchBorrower.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSearchBorrower.BackColor = System.Drawing.Color.White
         Me.btnSearchBorrower.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSearchBorrower.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchBorrower.ForeColor = System.Drawing.Color.Black
         Me.btnSearchBorrower.Location = New System.Drawing.Point(508, 32)
         Me.btnSearchBorrower.Name = "btnSearchBorrower"
-        Me.btnSearchBorrower.Size = New System.Drawing.Size(115, 45)
+        Me.btnSearchBorrower.Size = New System.Drawing.Size(138, 45)
         Me.btnSearchBorrower.TabIndex = 5
         Me.btnSearchBorrower.Text = "Search"
         Me.btnSearchBorrower.UseVisualStyleBackColor = False
         '
-        'DataGridView1
+        'dgvBookReturnInfo
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Firebrick
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.Black
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle13
-        Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(35, 218)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
-        Me.DataGridView1.RowHeadersWidth = 51
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle15
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(987, 364)
-        Me.DataGridView1.TabIndex = 6
+        Me.dgvBookReturnInfo.AllowUserToAddRows = False
+        Me.dgvBookReturnInfo.AllowUserToDeleteRows = False
+        Me.dgvBookReturnInfo.AllowUserToResizeColumns = False
+        Me.dgvBookReturnInfo.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.dgvBookReturnInfo.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvBookReturnInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvBookReturnInfo.BackgroundColor = System.Drawing.Color.Black
+        Me.dgvBookReturnInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvBookReturnInfo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBookReturnInfo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvBookReturnInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvBookReturnInfo.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvBookReturnInfo.EnableHeadersVisualStyles = False
+        Me.dgvBookReturnInfo.GridColor = System.Drawing.Color.White
+        Me.dgvBookReturnInfo.Location = New System.Drawing.Point(34, 353)
+        Me.dgvBookReturnInfo.MultiSelect = False
+        Me.dgvBookReturnInfo.Name = "dgvBookReturnInfo"
+        Me.dgvBookReturnInfo.ReadOnly = True
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBookReturnInfo.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvBookReturnInfo.RowHeadersWidth = 51
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        Me.dgvBookReturnInfo.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvBookReturnInfo.RowTemplate.Height = 24
+        Me.dgvBookReturnInfo.Size = New System.Drawing.Size(987, 377)
+        Me.dgvBookReturnInfo.TabIndex = 6
         '
         'btnReturn
         '
         Me.btnReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReturn.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReturn.Location = New System.Drawing.Point(936, 24)
+        Me.btnReturn.ForeColor = System.Drawing.Color.Black
+        Me.btnReturn.Location = New System.Drawing.Point(891, 253)
         Me.btnReturn.Name = "btnReturn"
-        Me.btnReturn.Size = New System.Drawing.Size(86, 179)
+        Me.btnReturn.Size = New System.Drawing.Size(106, 60)
         Me.btnReturn.TabIndex = 7
         Me.btnReturn.Text = "Return"
         Me.btnReturn.UseVisualStyleBackColor = False
@@ -193,9 +200,10 @@ Partial Class BookReturnInformation
         Me.btnReturnBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnReturnBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReturnBook.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReturnBook.Location = New System.Drawing.Point(759, 116)
+        Me.btnReturnBook.ForeColor = System.Drawing.Color.Black
+        Me.btnReturnBook.Location = New System.Drawing.Point(752, 253)
         Me.btnReturnBook.Name = "btnReturnBook"
-        Me.btnReturnBook.Size = New System.Drawing.Size(161, 66)
+        Me.btnReturnBook.Size = New System.Drawing.Size(124, 60)
         Me.btnReturnBook.TabIndex = 8
         Me.btnReturnBook.Text = "Return Book"
         Me.btnReturnBook.UseVisualStyleBackColor = False
@@ -205,33 +213,46 @@ Partial Class BookReturnInformation
         Me.btnLateReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnLateReturn.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLateReturn.Location = New System.Drawing.Point(759, 43)
+        Me.btnLateReturn.ForeColor = System.Drawing.Color.Black
+        Me.btnLateReturn.Location = New System.Drawing.Point(752, 160)
         Me.btnLateReturn.Name = "btnLateReturn"
-        Me.btnLateReturn.Size = New System.Drawing.Size(161, 66)
+        Me.btnLateReturn.Size = New System.Drawing.Size(245, 79)
         Me.btnLateReturn.TabIndex = 9
-        Me.btnLateReturn.Text = "Go to Late" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Return Page"
+        Me.btnLateReturn.Text = "Go to Late Return Page"
         Me.btnLateReturn.UseVisualStyleBackColor = False
         Me.btnLateReturn.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Bebas Neue", 64.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(12, 9)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(1041, 121)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = "BOOK RETURN INFORMATION"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BookReturnInformation
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(1065, 617)
+        Me.ClientSize = New System.Drawing.Size(1065, 761)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnLateReturn)
         Me.Controls.Add(Me.btnReturnBook)
         Me.Controls.Add(Me.btnReturn)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvBookReturnInfo)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BookReturnInformation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Book Return Information"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBookReturnInfo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -243,8 +264,9 @@ Partial Class BookReturnInformation
     Friend WithEvents cboBorrowerName As ComboBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnSearchBorrower As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvBookReturnInfo As DataGridView
     Friend WithEvents btnReturn As Button
     Friend WithEvents btnReturnBook As Button
     Friend WithEvents btnLateReturn As Button
+    Friend WithEvents Label3 As Label
 End Class

@@ -5,19 +5,20 @@ Public Class BookDetails
 
     Private Sub DisplayTable()
         Dim query = "select * from Book"
-        SQLCommandView(query, DataGridViewListofBook)
+        SQLCommandView(query, dgvBookDetails)
     End Sub
 
     Private Sub DisplayHeader()
         Dim query = "select * from Book where ISBN is null"
-        SQLCommandView(query, DataGridViewListofBook)
+        SQLCommandView(query, dgvBookDetails)
+        dgvBookDetails().Columns(1).HeaderText = "Year"
     End Sub
 
     Dim key = 0
-    Private Sub DataGridViewListofBook_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridViewListofBook.CellMouseClick
+    Private Sub DataGridViewListofBook_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBookDetails.CellMouseClick
 
         If e.RowIndex >= 0 Then
-            Dim row As DataGridViewRow = DataGridViewListofBook.Rows(e.RowIndex)
+            Dim row As DataGridViewRow = dgvBookDetails.Rows(e.RowIndex)
 
             txtISBN.Text = row.Cells(0).Value.ToString
             txtYear.Text = row.Cells(1).Value.ToString
@@ -38,7 +39,7 @@ Public Class BookDetails
         txtAuthor.Clear()
         txtPublisher.Clear()
         txtCategory.Clear()
-        DataGridViewListofBook.ClearSelection()
+        dgvBookDetails.ClearSelection()
     End Sub
 
     Private Sub Reset()
@@ -51,7 +52,7 @@ Public Class BookDetails
         txtCategory.Clear()
         txtSearchBook.Clear()
         cboSearchBy.SelectedIndex = 0
-        DataGridViewListofBook.DataSource.Clear()
+        dgvBookDetails.DataSource.Clear()
     End Sub
     Private Sub ResetKey()
         key = 0
@@ -59,7 +60,8 @@ Public Class BookDetails
 
     Private Function ValidateTextBoxes() As Boolean
         If txtISBN.Text = "" Or txtYear.Text = "" Or txtAuthor.Text = "" Or txtTitle.Text = "" Or txtPublisher.Text = "" Or txtCategory.Text = "" Then
-            MsgBox("Missing Information")
+            MyMessageBox.ShowMessage("Missing Information")
+            txtISBN.Focus()
             Return False
         End If
 
@@ -69,7 +71,7 @@ Public Class BookDetails
     Dim decSearchISBN As Decimal
     Private Function ValidateSearchByISBN() As Boolean
         If Not Decimal.TryParse(txtSearchBook.Text, decSearchISBN) Then
-            MsgBox("Please input the ISBN correctly")
+            MyMessageBox.ShowMessage("Please input the ISBN correctly")
             txtSearchBook.Clear()
             txtSearchBook.Focus()
             Return False
@@ -80,7 +82,8 @@ Public Class BookDetails
     Dim decISBN As Decimal
     Private Function ValidateISBN() As Boolean
         If Not Decimal.TryParse(txtISBN.Text, decISBN) Then
-            MsgBox("Please input the ISBN correctly")
+            MyMessageBox.ShowMessage("Please input the ISBN correctly")
+            txtISBN.Focus()
             Return False
         End If
         Return True
@@ -89,7 +92,8 @@ Public Class BookDetails
     Dim intYear As Integer
     Private Function ValidateYear() As Boolean
         If Not Integer.TryParse(txtYear.Text, intYear) Then
-            MsgBox("Please input the Year of Publication correctly")
+            MyMessageBox.ShowMessage("Please input the Year of Publication correctly")
+            txtYear.Focus()
             Return False
         End If
         Return True
@@ -100,9 +104,10 @@ Public Class BookDetails
             If ValidateISBN() And ValidateYear() Then
                 decISBN = CDec(txtISBN.Text)
                 Dim i
-                For i = 0 To DataGridViewListofBook.Rows.Count - 1
-                    If CDec(DataGridViewListofBook.Rows(i).Cells(0).Value) = decISBN Then
-                        MsgBox("Sorry, the book is already exist")
+                For i = 0 To dgvBookDetails.Rows.Count - 1
+                    If CDec(dgvBookDetails.Rows(i).Cells(0).Value) = decISBN Then
+                        MyMessageBox.ShowMessage("Sorry, the book is already exist")
+                        ClearTextBoxes()
                         Return False
                     End If
                 Next
@@ -131,11 +136,12 @@ Public Class BookDetails
                 strCategory = txtCategory.Text
 
                 Dim i
-                For i = 0 To DataGridViewListofBook.Rows.Count - 1
-                    If CDec(DataGridViewListofBook.Rows(i).Cells(0).Value) = decISBN And CInt(DataGridViewListofBook.Rows(i).Cells(1).Value) = intYear And
-                    DataGridViewListofBook.Rows(i).Cells(2).Value.ToString = strTitle And DataGridViewListofBook.Rows(i).Cells(3).Value.ToString = strAuthor And
-                    DataGridViewListofBook.Rows(i).Cells(4).Value.ToString = strPublisher And DataGridViewListofBook.Rows(i).Cells(5).Value.ToString = strCategory Then
-                        MsgBox("Nothing to update")
+                For i = 0 To dgvBookDetails.Rows.Count - 1
+                    If CDec(dgvBookDetails.Rows(i).Cells(0).Value) = decISBN And CInt(dgvBookDetails.Rows(i).Cells(1).Value) = intYear And
+                    dgvBookDetails.Rows(i).Cells(2).Value.ToString = strTitle And dgvBookDetails.Rows(i).Cells(3).Value.ToString = strAuthor And
+                    dgvBookDetails.Rows(i).Cells(4).Value.ToString = strPublisher And dgvBookDetails.Rows(i).Cells(5).Value.ToString = strCategory Then
+                        MyMessageBox.ShowMessage("Nothing to update")
+                        dgvBookDetails.ClearSelection()
                         Return False
                     End If
                 Next
@@ -144,7 +150,8 @@ Public Class BookDetails
             End If
 
             If key = 0 Then
-                MsgBox("Please select the book to update")
+                MyMessageBox.ShowMessage("Please select the book to update")
+                dgvBookDetails.ClearSelection()
                 Return False
             End If
 
@@ -155,26 +162,23 @@ Public Class BookDetails
     End Function
 
     Private Function ValidateDeletedBook() As Boolean
-        If ValidateTextBoxes() Then
-            If key = 0 Then
-                MsgBox("Please select the book to delete")
-                Return False
-            Else
-                Return True
+        If key = 0 Then
+            MyMessageBox.ShowMessage("Please select the book to delete")
+            Return False
+        Else
+            Return True
             End If
 
-            Return True
-        End If
+        Return True
 
         Return False
     End Function
 
     Private Function ConfirmationOfDeletedBook() As Boolean
-        Select Case MsgBox("You will permanently loss the data" & ControlChars.CrLf & "Are you sure to continue?", vbYesNo)
-
-            Case MsgBoxResult.Yes
+        Select Case MyMessageBox.ShowConfirmation("You will permanently loss the data" & ControlChars.CrLf & "Are you sure to continue?")
+            Case DialogResult.Yes
                 Return True
-            Case MsgBoxResult.No
+            Case DialogResult.No
                 Return False
         End Select
     End Function
@@ -191,31 +195,33 @@ Public Class BookDetails
         blnInvalidISBN = False
 
         If txtSearchBook.Text = "" Then
-            MsgBox("Missing Information")
+            MyMessageBox.ShowMessage("Missing Information")
+            txtSearchBook.Focus()
         Else
             Dim query = ""
             If cboSearchBy.SelectedIndex = 0 Then
                 If ValidateSearchByISBN() Then
                     query = "select * from book where ISBN=" & decSearchISBN & ""
-                    SQLCommandView(query, DataGridViewListofBook)
+                    SQLCommandView(query, dgvBookDetails)
                 Else
                     blnInvalidISBN = True
                 End If
             ElseIf cboSearchBy.SelectedIndex = 1 Then
                 strSearchAuthor = txtSearchBook.Text
                 query = "select * from book where Author='" & strSearchAuthor & "'"
-                SQLCommandView(query, DataGridViewListofBook)
+            SQLCommandView(query, dgvBookDetails)
             ElseIf cboSearchBy.SelectedIndex = 2 Then
                 strSearchTitle = txtSearchBook.Text
                 query = "select * from book where Title='" & strSearchTitle & "'"
-                SQLCommandView(query, DataGridViewListofBook)
+                SQLCommandView(query, dgvBookDetails)
             End If
 
             If blnInvalidISBN = False Then
-                If DataGridViewListofBook.Rows.Count = 0 Then
-                    MsgBox("Sorry, no book found")
+                If dgvBookDetails.Rows.Count = 0 Then
+                    MyMessageBox.ShowMessage("Sorry, no book found")
                 Else
-                    MsgBox(DataGridViewListofBook.Rows.Count & " Book found!")
+                    MyMessageBox.ShowMessage(dgvBookDetails.Rows.Count & " Book found!")
+                    'MsgBox(DataGridViewListofBook.Rows.Count & " Book found!")
                 End If
             End If
 
@@ -227,7 +233,7 @@ Public Class BookDetails
         If ValidateAddedBook() Then
             Dim query = "insert into book values(" & txtISBN.Text & "," & txtYear.Text & ",'" & txtTitle.Text & "','" & txtAuthor.Text & "','" & txtPublisher.Text & "','" & txtCategory.Text & "')"
             SQLCommandBasic(query)
-            MsgBox("Book Saved")
+            MyMessageBox.ShowMessage("Book Saved")
             DisplayTable()
             ClearTextBoxes()
         End If
@@ -239,7 +245,7 @@ Public Class BookDetails
             Dim query = "update Book set ISBN=" & txtISBN.Text & ",YearofPublication=" & txtYear.Text & ",Title='" & txtTitle.Text & "',Author='" &
                     txtAuthor.Text & "',Publisher='" & txtPublisher.Text & "',Category='" & txtCategory.Text & "' where ISBN=" & key & ""
             SQLCommandBasic(query)
-            MsgBox("Book Updated")
+            MyMessageBox.ShowMessage("Book Updated")
             DisplayTable()
             ClearTextBoxes()
         End If
@@ -251,7 +257,7 @@ Public Class BookDetails
             If ConfirmationOfDeletedBook() Then
                 Dim query = "delete from Book where ISBN=" & key & ""
                 SQLCommandBasic(query)
-                MsgBox("Book Deleted")
+                MyMessageBox.ShowMessage("Book Deleted")
                 DisplayTable()
             End If
         End If
@@ -269,5 +275,4 @@ Public Class BookDetails
         Reset()
         Me.Close()
     End Sub
-
 End Class

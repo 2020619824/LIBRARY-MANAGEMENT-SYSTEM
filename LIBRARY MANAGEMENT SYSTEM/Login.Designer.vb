@@ -33,9 +33,9 @@ Partial Class Login
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.Red
+        Me.Label1.BackColor = System.Drawing.Color.Black
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(29, 59)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(122, 40)
@@ -45,9 +45,9 @@ Partial Class Login
         '
         'Label2
         '
-        Me.Label2.BackColor = System.Drawing.Color.Red
+        Me.Label2.BackColor = System.Drawing.Color.Black
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(29, 105)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(122, 40)
@@ -57,25 +57,26 @@ Partial Class Login
         '
         'txtGetUserName
         '
-        Me.txtGetUserName.Location = New System.Drawing.Point(157, 59)
+        Me.txtGetUserName.Location = New System.Drawing.Point(157, 69)
         Me.txtGetUserName.Multiline = True
         Me.txtGetUserName.Name = "txtGetUserName"
-        Me.txtGetUserName.Size = New System.Drawing.Size(593, 40)
+        Me.txtGetUserName.Size = New System.Drawing.Size(593, 28)
         Me.txtGetUserName.TabIndex = 2
         '
         'txtGetPassword
         '
-        Me.txtGetPassword.Location = New System.Drawing.Point(157, 105)
+        Me.txtGetPassword.Location = New System.Drawing.Point(157, 115)
         Me.txtGetPassword.Multiline = True
         Me.txtGetPassword.Name = "txtGetPassword"
-        Me.txtGetPassword.Size = New System.Drawing.Size(593, 40)
+        Me.txtGetPassword.Size = New System.Drawing.Size(593, 28)
         Me.txtGetPassword.TabIndex = 3
         '
         'txtLoginMesage
         '
-        Me.txtLoginMesage.BackColor = System.Drawing.Color.Red
+        Me.txtLoginMesage.BackColor = System.Drawing.Color.Black
         Me.txtLoginMesage.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtLoginMesage.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLoginMesage.ForeColor = System.Drawing.Color.White
         Me.txtLoginMesage.Location = New System.Drawing.Point(49, 151)
         Me.txtLoginMesage.Multiline = True
         Me.txtLoginMesage.Name = "txtLoginMesage"
@@ -85,11 +86,11 @@ Partial Class Login
         '
         'cnbReturn
         '
-        Me.cnbReturn.BackColor = System.Drawing.Color.Black
+        Me.cnbReturn.BackColor = System.Drawing.Color.Red
         Me.cnbReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cnbReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cnbReturn.ForeColor = System.Drawing.Color.Red
-        Me.cnbReturn.Location = New System.Drawing.Point(623, 151)
+        Me.cnbReturn.ForeColor = System.Drawing.Color.Black
+        Me.cnbReturn.Location = New System.Drawing.Point(623, 169)
         Me.cnbReturn.Name = "cnbReturn"
         Me.cnbReturn.Size = New System.Drawing.Size(127, 43)
         Me.cnbReturn.TabIndex = 5
@@ -99,7 +100,9 @@ Partial Class Login
         'lbltitleLogin
         '
         Me.lbltitleLogin.AutoSize = True
+        Me.lbltitleLogin.BackColor = System.Drawing.Color.Black
         Me.lbltitleLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltitleLogin.ForeColor = System.Drawing.Color.White
         Me.lbltitleLogin.Location = New System.Drawing.Point(29, 23)
         Me.lbltitleLogin.Name = "lbltitleLogin"
         Me.lbltitleLogin.Size = New System.Drawing.Size(518, 24)
@@ -110,8 +113,8 @@ Partial Class Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Red
-        Me.ClientSize = New System.Drawing.Size(785, 224)
+        Me.BackColor = System.Drawing.Color.Black
+        Me.ClientSize = New System.Drawing.Size(779, 244)
         Me.Controls.Add(Me.lbltitleLogin)
         Me.Controls.Add(Me.cnbReturn)
         Me.Controls.Add(Me.txtLoginMesage)
