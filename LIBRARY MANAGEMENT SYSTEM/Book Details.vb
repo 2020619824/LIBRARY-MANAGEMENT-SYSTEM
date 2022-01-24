@@ -221,10 +221,9 @@ Public Class BookDetails
                     MyMessageBox.ShowMessage("Sorry, no book found")
                 Else
                     MyMessageBox.ShowMessage(dgvBookDetails.Rows.Count & " Book found!")
-                    'MsgBox(DataGridViewListofBook.Rows.Count & " Book found!")
                 End If
             End If
-
+            key = 0
             ClearTextBoxes()
         End If
     End Sub
