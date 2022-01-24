@@ -55,11 +55,11 @@ Partial Class MenuList
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.cmdExit)
-        Me.GroupBox1.Font = New System.Drawing.Font("Arial Narrow", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(1, 45)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(186, 597)
+        Me.GroupBox1.Size = New System.Drawing.Size(186, 591)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Login Information"
@@ -74,6 +74,9 @@ Partial Class MenuList
         '
         'txtTime
         '
+        Me.txtTime.BackColor = System.Drawing.Color.Black
+        Me.txtTime.Font = New System.Drawing.Font("Arial", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTime.ForeColor = System.Drawing.Color.White
         Me.txtTime.Location = New System.Drawing.Point(24, 290)
         Me.txtTime.Name = "txtTime"
         Me.txtTime.Size = New System.Drawing.Size(139, 27)
@@ -89,6 +92,9 @@ Partial Class MenuList
         '
         'txtDate
         '
+        Me.txtDate.BackColor = System.Drawing.Color.Black
+        Me.txtDate.Font = New System.Drawing.Font("Arial", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDate.ForeColor = System.Drawing.Color.White
         Me.txtDate.Location = New System.Drawing.Point(24, 195)
         Me.txtDate.Name = "txtDate"
         Me.txtDate.Size = New System.Drawing.Size(139, 27)
@@ -104,6 +110,9 @@ Partial Class MenuList
         '
         'TextBox1
         '
+        Me.TextBox1.BackColor = System.Drawing.Color.Black
+        Me.TextBox1.Font = New System.Drawing.Font("Arial", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.White
         Me.TextBox1.Location = New System.Drawing.Point(24, 104)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(139, 27)
@@ -112,7 +121,7 @@ Partial Class MenuList
         'cmdExit
         '
         Me.cmdExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdExit.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdExit.ForeColor = System.Drawing.Color.White
         Me.cmdExit.Location = New System.Drawing.Point(24, 390)
@@ -125,7 +134,7 @@ Partial Class MenuList
         'cmdDisplayUser
         '
         Me.cmdDisplayUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdDisplayUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdDisplayUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdDisplayUser.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayUser.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayUser.Image = CType(resources.GetObject("cmdDisplayUser.Image"), System.Drawing.Image)
@@ -141,7 +150,7 @@ Partial Class MenuList
         'cmdDisplayBookDetails
         '
         Me.cmdDisplayBookDetails.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdDisplayBookDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdDisplayBookDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdDisplayBookDetails.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayBookDetails.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayBookDetails.Image = CType(resources.GetObject("cmdDisplayBookDetails.Image"), System.Drawing.Image)
@@ -156,7 +165,7 @@ Partial Class MenuList
         'cmdDisplayBorrowers
         '
         Me.cmdDisplayBorrowers.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdDisplayBorrowers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdDisplayBorrowers.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdDisplayBorrowers.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayBorrowers.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayBorrowers.Image = CType(resources.GetObject("cmdDisplayBorrowers.Image"), System.Drawing.Image)
@@ -171,7 +180,7 @@ Partial Class MenuList
         'cmdDisplayBookReturn
         '
         Me.cmdDisplayBookReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdDisplayBookReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdDisplayBookReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdDisplayBookReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayBookReturn.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayBookReturn.Image = CType(resources.GetObject("cmdDisplayBookReturn.Image"), System.Drawing.Image)
@@ -186,7 +195,7 @@ Partial Class MenuList
         'cmdBookIssue
         '
         Me.cmdBookIssue.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdBookIssue.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdBookIssue.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdBookIssue.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdBookIssue.ForeColor = System.Drawing.Color.White
         Me.cmdBookIssue.Image = CType(resources.GetObject("cmdBookIssue.Image"), System.Drawing.Image)
@@ -201,7 +210,7 @@ Partial Class MenuList
         'cmdDisplayLateReturn
         '
         Me.cmdDisplayLateReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdDisplayLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdDisplayLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdDisplayLateReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayLateReturn.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayLateReturn.Image = CType(resources.GetObject("cmdDisplayLateReturn.Image"), System.Drawing.Image)
@@ -242,8 +251,7 @@ Partial Class MenuList
         '
         'MenuList
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.BackColor = System.Drawing.Color.Black
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -257,7 +265,7 @@ Partial Class MenuList
         Me.Controls.Add(Me.cmdDisplayBookDetails)
         Me.Controls.Add(Me.cmdDisplayUser)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MenuList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
