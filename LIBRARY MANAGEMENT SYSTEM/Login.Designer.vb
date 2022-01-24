@@ -29,6 +29,7 @@ Partial Class Login
         Me.btnReturn = New System.Windows.Forms.Button()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.chkShowPassword = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -110,12 +111,24 @@ Partial Class Login
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "login"
         '
+        'chkShowPassword
+        '
+        Me.chkShowPassword.AutoSize = True
+        Me.chkShowPassword.ForeColor = System.Drawing.SystemColors.ButtonShadow
+        Me.chkShowPassword.Location = New System.Drawing.Point(123, 167)
+        Me.chkShowPassword.Name = "chkShowPassword"
+        Me.chkShowPassword.Size = New System.Drawing.Size(129, 21)
+        Me.chkShowPassword.TabIndex = 9
+        Me.chkShowPassword.Text = "Show Password"
+        Me.chkShowPassword.UseVisualStyleBackColor = True
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(470, 251)
+        Me.Controls.Add(Me.chkShowPassword)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.btnReturn)
@@ -138,4 +151,5 @@ Partial Class Login
     Friend WithEvents btnReturn As Button
     Friend WithEvents btnLogin As Button
     Friend WithEvents Label3 As Label
+    Friend WithEvents chkShowPassword As CheckBox
 End Class
