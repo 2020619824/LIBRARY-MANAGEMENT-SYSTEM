@@ -17,7 +17,8 @@ Public Class LateReturnInformation
                  From Book B, Borrower BR, Borrow BRW, LateReturnFines L
                  Where B.ISBN = BRW.ISBN
                  AND BRW.BorrowerIC = BR.BorrowerIC
-                 AND L.BorrowerIC = BR.BorrowerIC"
+                 AND L.BorrowID = BRW.BorrowID
+                 AND L.LateReturnFines <> 0.00"
         SQLCommandView(query, dgvLateReturnFine)
 
     End Sub

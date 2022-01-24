@@ -52,11 +52,12 @@ Partial Class MenuList
         Me.GroupBox1.Controls.Add(Me.txtDate)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.cmdExit)
         Me.GroupBox1.Font = New System.Drawing.Font("Arial Narrow", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 87)
+        Me.GroupBox1.Location = New System.Drawing.Point(1, 45)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(186, 372)
+        Me.GroupBox1.Size = New System.Drawing.Size(186, 597)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Login Information"
@@ -112,9 +113,9 @@ Partial Class MenuList
         Me.cmdExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdExit.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdExit.ForeColor = System.Drawing.Color.White
-        Me.cmdExit.Location = New System.Drawing.Point(12, 484)
+        Me.cmdExit.Location = New System.Drawing.Point(24, 390)
         Me.cmdExit.Name = "cmdExit"
-        Me.cmdExit.Size = New System.Drawing.Size(186, 46)
+        Me.cmdExit.Size = New System.Drawing.Size(139, 46)
         Me.cmdExit.TabIndex = 1
         Me.cmdExit.Text = "Exit"
         Me.cmdExit.UseVisualStyleBackColor = False
@@ -218,7 +219,7 @@ Partial Class MenuList
         Me.Label4.BackColor = System.Drawing.Color.Black
         Me.Label4.Font = New System.Drawing.Font("Bebas Neue", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(247, 312)
+        Me.Label4.Location = New System.Drawing.Point(247, 303)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(394, 92)
         Me.Label4.TabIndex = 8
@@ -240,7 +241,6 @@ Partial Class MenuList
         Me.Controls.Add(Me.cmdDisplayBorrowers)
         Me.Controls.Add(Me.cmdDisplayBookDetails)
         Me.Controls.Add(Me.cmdDisplayUser)
-        Me.Controls.Add(Me.cmdExit)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
