@@ -187,9 +187,9 @@ Partial Class BorrowerInformation
         'txtSearchBorrowersName
         '
         Me.txtSearchBorrowersName.ForeColor = System.Drawing.Color.Black
-        Me.txtSearchBorrowersName.Location = New System.Drawing.Point(42, 27)
+        Me.txtSearchBorrowersName.Location = New System.Drawing.Point(28, 27)
         Me.txtSearchBorrowersName.Name = "txtSearchBorrowersName"
-        Me.txtSearchBorrowersName.Size = New System.Drawing.Size(317, 22)
+        Me.txtSearchBorrowersName.Size = New System.Drawing.Size(331, 22)
         Me.txtSearchBorrowersName.TabIndex = 0
         '
         'DataGridViewBorrower

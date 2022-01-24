@@ -64,7 +64,9 @@ Partial Class Registration
         '
         'txtPassword
         '
+        Me.txtPassword.BackColor = System.Drawing.Color.Black
         Me.txtPassword.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.ForeColor = System.Drawing.Color.White
         Me.txtPassword.Location = New System.Drawing.Point(118, 240)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(305, 22)
@@ -73,7 +75,9 @@ Partial Class Registration
         '
         'txtUsername
         '
+        Me.txtUsername.BackColor = System.Drawing.Color.Black
         Me.txtUsername.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.ForeColor = System.Drawing.Color.White
         Me.txtUsername.Location = New System.Drawing.Point(118, 191)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(305, 22)
@@ -81,7 +85,9 @@ Partial Class Registration
         '
         'txtPhoneNumber
         '
+        Me.txtPhoneNumber.BackColor = System.Drawing.Color.Black
         Me.txtPhoneNumber.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPhoneNumber.ForeColor = System.Drawing.Color.White
         Me.txtPhoneNumber.Location = New System.Drawing.Point(118, 140)
         Me.txtPhoneNumber.Name = "txtPhoneNumber"
         Me.txtPhoneNumber.Size = New System.Drawing.Size(305, 22)
@@ -89,7 +95,9 @@ Partial Class Registration
         '
         'txtStaffID
         '
+        Me.txtStaffID.BackColor = System.Drawing.Color.Black
         Me.txtStaffID.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStaffID.ForeColor = System.Drawing.Color.White
         Me.txtStaffID.Location = New System.Drawing.Point(118, 89)
         Me.txtStaffID.Name = "txtStaffID"
         Me.txtStaffID.Size = New System.Drawing.Size(305, 22)
@@ -97,7 +105,9 @@ Partial Class Registration
         '
         'txtName
         '
+        Me.txtName.BackColor = System.Drawing.Color.Black
         Me.txtName.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtName.ForeColor = System.Drawing.Color.White
         Me.txtName.Location = New System.Drawing.Point(118, 39)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(305, 22)
@@ -158,7 +168,7 @@ Partial Class Registration
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Bebas Neue", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(126, 9)
+        Me.Label1.Location = New System.Drawing.Point(132, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(303, 77)
         Me.Label1.TabIndex = 4
