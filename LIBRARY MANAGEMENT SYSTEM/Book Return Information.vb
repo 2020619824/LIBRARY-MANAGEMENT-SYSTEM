@@ -118,6 +118,15 @@ Public Class BookReturnInformation
         dgvBookReturnInfo.Columns(0).ReadOnly = False
     End Sub
 
+    Private Function TodayDate() As String
+        'SQL Date Format: YYYYMMDD
+        Dim dateSQLFormat = Date.Today.Year.ToString & "-"
+        dateSQLFormat += Date.Today.Month.ToString & "-"
+        dateSQLFormat += Date.Today.Day.ToString
+
+        Return dateSQLFormat
+    End Function
+
     Private Sub LateReturnBook()
         Dim yesDisplayed As Boolean
         yesDisplayed = False
