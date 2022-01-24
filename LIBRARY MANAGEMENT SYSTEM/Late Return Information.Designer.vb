@@ -29,13 +29,15 @@ Partial Class LateReturnInformation
         Me.txtTotalAmountLateFine = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.cmdGenerateReceipt = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cmdSearchLateReturnFines = New System.Windows.Forms.Button()
         Me.cboSearchBy = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearchLateReturnInformation = New System.Windows.Forms.TextBox()
+        Me.pdReceipt = New System.Drawing.Printing.PrintDocument()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.DataGridViewLateReturnFine, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -45,7 +47,7 @@ Partial Class LateReturnInformation
         '
         Me.DataGridViewLateReturnFine.AllowUserToOrderColumns = True
         Me.DataGridViewLateReturnFine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewLateReturnFine.Location = New System.Drawing.Point(26, 151)
+        Me.DataGridViewLateReturnFine.Location = New System.Drawing.Point(24, 237)
         Me.DataGridViewLateReturnFine.Name = "DataGridViewLateReturnFine"
         Me.DataGridViewLateReturnFine.RowHeadersWidth = 51
         Me.DataGridViewLateReturnFine.RowTemplate.Height = 24
@@ -60,11 +62,13 @@ Partial Class LateReturnInformation
         Me.GroupBox2.Controls.Add(Me.txtTotalAmountLateFine)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.cmdGenerateReceipt)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Location = New System.Drawing.Point(818, 37)
+        Me.GroupBox2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.Color.White
+        Me.GroupBox2.Location = New System.Drawing.Point(816, 136)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(295, 483)
+        Me.GroupBox2.Size = New System.Drawing.Size(295, 470)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Fines Payment"
@@ -73,21 +77,21 @@ Partial Class LateReturnInformation
         '
         Me.TextBox3.Location = New System.Drawing.Point(18, 368)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(241, 22)
+        Me.TextBox3.Size = New System.Drawing.Size(241, 27)
         Me.TextBox3.TabIndex = 6
         '
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(18, 297)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(241, 22)
+        Me.TextBox2.Size = New System.Drawing.Size(241, 27)
         Me.TextBox2.TabIndex = 5
         '
         'txtTotalAmountLateFine
         '
         Me.txtTotalAmountLateFine.Location = New System.Drawing.Point(18, 223)
         Me.txtTotalAmountLateFine.Name = "txtTotalAmountLateFine"
-        Me.txtTotalAmountLateFine.Size = New System.Drawing.Size(241, 22)
+        Me.txtTotalAmountLateFine.Size = New System.Drawing.Size(241, 27)
         Me.txtTotalAmountLateFine.TabIndex = 4
         '
         'Label5
@@ -95,7 +99,7 @@ Partial Class LateReturnInformation
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(15, 348)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(108, 17)
+        Me.Label5.Size = New System.Drawing.Size(136, 20)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Date payment : "
         '
@@ -104,25 +108,30 @@ Partial Class LateReturnInformation
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(15, 277)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(140, 17)
+        Me.Label4.Size = New System.Drawing.Size(179, 20)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Insert fine payment : "
         '
-        'Button1
+        'cmdGenerateReceipt
         '
-        Me.Button1.Location = New System.Drawing.Point(102, 417)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(108, 47)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Generate Receipt"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.cmdGenerateReceipt.BackColor = System.Drawing.Color.DarkRed
+        Me.cmdGenerateReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdGenerateReceipt.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdGenerateReceipt.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.cmdGenerateReceipt.Location = New System.Drawing.Point(101, 417)
+        Me.cmdGenerateReceipt.Name = "cmdGenerateReceipt"
+        Me.cmdGenerateReceipt.Size = New System.Drawing.Size(134, 45)
+        Me.cmdGenerateReceipt.TabIndex = 1
+        Me.cmdGenerateReceipt.Text = "Generate Receipt"
+        Me.cmdGenerateReceipt.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.cmdGenerateReceipt.UseVisualStyleBackColor = False
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(15, 203)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(157, 17)
+        Me.Label3.Size = New System.Drawing.Size(199, 20)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Total amount late fine : "
         '
@@ -132,7 +141,9 @@ Partial Class LateReturnInformation
         Me.GroupBox1.Controls.Add(Me.cboSearchBy)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtSearchLateReturnInformation)
-        Me.GroupBox1.Location = New System.Drawing.Point(26, 50)
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.GroupBox1.Location = New System.Drawing.Point(24, 136)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(762, 72)
         Me.GroupBox1.TabIndex = 7
@@ -141,12 +152,16 @@ Partial Class LateReturnInformation
         '
         'cmdSearchLateReturnFines
         '
+        Me.cmdSearchLateReturnFines.BackColor = System.Drawing.Color.Maroon
+        Me.cmdSearchLateReturnFines.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdSearchLateReturnFines.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdSearchLateReturnFines.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.cmdSearchLateReturnFines.Location = New System.Drawing.Point(472, 18)
         Me.cmdSearchLateReturnFines.Name = "cmdSearchLateReturnFines"
         Me.cmdSearchLateReturnFines.Size = New System.Drawing.Size(112, 41)
         Me.cmdSearchLateReturnFines.TabIndex = 18
         Me.cmdSearchLateReturnFines.Text = "Search"
-        Me.cmdSearchLateReturnFines.UseVisualStyleBackColor = True
+        Me.cmdSearchLateReturnFines.UseVisualStyleBackColor = False
         '
         'cboSearchBy
         '
@@ -154,7 +169,7 @@ Partial Class LateReturnInformation
         Me.cboSearchBy.Items.AddRange(New Object() {"Borrower's name", "IC number"})
         Me.cboSearchBy.Location = New System.Drawing.Point(323, 27)
         Me.cboSearchBy.Name = "cboSearchBy"
-        Me.cboSearchBy.Size = New System.Drawing.Size(119, 24)
+        Me.cboSearchBy.Size = New System.Drawing.Size(119, 28)
         Me.cboSearchBy.TabIndex = 2
         '
         'Label1
@@ -162,7 +177,7 @@ Partial Class LateReturnInformation
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(293, 30)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(24, 17)
+        Me.Label1.Size = New System.Drawing.Size(30, 20)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "By"
         '
@@ -170,14 +185,30 @@ Partial Class LateReturnInformation
         '
         Me.txtSearchLateReturnInformation.Location = New System.Drawing.Point(20, 27)
         Me.txtSearchLateReturnInformation.Name = "txtSearchLateReturnInformation"
-        Me.txtSearchLateReturnInformation.Size = New System.Drawing.Size(267, 22)
+        Me.txtSearchLateReturnInformation.Size = New System.Drawing.Size(267, 27)
         Me.txtSearchLateReturnInformation.TabIndex = 0
+        '
+        'pdReceipt
+        '
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Bebas Neue", 64.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(97, 4)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(933, 129)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "LATE RETURN INFORMATION"
         '
         'LateReturnInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1125, 576)
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ClientSize = New System.Drawing.Size(1127, 633)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.DataGridViewLateReturnFine)
@@ -189,12 +220,13 @@ Partial Class LateReturnInformation
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents DataGridViewLateReturnFine As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents cmdGenerateReceipt As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox3 As TextBox
@@ -206,4 +238,6 @@ Partial Class LateReturnInformation
     Friend WithEvents cboSearchBy As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtSearchLateReturnInformation As TextBox
+    Friend WithEvents pdReceipt As Printing.PrintDocument
+    Friend WithEvents Label2 As Label
 End Class
