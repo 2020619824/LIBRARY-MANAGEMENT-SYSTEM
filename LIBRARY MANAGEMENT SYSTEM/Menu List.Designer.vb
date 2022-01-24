@@ -127,9 +127,9 @@ Partial Class MenuList
         Me.cmdDisplayUser.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayUser.Image = CType(resources.GetObject("cmdDisplayUser.Image"), System.Drawing.Image)
         Me.cmdDisplayUser.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.cmdDisplayUser.Location = New System.Drawing.Point(1, 1)
+        Me.cmdDisplayUser.Location = New System.Drawing.Point(1, 3)
         Me.cmdDisplayUser.Name = "cmdDisplayUser"
-        Me.cmdDisplayUser.Size = New System.Drawing.Size(89, 36)
+        Me.cmdDisplayUser.Size = New System.Drawing.Size(93, 36)
         Me.cmdDisplayUser.TabIndex = 2
         Me.cmdDisplayUser.Text = "User"
         Me.cmdDisplayUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -142,9 +142,9 @@ Partial Class MenuList
         Me.cmdDisplayBookDetails.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayBookDetails.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayBookDetails.Image = CType(resources.GetObject("cmdDisplayBookDetails.Image"), System.Drawing.Image)
-        Me.cmdDisplayBookDetails.Location = New System.Drawing.Point(227, 1)
+        Me.cmdDisplayBookDetails.Location = New System.Drawing.Point(224, 3)
         Me.cmdDisplayBookDetails.Name = "cmdDisplayBookDetails"
-        Me.cmdDisplayBookDetails.Size = New System.Drawing.Size(170, 36)
+        Me.cmdDisplayBookDetails.Size = New System.Drawing.Size(174, 36)
         Me.cmdDisplayBookDetails.TabIndex = 3
         Me.cmdDisplayBookDetails.Text = "Book Details"
         Me.cmdDisplayBookDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -154,12 +154,12 @@ Partial Class MenuList
         '
         Me.cmdDisplayBorrowers.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cmdDisplayBorrowers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmdDisplayBorrowers.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdDisplayBorrowers.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayBorrowers.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayBorrowers.Image = CType(resources.GetObject("cmdDisplayBorrowers.Image"), System.Drawing.Image)
-        Me.cmdDisplayBorrowers.Location = New System.Drawing.Point(593, 12)
+        Me.cmdDisplayBorrowers.Location = New System.Drawing.Point(561, 3)
         Me.cmdDisplayBorrowers.Name = "cmdDisplayBorrowers"
-        Me.cmdDisplayBorrowers.Size = New System.Drawing.Size(140, 36)
+        Me.cmdDisplayBorrowers.Size = New System.Drawing.Size(166, 36)
         Me.cmdDisplayBorrowers.TabIndex = 4
         Me.cmdDisplayBorrowers.Text = "Borrowers"
         Me.cmdDisplayBorrowers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -169,12 +169,12 @@ Partial Class MenuList
         '
         Me.cmdDisplayBookReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cmdDisplayBookReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmdDisplayBookReturn.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdDisplayBookReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayBookReturn.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayBookReturn.Image = CType(resources.GetObject("cmdDisplayBookReturn.Image"), System.Drawing.Image)
-        Me.cmdDisplayBookReturn.Location = New System.Drawing.Point(431, 12)
+        Me.cmdDisplayBookReturn.Location = New System.Drawing.Point(395, 3)
         Me.cmdDisplayBookReturn.Name = "cmdDisplayBookReturn"
-        Me.cmdDisplayBookReturn.Size = New System.Drawing.Size(156, 36)
+        Me.cmdDisplayBookReturn.Size = New System.Drawing.Size(167, 36)
         Me.cmdDisplayBookReturn.TabIndex = 5
         Me.cmdDisplayBookReturn.Text = "Book Return"
         Me.cmdDisplayBookReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -187,9 +187,9 @@ Partial Class MenuList
         Me.cmdBookIssue.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdBookIssue.ForeColor = System.Drawing.Color.White
         Me.cmdBookIssue.Image = CType(resources.GetObject("cmdBookIssue.Image"), System.Drawing.Image)
-        Me.cmdBookIssue.Location = New System.Drawing.Point(91, 1)
+        Me.cmdBookIssue.Location = New System.Drawing.Point(91, 3)
         Me.cmdBookIssue.Name = "cmdBookIssue"
-        Me.cmdBookIssue.Size = New System.Drawing.Size(142, 36)
+        Me.cmdBookIssue.Size = New System.Drawing.Size(138, 36)
         Me.cmdBookIssue.TabIndex = 6
         Me.cmdBookIssue.Text = "Book Issue"
         Me.cmdBookIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -199,12 +199,12 @@ Partial Class MenuList
         '
         Me.cmdDisplayLateReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cmdDisplayLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmdDisplayLateReturn.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdDisplayLateReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayLateReturn.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayLateReturn.Image = CType(resources.GetObject("cmdDisplayLateReturn.Image"), System.Drawing.Image)
-        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(739, 12)
+        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(723, 3)
         Me.cmdDisplayLateReturn.Name = "cmdDisplayLateReturn"
-        Me.cmdDisplayLateReturn.Size = New System.Drawing.Size(135, 36)
+        Me.cmdDisplayLateReturn.Size = New System.Drawing.Size(163, 36)
         Me.cmdDisplayLateReturn.TabIndex = 7
         Me.cmdDisplayLateReturn.Text = "Late Return"
         Me.cmdDisplayLateReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -215,9 +215,10 @@ Partial Class MenuList
         '
         'Label4
         '
+        Me.Label4.BackColor = System.Drawing.Color.Black
         Me.Label4.Font = New System.Drawing.Font("Bebas Neue", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(321, 300)
+        Me.Label4.Location = New System.Drawing.Point(271, 295)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(394, 92)
         Me.Label4.TabIndex = 8
