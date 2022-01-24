@@ -7,7 +7,7 @@ Public Class Login
 
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
         If (Me.chkShowPassword.Checked = True) Then
-            Me.txtGetPassword.PasswordChar = " "
+            Me.txtGetPassword.PasswordChar = ""
         Else
             Me.txtGetPassword.PasswordChar = "*"c
         End If
@@ -25,14 +25,28 @@ Public Class Login
 
             objcon = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30")
             objcon.Open()
-            Dim query As String = "Select * From User Where Username = '" &
+            Dim query As String = "Select * From Users Where Username = '" &
             txtGetUserName.Text & "' AND Password = '" &
             txtGetPassword.Text & "'"
 
             objcmd = New SqlCommand(query, objcon)
             Dim reader As SqlDataReader = objcmd.ExecuteReader
+            If reader.Read Then
+                MyMessageBox.ShowMessage("Login Successfully")
+                Me.Hide()
+                MenuList.ShowDialog()
+            Else
+                MyMessageBox.ShowMessage("Invalid Login. Please try Again.")
+                txtGetUserName.Clear()
+                txtGetPassword.Clear()
+            End If
         Catch ex As Exception
             MyMessageBox.ShowMessage("Connection Error")
         End Try
+    End Sub
+
+    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
+        Reset()
+        Me.Close()
     End Sub
 End Class
