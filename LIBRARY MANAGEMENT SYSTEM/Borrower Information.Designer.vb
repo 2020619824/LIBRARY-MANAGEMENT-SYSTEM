@@ -22,7 +22,7 @@ Partial Class BorrowerInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.cnbReturn = New System.Windows.Forms.Button()
+        Me.btnReturn = New System.Windows.Forms.Button()
         Me.lblTitleBorrower = New System.Windows.Forms.Label()
         Me.lbllblBorrowerName = New System.Windows.Forms.Label()
         Me.lbllblBorrowerIC = New System.Windows.Forms.Label()
@@ -36,24 +36,24 @@ Partial Class BorrowerInformation
         Me.btnSearchBorrower = New System.Windows.Forms.Button()
         Me.txtSearchBorrowersName = New System.Windows.Forms.TextBox()
         Me.DataGridViewBorrower = New System.Windows.Forms.DataGridView()
-        Me.cnbReturnBook = New System.Windows.Forms.Button()
-        Me.cnbLateReturnPage = New System.Windows.Forms.Button()
+        Me.btnReturnBook = New System.Windows.Forms.Button()
+        Me.btnLateReturnPage = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridViewBorrower, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'cnbReturn
+        'btnReturn
         '
-        Me.cnbReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cnbReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cnbReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cnbReturn.ForeColor = System.Drawing.Color.Black
-        Me.cnbReturn.Location = New System.Drawing.Point(434, 599)
-        Me.cnbReturn.Name = "cnbReturn"
-        Me.cnbReturn.Size = New System.Drawing.Size(118, 54)
-        Me.cnbReturn.TabIndex = 6
-        Me.cnbReturn.Text = "Return"
-        Me.cnbReturn.UseVisualStyleBackColor = False
+        Me.btnReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReturn.ForeColor = System.Drawing.Color.Black
+        Me.btnReturn.Location = New System.Drawing.Point(434, 599)
+        Me.btnReturn.Name = "btnReturn"
+        Me.btnReturn.Size = New System.Drawing.Size(118, 54)
+        Me.btnReturn.TabIndex = 6
+        Me.btnReturn.Text = "Return"
+        Me.btnReturn.UseVisualStyleBackColor = False
         '
         'lblTitleBorrower
         '
@@ -203,40 +203,40 @@ Partial Class BorrowerInformation
         Me.DataGridViewBorrower.Size = New System.Drawing.Size(516, 178)
         Me.DataGridViewBorrower.TabIndex = 17
         '
-        'cnbReturnBook
+        'btnReturnBook
         '
-        Me.cnbReturnBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cnbReturnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cnbReturnBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cnbReturnBook.ForeColor = System.Drawing.Color.Black
-        Me.cnbReturnBook.Location = New System.Drawing.Point(36, 599)
-        Me.cnbReturnBook.Name = "cnbReturnBook"
-        Me.cnbReturnBook.Size = New System.Drawing.Size(118, 54)
-        Me.cnbReturnBook.TabIndex = 18
-        Me.cnbReturnBook.Text = "Return Book"
-        Me.cnbReturnBook.UseVisualStyleBackColor = False
+        Me.btnReturnBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnReturnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReturnBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReturnBook.ForeColor = System.Drawing.Color.Black
+        Me.btnReturnBook.Location = New System.Drawing.Point(36, 599)
+        Me.btnReturnBook.Name = "btnReturnBook"
+        Me.btnReturnBook.Size = New System.Drawing.Size(118, 54)
+        Me.btnReturnBook.TabIndex = 18
+        Me.btnReturnBook.Text = "Return Book"
+        Me.btnReturnBook.UseVisualStyleBackColor = False
         '
-        'cnbLateReturnPage
+        'btnLateReturnPage
         '
-        Me.cnbLateReturnPage.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cnbLateReturnPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cnbLateReturnPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cnbLateReturnPage.ForeColor = System.Drawing.Color.Black
-        Me.cnbLateReturnPage.Location = New System.Drawing.Point(160, 599)
-        Me.cnbLateReturnPage.Name = "cnbLateReturnPage"
-        Me.cnbLateReturnPage.Size = New System.Drawing.Size(118, 54)
-        Me.cnbLateReturnPage.TabIndex = 19
-        Me.cnbLateReturnPage.Text = "Go to late return page "
-        Me.cnbLateReturnPage.UseVisualStyleBackColor = False
+        Me.btnLateReturnPage.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnLateReturnPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLateReturnPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLateReturnPage.ForeColor = System.Drawing.Color.Black
+        Me.btnLateReturnPage.Location = New System.Drawing.Point(160, 599)
+        Me.btnLateReturnPage.Name = "btnLateReturnPage"
+        Me.btnLateReturnPage.Size = New System.Drawing.Size(118, 54)
+        Me.btnLateReturnPage.TabIndex = 19
+        Me.btnLateReturnPage.Text = "Go to late return page "
+        Me.btnLateReturnPage.UseVisualStyleBackColor = False
         '
         'BorrowerInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(597, 676)
-        Me.Controls.Add(Me.cnbLateReturnPage)
-        Me.Controls.Add(Me.cnbReturnBook)
+        Me.ClientSize = New System.Drawing.Size(578, 676)
+        Me.Controls.Add(Me.btnLateReturnPage)
+        Me.Controls.Add(Me.btnReturnBook)
         Me.Controls.Add(Me.DataGridViewBorrower)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lblBorrowerPhoneNumber)
@@ -244,8 +244,9 @@ Partial Class BorrowerInformation
         Me.Controls.Add(Me.lbllblAddress)
         Me.Controls.Add(Me.lbllblPhoneNum)
         Me.Controls.Add(Me.lblTitleBorrower)
-        Me.Controls.Add(Me.cnbReturn)
+        Me.Controls.Add(Me.btnReturn)
         Me.ForeColor = System.Drawing.Color.Black
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BorrowerInformation"
         Me.Text = "Borrower Information"
         Me.GroupBox1.ResumeLayout(False)
@@ -256,7 +257,7 @@ Partial Class BorrowerInformation
 
     End Sub
 
-    Friend WithEvents cnbReturn As Button
+    Friend WithEvents btnReturn As Button
     Friend WithEvents lblTitleBorrower As Label
     Friend WithEvents lbllblBorrowerName As Label
     Friend WithEvents lbllblBorrowerIC As Label
@@ -270,6 +271,6 @@ Partial Class BorrowerInformation
     Friend WithEvents btnSearchBorrower As Button
     Friend WithEvents txtSearchBorrowersName As TextBox
     Friend WithEvents DataGridViewBorrower As DataGridView
-    Friend WithEvents cnbReturnBook As Button
-    Friend WithEvents cnbLateReturnPage As Button
+    Friend WithEvents btnReturnBook As Button
+    Friend WithEvents btnLateReturnPage As Button
 End Class

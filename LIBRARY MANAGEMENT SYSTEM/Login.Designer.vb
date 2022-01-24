@@ -26,9 +26,9 @@ Partial Class Login
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtGetUserName = New System.Windows.Forms.TextBox()
         Me.txtGetPassword = New System.Windows.Forms.TextBox()
-        Me.txtLoginMesage = New System.Windows.Forms.TextBox()
-        Me.cnbReturn = New System.Windows.Forms.Button()
-        Me.lbltitleLogin = New System.Windows.Forms.Label()
+        Me.btnReturn = New System.Windows.Forms.Button()
+        Me.btnLogin = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -36,9 +36,9 @@ Partial Class Login
         Me.Label1.BackColor = System.Drawing.Color.Black
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(29, 59)
+        Me.Label1.Location = New System.Drawing.Point(18, 76)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(122, 40)
+        Me.Label1.Size = New System.Drawing.Size(109, 40)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Username :"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -48,80 +48,82 @@ Partial Class Login
         Me.Label2.BackColor = System.Drawing.Color.Black
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(29, 105)
+        Me.Label2.Location = New System.Drawing.Point(18, 122)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(122, 40)
+        Me.Label2.Size = New System.Drawing.Size(109, 40)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Password :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtGetUserName
         '
-        Me.txtGetUserName.Location = New System.Drawing.Point(157, 69)
+        Me.txtGetUserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtGetUserName.Location = New System.Drawing.Point(123, 88)
         Me.txtGetUserName.Multiline = True
         Me.txtGetUserName.Name = "txtGetUserName"
-        Me.txtGetUserName.Size = New System.Drawing.Size(593, 28)
+        Me.txtGetUserName.Size = New System.Drawing.Size(329, 28)
         Me.txtGetUserName.TabIndex = 2
         '
         'txtGetPassword
         '
-        Me.txtGetPassword.Location = New System.Drawing.Point(157, 115)
+        Me.txtGetPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtGetPassword.Location = New System.Drawing.Point(123, 132)
         Me.txtGetPassword.Multiline = True
         Me.txtGetPassword.Name = "txtGetPassword"
-        Me.txtGetPassword.Size = New System.Drawing.Size(593, 28)
+        Me.txtGetPassword.Size = New System.Drawing.Size(329, 28)
         Me.txtGetPassword.TabIndex = 3
         '
-        'txtLoginMesage
+        'btnReturn
         '
-        Me.txtLoginMesage.BackColor = System.Drawing.Color.Black
-        Me.txtLoginMesage.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtLoginMesage.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLoginMesage.ForeColor = System.Drawing.Color.White
-        Me.txtLoginMesage.Location = New System.Drawing.Point(49, 151)
-        Me.txtLoginMesage.Multiline = True
-        Me.txtLoginMesage.Name = "txtLoginMesage"
-        Me.txtLoginMesage.Size = New System.Drawing.Size(568, 43)
-        Me.txtLoginMesage.TabIndex = 4
-        Me.txtLoginMesage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReturn.ForeColor = System.Drawing.Color.Black
+        Me.btnReturn.Location = New System.Drawing.Point(325, 188)
+        Me.btnReturn.Name = "btnReturn"
+        Me.btnReturn.Size = New System.Drawing.Size(127, 43)
+        Me.btnReturn.TabIndex = 5
+        Me.btnReturn.Text = "Return"
+        Me.btnReturn.UseVisualStyleBackColor = False
         '
-        'cnbReturn
+        'btnLogin
         '
-        Me.cnbReturn.BackColor = System.Drawing.Color.Red
-        Me.cnbReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cnbReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cnbReturn.ForeColor = System.Drawing.Color.Black
-        Me.cnbReturn.Location = New System.Drawing.Point(623, 169)
-        Me.cnbReturn.Name = "cnbReturn"
-        Me.cnbReturn.Size = New System.Drawing.Size(127, 43)
-        Me.cnbReturn.TabIndex = 5
-        Me.cnbReturn.Text = "Return"
-        Me.cnbReturn.UseVisualStyleBackColor = False
+        Me.btnLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.ForeColor = System.Drawing.Color.Black
+        Me.btnLogin.Location = New System.Drawing.Point(192, 188)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(127, 43)
+        Me.btnLogin.TabIndex = 7
+        Me.btnLogin.Text = "Login"
+        Me.btnLogin.UseVisualStyleBackColor = False
         '
-        'lbltitleLogin
+        'Label3
         '
-        Me.lbltitleLogin.AutoSize = True
-        Me.lbltitleLogin.BackColor = System.Drawing.Color.Black
-        Me.lbltitleLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitleLogin.ForeColor = System.Drawing.Color.White
-        Me.lbltitleLogin.Location = New System.Drawing.Point(29, 23)
-        Me.lbltitleLogin.Name = "lbltitleLogin"
-        Me.lbltitleLogin.Size = New System.Drawing.Size(518, 24)
-        Me.lbltitleLogin.TabIndex = 6
-        Me.lbltitleLogin.Text = "Welcome, Please enter your Username and Password."
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Bebas Neue", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(177, 8)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(136, 72)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "login"
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(779, 244)
-        Me.Controls.Add(Me.lbltitleLogin)
-        Me.Controls.Add(Me.cnbReturn)
-        Me.Controls.Add(Me.txtLoginMesage)
+        Me.ClientSize = New System.Drawing.Size(470, 251)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.btnLogin)
+        Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.txtGetPassword)
         Me.Controls.Add(Me.txtGetUserName)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Login"
         Me.Text = "Login"
         Me.ResumeLayout(False)
@@ -133,7 +135,7 @@ Partial Class Login
     Friend WithEvents Label2 As Label
     Friend WithEvents txtGetUserName As TextBox
     Friend WithEvents txtGetPassword As TextBox
-    Friend WithEvents txtLoginMesage As TextBox
-    Friend WithEvents cnbReturn As Button
-    Friend WithEvents lbltitleLogin As Label
+    Friend WithEvents btnReturn As Button
+    Friend WithEvents btnLogin As Button
+    Friend WithEvents Label3 As Label
 End Class

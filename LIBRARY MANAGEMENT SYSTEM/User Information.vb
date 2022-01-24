@@ -167,4 +167,7 @@ Public Class UserInformation
 
     End Sub
 
+    Private Sub cboSearchBy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSearchBy.SelectedIndexChanged
+
+    End Sub
 End Class
