@@ -253,11 +253,12 @@ Partial Class UserInformation
         '
         'Label6
         '
+        Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Bebas Neue", 52.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(40, 14)
+        Me.Label6.Location = New System.Drawing.Point(36, 9)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(553, 97)
+        Me.Label6.Size = New System.Drawing.Size(546, 104)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "USER INFORMATION"
         '
@@ -283,6 +284,7 @@ Partial Class UserInformation
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridViewListOfUsers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
