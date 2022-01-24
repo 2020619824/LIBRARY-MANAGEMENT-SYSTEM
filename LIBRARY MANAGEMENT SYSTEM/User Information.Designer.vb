@@ -147,10 +147,10 @@ Partial Class UserInformation
         '
         'btnSearchBook
         '
-        Me.btnSearchBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSearchBook.BackColor = System.Drawing.Color.White
         Me.btnSearchBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearchBook.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchBook.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnSearchBook.ForeColor = System.Drawing.Color.Black
         Me.btnSearchBook.Location = New System.Drawing.Point(472, 21)
         Me.btnSearchBook.Name = "btnSearchBook"
         Me.btnSearchBook.Size = New System.Drawing.Size(112, 41)

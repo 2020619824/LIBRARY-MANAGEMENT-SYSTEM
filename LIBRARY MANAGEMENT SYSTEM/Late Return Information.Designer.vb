@@ -114,10 +114,10 @@ Partial Class LateReturnInformation
         '
         'cmdGenerateReceipt
         '
-        Me.cmdGenerateReceipt.BackColor = System.Drawing.Color.DarkRed
+        Me.cmdGenerateReceipt.BackColor = System.Drawing.Color.White
         Me.cmdGenerateReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdGenerateReceipt.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdGenerateReceipt.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.cmdGenerateReceipt.ForeColor = System.Drawing.Color.Black
         Me.cmdGenerateReceipt.Location = New System.Drawing.Point(101, 417)
         Me.cmdGenerateReceipt.Name = "cmdGenerateReceipt"
         Me.cmdGenerateReceipt.Size = New System.Drawing.Size(134, 45)
@@ -152,10 +152,10 @@ Partial Class LateReturnInformation
         '
         'cmdSearchLateReturnFines
         '
-        Me.cmdSearchLateReturnFines.BackColor = System.Drawing.Color.Maroon
+        Me.cmdSearchLateReturnFines.BackColor = System.Drawing.Color.White
         Me.cmdSearchLateReturnFines.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdSearchLateReturnFines.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdSearchLateReturnFines.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.cmdSearchLateReturnFines.ForeColor = System.Drawing.Color.Black
         Me.cmdSearchLateReturnFines.Location = New System.Drawing.Point(472, 18)
         Me.cmdSearchLateReturnFines.Name = "cmdSearchLateReturnFines"
         Me.cmdSearchLateReturnFines.Size = New System.Drawing.Size(112, 41)
