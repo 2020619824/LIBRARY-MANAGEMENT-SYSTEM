@@ -40,7 +40,9 @@ Partial Class MenuList
         Me.cmdDisplayLateReturn = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.picLibraryLogo = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.picLibraryLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -219,12 +221,24 @@ Partial Class MenuList
         Me.Label4.BackColor = System.Drawing.Color.Black
         Me.Label4.Font = New System.Drawing.Font("Bebas Neue", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(247, 303)
+        Me.Label4.Location = New System.Drawing.Point(259, 324)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(394, 92)
+        Me.Label4.Size = New System.Drawing.Size(366, 92)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "MENU"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'picLibraryLogo
+        '
+        Me.picLibraryLogo.BackColor = System.Drawing.Color.Transparent
+        Me.picLibraryLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picLibraryLogo.Image = Global.LIBRARY_MANAGEMENT_SYSTEM.My.Resources.Resources.READOBRITE_PUBLIC_LOGO_3
+        Me.picLibraryLogo.Location = New System.Drawing.Point(375, 105)
+        Me.picLibraryLogo.Name = "picLibraryLogo"
+        Me.picLibraryLogo.Size = New System.Drawing.Size(130, 131)
+        Me.picLibraryLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLibraryLogo.TabIndex = 9
+        Me.picLibraryLogo.TabStop = False
         '
         'MenuList
         '
@@ -234,6 +248,7 @@ Partial Class MenuList
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(886, 637)
+        Me.Controls.Add(Me.picLibraryLogo)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.cmdDisplayLateReturn)
         Me.Controls.Add(Me.cmdBookIssue)
@@ -245,9 +260,11 @@ Partial Class MenuList
         Me.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MenuList"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menu List"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.picLibraryLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -268,4 +285,5 @@ Partial Class MenuList
     Friend WithEvents cmdDisplayLateReturn As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label4 As Label
+    Friend WithEvents picLibraryLogo As PictureBox
 End Class

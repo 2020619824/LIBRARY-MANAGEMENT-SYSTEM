@@ -120,7 +120,7 @@ Partial Class LateReturnInformation
         Me.cmdGenerateReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdGenerateReceipt.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdGenerateReceipt.ForeColor = System.Drawing.Color.Black
-        Me.cmdGenerateReceipt.Location = New System.Drawing.Point(101, 417)
+        Me.cmdGenerateReceipt.Location = New System.Drawing.Point(184, 419)
         Me.cmdGenerateReceipt.Name = "cmdGenerateReceipt"
         Me.cmdGenerateReceipt.Size = New System.Drawing.Size(134, 45)
         Me.cmdGenerateReceipt.TabIndex = 1
@@ -200,7 +200,7 @@ Partial Class LateReturnInformation
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(97, 4)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(933, 129)
+        Me.Label2.Size = New System.Drawing.Size(949, 131)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "LATE RETURN INFORMATION"
         '
@@ -215,6 +215,7 @@ Partial Class LateReturnInformation
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.dgvLateReturnFine)
         Me.Name = "LateReturnInformation"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Late Return Information"
         CType(Me.dgvLateReturnFine, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
