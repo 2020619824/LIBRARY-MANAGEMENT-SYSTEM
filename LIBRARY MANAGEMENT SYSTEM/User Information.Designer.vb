@@ -147,10 +147,10 @@ Partial Class UserInformation
         '
         'btnSearchBook
         '
-        Me.btnSearchBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSearchBook.BackColor = System.Drawing.Color.White
         Me.btnSearchBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearchBook.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchBook.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnSearchBook.ForeColor = System.Drawing.Color.Black
         Me.btnSearchBook.Location = New System.Drawing.Point(472, 21)
         Me.btnSearchBook.Name = "btnSearchBook"
         Me.btnSearchBook.Size = New System.Drawing.Size(112, 41)
@@ -253,11 +253,12 @@ Partial Class UserInformation
         '
         'Label6
         '
+        Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Bebas Neue", 52.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(40, 14)
+        Me.Label6.Location = New System.Drawing.Point(36, 9)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(553, 97)
+        Me.Label6.Size = New System.Drawing.Size(546, 104)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "USER INFORMATION"
         '
@@ -283,6 +284,7 @@ Partial Class UserInformation
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridViewListOfUsers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

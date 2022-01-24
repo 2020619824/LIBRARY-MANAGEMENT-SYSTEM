@@ -25,7 +25,7 @@ Public Class LateReturnInformation
     Dim decSearchICNumber As Decimal
     Private Function ValidateICNumber() As Boolean
         If Not Decimal.TryParse(txtSearchLateReturnInformation.Text, decSearchICNumber) Then
-            MsgBox("Please input the IC number correctly")
+            MyMessageBox.ShowMessage("Please input the IC number correctly")
             Return False
         End If
         Return True
@@ -38,7 +38,7 @@ Public Class LateReturnInformation
         blnInvalidICNum = False
 
         If txtSearchLateReturnInformation.Text = "" Then
-            MsgBox("Missing Information")
+            MyMessageBox.ShowMessage("Missing Information")
         Else
             Dim query = ""
             ' ada error 
@@ -63,9 +63,9 @@ Public Class LateReturnInformation
 
             If blnInvalidICNum = False Then
                 If DataGridViewLateReturnFine.Rows.Count = 0 Then
-                    MsgBox("Sorry, no information found")
+                    MyMessageBox.ShowMessage("Sorry, no information found")
                 Else
-                    MsgBox(DataGridViewLateReturnFine.Rows.Count & " Information found!")
+                    MyMessageBox.ShowMessage(DataGridViewLateReturnFine.Rows.Count & " Information found!")
                 End If
             End If
 
@@ -109,6 +109,6 @@ Public Class LateReturnInformation
     End Sub
 
     Private Sub pdReceipt_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles pdReceipt.PrintPage
-        e.Graphics.DrawString()
+        'e.Graphics.DrawString()
     End Sub
 End Class
