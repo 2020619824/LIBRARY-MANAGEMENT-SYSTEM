@@ -22,15 +22,20 @@ Partial Class LateReturnInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim BorrowerICLabel As System.Windows.Forms.Label
+        Dim LateReturnFinesLabel As System.Windows.Forms.Label
+        Dim Label3 As System.Windows.Forms.Label
         Me.dgvLateReturnFine = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.txtTotalAmountLateFine = New System.Windows.Forms.TextBox()
+        Me.txtBorrowerName = New System.Windows.Forms.TextBox()
+        Me.txtLateReturnFines = New System.Windows.Forms.TextBox()
+        Me.txtBorrowerIC = New System.Windows.Forms.TextBox()
+        Me.dtpDatePaynment = New System.Windows.Forms.DateTimePicker()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.txtFinePayment = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cmdGenerateReceipt = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cmdSearchLateReturnFines = New System.Windows.Forms.Button()
         Me.cboSearchBy = New System.Windows.Forms.ComboBox()
@@ -38,10 +43,41 @@ Partial Class LateReturnInformation
         Me.txtSearchLateReturnInformation = New System.Windows.Forms.TextBox()
         Me.pdReceipt = New System.Drawing.Printing.PrintDocument()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnBack = New System.Windows.Forms.Button()
+        BorrowerICLabel = New System.Windows.Forms.Label()
+        LateReturnFinesLabel = New System.Windows.Forms.Label()
+        Label3 = New System.Windows.Forms.Label()
         CType(Me.dgvLateReturnFine, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'BorrowerICLabel
+        '
+        BorrowerICLabel.AutoSize = True
+        BorrowerICLabel.Location = New System.Drawing.Point(24, 81)
+        BorrowerICLabel.Name = "BorrowerICLabel"
+        BorrowerICLabel.Size = New System.Drawing.Size(103, 19)
+        BorrowerICLabel.TabIndex = 8
+        BorrowerICLabel.Text = "Borrower IC:"
+        '
+        'LateReturnFinesLabel
+        '
+        LateReturnFinesLabel.AutoSize = True
+        LateReturnFinesLabel.Location = New System.Drawing.Point(24, 123)
+        LateReturnFinesLabel.Name = "LateReturnFinesLabel"
+        LateReturnFinesLabel.Size = New System.Drawing.Size(143, 19)
+        LateReturnFinesLabel.TabIndex = 10
+        LateReturnFinesLabel.Text = "Late Return Fines:"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.Location = New System.Drawing.Point(24, 40)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(128, 19)
+        Label3.TabIndex = 12
+        Label3.Text = "Borrower Name:"
         '
         'dgvLateReturnFine
         '
@@ -59,58 +95,90 @@ Partial Class LateReturnInformation
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.TextBox3)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
-        Me.GroupBox2.Controls.Add(Me.txtTotalAmountLateFine)
+        Me.GroupBox2.Controls.Add(Me.txtBorrowerName)
+        Me.GroupBox2.Controls.Add(Label3)
+        Me.GroupBox2.Controls.Add(LateReturnFinesLabel)
+        Me.GroupBox2.Controls.Add(Me.txtLateReturnFines)
+        Me.GroupBox2.Controls.Add(BorrowerICLabel)
+        Me.GroupBox2.Controls.Add(Me.txtBorrowerIC)
+        Me.GroupBox2.Controls.Add(Me.dtpDatePaynment)
+        Me.GroupBox2.Controls.Add(Me.btnClear)
+        Me.GroupBox2.Controls.Add(Me.txtFinePayment)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.cmdGenerateReceipt)
-        Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(646, 136)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(465, 470)
+        Me.GroupBox2.Size = New System.Drawing.Size(465, 361)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Fines Payment"
         '
-        'TextBox3
+        'txtBorrowerName
         '
-        Me.TextBox3.Location = New System.Drawing.Point(23, 190)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(241, 27)
-        Me.TextBox3.TabIndex = 6
+        Me.txtBorrowerName.Location = New System.Drawing.Point(194, 32)
+        Me.txtBorrowerName.Name = "txtBorrowerName"
+        Me.txtBorrowerName.Size = New System.Drawing.Size(241, 27)
+        Me.txtBorrowerName.TabIndex = 13
         '
-        'TextBox2
+        'txtLateReturnFines
         '
-        Me.TextBox2.Location = New System.Drawing.Point(23, 119)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(241, 27)
-        Me.TextBox2.TabIndex = 5
+        Me.txtLateReturnFines.Location = New System.Drawing.Point(194, 120)
+        Me.txtLateReturnFines.Name = "txtLateReturnFines"
+        Me.txtLateReturnFines.Size = New System.Drawing.Size(241, 27)
+        Me.txtLateReturnFines.TabIndex = 11
         '
-        'txtTotalAmountLateFine
+        'txtBorrowerIC
         '
-        Me.txtTotalAmountLateFine.Location = New System.Drawing.Point(23, 45)
-        Me.txtTotalAmountLateFine.Name = "txtTotalAmountLateFine"
-        Me.txtTotalAmountLateFine.Size = New System.Drawing.Size(241, 27)
-        Me.txtTotalAmountLateFine.TabIndex = 4
+        Me.txtBorrowerIC.Location = New System.Drawing.Point(194, 78)
+        Me.txtBorrowerIC.Name = "txtBorrowerIC"
+        Me.txtBorrowerIC.Size = New System.Drawing.Size(241, 27)
+        Me.txtBorrowerIC.TabIndex = 9
+        '
+        'dtpDatePaynment
+        '
+        Me.dtpDatePaynment.Location = New System.Drawing.Point(155, 222)
+        Me.dtpDatePaynment.Name = "dtpDatePaynment"
+        Me.dtpDatePaynment.Size = New System.Drawing.Size(304, 27)
+        Me.dtpDatePaynment.TabIndex = 8
+        '
+        'btnClear
+        '
+        Me.btnClear.BackColor = System.Drawing.Color.White
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.Black
+        Me.btnClear.Location = New System.Drawing.Point(50, 275)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(134, 66)
+        Me.btnClear.TabIndex = 7
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = False
+        '
+        'txtFinePayment
+        '
+        Me.txtFinePayment.Location = New System.Drawing.Point(194, 168)
+        Me.txtFinePayment.Name = "txtFinePayment"
+        Me.txtFinePayment.Size = New System.Drawing.Size(241, 27)
+        Me.txtFinePayment.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(20, 170)
+        Me.Label5.Location = New System.Drawing.Point(24, 228)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(136, 20)
+        Me.Label5.Size = New System.Drawing.Size(125, 19)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Date payment : "
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(20, 99)
+        Me.Label4.Location = New System.Drawing.Point(24, 176)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(179, 20)
+        Me.Label4.Size = New System.Drawing.Size(164, 19)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Insert fine payment : "
         '
@@ -120,22 +188,12 @@ Partial Class LateReturnInformation
         Me.cmdGenerateReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdGenerateReceipt.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdGenerateReceipt.ForeColor = System.Drawing.Color.Black
-        Me.cmdGenerateReceipt.Location = New System.Drawing.Point(184, 419)
+        Me.cmdGenerateReceipt.Location = New System.Drawing.Point(244, 275)
         Me.cmdGenerateReceipt.Name = "cmdGenerateReceipt"
-        Me.cmdGenerateReceipt.Size = New System.Drawing.Size(134, 45)
+        Me.cmdGenerateReceipt.Size = New System.Drawing.Size(134, 66)
         Me.cmdGenerateReceipt.TabIndex = 1
         Me.cmdGenerateReceipt.Text = "Generate Receipt"
-        Me.cmdGenerateReceipt.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.cmdGenerateReceipt.UseVisualStyleBackColor = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 25)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(199, 20)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Total amount late fine : "
         '
         'GroupBox1
         '
@@ -204,12 +262,26 @@ Partial Class LateReturnInformation
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "LATE RETURN INFORMATION"
         '
+        'btnBack
+        '
+        Me.btnBack.BackColor = System.Drawing.Color.White
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.ForeColor = System.Drawing.Color.Black
+        Me.btnBack.Location = New System.Drawing.Point(951, 526)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(134, 66)
+        Me.btnBack.TabIndex = 9
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = False
+        '
         'LateReturnInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ClientSize = New System.Drawing.Size(1127, 633)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
@@ -230,12 +302,6 @@ Partial Class LateReturnInformation
     Friend WithEvents dgvLateReturnFine As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents cmdGenerateReceipt As Button
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents txtTotalAmountLateFine As TextBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents cmdSearchLateReturnFines As Button
     Friend WithEvents cboSearchBy As ComboBox
@@ -243,4 +309,13 @@ Partial Class LateReturnInformation
     Friend WithEvents txtSearchLateReturnInformation As TextBox
     Friend WithEvents pdReceipt As Printing.PrintDocument
     Friend WithEvents Label2 As Label
+    Friend WithEvents btnClear As Button
+    Friend WithEvents dtpDatePaynment As DateTimePicker
+    Friend WithEvents btnBack As Button
+    Friend WithEvents txtFinePayment As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtLateReturnFines As TextBox
+    Friend WithEvents txtBorrowerIC As TextBox
+    Friend WithEvents txtBorrowerName As TextBox
 End Class
