@@ -1,7 +1,8 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Registration
-
+    Dim blnPasswordValid As Boolean = False
+    Dim blnAllInputDataIsValid As Boolean = False
     Private Sub Button2_Click(sender As Object, e As EventArgs)
         StartUp.Show()
         Me.Close()
@@ -21,6 +22,9 @@ Public Class Registration
             Dim con As New SqlConnection
             Dim cmd As New SqlCommand
             Dim dr As SqlDataReader
+
+            blnPasswordValid = False
+            DoValidations()
 
             con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30"
             con.Open()
@@ -153,7 +157,11 @@ Public Class Registration
         End If
 
     End Sub
-
+    Public Sub DoValidations()
+        If blnPasswordValid = False Then
+            validatePassword()
+        End If
+    End Sub
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Reset()
         Me.Close()
