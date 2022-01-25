@@ -37,7 +37,7 @@ Partial Class Login
         Me.Label1.BackColor = System.Drawing.Color.Black
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(18, 76)
+        Me.Label1.Location = New System.Drawing.Point(8, 81)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(109, 40)
         Me.Label1.TabIndex = 0
@@ -49,7 +49,7 @@ Partial Class Login
         Me.Label2.BackColor = System.Drawing.Color.Black
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(18, 122)
+        Me.Label2.Location = New System.Drawing.Point(8, 125)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(109, 40)
         Me.Label2.TabIndex = 1
@@ -124,8 +124,8 @@ Partial Class Login
         '
         'Login
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(470, 251)
         Me.Controls.Add(Me.chkShowPassword)
@@ -138,6 +138,7 @@ Partial Class Login
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -90,7 +90,7 @@ Public Class BorrowerInformation
     End Function
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         If ValidateAddBorrower() Then
-            Dim query = "insert into borrower values(" & txtBorrowerIC.Text & "," & txtBorrowerName.Text & ",'" & txtPhoneNum.Text & "','" & txtAddress.Text & "')"
+            Dim query = "insert into borrower values(" & txtBorrowerIC.Text & ",'" & txtBorrowerName.Text & "'," & txtPhoneNum.Text & ",'" & txtAddress.Text & "')"
             SQLCommandBasic(query)
             MyMessageBox.ShowMessage("Borrower Info Saved")
         End If
