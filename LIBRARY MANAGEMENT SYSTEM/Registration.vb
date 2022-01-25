@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 
 Public Class Registration
     Dim blnPasswordValid As Boolean = False
@@ -58,6 +59,11 @@ Public Class Registration
         Catch ex As Exception
             MyMessageBox.ShowMessage("Connection Error")
         End Try
+
+        If blnAllInputDataIsValid = True Then
+            btnRegister.Enabled = False
+            txtPassword.Enabled = False
+        End If
     End Sub
     Public Sub validatePassword()
         Dim strUserPassword As String
@@ -163,6 +169,10 @@ Public Class Registration
     Public Sub DoValidations()
         If blnPasswordValid = False Then
             validatePassword()
+        End If
+
+        If blnPasswordValid = True Then
+            blnAllInputDataIsValid = True
         End If
     End Sub
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
