@@ -3,10 +3,10 @@ Imports System.Data.SqlClient
 Public Class Login
 
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
-        If (Me.chkShowPassword.Checked = True) Then
-            Me.txtGetPassword.PasswordChar = ""
-        Else
+        If (Me.chkShowPassword.Checked = False) Then
             Me.txtGetPassword.PasswordChar = "*"c
+        Else
+            Me.txtGetPassword.PasswordChar = ""
         End If
 
     End Sub
@@ -44,5 +44,9 @@ Public Class Login
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Reset()
         Me.Close()
+    End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.txtGetPassword.PasswordChar = "*"c
     End Sub
 End Class
