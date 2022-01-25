@@ -208,11 +208,11 @@ Public Class BookDetails
                 End If
             ElseIf cboSearchBy.SelectedIndex = 1 Then
                 strSearchAuthor = txtSearchBook.Text
-                query = "select * from book where Author='" & strSearchAuthor & "'"
-            SQLCommandView(query, dgvBookDetails)
+                query = "select * from book where Author like '%" & strSearchAuthor & "%'"
+                SQLCommandView(query, dgvBookDetails)
             ElseIf cboSearchBy.SelectedIndex = 2 Then
                 strSearchTitle = txtSearchBook.Text
-                query = "select * from book where Title='" & strSearchTitle & "'"
+                query = "select * from book where Title like '%" & strSearchTitle & "%'"
                 SQLCommandView(query, dgvBookDetails)
             End If
 
