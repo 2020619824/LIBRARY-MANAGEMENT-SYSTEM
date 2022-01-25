@@ -82,13 +82,15 @@ Partial Class LateReturnInformation
         '
         'dgvLateReturnFine
         '
-        Me.dgvLateReturnFine.AllowUserToOrderColumns = True
+        Me.dgvLateReturnFine.AllowUserToAddRows = False
+        Me.dgvLateReturnFine.AllowUserToDeleteRows = False
         Me.dgvLateReturnFine.BackgroundColor = System.Drawing.Color.Black
         Me.dgvLateReturnFine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvLateReturnFine.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.dgvLateReturnFine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLateReturnFine.Location = New System.Drawing.Point(24, 237)
         Me.dgvLateReturnFine.Name = "dgvLateReturnFine"
+        Me.dgvLateReturnFine.ReadOnly = True
         Me.dgvLateReturnFine.RowHeadersWidth = 51
         Me.dgvLateReturnFine.RowTemplate.Height = 24
         Me.dgvLateReturnFine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -148,6 +150,7 @@ Partial Class LateReturnInformation
         '
         'dtpDatePaynment
         '
+        Me.dtpDatePaynment.CustomFormat = "dd/mm/yyyy"
         Me.dtpDatePaynment.Location = New System.Drawing.Point(155, 222)
         Me.dtpDatePaynment.Name = "dtpDatePaynment"
         Me.dtpDatePaynment.Size = New System.Drawing.Size(304, 27)

@@ -5,9 +5,6 @@ Public Class LateReturnInformation
     Dim con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30 ")
     Dim cmd As New SqlCommand
     Dim i As Integer
-    Private Sub DataGridViewLateReturnFine_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvLateReturnFine.CellContentClick
-
-    End Sub
 
     Private Sub LateReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -19,9 +16,12 @@ Public Class LateReturnInformation
                  Where B.ISBN = BRW.ISBN
                  AND BRW.BorrowerIC = BR.BorrowerIC
                  AND L.BorrowID = BRW.BorrowID
-                 AND L.LateReturnFines <> 0.00"
+                 AND L.LateReturnFines <> 0.00
+                 AND L.Payment is null
+                 AND L.DateofPayment is null"
         SQLCommandView(query, dgvLateReturnFine)
-
+        dtpDatePaynment.Format = DateTimePickerFormat.Custom
+        dtpDatePaynment.CustomFormat = "yyyy-MM-dd"
     End Sub
 
     Dim decSearchICNumber As Decimal
@@ -43,7 +43,6 @@ Public Class LateReturnInformation
             MyMessageBox.ShowMessage("Missing Information")
         Else
             Dim query = ""
-            ' ada error 
             If cboSearchBy.SelectedIndex = 0 Then
                 strSearchBorrowerName = txtSearchLateReturnInformation.Text
                 query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
@@ -102,48 +101,38 @@ Public Class LateReturnInformation
     End Sub
 
     Private Sub cmdGenerateReceipt_Click(sender As Object, e As EventArgs) Handles cmdGenerateReceipt.Click
-        pdReceipt.Print()
-        UpdateReturnStatus()
-        UpdateReturnDate()
+
+        UpdateBorrow()
         UpdateDatePayment()
         UpdatePayment()
-
+        pdReceipt.Print()
     End Sub
-    Private Sub UpdateReturnStatus()
+    Private Sub UpdateBorrow()
         Dim query
         query = "Update Borrow
-                 Set LateReturnStatus = 'Yes'
+                 Set LateReturnStatus = 'Yes', ReturnDate = '" & dtpDatePaynment.Text & "'
                  Where BorrowerIC = " & txtBorrowerIC.Text & ""
         SQLCommandBasic(query)
     End Sub
 
-    Private Sub UpdateReturnDate()
-        Dim query
-        query = "Update Borrow
-                 Set ReturnDate = " & dtpDatePaynment.Text & "
-                 Where BorrowerIC = " & txtBorrowerIC.Text & ""
-        SQLCommandBasic(query)
-    End Sub
     Private Sub UpdatePayment()
         Dim query
         query = "Update LateReturnFines 
                  Set Payment = " & txtFinePayment.Text & " 
-                 Where BorrowerIC in (Select BorrowerIC from Borrower where BorrowerIC = " & txtBorrowerIC.Text & ""
+                 Where BorrowID in (Select BorrowID from Borrow where BorrowerIC = " & txtBorrowerIC.Text & ")"
         SQLCommandBasic(query)
     End Sub
 
     Private Sub UpdateDatePayment()
         Dim query
         query = "Update LateReturnFines 
-                 Set DateofPayment = " & dtpDatePaynment.Text & " 
-                 Where BorrowerIC in (Select BorrowerIC from Borrower where BorrowerIC = " & txtBorrowerIC.Text & ""
+                 Set DateofPayment = '" & dtpDatePaynment.Text & "'
+                 Where BorrowID in (Select BorrowID from Borrow where BorrowerIC = " & txtBorrowerIC.Text & ")"
         SQLCommandBasic(query)
     End Sub
 
     Private Sub pdReceipt_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles pdReceipt.PrintPage
-        'e.Graphics.DrawString()
 
-        'Print Title of the document
         e.Graphics.DrawString("=======================================", New Font("Times New Roman", 24,
             FontStyle.Bold), Brushes.Black, 50, 80)
 
@@ -156,7 +145,7 @@ Public Class LateReturnInformation
         e.Graphics.DrawString("=======================================", New Font("Times New Roman", 24,
             FontStyle.Bold), Brushes.Black, 50, 170)
 
-        'Print the Data of fines paymment & LoanInformation
+
         e.Graphics.DrawString("Name: " & txtBorrowerName.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 200)
         e.Graphics.DrawString("IC: " & txtBorrowerIC.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 230)
         e.Graphics.DrawString("Total late fine: " & txtLateReturnFines.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 260)
@@ -166,8 +155,8 @@ Public Class LateReturnInformation
         e.Graphics.DrawString("=======================================", New Font("Times New Roman", 24,
             FontStyle.Bold), Brushes.Black, 50, 350)
 
-        e.Graphics.DrawString("THANK YOU FOR YOUR SINCERITY!", New Font("Times New Roman", 24,
-            FontStyle.Bold), Brushes.Black, 100, 380)
+        e.Graphics.DrawString("THANK YOU FOR YOUR SINCERITY!", New Font("Times New Roman", 14,
+            FontStyle.Bold), Brushes.Black, 270, 380)
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
