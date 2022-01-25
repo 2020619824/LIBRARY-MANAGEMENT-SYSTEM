@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 
 Public Class Registration
     Dim blnPasswordValid As Boolean = False
@@ -58,6 +59,11 @@ Public Class Registration
         Catch ex As Exception
             MyMessageBox.ShowMessage("Connection Error")
         End Try
+
+        If blnAllInputDataIsValid = True Then
+            btnRegister.Enabled = False
+            txtPassword.Enabled = False
+        End If
     End Sub
     Public Sub validatePassword()
         Dim strUserPassword As String
@@ -72,6 +78,7 @@ Public Class Registration
 
         blnPasswordValid = False
 
+        'To chack if the password is not left blank
         If strUserPassword = Nothing Then
             blnPasswordNotBlank = False
             MyMessageBox.ShowMessage("Password Missing")
@@ -80,6 +87,7 @@ Public Class Registration
             blnPasswordNotBlank = True
         End If
 
+        'To check if the password is 8 charachters or longer 
         If strUserPassword.Length < 8 Then
             blnPasswordLengthValid = False
             MyMessageBox.ShowMessage("Password must be between 8 to 12 charachters")
@@ -88,6 +96,7 @@ Public Class Registration
             blnPasswordLengthValid = True
         End If
 
+        'To check if the password has bad characters 
         Dim intPW_InvalidCharsCount As Integer = 0
         Dim intPW_LettersAndNumbersCount As Integer = 0
 
@@ -104,15 +113,15 @@ Public Class Registration
                 intPW_InvalidCharsCount = intPW_InvalidCharsCount + 1
                 txtPassword.Focus()
             End If
-
-            If intPW_InvalidCharsCount > 0 Then
-                blnLettersAndNumbersOnly = False
-                MyMessageBox.ShowMessage("Password must contain only letters and numbers only")
-                txtPassword.Focus()
-            Else
-                blnLettersAndNumbersOnly = True
-            End If
         Next
+
+        If intPW_InvalidCharsCount > 0 Then
+            blnLettersAndNumbersOnly = False
+            MyMessageBox.ShowMessage("Password must contain only letters and numbers only")
+            txtPassword.Focus()
+        Else
+            blnLettersAndNumbersOnly = True
+        End If
 
         Dim intPWNumbersCount As Integer = 0
 
@@ -160,6 +169,10 @@ Public Class Registration
     Public Sub DoValidations()
         If blnPasswordValid = False Then
             validatePassword()
+        End If
+
+        If blnPasswordValid = True Then
+            blnAllInputDataIsValid = True
         End If
     End Sub
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
