@@ -44,6 +44,7 @@ Partial Class LateReturnInformation
         Me.pdReceipt = New System.Drawing.Printing.PrintDocument()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
+        Me.btnListLateReturn = New System.Windows.Forms.Button()
         BorrowerICLabel = New System.Windows.Forms.Label()
         LateReturnFinesLabel = New System.Windows.Forms.Label()
         Label3 = New System.Windows.Forms.Label()
@@ -82,6 +83,7 @@ Partial Class LateReturnInformation
         'dgvLateReturnFine
         '
         Me.dgvLateReturnFine.AllowUserToOrderColumns = True
+        Me.dgvLateReturnFine.BackgroundColor = System.Drawing.Color.Black
         Me.dgvLateReturnFine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvLateReturnFine.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.dgvLateReturnFine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -95,6 +97,7 @@ Partial Class LateReturnInformation
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Black
         Me.GroupBox2.Controls.Add(Me.txtBorrowerName)
         Me.GroupBox2.Controls.Add(Label3)
         Me.GroupBox2.Controls.Add(LateReturnFinesLabel)
@@ -118,6 +121,8 @@ Partial Class LateReturnInformation
         '
         'txtBorrowerName
         '
+        Me.txtBorrowerName.BackColor = System.Drawing.Color.Black
+        Me.txtBorrowerName.ForeColor = System.Drawing.Color.White
         Me.txtBorrowerName.Location = New System.Drawing.Point(194, 32)
         Me.txtBorrowerName.Name = "txtBorrowerName"
         Me.txtBorrowerName.Size = New System.Drawing.Size(241, 27)
@@ -125,6 +130,8 @@ Partial Class LateReturnInformation
         '
         'txtLateReturnFines
         '
+        Me.txtLateReturnFines.BackColor = System.Drawing.Color.Black
+        Me.txtLateReturnFines.ForeColor = System.Drawing.Color.White
         Me.txtLateReturnFines.Location = New System.Drawing.Point(194, 120)
         Me.txtLateReturnFines.Name = "txtLateReturnFines"
         Me.txtLateReturnFines.Size = New System.Drawing.Size(241, 27)
@@ -132,6 +139,8 @@ Partial Class LateReturnInformation
         '
         'txtBorrowerIC
         '
+        Me.txtBorrowerIC.BackColor = System.Drawing.Color.Black
+        Me.txtBorrowerIC.ForeColor = System.Drawing.Color.White
         Me.txtBorrowerIC.Location = New System.Drawing.Point(194, 78)
         Me.txtBorrowerIC.Name = "txtBorrowerIC"
         Me.txtBorrowerIC.Size = New System.Drawing.Size(241, 27)
@@ -159,6 +168,8 @@ Partial Class LateReturnInformation
         '
         'txtFinePayment
         '
+        Me.txtFinePayment.BackColor = System.Drawing.Color.Black
+        Me.txtFinePayment.ForeColor = System.Drawing.Color.White
         Me.txtFinePayment.Location = New System.Drawing.Point(194, 168)
         Me.txtFinePayment.Name = "txtFinePayment"
         Me.txtFinePayment.Size = New System.Drawing.Size(241, 27)
@@ -254,6 +265,7 @@ Partial Class LateReturnInformation
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Black
         Me.Label2.Font = New System.Drawing.Font("Bebas Neue", 64.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(97, 4)
@@ -268,12 +280,25 @@ Partial Class LateReturnInformation
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.Color.Black
-        Me.btnBack.Location = New System.Drawing.Point(951, 526)
+        Me.btnBack.Location = New System.Drawing.Point(971, 526)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(134, 66)
         Me.btnBack.TabIndex = 9
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = False
+        '
+        'btnListLateReturn
+        '
+        Me.btnListLateReturn.BackColor = System.Drawing.Color.White
+        Me.btnListLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnListLateReturn.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnListLateReturn.ForeColor = System.Drawing.Color.Black
+        Me.btnListLateReturn.Location = New System.Drawing.Point(661, 526)
+        Me.btnListLateReturn.Name = "btnListLateReturn"
+        Me.btnListLateReturn.Size = New System.Drawing.Size(134, 66)
+        Me.btnListLateReturn.TabIndex = 10
+        Me.btnListLateReturn.Text = "List of Late Return Books"
+        Me.btnListLateReturn.UseVisualStyleBackColor = False
         '
         'LateReturnInformation
         '
@@ -281,6 +306,7 @@ Partial Class LateReturnInformation
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ClientSize = New System.Drawing.Size(1127, 633)
+        Me.Controls.Add(Me.btnListLateReturn)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox1)
@@ -318,4 +344,5 @@ Partial Class LateReturnInformation
     Friend WithEvents txtLateReturnFines As TextBox
     Friend WithEvents txtBorrowerIC As TextBox
     Friend WithEvents txtBorrowerName As TextBox
+    Friend WithEvents btnListLateReturn As Button
 End Class

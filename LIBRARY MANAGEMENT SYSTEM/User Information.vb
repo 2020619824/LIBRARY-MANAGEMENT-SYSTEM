@@ -174,4 +174,5 @@ Public Class UserInformation
     Private Sub UserInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
 End Class
