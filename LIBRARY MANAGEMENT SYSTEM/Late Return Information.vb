@@ -5,7 +5,7 @@ Public Class LateReturnInformation
     Dim con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30 ")
     Dim cmd As New SqlCommand
     Dim i As Integer
-    Private Sub DataGridViewLateReturnFine_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewLateReturnFine.CellContentClick
+    Private Sub DataGridViewLateReturnFine_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvLateReturnFine.CellContentClick
 
     End Sub
 
@@ -17,8 +17,9 @@ Public Class LateReturnInformation
                  From Book B, Borrower BR, Borrow BRW, LateReturnFines L
                  Where B.ISBN = BRW.ISBN
                  AND BRW.BorrowerIC = BR.BorrowerIC
-                 AND L.BorrowerIC = BR.BorrowerIC"
-        SQLCommandView(query, DataGridViewLateReturnFine)
+                 AND L.BorrowID = BRW.BorrowID
+                 AND L.LateReturnFines <> 0.00"
+        SQLCommandView(query, dgvLateReturnFine)
 
     End Sub
 
@@ -48,12 +49,12 @@ Public Class LateReturnInformation
                          from LateReturnFines L, Borrower B
                          where L.BorrowerIC = B.BorrowerIC
                          AND B.BorrowerName= " & strSearchBorrowerName & ""
-                SQLCommandView(query, DataGridViewLateReturnFine)
+                SQLCommandView(query, dgvLateReturnFine)
 
             ElseIf cboSearchBy.SelectedIndex = 1 Then
                 If ValidateICNumber() Then
                     query = "select *  from LateReturnFines where BorrowerIC =" & decSearchICNumber & ""
-                    SQLCommandView(query, DataGridViewLateReturnFine)
+                    SQLCommandView(query, dgvLateReturnFine)
                 Else
                     blnInvalidICNum = True
                 End If
@@ -62,10 +63,10 @@ Public Class LateReturnInformation
 
 
             If blnInvalidICNum = False Then
-                If DataGridViewLateReturnFine.Rows.Count = 0 Then
+                If dgvLateReturnFine.Rows.Count = 0 Then
                     MyMessageBox.ShowMessage("Sorry, no information found")
                 Else
-                    MyMessageBox.ShowMessage(DataGridViewLateReturnFine.Rows.Count & " Information found!")
+                    MyMessageBox.ShowMessage(dgvLateReturnFine.Rows.Count & " Information found!")
                 End If
             End If
 
@@ -74,7 +75,7 @@ Public Class LateReturnInformation
     End Sub
 
     ' tak siap lagi 
-    Private Sub DataGridViewLateReturnFine_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewLateReturnFine.CellClick
+    Private Sub DataGridViewLateReturnFine_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvLateReturnFine.CellClick
         Try
             If con.State = ConnectionState.Open Then
                 con.Close()
@@ -82,7 +83,7 @@ Public Class LateReturnInformation
             End If
             con.Open()
 
-            i = Convert.ToInt32(DataGridViewLateReturnFine.SelectedCells.Item(2).Value.ToString())
+            i = Convert.ToInt32(dgvLateReturnFine.SelectedCells.Item(2).Value.ToString())
             'key = Convert.ToInt32(DataGridViewListOfUsers.SelectedCells.Item(0).Value.ToString())
             cmd = con.CreateCommand()
             cmd.CommandType = CommandType.Text
