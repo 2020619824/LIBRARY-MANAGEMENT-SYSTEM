@@ -10,6 +10,7 @@ Public Class LateReturnInformation
     End Sub
 
     Private Sub LateReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim query
         query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
                  B.YearofPublication, B.Title, B.Author, B.Publisher, 
@@ -45,15 +46,28 @@ Public Class LateReturnInformation
             ' ada error 
             If cboSearchBy.SelectedIndex = 0 Then
                 strSearchBorrowerName = txtSearchLateReturnInformation.Text
-                query = "select B.BorrowerName,  L.ISBN, L.BorrowerIC, L.LateReturnFines, L.Payment, L.DateofPayment
-                         from LateReturnFines L, Borrower B
-                         where L.BorrowerIC = B.BorrowerIC
-                         AND B.BorrowerName= " & strSearchBorrowerName & ""
+                query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
+                 B.YearofPublication, B.Title, B.Author, B.Publisher, 
+                 BRW.IssueDate, BRW.DueDate, L.LateReturnFines
+                 From Book B, Borrower BR, Borrow BRW, LateReturnFines L
+                 Where B.ISBN = BRW.ISBN
+                 AND BRW.BorrowerIC = BR.BorrowerIC
+                 AND L.BorrowID = BRW.BorrowID
+                 AND L.LateReturnFines <> 0.00
+                 AND BR.BorrowerName like '%" & strSearchBorrowerName & "%'"
                 SQLCommandView(query, dgvLateReturnFine)
 
             ElseIf cboSearchBy.SelectedIndex = 1 Then
                 If ValidateICNumber() Then
-                    query = "select *  from LateReturnFines where BorrowerIC =" & decSearchICNumber & ""
+                    query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
+                 B.YearofPublication, B.Title, B.Author, B.Publisher, 
+                 BRW.IssueDate, BRW.DueDate, L.LateReturnFines
+                 From Book B, Borrower BR, Borrow BRW, LateReturnFines L
+                 Where B.ISBN = BRW.ISBN
+                 AND BRW.BorrowerIC = BR.BorrowerIC
+                 AND L.BorrowID = BRW.BorrowID
+                 AND L.LateReturnFines <> 0.00
+                 And BR.BorrowerIC like '%" & decSearchICNumber & "%'"
                     SQLCommandView(query, dgvLateReturnFine)
                 Else
                     blnInvalidICNum = True
@@ -70,39 +84,23 @@ Public Class LateReturnInformation
                 End If
             End If
 
-            'ClearTextBoxes()
+
         End If
     End Sub
 
-    ' tak siap lagi 
-    Private Sub DataGridViewLateReturnFine_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvLateReturnFine.CellClick
-        Try
-            If con.State = ConnectionState.Open Then
-                con.Close()
 
-            End If
-            con.Open()
-
-            i = Convert.ToInt32(dgvLateReturnFine.SelectedCells.Item(2).Value.ToString())
-            'key = Convert.ToInt32(DataGridViewListOfUsers.SelectedCells.Item(0).Value.ToString())
-            cmd = con.CreateCommand()
-            cmd.CommandType = CommandType.Text
-            cmd.CommandText = " select * from LateReturnFines where BorrowerIC = " & i & ""
-            cmd.ExecuteNonQuery()
-            Dim dt As New DataTable()
-            Dim da As New SqlDataAdapter(cmd)
-            da.Fill(dt)
-            Dim dr As SqlClient.SqlDataReader
-            dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
-            While dr.Read
-
-                txtTotalAmountLateFine.Text = dr.GetSqlDecimal(3).ToString()
+    Private Sub DataGridViewLateReturnFine_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvLateReturnFine.CellMouseClick
 
 
-            End While
-        Catch ex As Exception
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dgvLateReturnFine.Rows(e.RowIndex)
+            txtBorrowerName.Text = row.Cells(0).Value.ToString
+            txtBorrowerIC.Text = row.Cells(1).Value.ToString
+            txtLateReturnFines.Text = row.Cells(10).Value.ToString
+            i = Convert.ToInt32(row.Cells(1).Value.ToString)
+        End If
 
-        End Try
+
     End Sub
 
     Private Sub cmdGenerateReceipt_Click(sender As Object, e As EventArgs) Handles cmdGenerateReceipt.Click
@@ -111,5 +109,44 @@ Public Class LateReturnInformation
 
     Private Sub pdReceipt_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles pdReceipt.PrintPage
         'e.Graphics.DrawString()
+
+        'Print Title of the document
+        e.Graphics.DrawString("=======================================", New Font("Times New Roman", 24,
+            FontStyle.Bold), Brushes.Black, 50, 80)
+
+        e.Graphics.DrawString("READ O BRITE", New Font("Times New Roman", 24,
+            FontStyle.Bold), Brushes.Black, 300, 110)
+
+        e.Graphics.DrawString("PUBLIC LIBRARY", New Font("Times New Roman", 24,
+            FontStyle.Bold), Brushes.Black, 280, 140)
+
+        e.Graphics.DrawString("=======================================", New Font("Times New Roman", 24,
+            FontStyle.Bold), Brushes.Black, 50, 170)
+
+        'Print the Vehicle & LoanInformation
+
+        e.Graphics.DrawString("Name: " & txtBorrowerName.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 200)
+        e.Graphics.DrawString("IC: " & txtBorrowerIC.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 230)
+        e.Graphics.DrawString("Total late fine: " & txtLateReturnFines.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 260)
+        e.Graphics.DrawString("Payment: " & txtFinePayment.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 290)
+        e.Graphics.DrawString("Date Payment: " & dtpDatePaynment.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 320)
+
+        e.Graphics.DrawString("=======================================", New Font("Times New Roman", 24,
+            FontStyle.Bold), Brushes.Black, 50, 350)
+
+        e.Graphics.DrawString("THANK YOU FOR YOUR SINCERITY!", New Font("Times New Roman", 24,
+            FontStyle.Bold), Brushes.Black, 280, 380)
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtBorrowerName.Clear()
+        txtBorrowerIC.Clear()
+        txtLateReturnFines.Clear()
+        txtFinePayment.Clear()
+    End Sub
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        Me.Close()
+        Reset()
     End Sub
 End Class
