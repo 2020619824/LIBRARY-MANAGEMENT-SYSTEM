@@ -1,9 +1,6 @@
 ﻿
 Imports System.Data.SqlClient
 Public Class Login
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
         If (Me.chkShowPassword.Checked = True) Then
@@ -21,7 +18,6 @@ Public Class Login
         Dim objcon As SqlConnection = Nothing
         Dim objcmd As SqlCommand = Nothing
         Try
-
 
             objcon = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30")
             objcon.Open()
