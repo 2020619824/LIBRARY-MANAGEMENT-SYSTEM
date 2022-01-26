@@ -119,18 +119,18 @@ Public Class BookReturnInformation
     End Sub
 
     Private Sub LateReturnBook()
-        Dim yesDisplayed As Boolean
-        yesDisplayed = False
+        Dim blnYesDisplayed As Boolean
+        blnYesDisplayed = False
         Dim i As Integer
         For i = 0 To dgvBookReturnInfo.Rows.Count - 1
-            If CStr(dgvBookReturnInfo.Rows(i).Cells(8).Value) = "Yes" And Not (yesDisplayed) Then
+            If CStr(dgvBookReturnInfo.Rows(i).Cells(8).Value) = "Yes" And Not (blnYesDisplayed) Then
                 MyMessageBox.ShowMessage("You have late return fines that need to be settled")
                 btnLateReturn.Visible = True
-                yesDisplayed = True
+                blnYesDisplayed = True
             End If
         Next
 
-        If yesDisplayed = False Then
+        If blnYesDisplayed = False Then
             btnLateReturn.Visible = False
         End If
     End Sub
@@ -184,27 +184,27 @@ Public Class BookReturnInformation
     Private Sub btnReturnBook_Click(sender As Object, e As EventArgs) Handles btnReturnBook.Click
 
         Dim query
-        Dim updateMessageDisplayed As Boolean
-        Dim fineMessageDisplayed As Boolean
-        updateMessageDisplayed = False
-        fineMessageDisplayed = False
+        Dim blnUpdateMessageDisplayed As Boolean
+        Dim blnFineMessageDisplayed As Boolean
+        blnUpdateMessageDisplayed = False
+        blnFineMessageDisplayed = False
         Dim borrowerIC = txtBorrowerIC.Text
 
         Dim i As Integer
         For i = 0 To dgvBookReturnInfo.Rows.Count - 1
             If CBool(dgvBookReturnInfo.Rows(i).Cells(0).Value) = True Then
                 If CStr(dgvBookReturnInfo.Rows(i).Cells(8).Value) = "Yes" Then
-                    If Not (fineMessageDisplayed) Then
+                    If Not (blnFineMessageDisplayed) Then
                         MyMessageBox.ShowMessage("Please settle the fines before return it")
-                        fineMessageDisplayed = True
+                        blnFineMessageDisplayed = True
                     End If
                 Else
                     query = "update borrow set ReturnDate='" & TodayDate() & "' where ISBN=" & dgvBookReturnInfo.Rows(i).Cells(1).Value.ToString &
                         " and BorrowerIC=" & borrowerIC & " and LateReturnStatus='No'"
                     SQLCommandBasic(query)
-                    If (Not (updateMessageDisplayed)) Then
+                    If (Not (blnUpdateMessageDisplayed)) Then
                         MyMessageBox.ShowMessage("Return Date Updated")
-                        updateMessageDisplayed = True
+                        blnUpdateMessageDisplayed = True
                     End If
                 End If
             End If
@@ -226,9 +226,5 @@ Public Class BookReturnInformation
         Reset()
         RemoveColumn()
         Me.Close()
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
     End Sub
 End Class
