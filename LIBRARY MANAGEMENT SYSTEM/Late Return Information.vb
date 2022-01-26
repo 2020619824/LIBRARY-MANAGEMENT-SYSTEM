@@ -101,6 +101,7 @@ Public Class LateReturnInformation
     End Sub
 
     Private Sub cmdGenerateReceipt_Click(sender As Object, e As EventArgs) Handles cmdGenerateReceipt.Click
+        ' buat balance dan if else kalau payment cukup ke tak
 
         UpdateBorrow()
         UpdateDatePayment()
