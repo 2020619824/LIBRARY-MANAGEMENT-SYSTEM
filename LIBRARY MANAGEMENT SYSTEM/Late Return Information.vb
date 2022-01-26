@@ -53,6 +53,8 @@ Public Class LateReturnInformation
                  AND BRW.BorrowerIC = BR.BorrowerIC
                  AND L.BorrowID = BRW.BorrowID
                  AND L.LateReturnFines <> 0.00
+                 AND L.Payment is null
+                 AND L.DateofPayment is null
                  AND BR.BorrowerName like '%" & strSearchBorrowerName & "%'"
                 SQLCommandView(query, dgvLateReturnFine)
 
@@ -66,6 +68,8 @@ Public Class LateReturnInformation
                  AND BRW.BorrowerIC = BR.BorrowerIC
                  AND L.BorrowID = BRW.BorrowID
                  AND L.LateReturnFines <> 0.00
+                 AND L.Payment is null
+                 AND L.DateofPayment is null
                  And BR.BorrowerIC like '%" & decSearchICNumber & "%'"
                     SQLCommandView(query, dgvLateReturnFine)
                 Else
@@ -87,7 +91,6 @@ Public Class LateReturnInformation
         End If
     End Sub
 
-
     Private Sub DataGridViewLateReturnFine_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvLateReturnFine.CellMouseClick
 
         If e.RowIndex >= 0 Then
@@ -99,20 +102,32 @@ Public Class LateReturnInformation
         End If
 
     End Sub
+    Private Sub totalBalance()
+        Dim dectotBal As Decimal = 0.00
 
+        dectotBal = txtFinePayment.Text - txtLateReturnFines.Text
+        txtBalance.Text = Format(dectotBal, "0.00")
+    End Sub
     Private Sub cmdGenerateReceipt_Click(sender As Object, e As EventArgs) Handles cmdGenerateReceipt.Click
         ' buat balance dan if else kalau payment cukup ke tak
+        If txtFinePayment.Text < txtLateReturnFines.Text Then
+            MyMessageBox.ShowMessage("Amount is not enough for payment! " + "Please put new payment.")
+            txtFinePayment.Clear()
+        Else
+            totalBalance()
+            UpdateBorrow()
+            UpdateDatePayment()
+            UpdatePayment()
+            pdReceipt.Print()
+        End If
 
-        UpdateBorrow()
-        UpdateDatePayment()
-        UpdatePayment()
-        pdReceipt.Print()
     End Sub
     Private Sub UpdateBorrow()
         Dim query
         query = "Update Borrow
-                 Set LateReturnStatus = 'Yes', ReturnDate = '" & dtpDatePaynment.Text & "'
-                 Where BorrowerIC = " & txtBorrowerIC.Text & ""
+                 Set LateReturnStatus = 'No', ReturnDate = '" & dtpDatePaynment.Text & "'
+                 Where BorrowerIC = " & txtBorrowerIC.Text & "
+                 And BorrowID in (Select BorrowID from LateReturnFines where LateReturnFines = " & txtLateReturnFines.Text & ")"
         SQLCommandBasic(query)
     End Sub
 
@@ -120,7 +135,8 @@ Public Class LateReturnInformation
         Dim query
         query = "Update LateReturnFines 
                  Set Payment = " & txtFinePayment.Text & " 
-                 Where BorrowID in (Select BorrowID from Borrow where BorrowerIC = " & txtBorrowerIC.Text & ")"
+                 Where BorrowID in (Select BorrowID from Borrow where BorrowerIC = " & txtBorrowerIC.Text & ")
+                 And LateReturnFines = " & txtLateReturnFines.Text & ""
         SQLCommandBasic(query)
     End Sub
 
@@ -128,7 +144,8 @@ Public Class LateReturnInformation
         Dim query
         query = "Update LateReturnFines 
                  Set DateofPayment = '" & dtpDatePaynment.Text & "'
-                 Where BorrowID in (Select BorrowID from Borrow where BorrowerIC = " & txtBorrowerIC.Text & ")"
+                 Where BorrowID in (Select BorrowID from Borrow where BorrowerIC = " & txtBorrowerIC.Text & ")
+                 And LateReturnFines = " & txtLateReturnFines.Text & ""
         SQLCommandBasic(query)
     End Sub
 
@@ -151,13 +168,15 @@ Public Class LateReturnInformation
         e.Graphics.DrawString("IC: " & txtBorrowerIC.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 230)
         e.Graphics.DrawString("Total late fine: " & txtLateReturnFines.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 260)
         e.Graphics.DrawString("Payment: " & txtFinePayment.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 290)
-        e.Graphics.DrawString("Date Payment: " & dtpDatePaynment.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 320)
+        e.Graphics.DrawString("Balance: " & txtBalance.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 320)
+
+        e.Graphics.DrawString("Date Payment: " & dtpDatePaynment.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 350)
 
         e.Graphics.DrawString("=======================================", New Font("Times New Roman", 24,
-            FontStyle.Bold), Brushes.Black, 50, 350)
+            FontStyle.Bold), Brushes.Black, 50, 380)
 
         e.Graphics.DrawString("THANK YOU FOR YOUR SINCERITY!", New Font("Times New Roman", 14,
-            FontStyle.Bold), Brushes.Black, 270, 380)
+            FontStyle.Bold), Brushes.Black, 250, 410)
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
@@ -165,13 +184,15 @@ Public Class LateReturnInformation
         txtBorrowerIC.Clear()
         txtLateReturnFines.Clear()
         txtFinePayment.Clear()
+        txtBalance.Clear()
+
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnListLateReturn.Click
+    Private Sub btnListLateReturn_Click(sender As Object, e As EventArgs) Handles btnListLateReturn.Click
         Dim query
         query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
                  B.YearofPublication, B.Title, B.Author, B.Publisher, 
@@ -180,7 +201,15 @@ Public Class LateReturnInformation
                  Where B.ISBN = BRW.ISBN
                  AND BRW.BorrowerIC = BR.BorrowerIC
                  AND L.BorrowID = BRW.BorrowID
-                 AND L.LateReturnFines <> 0.00"
+                 AND L.LateReturnFines <> 0.00
+                 AND L.Payment is null
+                 AND L.DateofPayment is null"
         SQLCommandView(query, dgvLateReturnFine)
     End Sub
+
+    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
+
+    End Sub
+
+
 End Class
