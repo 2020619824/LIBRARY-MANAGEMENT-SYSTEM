@@ -10,7 +10,8 @@
     Private Sub txtBorrower_TextChanged(sender As Object, e As EventArgs) Handles txtBorrower.TextChanged
 
     End Sub
-End Class
-Public Sub BorrowerName()
 
-End Sub
+    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
+
+    End Sub
+End Class
