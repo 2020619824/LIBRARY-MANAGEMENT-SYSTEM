@@ -167,7 +167,7 @@ Public Class BookDetails
             Return False
         Else
             Return True
-            End If
+        End If
 
         Return True
 
