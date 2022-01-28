@@ -25,8 +25,14 @@ Partial Class LateReturnInformation
         Dim BorrowerICLabel As System.Windows.Forms.Label
         Dim LateReturnFinesLabel As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvLateReturnFine = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtBalance = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtBorrowerName = New System.Windows.Forms.TextBox()
         Me.txtLateReturnFines = New System.Windows.Forms.TextBox()
         Me.txtBorrowerIC = New System.Windows.Forms.TextBox()
@@ -82,14 +88,47 @@ Partial Class LateReturnInformation
         '
         'dgvLateReturnFine
         '
-        Me.dgvLateReturnFine.AllowUserToOrderColumns = True
+        Me.dgvLateReturnFine.AllowUserToAddRows = False
+        Me.dgvLateReturnFine.AllowUserToDeleteRows = False
         Me.dgvLateReturnFine.BackgroundColor = System.Drawing.Color.Black
         Me.dgvLateReturnFine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvLateReturnFine.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLateReturnFine.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvLateReturnFine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLateReturnFine.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvLateReturnFine.EnableHeadersVisualStyles = False
         Me.dgvLateReturnFine.Location = New System.Drawing.Point(24, 237)
         Me.dgvLateReturnFine.Name = "dgvLateReturnFine"
+        Me.dgvLateReturnFine.ReadOnly = True
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvLateReturnFine.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvLateReturnFine.RowHeadersWidth = 51
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.dgvLateReturnFine.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvLateReturnFine.RowTemplate.Height = 24
         Me.dgvLateReturnFine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvLateReturnFine.Size = New System.Drawing.Size(600, 369)
@@ -98,6 +137,8 @@ Partial Class LateReturnInformation
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Black
+        Me.GroupBox2.Controls.Add(Me.txtBalance)
+        Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.txtBorrowerName)
         Me.GroupBox2.Controls.Add(Label3)
         Me.GroupBox2.Controls.Add(LateReturnFinesLabel)
@@ -114,10 +155,28 @@ Partial Class LateReturnInformation
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(646, 136)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(465, 361)
+        Me.GroupBox2.Size = New System.Drawing.Size(465, 398)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Fines Payment"
+        '
+        'txtBalance
+        '
+        Me.txtBalance.BackColor = System.Drawing.Color.Black
+        Me.txtBalance.ForeColor = System.Drawing.Color.White
+        Me.txtBalance.Location = New System.Drawing.Point(194, 201)
+        Me.txtBalance.Name = "txtBalance"
+        Me.txtBalance.Size = New System.Drawing.Size(241, 27)
+        Me.txtBalance.TabIndex = 15
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(24, 209)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(73, 19)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "Balance:"
         '
         'txtBorrowerName
         '
@@ -148,7 +207,8 @@ Partial Class LateReturnInformation
         '
         'dtpDatePaynment
         '
-        Me.dtpDatePaynment.Location = New System.Drawing.Point(155, 222)
+        Me.dtpDatePaynment.CustomFormat = "dd/mm/yyyy"
+        Me.dtpDatePaynment.Location = New System.Drawing.Point(155, 243)
         Me.dtpDatePaynment.Name = "dtpDatePaynment"
         Me.dtpDatePaynment.Size = New System.Drawing.Size(304, 27)
         Me.dtpDatePaynment.TabIndex = 8
@@ -159,7 +219,7 @@ Partial Class LateReturnInformation
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClear.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.Black
-        Me.btnClear.Location = New System.Drawing.Point(50, 275)
+        Me.btnClear.Location = New System.Drawing.Point(54, 304)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(134, 66)
         Me.btnClear.TabIndex = 7
@@ -170,7 +230,7 @@ Partial Class LateReturnInformation
         '
         Me.txtFinePayment.BackColor = System.Drawing.Color.Black
         Me.txtFinePayment.ForeColor = System.Drawing.Color.White
-        Me.txtFinePayment.Location = New System.Drawing.Point(194, 168)
+        Me.txtFinePayment.Location = New System.Drawing.Point(194, 161)
         Me.txtFinePayment.Name = "txtFinePayment"
         Me.txtFinePayment.Size = New System.Drawing.Size(241, 27)
         Me.txtFinePayment.TabIndex = 5
@@ -178,7 +238,7 @@ Partial Class LateReturnInformation
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(24, 228)
+        Me.Label5.Location = New System.Drawing.Point(24, 249)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(125, 19)
         Me.Label5.TabIndex = 3
@@ -187,7 +247,7 @@ Partial Class LateReturnInformation
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(24, 176)
+        Me.Label4.Location = New System.Drawing.Point(24, 169)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(164, 19)
         Me.Label4.TabIndex = 2
@@ -199,7 +259,7 @@ Partial Class LateReturnInformation
         Me.cmdGenerateReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdGenerateReceipt.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdGenerateReceipt.ForeColor = System.Drawing.Color.Black
-        Me.cmdGenerateReceipt.Location = New System.Drawing.Point(244, 275)
+        Me.cmdGenerateReceipt.Location = New System.Drawing.Point(266, 304)
         Me.cmdGenerateReceipt.Name = "cmdGenerateReceipt"
         Me.cmdGenerateReceipt.Size = New System.Drawing.Size(134, 66)
         Me.cmdGenerateReceipt.TabIndex = 1
@@ -280,7 +340,7 @@ Partial Class LateReturnInformation
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.Color.Black
-        Me.btnBack.Location = New System.Drawing.Point(971, 526)
+        Me.btnBack.Location = New System.Drawing.Point(971, 540)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(134, 66)
         Me.btnBack.TabIndex = 9
@@ -293,7 +353,7 @@ Partial Class LateReturnInformation
         Me.btnListLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnListLateReturn.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListLateReturn.ForeColor = System.Drawing.Color.Black
-        Me.btnListLateReturn.Location = New System.Drawing.Point(661, 526)
+        Me.btnListLateReturn.Location = New System.Drawing.Point(661, 540)
         Me.btnListLateReturn.Name = "btnListLateReturn"
         Me.btnListLateReturn.Size = New System.Drawing.Size(134, 66)
         Me.btnListLateReturn.TabIndex = 10
@@ -345,4 +405,6 @@ Partial Class LateReturnInformation
     Friend WithEvents txtBorrowerIC As TextBox
     Friend WithEvents txtBorrowerName As TextBox
     Friend WithEvents btnListLateReturn As Button
+    Friend WithEvents txtBalance As TextBox
+    Friend WithEvents Label6 As Label
 End Class

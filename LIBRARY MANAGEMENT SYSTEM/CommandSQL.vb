@@ -32,4 +32,13 @@ Module CommandSQL
             MyMessageBox.ShowMessage("Connection Error")
         End Try
     End Sub
+
+    Public Function TodayDate() As String
+        'SQL Date Format: YYYY-MM-DD
+        Dim dateSQLFormat = Date.Today.Year.ToString & "-"
+        dateSQLFormat += Date.Today.Month.ToString & "-"
+        dateSQLFormat += Date.Today.Day.ToString
+
+        Return dateSQLFormat
+    End Function
 End Module
