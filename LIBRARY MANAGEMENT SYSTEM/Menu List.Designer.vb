@@ -30,7 +30,7 @@ Partial Class MenuList
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtDate = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtCurrentUser = New System.Windows.Forms.TextBox()
         Me.cmdExit = New System.Windows.Forms.Button()
         Me.cmdDisplayUser = New System.Windows.Forms.Button()
         Me.cmdDisplayBookDetails = New System.Windows.Forms.Button()
@@ -53,7 +53,7 @@ Partial Class MenuList
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtDate)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtCurrentUser)
         Me.GroupBox1.Controls.Add(Me.cmdExit)
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
@@ -108,15 +108,15 @@ Partial Class MenuList
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Current user :"
         '
-        'TextBox1
+        'txtCurrentUser
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.Black
-        Me.TextBox1.Font = New System.Drawing.Font("Arial", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(24, 104)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(139, 27)
-        Me.TextBox1.TabIndex = 1
+        Me.txtCurrentUser.BackColor = System.Drawing.Color.Black
+        Me.txtCurrentUser.Font = New System.Drawing.Font("Arial", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCurrentUser.ForeColor = System.Drawing.Color.White
+        Me.txtCurrentUser.Location = New System.Drawing.Point(24, 104)
+        Me.txtCurrentUser.Name = "txtCurrentUser"
+        Me.txtCurrentUser.Size = New System.Drawing.Size(139, 27)
+        Me.txtCurrentUser.TabIndex = 1
         '
         'cmdExit
         '
@@ -169,7 +169,7 @@ Partial Class MenuList
         Me.cmdDisplayBorrowers.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayBorrowers.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayBorrowers.Image = CType(resources.GetObject("cmdDisplayBorrowers.Image"), System.Drawing.Image)
-        Me.cmdDisplayBorrowers.Location = New System.Drawing.Point(723, 3)
+        Me.cmdDisplayBorrowers.Location = New System.Drawing.Point(577, 3)
         Me.cmdDisplayBorrowers.Name = "cmdDisplayBorrowers"
         Me.cmdDisplayBorrowers.Size = New System.Drawing.Size(163, 36)
         Me.cmdDisplayBorrowers.TabIndex = 4
@@ -184,7 +184,7 @@ Partial Class MenuList
         Me.cmdDisplayBookReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayBookReturn.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayBookReturn.Image = CType(resources.GetObject("cmdDisplayBookReturn.Image"), System.Drawing.Image)
-        Me.cmdDisplayBookReturn.Location = New System.Drawing.Point(568, 3)
+        Me.cmdDisplayBookReturn.Location = New System.Drawing.Point(417, 3)
         Me.cmdDisplayBookReturn.Name = "cmdDisplayBookReturn"
         Me.cmdDisplayBookReturn.Size = New System.Drawing.Size(163, 36)
         Me.cmdDisplayBookReturn.TabIndex = 5
@@ -214,7 +214,7 @@ Partial Class MenuList
         Me.cmdDisplayLateReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayLateReturn.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayLateReturn.Image = CType(resources.GetObject("cmdDisplayLateReturn.Image"), System.Drawing.Image)
-        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(419, 3)
+        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(732, 3)
         Me.cmdDisplayLateReturn.Name = "cmdDisplayLateReturn"
         Me.cmdDisplayLateReturn.Size = New System.Drawing.Size(154, 36)
         Me.cmdDisplayLateReturn.TabIndex = 7
@@ -283,7 +283,7 @@ Partial Class MenuList
     Friend WithEvents Label2 As Label
     Friend WithEvents txtDate As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtCurrentUser As TextBox
     Friend WithEvents cmdExit As Button
     Friend WithEvents cmdDisplayUser As Button
     Friend WithEvents cmdDisplayBookDetails As Button

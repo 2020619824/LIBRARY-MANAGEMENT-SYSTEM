@@ -1,7 +1,4 @@
-﻿
-Imports System.Data.SqlClient
-
-
+﻿Imports System.Data.SqlClient
 Public Class UserInformation
 
     Dim con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30 ")
@@ -39,6 +36,60 @@ Public Class UserInformation
         End If
         Return True
     End Function
+
+    Private Sub btnSearchUser_Click(sender As Object, e As EventArgs) Handles btnSearchUser.Click
+
+        Dim strSearchUsername As String
+
+        Dim blnInvalidStaffID As Boolean
+        blnInvalidStaffID = False
+
+        If txtSearchUser.Text = "" Then
+            MsgBox("Missing Information")
+        Else
+            Dim query = ""
+            If cboSearchBy.SelectedIndex = 0 Then
+
+                If ValidateStaffID() Then
+                    query = "select StaffID, StaffName, PhoneNo, Username from Users where StaffID=" & decSearchStaffID & ""
+                    SQLCommandView(query, dgvListOfUsers)
+                Else
+                    blnInvalidStaffID = True
+                End If
+            ElseIf cboSearchBy.SelectedIndex = 1 Then
+                strSearchUsername = txtSearchUser.Text
+                query = "select StaffID, StaffName, PhoneNo, Username from Users where Username='" & strSearchUsername & ""
+                SQLCommandView(query, dgvListOfUsers)
+            End If
+
+
+
+            If blnInvalidStaffID = False Then
+                If dgvListOfUsers.Rows.Count = 0 Then
+                    MsgBox("Sorry, no user found")
+                Else
+                    MsgBox(dgvListOfUsers.Rows.Count & " User found!")
+                End If
+            End If
+
+            ClearTextBoxes()
+        End If
+    End Sub
+
+    Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles cmdUpdate.Click
+        If txtUsername.Text = "" Or txtStaffID.Text = "" Or txtStaffName.Text = "" Or txtPhoneNumber.Text = "" Then
+            MsgBox("Missing Information")
+        Else
+            Dim query = " update Users set StaffID = '" + txtStaffID.Text + "', StaffName = '" + txtStaffName.Text + "', 
+                            Username = '" + txtUsername.Text + "', PhoneNo = '" + txtPhoneNumber.Text + "' where StaffID = " & i & ""
+            SQLCommandBasic(query)
+            MsgBox("User Information Updated")
+            query = "select StaffID, StaffName, PhoneNo, Username from Users"
+            SQLCommandView(query, dgvListOfUsers)
+            ClearTextBoxes()
+        End If
+
+    End Sub
 
     Private Sub cmdListOfUsers_Click(sender As Object, e As EventArgs) Handles cmdListOfUsers.Click
         Dim query = "select StaffID, StaffName, PhoneNo, Username from Users"
@@ -80,22 +131,6 @@ Public Class UserInformation
         End Try
     End Sub
 
-    Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles cmdUpdate.Click
-        If txtUsername.Text = "" Or txtStaffID.Text = "" Or txtStaffName.Text = "" Or txtPhoneNumber.Text = "" Then
-            MsgBox("Missing Information")
-        Else
-            Dim query = " update Users set StaffID = '" + txtStaffID.Text + "', StaffName = '" + txtStaffName.Text + "', 
-                            Username = '" + txtUsername.Text + "', PhoneNo = '" + txtPhoneNumber.Text + "' where StaffID = " & i & ""
-            SQLCommandBasic(query)
-            MsgBox("User Information Updated")
-            query = "select StaffID, StaffName, PhoneNo, Username from Users"
-            SQLCommandView(query, dgvListOfUsers)
-            ClearTextBoxes()
-        End If
-
-    End Sub
-
-
     Private Sub cmdDelete_Click(sender As Object, e As EventArgs) Handles cmdDelete.Click
 
         If key = 0 Or (txtUsername.Text = "" Or txtStaffID.Text = "" Or txtStaffName.Text = "" Or txtPhoneNumber.Text = "") Then
@@ -112,44 +147,6 @@ Public Class UserInformation
     End Sub
 
 
-    Private Sub btnSearchBook_Click(sender As Object, e As EventArgs) Handles btnSearchBook.Click
-
-        Dim strSearchUsername As String
-
-        Dim blnInvalidStaffID As Boolean
-        blnInvalidStaffID = False
-
-        If txtSearchUser.Text = "" Then
-            MsgBox("Missing Information")
-        Else
-            Dim query = ""
-            If cboSearchBy.SelectedIndex = 0 Then
-
-                If ValidateStaffID() Then
-                    query = "select StaffID, StaffName, PhoneNo, Username from Users where StaffID=" & decSearchStaffID & ""
-                    SQLCommandView(query, dgvListOfUsers)
-                Else
-                    blnInvalidStaffID = True
-                End If
-            ElseIf cboSearchBy.SelectedIndex = 1 Then
-                strSearchUsername = txtSearchUser.Text
-                query = "select StaffID, StaffName, PhoneNo, Username from Users where Username='" & strSearchUsername & ""
-                SQLCommandView(query, dgvListOfUsers)
-            End If
-
-
-
-            If blnInvalidStaffID = False Then
-                If dgvListOfUsers.Rows.Count = 0 Then
-                    MsgBox("Sorry, no user found")
-                Else
-                    MsgBox(dgvListOfUsers.Rows.Count & " User found!")
-                End If
-            End If
-
-            ClearTextBoxes()
-        End If
-    End Sub
     Private Sub cmdReturn_Click(sender As Object, e As EventArgs) Handles cmdReturn.Click
         Me.Close()
         Reset()
@@ -164,14 +161,6 @@ Public Class UserInformation
         Dim da As New SqlDataAdapter(cmd)
         da.Fill(dt)
         dgvListOfUsers.DataSource = dt
-
-    End Sub
-
-    Private Sub cboSearchBy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSearchBy.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub UserInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
