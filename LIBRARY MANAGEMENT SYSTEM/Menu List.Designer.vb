@@ -169,7 +169,7 @@ Partial Class MenuList
         Me.cmdDisplayBorrowers.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayBorrowers.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayBorrowers.Image = CType(resources.GetObject("cmdDisplayBorrowers.Image"), System.Drawing.Image)
-        Me.cmdDisplayBorrowers.Location = New System.Drawing.Point(723, 3)
+        Me.cmdDisplayBorrowers.Location = New System.Drawing.Point(577, 3)
         Me.cmdDisplayBorrowers.Name = "cmdDisplayBorrowers"
         Me.cmdDisplayBorrowers.Size = New System.Drawing.Size(163, 36)
         Me.cmdDisplayBorrowers.TabIndex = 4
@@ -184,7 +184,7 @@ Partial Class MenuList
         Me.cmdDisplayBookReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayBookReturn.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayBookReturn.Image = CType(resources.GetObject("cmdDisplayBookReturn.Image"), System.Drawing.Image)
-        Me.cmdDisplayBookReturn.Location = New System.Drawing.Point(568, 3)
+        Me.cmdDisplayBookReturn.Location = New System.Drawing.Point(417, 3)
         Me.cmdDisplayBookReturn.Name = "cmdDisplayBookReturn"
         Me.cmdDisplayBookReturn.Size = New System.Drawing.Size(163, 36)
         Me.cmdDisplayBookReturn.TabIndex = 5
@@ -214,7 +214,7 @@ Partial Class MenuList
         Me.cmdDisplayLateReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDisplayLateReturn.ForeColor = System.Drawing.Color.White
         Me.cmdDisplayLateReturn.Image = CType(resources.GetObject("cmdDisplayLateReturn.Image"), System.Drawing.Image)
-        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(419, 3)
+        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(732, 3)
         Me.cmdDisplayLateReturn.Name = "cmdDisplayLateReturn"
         Me.cmdDisplayLateReturn.Size = New System.Drawing.Size(154, 36)
         Me.cmdDisplayLateReturn.TabIndex = 7

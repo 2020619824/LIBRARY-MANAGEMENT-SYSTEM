@@ -167,7 +167,7 @@ Public Class BookDetails
             Return False
         Else
             Return True
-            End If
+        End If
 
         Return True
 
@@ -181,6 +181,8 @@ Public Class BookDetails
             Case DialogResult.No
                 Return False
         End Select
+
+        Return False
     End Function
 
     Private Sub BookDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
