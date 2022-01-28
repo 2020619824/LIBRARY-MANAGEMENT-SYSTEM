@@ -34,12 +34,6 @@
 
     End Sub
 
-    Public Sub CurrUser()
-
-        Dim user As String
-
-    End Sub
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         txtTime.Text = Date.Now.ToString("hh:mm")
         txtDate.Text = Date.Now.ToString("dd MMM yyyy")

@@ -30,6 +30,7 @@ Public Class Login
             If reader.Read Then
                 MyMessageBox.ShowMessage("Login Successfully")
                 Me.Hide()
+                MenuList.txtCurrentUser.Text = txtGetUserName.Text
                 MenuList.ShowDialog()
             Else
                 MyMessageBox.ShowMessage("Invalid Login. Please try Again.")
@@ -39,6 +40,8 @@ Public Class Login
         Catch ex As Exception
             MyMessageBox.ShowMessage("Connection Error")
         End Try
+
+
     End Sub
 
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click

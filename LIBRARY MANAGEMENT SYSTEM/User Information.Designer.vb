@@ -32,7 +32,7 @@ Partial Class UserInformation
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.txtStaffName = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnSearchBook = New System.Windows.Forms.Button()
+        Me.btnSearchUser = New System.Windows.Forms.Button()
         Me.cboSearchBy = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearchUser = New System.Windows.Forms.TextBox()
@@ -132,7 +132,7 @@ Partial Class UserInformation
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.btnSearchBook)
+        Me.GroupBox2.Controls.Add(Me.btnSearchUser)
         Me.GroupBox2.Controls.Add(Me.cboSearchBy)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtSearchUser)
@@ -145,18 +145,18 @@ Partial Class UserInformation
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Search User"
         '
-        'btnSearchBook
+        'btnSearchUser
         '
-        Me.btnSearchBook.BackColor = System.Drawing.Color.White
-        Me.btnSearchBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchBook.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchBook.ForeColor = System.Drawing.Color.Black
-        Me.btnSearchBook.Location = New System.Drawing.Point(472, 21)
-        Me.btnSearchBook.Name = "btnSearchBook"
-        Me.btnSearchBook.Size = New System.Drawing.Size(112, 41)
-        Me.btnSearchBook.TabIndex = 18
-        Me.btnSearchBook.Text = "Search"
-        Me.btnSearchBook.UseVisualStyleBackColor = False
+        Me.btnSearchUser.BackColor = System.Drawing.Color.White
+        Me.btnSearchUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchUser.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchUser.ForeColor = System.Drawing.Color.Black
+        Me.btnSearchUser.Location = New System.Drawing.Point(472, 21)
+        Me.btnSearchUser.Name = "btnSearchUser"
+        Me.btnSearchUser.Size = New System.Drawing.Size(112, 41)
+        Me.btnSearchUser.TabIndex = 18
+        Me.btnSearchUser.Text = "Search"
+        Me.btnSearchUser.UseVisualStyleBackColor = False
         '
         'cboSearchBy
         '
@@ -187,9 +187,9 @@ Partial Class UserInformation
         'cmdUpdate
         '
         Me.cmdUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdUpdate.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdUpdate.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.cmdUpdate.ForeColor = System.Drawing.Color.White
         Me.cmdUpdate.Location = New System.Drawing.Point(480, 205)
         Me.cmdUpdate.Name = "cmdUpdate"
         Me.cmdUpdate.Size = New System.Drawing.Size(142, 50)
@@ -200,9 +200,9 @@ Partial Class UserInformation
         'cmdDelete
         '
         Me.cmdDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdDelete.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDelete.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.cmdDelete.ForeColor = System.Drawing.Color.White
         Me.cmdDelete.Location = New System.Drawing.Point(480, 269)
         Me.cmdDelete.Name = "cmdDelete"
         Me.cmdDelete.Size = New System.Drawing.Size(142, 50)
@@ -213,9 +213,9 @@ Partial Class UserInformation
         'cmdListOfUsers
         '
         Me.cmdListOfUsers.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdListOfUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdListOfUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdListOfUsers.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdListOfUsers.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.cmdListOfUsers.ForeColor = System.Drawing.Color.White
         Me.cmdListOfUsers.Location = New System.Drawing.Point(480, 333)
         Me.cmdListOfUsers.Name = "cmdListOfUsers"
         Me.cmdListOfUsers.Size = New System.Drawing.Size(142, 50)
@@ -226,9 +226,9 @@ Partial Class UserInformation
         'cmdReturn
         '
         Me.cmdReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdReturn.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdReturn.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.cmdReturn.ForeColor = System.Drawing.Color.White
         Me.cmdReturn.Location = New System.Drawing.Point(480, 394)
         Me.cmdReturn.Name = "cmdReturn"
         Me.cmdReturn.Size = New System.Drawing.Size(142, 50)
@@ -258,7 +258,7 @@ Partial Class UserInformation
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(36, 9)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(546, 104)
+        Me.Label6.Size = New System.Drawing.Size(549, 105)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "USER INFORMATION"
         '
@@ -291,7 +291,7 @@ Partial Class UserInformation
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents btnSearchBook As Button
+    Friend WithEvents btnSearchUser As Button
     Friend WithEvents cboSearchBy As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtSearchUser As TextBox
