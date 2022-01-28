@@ -103,7 +103,7 @@ Public Class LateReturnInformation
 
     End Sub
     Private Sub totalBalance()
-        Dim dectotBal As Decimal = 0.00
+        Dim dectotBal As Decimal
 
         dectotBal = txtFinePayment.Text - txtLateReturnFines.Text
         txtBalance.Text = Format(dectotBal, "0.00")
