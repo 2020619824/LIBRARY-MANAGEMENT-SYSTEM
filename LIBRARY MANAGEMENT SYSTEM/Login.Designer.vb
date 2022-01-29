@@ -77,10 +77,10 @@ Partial Class Login
         'btnReturn
         '
         Me.btnReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReturn.ForeColor = System.Drawing.Color.Black
-        Me.btnReturn.Location = New System.Drawing.Point(325, 188)
+        Me.btnReturn.Location = New System.Drawing.Point(325, 194)
         Me.btnReturn.Name = "btnReturn"
         Me.btnReturn.Size = New System.Drawing.Size(127, 43)
         Me.btnReturn.TabIndex = 5
@@ -90,10 +90,10 @@ Partial Class Login
         'btnLogin
         '
         Me.btnLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.Black
-        Me.btnLogin.Location = New System.Drawing.Point(192, 188)
+        Me.btnLogin.Location = New System.Drawing.Point(192, 194)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(127, 43)
         Me.btnLogin.TabIndex = 7
@@ -113,11 +113,10 @@ Partial Class Login
         '
         'chkShowPassword
         '
-        Me.chkShowPassword.AutoSize = True
         Me.chkShowPassword.ForeColor = System.Drawing.SystemColors.ButtonShadow
         Me.chkShowPassword.Location = New System.Drawing.Point(123, 167)
         Me.chkShowPassword.Name = "chkShowPassword"
-        Me.chkShowPassword.Size = New System.Drawing.Size(129, 21)
+        Me.chkShowPassword.Size = New System.Drawing.Size(142, 21)
         Me.chkShowPassword.TabIndex = 9
         Me.chkShowPassword.Text = "Show Password"
         Me.chkShowPassword.UseVisualStyleBackColor = True
