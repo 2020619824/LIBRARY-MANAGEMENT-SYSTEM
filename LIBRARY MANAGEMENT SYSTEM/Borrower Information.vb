@@ -100,4 +100,5 @@ Public Class BorrowerInformation
     Private Sub btnListBook_Click(sender As Object, e As EventArgs) Handles btnListBook.Click
         DisplayTable()
     End Sub
+
 End Class

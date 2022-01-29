@@ -22,6 +22,10 @@ Partial Class UserInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtPhoneNumber = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -41,7 +45,7 @@ Partial Class UserInformation
         Me.cmdListOfUsers = New System.Windows.Forms.Button()
         Me.cmdReturn = New System.Windows.Forms.Button()
         Me.dgvListOfUsers = New System.Windows.Forms.DataGridView()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblUserInformation = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvListOfUsers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,7 +61,7 @@ Partial Class UserInformation
         Me.GroupBox1.Controls.Add(Me.txtStaffID)
         Me.GroupBox1.Controls.Add(Me.txtUsername)
         Me.GroupBox1.Controls.Add(Me.txtStaffName)
-        Me.GroupBox1.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(20, 194)
         Me.GroupBox1.Name = "GroupBox1"
@@ -68,9 +72,11 @@ Partial Class UserInformation
         '
         'txtPhoneNumber
         '
+        Me.txtPhoneNumber.BackColor = System.Drawing.Color.Black
+        Me.txtPhoneNumber.ForeColor = System.Drawing.Color.White
         Me.txtPhoneNumber.Location = New System.Drawing.Point(180, 190)
         Me.txtPhoneNumber.Name = "txtPhoneNumber"
-        Me.txtPhoneNumber.Size = New System.Drawing.Size(174, 31)
+        Me.txtPhoneNumber.Size = New System.Drawing.Size(174, 27)
         Me.txtPhoneNumber.TabIndex = 9
         '
         'Label2
@@ -78,7 +84,7 @@ Partial Class UserInformation
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(58, 56)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(116, 24)
+        Me.Label2.Size = New System.Drawing.Size(93, 19)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Username :"
         '
@@ -87,47 +93,53 @@ Partial Class UserInformation
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(50, 100)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(124, 24)
+        Me.Label3.Size = New System.Drawing.Size(98, 19)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Staff name :"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(80, 149)
+        Me.Label4.Location = New System.Drawing.Point(73, 147)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(94, 24)
+        Me.Label4.Size = New System.Drawing.Size(75, 19)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Staff ID :"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(16, 193)
+        Me.Label5.Location = New System.Drawing.Point(20, 193)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(159, 24)
+        Me.Label5.Size = New System.Drawing.Size(131, 19)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Phone number : "
         '
         'txtStaffID
         '
+        Me.txtStaffID.BackColor = System.Drawing.Color.Black
+        Me.txtStaffID.ForeColor = System.Drawing.Color.White
         Me.txtStaffID.Location = New System.Drawing.Point(180, 139)
         Me.txtStaffID.Name = "txtStaffID"
-        Me.txtStaffID.Size = New System.Drawing.Size(174, 31)
+        Me.txtStaffID.Size = New System.Drawing.Size(174, 27)
         Me.txtStaffID.TabIndex = 8
         '
         'txtUsername
         '
+        Me.txtUsername.BackColor = System.Drawing.Color.Black
+        Me.txtUsername.ForeColor = System.Drawing.Color.White
         Me.txtUsername.Location = New System.Drawing.Point(180, 49)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(174, 31)
+        Me.txtUsername.Size = New System.Drawing.Size(174, 27)
         Me.txtUsername.TabIndex = 6
         '
         'txtStaffName
         '
+        Me.txtStaffName.BackColor = System.Drawing.Color.Black
+        Me.txtStaffName.ForeColor = System.Drawing.Color.White
         Me.txtStaffName.Location = New System.Drawing.Point(180, 93)
         Me.txtStaffName.Name = "txtStaffName"
-        Me.txtStaffName.Size = New System.Drawing.Size(174, 31)
+        Me.txtStaffName.Size = New System.Drawing.Size(174, 27)
         Me.txtStaffName.TabIndex = 7
         '
         'GroupBox2
@@ -136,7 +148,7 @@ Partial Class UserInformation
         Me.GroupBox2.Controls.Add(Me.cboSearchBy)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtSearchUser)
-        Me.GroupBox2.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(20, 116)
         Me.GroupBox2.Name = "GroupBox2"
@@ -160,11 +172,14 @@ Partial Class UserInformation
         '
         'cboSearchBy
         '
+        Me.cboSearchBy.BackColor = System.Drawing.Color.Black
+        Me.cboSearchBy.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSearchBy.ForeColor = System.Drawing.Color.White
         Me.cboSearchBy.FormattingEnabled = True
         Me.cboSearchBy.Items.AddRange(New Object() {"Staff ID", "Username"})
         Me.cboSearchBy.Location = New System.Drawing.Point(323, 27)
         Me.cboSearchBy.Name = "cboSearchBy"
-        Me.cboSearchBy.Size = New System.Drawing.Size(119, 32)
+        Me.cboSearchBy.Size = New System.Drawing.Size(119, 27)
         Me.cboSearchBy.TabIndex = 2
         Me.cboSearchBy.Text = "Staff ID"
         '
@@ -173,24 +188,26 @@ Partial Class UserInformation
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(293, 30)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(33, 24)
+        Me.Label1.Size = New System.Drawing.Size(29, 19)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "By"
         '
         'txtSearchUser
         '
+        Me.txtSearchUser.BackColor = System.Drawing.Color.Black
+        Me.txtSearchUser.ForeColor = System.Drawing.Color.White
         Me.txtSearchUser.Location = New System.Drawing.Point(20, 27)
         Me.txtSearchUser.Name = "txtSearchUser"
-        Me.txtSearchUser.Size = New System.Drawing.Size(267, 31)
+        Me.txtSearchUser.Size = New System.Drawing.Size(267, 27)
         Me.txtSearchUser.TabIndex = 0
         '
         'cmdUpdate
         '
         Me.cmdUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cmdUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdUpdate.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdUpdate.ForeColor = System.Drawing.Color.White
-        Me.cmdUpdate.Location = New System.Drawing.Point(480, 205)
+        Me.cmdUpdate.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdUpdate.ForeColor = System.Drawing.Color.Black
+        Me.cmdUpdate.Location = New System.Drawing.Point(480, 211)
         Me.cmdUpdate.Name = "cmdUpdate"
         Me.cmdUpdate.Size = New System.Drawing.Size(142, 50)
         Me.cmdUpdate.TabIndex = 10
@@ -201,9 +218,9 @@ Partial Class UserInformation
         '
         Me.cmdDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cmdDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdDelete.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDelete.ForeColor = System.Drawing.Color.White
-        Me.cmdDelete.Location = New System.Drawing.Point(480, 269)
+        Me.cmdDelete.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdDelete.ForeColor = System.Drawing.Color.Black
+        Me.cmdDelete.Location = New System.Drawing.Point(480, 267)
         Me.cmdDelete.Name = "cmdDelete"
         Me.cmdDelete.Size = New System.Drawing.Size(142, 50)
         Me.cmdDelete.TabIndex = 11
@@ -214,11 +231,11 @@ Partial Class UserInformation
         '
         Me.cmdListOfUsers.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cmdListOfUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdListOfUsers.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdListOfUsers.ForeColor = System.Drawing.Color.White
-        Me.cmdListOfUsers.Location = New System.Drawing.Point(480, 333)
+        Me.cmdListOfUsers.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdListOfUsers.ForeColor = System.Drawing.Color.Black
+        Me.cmdListOfUsers.Location = New System.Drawing.Point(480, 323)
         Me.cmdListOfUsers.Name = "cmdListOfUsers"
-        Me.cmdListOfUsers.Size = New System.Drawing.Size(142, 50)
+        Me.cmdListOfUsers.Size = New System.Drawing.Size(142, 70)
         Me.cmdListOfUsers.TabIndex = 12
         Me.cmdListOfUsers.Text = "List of Users"
         Me.cmdListOfUsers.UseVisualStyleBackColor = False
@@ -227,9 +244,9 @@ Partial Class UserInformation
         '
         Me.cmdReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cmdReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdReturn.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdReturn.ForeColor = System.Drawing.Color.White
-        Me.cmdReturn.Location = New System.Drawing.Point(480, 394)
+        Me.cmdReturn.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdReturn.ForeColor = System.Drawing.Color.Black
+        Me.cmdReturn.Location = New System.Drawing.Point(480, 399)
         Me.cmdReturn.Name = "cmdReturn"
         Me.cmdReturn.Size = New System.Drawing.Size(142, 50)
         Me.cmdReturn.TabIndex = 13
@@ -240,35 +257,69 @@ Partial Class UserInformation
         '
         Me.dgvListOfUsers.AllowUserToAddRows = False
         Me.dgvListOfUsers.AllowUserToDeleteRows = False
-        Me.dgvListOfUsers.BackgroundColor = System.Drawing.SystemColors.ButtonFace
+        Me.dgvListOfUsers.BackgroundColor = System.Drawing.Color.Black
+        Me.dgvListOfUsers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvListOfUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListOfUsers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvListOfUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListOfUsers.Location = New System.Drawing.Point(21, 470)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListOfUsers.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvListOfUsers.EnableHeadersVisualStyles = False
+        Me.dgvListOfUsers.GridColor = System.Drawing.Color.White
+        Me.dgvListOfUsers.Location = New System.Drawing.Point(20, 463)
         Me.dgvListOfUsers.Name = "dgvListOfUsers"
         Me.dgvListOfUsers.ReadOnly = True
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvListOfUsers.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvListOfUsers.RowHeadersWidth = 51
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.dgvListOfUsers.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvListOfUsers.RowTemplate.Height = 24
         Me.dgvListOfUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListOfUsers.Size = New System.Drawing.Size(601, 303)
+        Me.dgvListOfUsers.Size = New System.Drawing.Size(601, 228)
         Me.dgvListOfUsers.TabIndex = 14
         '
-        'Label6
+        'lblUserInformation
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Bebas Neue", 52.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(36, 9)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(549, 105)
-        Me.Label6.TabIndex = 15
-        Me.Label6.Text = "USER INFORMATION"
+        Me.lblUserInformation.Font = New System.Drawing.Font("Bebas Neue", 52.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUserInformation.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblUserInformation.Location = New System.Drawing.Point(12, 9)
+        Me.lblUserInformation.Name = "lblUserInformation"
+        Me.lblUserInformation.Size = New System.Drawing.Size(615, 104)
+        Me.lblUserInformation.TabIndex = 15
+        Me.lblUserInformation.Text = "USER INFORMATION"
+        Me.lblUserInformation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'UserInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(634, 806)
-        Me.Controls.Add(Me.Label6)
+        Me.ClientSize = New System.Drawing.Size(634, 703)
+        Me.Controls.Add(Me.lblUserInformation)
         Me.Controls.Add(Me.dgvListOfUsers)
         Me.Controls.Add(Me.cmdReturn)
         Me.Controls.Add(Me.cmdListOfUsers)
@@ -276,6 +327,7 @@ Partial Class UserInformation
         Me.Controls.Add(Me.cmdUpdate)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "UserInformation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "User Information"
@@ -285,7 +337,6 @@ Partial Class UserInformation
         Me.GroupBox2.PerformLayout()
         CType(Me.dgvListOfUsers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -308,5 +359,5 @@ Partial Class UserInformation
     Friend WithEvents cmdListOfUsers As Button
     Friend WithEvents cmdReturn As Button
     Friend WithEvents dgvListOfUsers As DataGridView
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lblUserInformation As Label
 End Class

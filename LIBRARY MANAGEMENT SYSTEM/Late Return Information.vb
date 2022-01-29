@@ -77,8 +77,6 @@ Public Class LateReturnInformation
                 End If
             End If
 
-
-
             If blnInvalidICNum = False Then
                 If dgvLateReturnFine.Rows.Count = 0 Then
                     MyMessageBox.ShowMessage("Sorry, no information found")
@@ -86,7 +84,6 @@ Public Class LateReturnInformation
                     MyMessageBox.ShowMessage(dgvLateReturnFine.Rows.Count & " Information found!")
                 End If
             End If
-
 
         End If
     End Sub
@@ -98,7 +95,7 @@ Public Class LateReturnInformation
             txtBorrowerName.Text = row.Cells(0).Value.ToString
             txtBorrowerIC.Text = row.Cells(1).Value.ToString
             txtLateReturnFines.Text = row.Cells(10).Value.ToString
-            i = Convert.ToInt32(row.Cells(1).Value.ToString)
+            i = Convert.ToInt64(row.Cells(1).Value.ToString)
         End If
 
     End Sub
@@ -109,9 +106,9 @@ Public Class LateReturnInformation
         txtBalance.Text = Format(dectotBal, "0.00")
     End Sub
     Private Sub cmdGenerateReceipt_Click(sender As Object, e As EventArgs) Handles cmdGenerateReceipt.Click
-        ' buat balance dan if else kalau payment cukup ke tak
+
         If txtFinePayment.Text < txtLateReturnFines.Text Then
-            MyMessageBox.ShowMessage("Amount is not enough for payment! " + "Please put new payment.")
+            MyMessageBox.ShowMessage("Amount is not enough for payment! " & "Please put new payment.")
             txtFinePayment.Clear()
         Else
             totalBalance()
@@ -205,10 +202,6 @@ Public Class LateReturnInformation
                  AND L.Payment is null
                  AND L.DateofPayment is null"
         SQLCommandView(query, dgvLateReturnFine)
-    End Sub
-
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
-
     End Sub
 
 
