@@ -1,11 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Public Class BookIssueInformation
-    Dim con = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30")
+    Dim con = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True")
     Public Sub PutBorrowerName()
 
         Try
             con.Open()
-            Dim query = "select distinct BorrowerName From Borrower"
+            Dim query = "select BorrowerName From Borrower"
             Dim adapter As SqlDataAdapter
             Dim cmd = New SqlCommand(query, con)
             adapter = New SqlDataAdapter(cmd)
@@ -45,7 +45,16 @@ Public Class BookIssueInformation
         MyMessageBox.ShowMessage(cboBorrower.Items.Count & " Borrower found!")
     End Sub
 
-    Private Sub cboBorrower_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBorrower.SelectedIndexChanged
+    Private Sub cboBorrower_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBorrower.SelectionChangeCommitted
         GetBorrowerName()
+    End Sub
+    Private Sub DisplayBook()
+
+        Try
+            Dim query = "select * from Book"
+            SQLCommandView(query, dgvBookIssue)
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
     End Sub
 End Class

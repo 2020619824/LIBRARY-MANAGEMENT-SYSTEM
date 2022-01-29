@@ -77,8 +77,6 @@ Public Class LateReturnInformation
                 End If
             End If
 
-
-
             If blnInvalidICNum = False Then
                 If dgvLateReturnFine.Rows.Count = 0 Then
                     MyMessageBox.ShowMessage("Sorry, no information found")
@@ -86,7 +84,6 @@ Public Class LateReturnInformation
                     MyMessageBox.ShowMessage(dgvLateReturnFine.Rows.Count & " Information found!")
                 End If
             End If
-
 
         End If
     End Sub
@@ -97,21 +94,34 @@ Public Class LateReturnInformation
             Dim row As DataGridViewRow = dgvLateReturnFine.Rows(e.RowIndex)
             txtBorrowerName.Text = row.Cells(0).Value.ToString
             txtBorrowerIC.Text = row.Cells(1).Value.ToString
-            txtLateReturnFines.Text = row.Cells(10).Value.ToString
-            i = Convert.ToInt32(row.Cells(1).Value.ToString)
+            txtTotalLateReturnFines.Text = row.Cells(10).Value.ToString
+            i = Convert.ToInt64(row.Cells(1).Value.ToString)
+            txtFinePayment.Focus()
         End If
 
     End Sub
+
+
     Private Sub totalBalance()
         Dim dectotBal As Decimal
 
-        dectotBal = txtFinePayment.Text - txtLateReturnFines.Text
+        dectotBal = txtFinePayment.Text - txtTotalLateReturnFines.Text
         txtBalance.Text = Format(dectotBal, "0.00")
     End Sub
     Private Sub cmdGenerateReceipt_Click(sender As Object, e As EventArgs) Handles cmdGenerateReceipt.Click
-        ' buat balance dan if else kalau payment cukup ke tak
-        If txtFinePayment.Text < txtLateReturnFines.Text Then
-            MyMessageBox.ShowMessage("Amount is not enough for payment! " + "Please put new payment.")
+
+        If i = 0 Then
+            MyMessageBox.ShowMessage("Please fill the boxes by select data from list of Late Return Books! ")
+        ElseIf txtBorrowerName.Text = "" Then
+            MyMessageBox.ShowMessage("Missing borrower's name input! ")
+        ElseIf txtBorrowerIC.Text = "" Then
+            MyMessageBox.ShowMessage("Missing borrowers's IC input! ")
+        ElseIf txtTotalLateReturnFines.Text = "" Then
+            MyMessageBox.ShowMessage("Missing late return fine input! ")
+        ElseIf txtFinePayment.Text = "" Then
+            MyMessageBox.ShowMessage("Missing payment input! ")
+        ElseIf txtFinePayment.Text < txtTotalLateReturnFines.Text Then
+            MyMessageBox.ShowMessage("Amount is not enough for payment! " & ControlChars.CrLf & "Please put new payment.")
             txtFinePayment.Clear()
         Else
             totalBalance()
@@ -125,9 +135,9 @@ Public Class LateReturnInformation
     Private Sub UpdateBorrow()
         Dim query
         query = "Update Borrow
-                 Set LateReturnStatus = 'No', ReturnDate = '" & dtpDatePaynment.Text & "'
+                 Set LateReturnStatus = 'Yes', ReturnDate = '" & dtpDatePaynment.Text & "'
                  Where BorrowerIC = " & txtBorrowerIC.Text & "
-                 And BorrowID in (Select BorrowID from LateReturnFines where LateReturnFines = " & txtLateReturnFines.Text & ")"
+                 And BorrowID in (Select BorrowID from LateReturnFines where LateReturnFines = " & txtTotalLateReturnFines.Text & ")"
         SQLCommandBasic(query)
     End Sub
 
@@ -136,7 +146,7 @@ Public Class LateReturnInformation
         query = "Update LateReturnFines 
                  Set Payment = " & txtFinePayment.Text & " 
                  Where BorrowID in (Select BorrowID from Borrow where BorrowerIC = " & txtBorrowerIC.Text & ")
-                 And LateReturnFines = " & txtLateReturnFines.Text & ""
+                 And LateReturnFines = " & txtTotalLateReturnFines.Text & ""
         SQLCommandBasic(query)
     End Sub
 
@@ -145,7 +155,7 @@ Public Class LateReturnInformation
         query = "Update LateReturnFines 
                  Set DateofPayment = '" & dtpDatePaynment.Text & "'
                  Where BorrowID in (Select BorrowID from Borrow where BorrowerIC = " & txtBorrowerIC.Text & ")
-                 And LateReturnFines = " & txtLateReturnFines.Text & ""
+                 And LateReturnFines = " & txtTotalLateReturnFines.Text & ""
         SQLCommandBasic(query)
     End Sub
 
@@ -166,7 +176,7 @@ Public Class LateReturnInformation
 
         e.Graphics.DrawString("Name: " & txtBorrowerName.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 200)
         e.Graphics.DrawString("IC: " & txtBorrowerIC.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 230)
-        e.Graphics.DrawString("Total late fine: " & txtLateReturnFines.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 260)
+        e.Graphics.DrawString("Total late fine: " & txtTotalLateReturnFines.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 260)
         e.Graphics.DrawString("Payment: " & txtFinePayment.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 290)
         e.Graphics.DrawString("Balance: " & txtBalance.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 320)
 
@@ -182,7 +192,7 @@ Public Class LateReturnInformation
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtBorrowerName.Clear()
         txtBorrowerIC.Clear()
-        txtLateReturnFines.Clear()
+        txtTotalLateReturnFines.Clear()
         txtFinePayment.Clear()
         txtBalance.Clear()
 
@@ -205,10 +215,6 @@ Public Class LateReturnInformation
                  AND L.Payment is null
                  AND L.DateofPayment is null"
         SQLCommandView(query, dgvLateReturnFine)
-    End Sub
-
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
-
     End Sub
 
 
