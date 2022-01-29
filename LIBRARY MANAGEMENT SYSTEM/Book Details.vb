@@ -276,4 +276,5 @@ Public Class BookDetails
         Reset()
         Me.Close()
     End Sub
+
 End Class
