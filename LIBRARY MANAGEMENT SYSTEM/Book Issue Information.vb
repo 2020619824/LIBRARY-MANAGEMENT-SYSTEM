@@ -43,6 +43,7 @@ Public Class BookIssueInformation
         PutBorrowerName()
         txtBorrower.Clear()
         MyMessageBox.ShowMessage(cboBorrower.Items.Count & " Borrower found!")
+        btnAdd.Visible = True
     End Sub
 
     Private Sub cboBorrower_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBorrower.SelectionChangeCommitted
@@ -53,6 +54,93 @@ Public Class BookIssueInformation
         Try
             Dim query = "select * from Book"
             SQLCommandView(query, dgvBookIssue)
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
+    End Sub
+    Private Sub DisplayHeader()
+        Dim query = "select * from Book where ISBN is null"
+        SQLCommandView(query, dgvBookIssue)
+        dgvBookIssue().Columns(1).HeaderText = "Year"
+    End Sub
+    Dim key = 0
+    Private Sub DataGridViewListofBook_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBookIssue.CellMouseClick
+
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dgvBookIssue.Rows(e.RowIndex)
+
+            txtISBN.Text = row.Cells(0).Value.ToString
+            txtBookTitle.Text = row.Cells(2).Value.ToString
+
+            key = Convert.ToInt64(row.Cells(0).Value.ToString)
+
+        End If
+    End Sub
+
+    Private Sub btnSearchBook_Click(sender As Object, e As EventArgs) Handles btnSearchBook.Click
+        DisplayBook()
+    End Sub
+
+    Private Sub BookIssueInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisplayHeader()
+        dtpIssueDate.Format = DateTimePickerFormat.Custom
+        dtpIssueDate.CustomFormat = "yyyy-MM-dd"
+        dtpDueDate.Format = DateTimePickerFormat.Custom
+        dtpDueDate.CustomFormat = "yyyy-MM-dd"
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Me.Hide()
+        BorrowerInformation.ShowDialog()
+    End Sub
+
+    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
+        Me.Close()
+    End Sub
+    Dim intBorrowID As Integer
+    Private Sub GetBorrowID()
+
+        Try
+            con.Open()
+            Dim query = "select BorrowID as lastID from Borrow
+                    where BorrowID= @@identity"
+
+            Dim cmd = New SqlCommand(query, con)
+            Dim dt = New DataTable()
+            Dim reader As SqlDataReader
+            reader = cmd.ExecuteReader()
+            While reader.Read
+                intBorrowID = CInt("" + reader(0).ToString)
+            End While
+            con.Close()
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
+    End Sub
+    Private Sub btnIssueBook_Click(sender As Object, e As EventArgs) Handles btnIssueBook.Click
+        GetBorrowID()
+        GetBorrowerIC()
+
+        Dim query = "Insert into borrow values (" & intBorrowID & "," & txtISBN.Text & "," &
+            intBorrowerIC & ",'" & dtpIssueDate.Text & "','" & dtpDueDate.Text & "', null, 'no'"
+        SQLCommandBasic(query)
+    End Sub
+    Dim intBorrowerIC As Integer
+    Private Sub GetBorrowerIC()
+
+        Try
+            con.Open()
+            Dim query = "select BorrowerIC from Borrower
+                    where BorrowerName='" & cboBorrower.SelectedValue.ToString() & "'"
+
+            Dim cmd = New SqlCommand(query, con)
+            Dim dt = New DataTable()
+            Dim reader As SqlDataReader
+            reader = cmd.ExecuteReader()
+            While reader.Read
+                intBorrowerIC = CInt("" + reader(0).ToString)
+            End While
+            con.Close()
         Catch ex As Exception
             MyMessageBox.ShowMessage("Connection Error")
         End Try

@@ -208,6 +208,7 @@ Public Class Registration
     End Function
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Reset()
-        Me.Close()
+        Me.Hide()
+        StartUp.ShowDialog()
     End Sub
 End Class
