@@ -22,10 +22,10 @@ Partial Class BorrowerInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnReturn = New System.Windows.Forms.Button()
         Me.lbllblBorrowerName = New System.Windows.Forms.Label()
         Me.lbllblBorrowerIC = New System.Windows.Forms.Label()
@@ -55,7 +55,7 @@ Partial Class BorrowerInformation
         'btnReturn
         '
         Me.btnReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReturn.ForeColor = System.Drawing.Color.Black
         Me.btnReturn.Location = New System.Drawing.Point(577, 410)
@@ -127,7 +127,7 @@ Partial Class BorrowerInformation
         'btnSearchBorrower
         '
         Me.btnSearchBorrower.BackColor = System.Drawing.Color.White
-        Me.btnSearchBorrower.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchBorrower.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSearchBorrower.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchBorrower.ForeColor = System.Drawing.Color.Black
         Me.btnSearchBorrower.Location = New System.Drawing.Point(384, 18)
@@ -154,42 +154,42 @@ Partial Class BorrowerInformation
         Me.dgvBorrowerInfo.BackgroundColor = System.Drawing.Color.Black
         Me.dgvBorrowerInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvBorrowerInfo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBorrowerInfo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBorrowerInfo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvBorrowerInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBorrowerInfo.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBorrowerInfo.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvBorrowerInfo.EnableHeadersVisualStyles = False
         Me.dgvBorrowerInfo.Location = New System.Drawing.Point(35, 482)
         Me.dgvBorrowerInfo.Name = "dgvBorrowerInfo"
         Me.dgvBorrowerInfo.ReadOnly = True
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBorrowerInfo.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBorrowerInfo.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvBorrowerInfo.RowHeadersWidth = 51
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
-        Me.dgvBorrowerInfo.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.dgvBorrowerInfo.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvBorrowerInfo.RowTemplate.Height = 24
         Me.dgvBorrowerInfo.Size = New System.Drawing.Size(660, 219)
         Me.dgvBorrowerInfo.TabIndex = 17
@@ -197,7 +197,7 @@ Partial Class BorrowerInformation
         'btnUpdate
         '
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.Black
         Me.btnUpdate.Location = New System.Drawing.Point(577, 183)
@@ -210,7 +210,7 @@ Partial Class BorrowerInformation
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Black
         Me.btnAdd.Location = New System.Drawing.Point(577, 118)
@@ -298,7 +298,7 @@ Partial Class BorrowerInformation
         'btnDelete
         '
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.Color.Black
         Me.btnDelete.Location = New System.Drawing.Point(577, 245)
@@ -311,7 +311,7 @@ Partial Class BorrowerInformation
         'btnListBook
         '
         Me.btnListBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnListBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnListBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnListBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListBook.ForeColor = System.Drawing.Color.Black
         Me.btnListBook.Location = New System.Drawing.Point(577, 307)
@@ -350,6 +350,7 @@ Partial Class BorrowerInformation
         Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BorrowerInformation"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Borrower Information"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
