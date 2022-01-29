@@ -83,6 +83,10 @@ Public Class BookIssueInformation
 
     Private Sub BookIssueInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DisplayHeader()
+        dtpIssueDate.Format = DateTimePickerFormat.Custom
+        dtpIssueDate.CustomFormat = "yyyy-MM-dd"
+        dtpDueDate.Format = DateTimePickerFormat.Custom
+        dtpDueDate.CustomFormat = "yyyy-MM-dd"
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -92,5 +96,53 @@ Public Class BookIssueInformation
 
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Me.Close()
+    End Sub
+    Dim intBorrowID As Integer
+    Private Sub GetBorrowID()
+
+        Try
+            con.Open()
+            Dim query = "select BorrowID as lastID from Borrow
+                    where BorrowID= @@identity"
+
+            Dim cmd = New SqlCommand(query, con)
+            Dim dt = New DataTable()
+            Dim reader As SqlDataReader
+            reader = cmd.ExecuteReader()
+            While reader.Read
+                intBorrowID = CInt("" + reader(0).ToString)
+            End While
+            con.Close()
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
+    End Sub
+    Private Sub btnIssueBook_Click(sender As Object, e As EventArgs) Handles btnIssueBook.Click
+        GetBorrowID()
+        GetBorrowerIC()
+
+        Dim query = "Insert into borrow values (" & intBorrowID & "," & txtISBN.Text & "," &
+            intBorrowerIC & ",'" & dtpIssueDate.Text & "','" & dtpDueDate.Text & "', null, 'no'"
+        SQLCommandBasic(query)
+    End Sub
+    Dim intBorrowerIC As Integer
+    Private Sub GetBorrowerIC()
+
+        Try
+            con.Open()
+            Dim query = "select BorrowerIC from Borrower
+                    where BorrowerName='" & cboBorrower.SelectedValue.ToString() & "'"
+
+            Dim cmd = New SqlCommand(query, con)
+            Dim dt = New DataTable()
+            Dim reader As SqlDataReader
+            reader = cmd.ExecuteReader()
+            While reader.Read
+                intBorrowerIC = CInt("" + reader(0).ToString)
+            End While
+            con.Close()
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
     End Sub
 End Class
