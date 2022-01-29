@@ -136,7 +136,6 @@ Public Class BorrowerInformation
             Return False
         Else
             Return True
-            clearTextBox()
         End If
 
         Return True
@@ -145,7 +144,7 @@ Public Class BorrowerInformation
 
     End Function
     Private Function ConfirmationOfDeletedInfo() As Boolean
-        Select Case MyMessageBox.ShowConfirmation("You will permanently loss the data" & ControlChars.CrLf & "Are you sure to continue?")
+        Select Case MyMessageBox.ShowConfirmation("You will permanently loss this information" & ControlChars.CrLf & "Are you sure to continue?")
             Case DialogResult.Yes
                 Return True
             Case DialogResult.No
@@ -157,6 +156,7 @@ Public Class BorrowerInformation
         If ValidateDeleteInfo() Then
             If ConfirmationOfDeletedInfo() Then
                 Dim query = "delete from Borrower where borrowerIC=" & key & ""
+                clearTextBox()
                 SQLCommandBasic(query)
                 MyMessageBox.ShowMessage("Information Deleted")
 
