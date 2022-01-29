@@ -7,6 +7,7 @@ Public Class UserInformation
 
 
     Private Sub ClearTextBoxes()
+        ' This procedure will clear or empty the textBox of Username, StaffID, StaffName, PhoneNumber and list of user in DataGridView
         txtUsername.Clear()
         txtStaffID.Clear()
         txtStaffName.Clear()
@@ -15,6 +16,7 @@ Public Class UserInformation
     End Sub
 
     Private Sub Reset()
+        ' This procedure will clear the textBox and set the index for 
         txtUsername.Clear()
         txtStaffID.Clear()
         txtStaffName.Clear()
