@@ -43,6 +43,7 @@ Public Class BookIssueInformation
         PutBorrowerName()
         txtBorrower.Clear()
         MyMessageBox.ShowMessage(cboBorrower.Items.Count & " Borrower found!")
+        btnAdd.Visible = True
     End Sub
 
     Private Sub cboBorrower_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBorrower.SelectionChangeCommitted
@@ -56,5 +57,40 @@ Public Class BookIssueInformation
         Catch ex As Exception
             MyMessageBox.ShowMessage("Connection Error")
         End Try
+    End Sub
+    Private Sub DisplayHeader()
+        Dim query = "select * from Book where ISBN is null"
+        SQLCommandView(query, dgvBookIssue)
+        dgvBookIssue().Columns(1).HeaderText = "Year"
+    End Sub
+    Dim key = 0
+    Private Sub DataGridViewListofBook_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBookIssue.CellMouseClick
+
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dgvBookIssue.Rows(e.RowIndex)
+
+            txtISBN.Text = row.Cells(0).Value.ToString
+            txtBookTitle.Text = row.Cells(2).Value.ToString
+
+            key = Convert.ToInt64(row.Cells(0).Value.ToString)
+
+        End If
+    End Sub
+
+    Private Sub btnSearchBook_Click(sender As Object, e As EventArgs) Handles btnSearchBook.Click
+        DisplayBook()
+    End Sub
+
+    Private Sub BookIssueInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisplayHeader()
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Me.Hide()
+        BorrowerInformation.ShowDialog()
+    End Sub
+
+    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
+        Me.Close()
     End Sub
 End Class
