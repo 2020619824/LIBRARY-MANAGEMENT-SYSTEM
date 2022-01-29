@@ -136,7 +136,6 @@ Public Class BorrowerInformation
             Return False
         Else
             Return True
-            clearTextBox()
         End If
 
         Return True
@@ -157,6 +156,7 @@ Public Class BorrowerInformation
         If ValidateDeleteInfo() Then
             If ConfirmationOfDeletedInfo() Then
                 Dim query = "delete from Borrower where borrowerIC=" & key & ""
+                clearTextBox()
                 SQLCommandBasic(query)
                 MyMessageBox.ShowMessage("Information Deleted")
 
