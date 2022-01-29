@@ -1,6 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Public Class BorrowerInformation
     Dim Con = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True")
+    Private Sub DisplayHeader()
+        Dim query = "select * from Borrower where BorrowerIC is null"
+        SQLCommandView(query, dgvBorrowerInfo)
+    End Sub
+
     Private Sub DisplayTableBorrower()
         Dim query = "select * from borrower where borrowername = '" & txtSearchBorrowersName.Text & "'"
         SQLCommandView(query, dgvBorrowerInfo)
@@ -212,4 +217,7 @@ Public Class BorrowerInformation
         resetKey()
     End Sub
 
+    Private Sub BorrowerInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisplayHeader()
+    End Sub
 End Class
