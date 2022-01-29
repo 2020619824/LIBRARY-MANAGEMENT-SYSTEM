@@ -5,7 +5,7 @@ Public Class BookIssueInformation
 
         Try
             con.Open()
-            Dim query = "select distinct BorrowerName From Borrower"
+            Dim query = "select BorrowerName From Borrower"
             Dim adapter As SqlDataAdapter
             Dim cmd = New SqlCommand(query, con)
             adapter = New SqlDataAdapter(cmd)
@@ -47,5 +47,14 @@ Public Class BookIssueInformation
 
     Private Sub cboBorrower_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBorrower.SelectionChangeCommitted
         GetBorrowerName()
+    End Sub
+    Private Sub DisplayBook()
+
+        Try
+            Dim query = "select * from Book"
+            SQLCommandView(query, dgvBookIssue)
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
     End Sub
 End Class
