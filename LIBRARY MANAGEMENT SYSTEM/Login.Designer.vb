@@ -37,7 +37,7 @@ Partial Class Login
         Me.Label1.BackColor = System.Drawing.Color.Black
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(8, 81)
+        Me.Label1.Location = New System.Drawing.Point(8, 85)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(109, 40)
         Me.Label1.TabIndex = 0
@@ -59,7 +59,7 @@ Partial Class Login
         'txtGetUserName
         '
         Me.txtGetUserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtGetUserName.Location = New System.Drawing.Point(123, 88)
+        Me.txtGetUserName.Location = New System.Drawing.Point(123, 92)
         Me.txtGetUserName.Multiline = True
         Me.txtGetUserName.Name = "txtGetUserName"
         Me.txtGetUserName.Size = New System.Drawing.Size(329, 28)
@@ -80,7 +80,7 @@ Partial Class Login
         Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReturn.ForeColor = System.Drawing.Color.Black
-        Me.btnReturn.Location = New System.Drawing.Point(325, 194)
+        Me.btnReturn.Location = New System.Drawing.Point(331, 205)
         Me.btnReturn.Name = "btnReturn"
         Me.btnReturn.Size = New System.Drawing.Size(127, 43)
         Me.btnReturn.TabIndex = 5
@@ -93,7 +93,7 @@ Partial Class Login
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.Black
-        Me.btnLogin.Location = New System.Drawing.Point(192, 194)
+        Me.btnLogin.Location = New System.Drawing.Point(198, 205)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(127, 43)
         Me.btnLogin.TabIndex = 7
@@ -126,7 +126,7 @@ Partial Class Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(470, 251)
+        Me.ClientSize = New System.Drawing.Size(467, 260)
         Me.Controls.Add(Me.chkShowPassword)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnLogin)

@@ -44,9 +44,14 @@ Public Class Login
 
     End Sub
 
+    Private Sub Reset()
+        txtGetPassword.Clear()
+        txtGetUserName.Clear()
+    End Sub
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Reset()
         Me.Close()
+
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load

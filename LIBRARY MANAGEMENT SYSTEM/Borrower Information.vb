@@ -21,6 +21,11 @@ Public Class BorrowerInformation
     End Function
 
     Dim key = 0
+
+    Private Sub resetKey()
+        key = 0
+    End Sub
+
     Private Sub DataGridViewListofBook_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBorrowerInfo.CellMouseClick
 
         If e.RowIndex >= 0 Then
@@ -37,12 +42,21 @@ Public Class BorrowerInformation
     End Sub
     Private Sub btnSearchBorrower_Click(sender As Object, e As EventArgs) Handles btnSearchBorrower.Click
         DisplayTableBorrower()
+        dgvBorrowerInfo.Enabled = True
     End Sub
 
-
-
+    Private Sub reset()
+        txtAddress.Clear()
+        txtBorrowerIC.Clear()
+        txtBorrowerName.Clear()
+        txtPhoneNum.Clear()
+        txtNoBooksBorrow.Clear()
+        dgvBorrowerInfo.DataSource.clear()
+        txtSearchBorrowersName.Clear()
+        key = 0
+    End Sub
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
-        Reset()
+        reset()
         Me.Close()
     End Sub
 
@@ -94,8 +108,9 @@ Public Class BorrowerInformation
             Dim query = "insert into borrower values(" & txtBorrowerIC.Text & ",'" & txtBorrowerName.Text & "'," & txtPhoneNum.Text & ",'" & txtAddress.Text & "')"
             SQLCommandBasic(query)
             MyMessageBox.ShowMessage("Borrower Info Saved")
+            clearTextBox()
         End If
-
+        resetKey()
     End Sub
 
     Private Sub noBooksBorrowed()
@@ -119,8 +134,12 @@ Public Class BorrowerInformation
         End Try
     End Sub
     Private Sub btnListBook_Click(sender As Object, e As EventArgs) Handles btnListBook.Click
-        DisplayTableBook()
-
+        If ValidateTextBoxes() Then
+            DisplayTableBook()
+            dgvBorrowerInfo.Enabled = False
+            dgvBorrowerInfo.ClearSelection()
+        End If
+        resetKey()
     End Sub
 
     Private Sub clearTextBox()
@@ -128,7 +147,20 @@ Public Class BorrowerInformation
         txtBorrowerIC.Clear()
         txtBorrowerName.Clear()
         txtPhoneNum.Clear()
+        txtNoBooksBorrow.Clear()
+        dgvBorrowerInfo.ClearSelection()
     End Sub
+
+    Private Function ConfirmationOfDeletedInfo() As Boolean
+        Select Case MyMessageBox.ShowConfirmation("You will permanently loss this information" & ControlChars.CrLf & "Are you sure to continue?")
+            Case DialogResult.Yes
+                Return True
+            Case DialogResult.No
+                Return False
+        End Select
+        Return False
+    End Function
+
     Private Function ValidateDeleteInfo() As Boolean
         If key = 0 Then
             MyMessageBox.ShowMessage("Please select the information to delete")
@@ -143,33 +175,40 @@ Public Class BorrowerInformation
         Return False
 
     End Function
-    Private Function ConfirmationOfDeletedInfo() As Boolean
-        Select Case MyMessageBox.ShowConfirmation("You will permanently loss this information" & ControlChars.CrLf & "Are you sure to continue?")
-            Case DialogResult.Yes
-                Return True
-            Case DialogResult.No
-                Return False
-        End Select
-        Return False
-    End Function
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If ValidateDeleteInfo() Then
             If ConfirmationOfDeletedInfo() Then
                 Dim query = "delete from Borrower where borrowerIC=" & key & ""
-                clearTextBox()
                 SQLCommandBasic(query)
                 MyMessageBox.ShowMessage("Information Deleted")
 
             End If
         End If
-
+        clearTextBox()
+        resetKey()
     End Sub
+    Private Function ValidateUpdatedBorrowerInfo() As Boolean
+        If ValidateTextBoxes() Then
 
+            If key = 0 Then
+                MyMessageBox.ShowMessage("Please select the info to update")
+                dgvBorrowerInfo.ClearSelection()
+                Return False
+            End If
+
+            Return True
+        End If
+
+        Return False
+    End Function
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Dim query = "update Borrower set borrowerIC=" & txtBorrowerIC.Text & ",borrowerName='" & txtBorrowerName.Text & "',phoneNum=" & txtPhoneNum.Text & ",Address='" & txtAddress.Text & "' where borrowerIC = " & key & ""
-
-        SQLCommandBasic(query)
-        MyMessageBox.ShowMessage("Borrower Information Updated")
-        DisplayTableBorrower()
+        If ValidateUpdatedBorrowerInfo() Then
+            Dim query = "update Borrower set borrowerIC=" & txtBorrowerIC.Text & ",borrowerName='" & txtBorrowerName.Text & "',phoneNum=" & txtPhoneNum.Text & ",Address='" & txtAddress.Text & "' where borrowerIC = " & key & ""
+            SQLCommandBasic(query)
+            MyMessageBox.ShowMessage("Borrower Information Updated")
+            DisplayTableBorrower()
+            clearTextBox()
+        End If
+        resetKey()
     End Sub
 End Class
