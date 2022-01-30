@@ -53,7 +53,7 @@ Public Class Login
 
         Reset()
         Me.Hide()
-        StartUp.ShowDialog()
+        StartUp.Show()
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'to makesure the system didnot show the password at first'
