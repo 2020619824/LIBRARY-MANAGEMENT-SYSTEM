@@ -64,9 +64,10 @@ Partial Class BookIssueInformation
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Bebas Neue", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(172, 9)
+        Me.Label1.Location = New System.Drawing.Point(216, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(267, 77)
+        Me.Label1.Size = New System.Drawing.Size(331, 96)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Book Issue "
         '
@@ -74,9 +75,10 @@ Partial Class BookIssueInformation
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(43, 24)
+        Me.Label2.Location = New System.Drawing.Point(57, 30)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 16)
+        Me.Label2.Size = New System.Drawing.Size(57, 19)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "ISBN :"
         '
@@ -93,9 +95,11 @@ Partial Class BookIssueInformation
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(31, 176)
+        Me.GroupBox1.Location = New System.Drawing.Point(28, 217)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(515, 147)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(646, 181)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Book Details"
@@ -106,9 +110,10 @@ Partial Class BookIssueInformation
         Me.btnSearchBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSearchBook.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchBook.ForeColor = System.Drawing.Color.Black
-        Me.btnSearchBook.Location = New System.Drawing.Point(378, 24)
+        Me.btnSearchBook.Location = New System.Drawing.Point(492, 26)
+        Me.btnSearchBook.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSearchBook.Name = "btnSearchBook"
-        Me.btnSearchBook.Size = New System.Drawing.Size(98, 43)
+        Me.btnSearchBook.Size = New System.Drawing.Size(131, 45)
         Me.btnSearchBook.TabIndex = 9
         Me.btnSearchBook.Text = "Search"
         Me.btnSearchBook.UseVisualStyleBackColor = False
@@ -119,9 +124,10 @@ Partial Class BookIssueInformation
         Me.txtBookTitle.Enabled = False
         Me.txtBookTitle.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBookTitle.ForeColor = System.Drawing.Color.White
-        Me.txtBookTitle.Location = New System.Drawing.Point(95, 59)
+        Me.txtBookTitle.Location = New System.Drawing.Point(127, 73)
+        Me.txtBookTitle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtBookTitle.Name = "txtBookTitle"
-        Me.txtBookTitle.Size = New System.Drawing.Size(261, 22)
+        Me.txtBookTitle.Size = New System.Drawing.Size(347, 26)
         Me.txtBookTitle.TabIndex = 8
         '
         'txtISBN
@@ -130,17 +136,19 @@ Partial Class BookIssueInformation
         Me.txtISBN.Enabled = False
         Me.txtISBN.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtISBN.ForeColor = System.Drawing.Color.White
-        Me.txtISBN.Location = New System.Drawing.Point(95, 21)
+        Me.txtISBN.Location = New System.Drawing.Point(127, 26)
+        Me.txtISBN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtISBN.Name = "txtISBN"
-        Me.txtISBN.Size = New System.Drawing.Size(261, 22)
+        Me.txtISBN.Size = New System.Drawing.Size(347, 26)
         Me.txtISBN.TabIndex = 7
         '
         'dtpDueDate
         '
         Me.dtpDueDate.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpDueDate.Location = New System.Drawing.Point(281, 118)
+        Me.dtpDueDate.Location = New System.Drawing.Point(334, 145)
+        Me.dtpDueDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtpDueDate.Name = "dtpDueDate"
-        Me.dtpDueDate.Size = New System.Drawing.Size(218, 22)
+        Me.dtpDueDate.Size = New System.Drawing.Size(289, 26)
         Me.dtpDueDate.TabIndex = 6
         '
         'dtpIssueDate
@@ -150,18 +158,20 @@ Partial Class BookIssueInformation
         Me.dtpIssueDate.CalendarTitleBackColor = System.Drawing.Color.Black
         Me.dtpIssueDate.CalendarTitleForeColor = System.Drawing.Color.White
         Me.dtpIssueDate.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpIssueDate.Location = New System.Drawing.Point(14, 118)
+        Me.dtpIssueDate.Location = New System.Drawing.Point(19, 145)
+        Me.dtpIssueDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtpIssueDate.Name = "dtpIssueDate"
-        Me.dtpIssueDate.Size = New System.Drawing.Size(218, 22)
+        Me.dtpIssueDate.Size = New System.Drawing.Size(289, 26)
         Me.dtpIssueDate.TabIndex = 5
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(278, 99)
+        Me.Label6.Location = New System.Drawing.Point(330, 122)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(70, 16)
+        Me.Label6.Size = New System.Drawing.Size(88, 19)
         Me.Label6.TabIndex = 4
         Me.Label6.Text = "Due Date :"
         '
@@ -169,9 +179,10 @@ Partial Class BookIssueInformation
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(11, 99)
+        Me.Label5.Location = New System.Drawing.Point(15, 122)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(78, 16)
+        Me.Label5.Size = New System.Drawing.Size(97, 19)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Issue Date :"
         '
@@ -179,9 +190,10 @@ Partial Class BookIssueInformation
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(11, 62)
+        Me.Label3.Location = New System.Drawing.Point(15, 76)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(78, 16)
+        Me.Label3.Size = New System.Drawing.Size(93, 19)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Book Tittle :"
         '
@@ -190,9 +202,10 @@ Partial Class BookIssueInformation
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(16, 61)
+        Me.Label4.Location = New System.Drawing.Point(21, 75)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(114, 16)
+        Me.Label4.Size = New System.Drawing.Size(144, 19)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Borrower's Name :"
         '
@@ -202,9 +215,10 @@ Partial Class BookIssueInformation
         Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReturn.Font = New System.Drawing.Font("Arial Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReturn.ForeColor = System.Drawing.Color.Black
-        Me.btnReturn.Location = New System.Drawing.Point(401, 473)
+        Me.btnReturn.Location = New System.Drawing.Point(541, 582)
+        Me.btnReturn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnReturn.Name = "btnReturn"
-        Me.btnReturn.Size = New System.Drawing.Size(129, 31)
+        Me.btnReturn.Size = New System.Drawing.Size(133, 44)
         Me.btnReturn.TabIndex = 4
         Me.btnReturn.Text = "Return"
         Me.btnReturn.UseVisualStyleBackColor = False
@@ -214,9 +228,10 @@ Partial Class BookIssueInformation
         Me.btnIssueBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnIssueBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnIssueBook.Font = New System.Drawing.Font("Arial Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIssueBook.Location = New System.Drawing.Point(66, 473)
+        Me.btnIssueBook.Location = New System.Drawing.Point(392, 582)
+        Me.btnIssueBook.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnIssueBook.Name = "btnIssueBook"
-        Me.btnIssueBook.Size = New System.Drawing.Size(129, 31)
+        Me.btnIssueBook.Size = New System.Drawing.Size(133, 44)
         Me.btnIssueBook.TabIndex = 5
         Me.btnIssueBook.Text = "Issue Book"
         Me.btnIssueBook.UseVisualStyleBackColor = False
@@ -230,9 +245,11 @@ Partial Class BookIssueInformation
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.GroupBox2.Location = New System.Drawing.Point(31, 79)
+        Me.GroupBox2.Location = New System.Drawing.Point(28, 97)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(515, 91)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Size = New System.Drawing.Size(640, 112)
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Borrower Details"
@@ -242,9 +259,10 @@ Partial Class BookIssueInformation
         Me.btnAdd.BackColor = System.Drawing.Color.White
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnAdd.ForeColor = System.Drawing.Color.Black
-        Me.btnAdd.Location = New System.Drawing.Point(378, 50)
+        Me.btnAdd.Location = New System.Drawing.Point(492, 64)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(98, 33)
+        Me.btnAdd.Size = New System.Drawing.Size(131, 41)
         Me.btnAdd.TabIndex = 7
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -256,9 +274,10 @@ Partial Class BookIssueInformation
         Me.btnSearchBorrower.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSearchBorrower.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchBorrower.ForeColor = System.Drawing.Color.Black
-        Me.btnSearchBorrower.Location = New System.Drawing.Point(378, 12)
+        Me.btnSearchBorrower.Location = New System.Drawing.Point(492, 18)
+        Me.btnSearchBorrower.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSearchBorrower.Name = "btnSearchBorrower"
-        Me.btnSearchBorrower.Size = New System.Drawing.Size(98, 33)
+        Me.btnSearchBorrower.Size = New System.Drawing.Size(131, 41)
         Me.btnSearchBorrower.TabIndex = 6
         Me.btnSearchBorrower.Text = "Search"
         Me.btnSearchBorrower.UseVisualStyleBackColor = False
@@ -268,9 +287,10 @@ Partial Class BookIssueInformation
         Me.txtBorrower.BackColor = System.Drawing.Color.Black
         Me.txtBorrower.Enabled = False
         Me.txtBorrower.ForeColor = System.Drawing.Color.White
-        Me.txtBorrower.Location = New System.Drawing.Point(136, 58)
+        Me.txtBorrower.Location = New System.Drawing.Point(181, 71)
+        Me.txtBorrower.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtBorrower.Name = "txtBorrower"
-        Me.txtBorrower.Size = New System.Drawing.Size(220, 22)
+        Me.txtBorrower.Size = New System.Drawing.Size(292, 26)
         Me.txtBorrower.TabIndex = 5
         '
         'cboBorrower
@@ -278,9 +298,10 @@ Partial Class BookIssueInformation
         Me.cboBorrower.BackColor = System.Drawing.Color.Black
         Me.cboBorrower.ForeColor = System.Drawing.Color.White
         Me.cboBorrower.FormattingEnabled = True
-        Me.cboBorrower.Location = New System.Drawing.Point(19, 21)
+        Me.cboBorrower.Location = New System.Drawing.Point(25, 26)
+        Me.cboBorrower.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cboBorrower.Name = "cboBorrower"
-        Me.cboBorrower.Size = New System.Drawing.Size(337, 24)
+        Me.cboBorrower.Size = New System.Drawing.Size(448, 26)
         Me.cboBorrower.TabIndex = 4
         '
         'dgvBookIssue
@@ -309,7 +330,8 @@ Partial Class BookIssueInformation
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvBookIssue.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvBookIssue.EnableHeadersVisualStyles = False
-        Me.dgvBookIssue.Location = New System.Drawing.Point(31, 335)
+        Me.dgvBookIssue.Location = New System.Drawing.Point(28, 412)
+        Me.dgvBookIssue.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgvBookIssue.Name = "dgvBookIssue"
         Me.dgvBookIssue.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -327,15 +349,15 @@ Partial Class BookIssueInformation
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
         Me.dgvBookIssue.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvBookIssue.Size = New System.Drawing.Size(515, 132)
+        Me.dgvBookIssue.Size = New System.Drawing.Size(646, 162)
         Me.dgvBookIssue.TabIndex = 9
         '
         'BookIssueInformation
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(575, 507)
+        Me.ClientSize = New System.Drawing.Size(699, 647)
         Me.Controls.Add(Me.dgvBookIssue)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnIssueBook)
@@ -343,6 +365,7 @@ Partial Class BookIssueInformation
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "BookIssueInformation"
         Me.Text = "Borrower Details"
         Me.GroupBox1.ResumeLayout(False)
