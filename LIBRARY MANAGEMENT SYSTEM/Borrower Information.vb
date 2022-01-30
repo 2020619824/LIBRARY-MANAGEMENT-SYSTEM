@@ -45,8 +45,15 @@ Public Class BorrowerInformation
             noBooksBorrowed()
         End If
     End Sub
+
+    Private Sub ValidateSearch() 'to remind the user to put the name before system do the searching'
+        If txtSearchBorrowersName.Text = ("") Then
+            MyMessageBox.ShowMessage("Please input the name to search")
+        End If
+    End Sub
     'button searchborrower display after get click (search by name)'
     Private Sub btnSearchBorrower_Click(sender As Object, e As EventArgs) Handles btnSearchBorrower.Click
+        ValidateSearch()
         DisplayTableBorrower()
         dgvBorrowerInfo.Enabled = True
     End Sub
