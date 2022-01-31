@@ -44,12 +44,12 @@ Public Class Login
 
     End Sub
 
-    Private Sub Reset() 'function on clear the data that the user put'
+    Private Sub Reset() 'function on clear the data that insert by the user'
         txtGetPassword.Clear()
         txtGetUserName.Clear()
         chkShowPassword.Checked = False
     End Sub
-    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click 'fuction on bact to startup and call others function that involved'
+    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click 'fuction on back to startup '
 
         Reset()
         Me.Hide()
