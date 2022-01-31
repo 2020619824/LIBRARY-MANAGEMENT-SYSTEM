@@ -3,6 +3,7 @@ Module CommandSQL
 
     Dim Con = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True")
 
+    ' To execute SQL Command such as Insert, Update and Delete
     Public Sub SQLCommandBasic(ByVal strQuery As String)
         Try
             Con.Open()
@@ -16,6 +17,7 @@ Module CommandSQL
         End Try
     End Sub
 
+    ' To execute SQL Command such as Select and Display the result in DataGridView
     Public Sub SQLCommandView(ByVal strQuery As String, ByVal TempDataGridView As DataGridView)
         Try
             Con.Open()
@@ -33,8 +35,9 @@ Module CommandSQL
         End Try
     End Sub
 
+    ' To format date of today that will being used in SQL Command
     Public Function TodayDate() As String
-        'SQL Date Format: YYYY-MM-DD
+        ' SQL Date Format: YYYY-MM-DD
         Dim dateSQLFormat = Date.Today.Year.ToString & "-"
         dateSQLFormat += Date.Today.Month.ToString & "-"
         dateSQLFormat += Date.Today.Day.ToString

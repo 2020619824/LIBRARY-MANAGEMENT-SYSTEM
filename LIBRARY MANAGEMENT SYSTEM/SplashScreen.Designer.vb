@@ -23,6 +23,7 @@ Partial Class SplashScreen
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SplashScreen))
         Me.picLibraryLogo = New System.Windows.Forms.PictureBox()
         Me.loadingBar = New System.Windows.Forms.Panel()
         Me.progressBar = New System.Windows.Forms.Panel()
@@ -76,6 +77,7 @@ Partial Class SplashScreen
         Me.Controls.Add(Me.loadingBar)
         Me.Controls.Add(Me.picLibraryLogo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "SplashScreen"

@@ -22,28 +22,29 @@ Partial Class LateReturnInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim BorrowerICLabel As System.Windows.Forms.Label
+        Dim lblBorrowerIC As System.Windows.Forms.Label
         Dim lblTotalLateFines As System.Windows.Forms.Label
-        Dim Label3 As System.Windows.Forms.Label
+        Dim lblBorrowerName As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LateReturnInformation))
         Me.dgvLateReturnFine = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtBalance = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblBalance = New System.Windows.Forms.Label()
         Me.txtBorrowerName = New System.Windows.Forms.TextBox()
         Me.txtTotalLateReturnFines = New System.Windows.Forms.TextBox()
         Me.txtBorrowerIC = New System.Windows.Forms.TextBox()
         Me.dtpDatePaynment = New System.Windows.Forms.DateTimePicker()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.txtFinePayment = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.cmdGenerateReceipt = New System.Windows.Forms.Button()
+        Me.lblDatePayment = New System.Windows.Forms.Label()
+        Me.lblInsertFinePayment = New System.Windows.Forms.Label()
+        Me.btnGenerateReceipt = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cmdSearchLateReturnFines = New System.Windows.Forms.Button()
+        Me.btnSearchLateReturnFines = New System.Windows.Forms.Button()
         Me.cboSearchBy = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearchLateReturnInformation = New System.Windows.Forms.TextBox()
@@ -51,40 +52,40 @@ Partial Class LateReturnInformation
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnListLateReturn = New System.Windows.Forms.Button()
-        BorrowerICLabel = New System.Windows.Forms.Label()
+        lblBorrowerIC = New System.Windows.Forms.Label()
         lblTotalLateFines = New System.Windows.Forms.Label()
-        Label3 = New System.Windows.Forms.Label()
+        lblBorrowerName = New System.Windows.Forms.Label()
         CType(Me.dgvLateReturnFine, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'BorrowerICLabel
+        'lblBorrowerIC
         '
-        BorrowerICLabel.AutoSize = True
-        BorrowerICLabel.Location = New System.Drawing.Point(75, 86)
-        BorrowerICLabel.Name = "BorrowerICLabel"
-        BorrowerICLabel.Size = New System.Drawing.Size(103, 19)
-        BorrowerICLabel.TabIndex = 8
-        BorrowerICLabel.Text = "Borrower IC:"
+        lblBorrowerIC.AutoSize = True
+        lblBorrowerIC.Location = New System.Drawing.Point(75, 86)
+        lblBorrowerIC.Name = "lblBorrowerIC"
+        lblBorrowerIC.Size = New System.Drawing.Size(103, 19)
+        lblBorrowerIC.TabIndex = 8
+        lblBorrowerIC.Text = "Borrower IC:"
         '
         'lblTotalLateFines
         '
         lblTotalLateFines.AutoSize = True
-        lblTotalLateFines.Location = New System.Drawing.Point(35, 123)
+        lblTotalLateFines.Location = New System.Drawing.Point(87, 128)
         lblTotalLateFines.Name = "lblTotalLateFines"
         lblTotalLateFines.Size = New System.Drawing.Size(91, 19)
         lblTotalLateFines.TabIndex = 10
         lblTotalLateFines.Text = "Total Fines:"
         '
-        'Label3
+        'lblBorrowerName
         '
-        Label3.AutoSize = True
-        Label3.Location = New System.Drawing.Point(50, 38)
-        Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(128, 19)
-        Label3.TabIndex = 12
-        Label3.Text = "Borrower Name:"
+        lblBorrowerName.AutoSize = True
+        lblBorrowerName.Location = New System.Drawing.Point(50, 40)
+        lblBorrowerName.Name = "lblBorrowerName"
+        lblBorrowerName.Size = New System.Drawing.Size(128, 19)
+        lblBorrowerName.TabIndex = 12
+        lblBorrowerName.Text = "Borrower Name:"
         '
         'dgvLateReturnFine
         '
@@ -139,19 +140,19 @@ Partial Class LateReturnInformation
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Black
         Me.GroupBox2.Controls.Add(Me.txtBalance)
-        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.lblBalance)
         Me.GroupBox2.Controls.Add(Me.txtBorrowerName)
-        Me.GroupBox2.Controls.Add(Label3)
+        Me.GroupBox2.Controls.Add(lblBorrowerName)
         Me.GroupBox2.Controls.Add(lblTotalLateFines)
         Me.GroupBox2.Controls.Add(Me.txtTotalLateReturnFines)
-        Me.GroupBox2.Controls.Add(BorrowerICLabel)
+        Me.GroupBox2.Controls.Add(lblBorrowerIC)
         Me.GroupBox2.Controls.Add(Me.txtBorrowerIC)
         Me.GroupBox2.Controls.Add(Me.dtpDatePaynment)
         Me.GroupBox2.Controls.Add(Me.btnClear)
         Me.GroupBox2.Controls.Add(Me.txtFinePayment)
-        Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Controls.Add(Me.cmdGenerateReceipt)
+        Me.GroupBox2.Controls.Add(Me.lblDatePayment)
+        Me.GroupBox2.Controls.Add(Me.lblInsertFinePayment)
+        Me.GroupBox2.Controls.Add(Me.btnGenerateReceipt)
         Me.GroupBox2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(646, 136)
@@ -170,14 +171,14 @@ Partial Class LateReturnInformation
         Me.txtBalance.Size = New System.Drawing.Size(241, 27)
         Me.txtBalance.TabIndex = 15
         '
-        'Label6
+        'lblBalance
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(105, 209)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 19)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Balance:"
+        Me.lblBalance.AutoSize = True
+        Me.lblBalance.Location = New System.Drawing.Point(105, 209)
+        Me.lblBalance.Name = "lblBalance"
+        Me.lblBalance.Size = New System.Drawing.Size(73, 19)
+        Me.lblBalance.TabIndex = 14
+        Me.lblBalance.Text = "Balance:"
         '
         'txtBorrowerName
         '
@@ -217,10 +218,10 @@ Partial Class LateReturnInformation
         'btnClear
         '
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnClear.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.Black
-        Me.btnClear.Location = New System.Drawing.Point(28, 304)
+        Me.btnClear.Location = New System.Drawing.Point(91, 304)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(134, 66)
         Me.btnClear.TabIndex = 7
@@ -236,40 +237,40 @@ Partial Class LateReturnInformation
         Me.txtFinePayment.Size = New System.Drawing.Size(241, 27)
         Me.txtFinePayment.TabIndex = 5
         '
-        'Label5
+        'lblDatePayment
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(24, 249)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(125, 19)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Date payment : "
+        Me.lblDatePayment.AutoSize = True
+        Me.lblDatePayment.Location = New System.Drawing.Point(24, 249)
+        Me.lblDatePayment.Name = "lblDatePayment"
+        Me.lblDatePayment.Size = New System.Drawing.Size(125, 19)
+        Me.lblDatePayment.TabIndex = 3
+        Me.lblDatePayment.Text = "Date payment : "
         '
-        'Label4
+        'lblInsertFinePayment
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(24, 169)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(154, 19)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Insert fine payment:"
+        Me.lblInsertFinePayment.AutoSize = True
+        Me.lblInsertFinePayment.Location = New System.Drawing.Point(24, 169)
+        Me.lblInsertFinePayment.Name = "lblInsertFinePayment"
+        Me.lblInsertFinePayment.Size = New System.Drawing.Size(154, 19)
+        Me.lblInsertFinePayment.TabIndex = 2
+        Me.lblInsertFinePayment.Text = "Insert fine payment:"
         '
-        'cmdGenerateReceipt
+        'btnGenerateReceipt
         '
-        Me.cmdGenerateReceipt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdGenerateReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmdGenerateReceipt.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdGenerateReceipt.ForeColor = System.Drawing.Color.Black
-        Me.cmdGenerateReceipt.Location = New System.Drawing.Point(301, 304)
-        Me.cmdGenerateReceipt.Name = "cmdGenerateReceipt"
-        Me.cmdGenerateReceipt.Size = New System.Drawing.Size(134, 66)
-        Me.cmdGenerateReceipt.TabIndex = 1
-        Me.cmdGenerateReceipt.Text = "Generate Receipt"
-        Me.cmdGenerateReceipt.UseVisualStyleBackColor = False
+        Me.btnGenerateReceipt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGenerateReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnGenerateReceipt.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGenerateReceipt.ForeColor = System.Drawing.Color.Black
+        Me.btnGenerateReceipt.Location = New System.Drawing.Point(266, 304)
+        Me.btnGenerateReceipt.Name = "btnGenerateReceipt"
+        Me.btnGenerateReceipt.Size = New System.Drawing.Size(134, 66)
+        Me.btnGenerateReceipt.TabIndex = 1
+        Me.btnGenerateReceipt.Text = "Generate Receipt"
+        Me.btnGenerateReceipt.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.cmdSearchLateReturnFines)
+        Me.GroupBox1.Controls.Add(Me.btnSearchLateReturnFines)
         Me.GroupBox1.Controls.Add(Me.cboSearchBy)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtSearchLateReturnInformation)
@@ -282,18 +283,18 @@ Partial Class LateReturnInformation
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Search Late Return Information"
         '
-        'cmdSearchLateReturnFines
+        'btnSearchLateReturnFines
         '
-        Me.cmdSearchLateReturnFines.BackColor = System.Drawing.Color.White
-        Me.cmdSearchLateReturnFines.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmdSearchLateReturnFines.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdSearchLateReturnFines.ForeColor = System.Drawing.Color.Black
-        Me.cmdSearchLateReturnFines.Location = New System.Drawing.Point(472, 18)
-        Me.cmdSearchLateReturnFines.Name = "cmdSearchLateReturnFines"
-        Me.cmdSearchLateReturnFines.Size = New System.Drawing.Size(112, 41)
-        Me.cmdSearchLateReturnFines.TabIndex = 18
-        Me.cmdSearchLateReturnFines.Text = "Search"
-        Me.cmdSearchLateReturnFines.UseVisualStyleBackColor = False
+        Me.btnSearchLateReturnFines.BackColor = System.Drawing.Color.White
+        Me.btnSearchLateReturnFines.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSearchLateReturnFines.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchLateReturnFines.ForeColor = System.Drawing.Color.Black
+        Me.btnSearchLateReturnFines.Location = New System.Drawing.Point(472, 18)
+        Me.btnSearchLateReturnFines.Name = "btnSearchLateReturnFines"
+        Me.btnSearchLateReturnFines.Size = New System.Drawing.Size(112, 41)
+        Me.btnSearchLateReturnFines.TabIndex = 18
+        Me.btnSearchLateReturnFines.Text = "Search"
+        Me.btnSearchLateReturnFines.UseVisualStyleBackColor = False
         '
         'cboSearchBy
         '
@@ -344,7 +345,7 @@ Partial Class LateReturnInformation
         'btnBack
         '
         Me.btnBack.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBack.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.Color.Black
         Me.btnBack.Location = New System.Drawing.Point(971, 540)
@@ -357,7 +358,7 @@ Partial Class LateReturnInformation
         'btnListLateReturn
         '
         Me.btnListLateReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnListLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnListLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnListLateReturn.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListLateReturn.ForeColor = System.Drawing.Color.Black
         Me.btnListLateReturn.Location = New System.Drawing.Point(661, 540)
@@ -380,6 +381,7 @@ Partial Class LateReturnInformation
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.dgvLateReturnFine)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "LateReturnInformation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Late Return Information"
@@ -395,9 +397,9 @@ Partial Class LateReturnInformation
 
     Friend WithEvents dgvLateReturnFine As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents cmdGenerateReceipt As Button
+    Friend WithEvents btnGenerateReceipt As Button
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents cmdSearchLateReturnFines As Button
+    Friend WithEvents btnSearchLateReturnFines As Button
     Friend WithEvents cboSearchBy As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtSearchLateReturnInformation As TextBox
@@ -407,12 +409,12 @@ Partial Class LateReturnInformation
     Friend WithEvents dtpDatePaynment As DateTimePicker
     Friend WithEvents btnBack As Button
     Friend WithEvents txtFinePayment As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblDatePayment As Label
+    Friend WithEvents lblInsertFinePayment As Label
     Friend WithEvents txtTotalLateReturnFines As TextBox
     Friend WithEvents txtBorrowerIC As TextBox
     Friend WithEvents txtBorrowerName As TextBox
     Friend WithEvents btnListLateReturn As Button
     Friend WithEvents txtBalance As TextBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lblBalance As Label
 End Class

@@ -1,7 +1,7 @@
 ﻿
 Imports System.Data.SqlClient
 Public Class Login
-
+    'function on let the user make choice rather enable or unable the the system display the password'
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
         If (Me.chkShowPassword.Checked = False) Then
             Me.txtGetPassword.PasswordChar = "*"c
@@ -10,7 +10,7 @@ Public Class Login
         End If
 
     End Sub
-
+    'function on get the username and password that exist in the system to login'
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim Con As New SqlConnection
         Dim cmd As New SqlCommand
@@ -44,17 +44,19 @@ Public Class Login
 
     End Sub
 
-    Private Sub Reset()
+    Private Sub Reset() 'function on clear the data that insert by the user'
         txtGetPassword.Clear()
         txtGetUserName.Clear()
+        chkShowPassword.Checked = False
     End Sub
-    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
+    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click 'fuction on back to startup '
+
         Reset()
-        Me.Close()
-
+        Me.Hide()
+        StartUp.Show()
     End Sub
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'to makesure the system didnot show the password at first'
         Me.txtGetPassword.PasswordChar = "*"c
     End Sub
 End Class

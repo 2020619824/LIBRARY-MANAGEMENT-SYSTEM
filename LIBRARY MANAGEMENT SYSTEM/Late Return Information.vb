@@ -1,10 +1,8 @@
-﻿
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Public Class LateReturnInformation
 
     Dim con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30 ")
-    Dim cmd As New SqlCommand
-    Dim i As Integer
+    Dim i As Integer 'to store current primary key selected data from data grid
 
     Private Sub LateReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -32,7 +30,7 @@ Public Class LateReturnInformation
         End If
         Return True
     End Function
-    Private Sub cmdSearchLateReturnFines_Click(sender As Object, e As EventArgs) Handles cmdSearchLateReturnFines.Click
+    Private Sub cmdSearchLateReturnFines_Click(sender As Object, e As EventArgs) Handles btnSearchLateReturnFines.Click
         Dim strSearchBorrowerName As String
 
 
@@ -101,14 +99,14 @@ Public Class LateReturnInformation
 
     End Sub
 
-
+    ' Function to get the total balance of the paynment
     Private Sub totalBalance()
         Dim dectotBal As Decimal
 
         dectotBal = txtFinePayment.Text - txtTotalLateReturnFines.Text
         txtBalance.Text = Format(dectotBal, "0.00")
     End Sub
-    Private Sub cmdGenerateReceipt_Click(sender As Object, e As EventArgs) Handles cmdGenerateReceipt.Click
+    Private Sub cmdGenerateReceipt_Click(sender As Object, e As EventArgs) Handles btnGenerateReceipt.Click
 
         If i = 0 Then
             MyMessageBox.ShowMessage("Please fill the boxes by select data from list of Late Return Books! ")
@@ -117,10 +115,10 @@ Public Class LateReturnInformation
         ElseIf txtBorrowerIC.Text = "" Then
             MyMessageBox.ShowMessage("Missing borrowers's IC input! ")
         ElseIf txtTotalLateReturnFines.Text = "" Then
-            MyMessageBox.ShowMessage("Missing late return fine input! ")
+            MyMessageBox.ShowMessage("Missing total fine input! ")
         ElseIf txtFinePayment.Text = "" Then
             MyMessageBox.ShowMessage("Missing payment input! ")
-        ElseIf txtFinePayment.Text < txtTotalLateReturnFines.Text Then
+        ElseIf CDec(txtFinePayment.Text) < CDec(txtTotalLateReturnFines.Text) Then 'this condition to compare between total late fine and the amount of payment given
             MyMessageBox.ShowMessage("Amount is not enough for payment! " & ControlChars.CrLf & "Please put new payment.")
             txtFinePayment.Clear()
         Else
@@ -132,6 +130,8 @@ Public Class LateReturnInformation
         End If
 
     End Sub
+
+    ' Function to update the status and return date in Borrow database
     Private Sub UpdateBorrow()
         Dim query
         query = "Update Borrow
@@ -141,6 +141,7 @@ Public Class LateReturnInformation
         SQLCommandBasic(query)
     End Sub
 
+    ' Function to update fine payment given in LateReturnFines database
     Private Sub UpdatePayment()
         Dim query
         query = "Update LateReturnFines 
@@ -149,7 +150,7 @@ Public Class LateReturnInformation
                  And LateReturnFines = " & txtTotalLateReturnFines.Text & ""
         SQLCommandBasic(query)
     End Sub
-
+    ' Function to update date of payment in LateReturnFines database
     Private Sub UpdateDatePayment()
         Dim query
         query = "Update LateReturnFines 
@@ -160,6 +161,10 @@ Public Class LateReturnInformation
     End Sub
 
     Private Sub pdReceipt_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles pdReceipt.PrintPage
+
+
+        e.Graphics.DrawString("RECEIPT", New Font("Times New Roman", 24,
+            FontStyle.Bold), Brushes.Black, 300, 50)
 
         e.Graphics.DrawString("=======================================", New Font("Times New Roman", 24,
             FontStyle.Bold), Brushes.Black, 50, 80)
@@ -216,6 +221,4 @@ Public Class LateReturnInformation
                  AND L.DateofPayment is null"
         SQLCommandView(query, dgvLateReturnFine)
     End Sub
-
-
 End Class
