@@ -31,13 +31,13 @@ Partial Class MenuList
         Me.txtDate = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtCurrentUser = New System.Windows.Forms.TextBox()
-        Me.cmdExit = New System.Windows.Forms.Button()
-        Me.cmdDisplayUser = New System.Windows.Forms.Button()
-        Me.cmdDisplayBookDetails = New System.Windows.Forms.Button()
-        Me.cmdDisplayBorrowers = New System.Windows.Forms.Button()
-        Me.cmdDisplayBookReturn = New System.Windows.Forms.Button()
-        Me.cmdBookIssue = New System.Windows.Forms.Button()
-        Me.cmdDisplayLateReturn = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.btnDisplayUser = New System.Windows.Forms.Button()
+        Me.btnDisplayBookDetails = New System.Windows.Forms.Button()
+        Me.btnDisplayBorrowers = New System.Windows.Forms.Button()
+        Me.btnDisplayBookReturn = New System.Windows.Forms.Button()
+        Me.btnBookIssue = New System.Windows.Forms.Button()
+        Me.btnDisplayLateReturn = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label4 = New System.Windows.Forms.Label()
         Me.picLibraryLogo = New System.Windows.Forms.PictureBox()
@@ -54,7 +54,7 @@ Partial Class MenuList
         Me.GroupBox1.Controls.Add(Me.txtDate)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtCurrentUser)
-        Me.GroupBox1.Controls.Add(Me.cmdExit)
+        Me.GroupBox1.Controls.Add(Me.btnExit)
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(1, 45)
@@ -118,109 +118,109 @@ Partial Class MenuList
         Me.txtCurrentUser.Size = New System.Drawing.Size(139, 27)
         Me.txtCurrentUser.TabIndex = 1
         '
-        'cmdExit
+        'btnExit
         '
-        Me.cmdExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdExit.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdExit.ForeColor = System.Drawing.Color.White
-        Me.cmdExit.Location = New System.Drawing.Point(24, 390)
-        Me.cmdExit.Name = "cmdExit"
-        Me.cmdExit.Size = New System.Drawing.Size(139, 46)
-        Me.cmdExit.TabIndex = 1
-        Me.cmdExit.Text = "Exit"
-        Me.cmdExit.UseVisualStyleBackColor = False
+        Me.btnExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnExit.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExit.ForeColor = System.Drawing.Color.White
+        Me.btnExit.Location = New System.Drawing.Point(24, 390)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(139, 46)
+        Me.btnExit.TabIndex = 1
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.UseVisualStyleBackColor = False
         '
-        'cmdDisplayUser
+        'btnDisplayUser
         '
-        Me.cmdDisplayUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdDisplayUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdDisplayUser.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDisplayUser.ForeColor = System.Drawing.Color.White
-        Me.cmdDisplayUser.Image = CType(resources.GetObject("cmdDisplayUser.Image"), System.Drawing.Image)
-        Me.cmdDisplayUser.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.cmdDisplayUser.Location = New System.Drawing.Point(1, 3)
-        Me.cmdDisplayUser.Name = "cmdDisplayUser"
-        Me.cmdDisplayUser.Size = New System.Drawing.Size(93, 36)
-        Me.cmdDisplayUser.TabIndex = 2
-        Me.cmdDisplayUser.Text = "User"
-        Me.cmdDisplayUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.cmdDisplayUser.UseVisualStyleBackColor = False
+        Me.btnDisplayUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDisplayUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDisplayUser.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDisplayUser.ForeColor = System.Drawing.Color.White
+        Me.btnDisplayUser.Image = CType(resources.GetObject("btnDisplayUser.Image"), System.Drawing.Image)
+        Me.btnDisplayUser.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnDisplayUser.Location = New System.Drawing.Point(1, 3)
+        Me.btnDisplayUser.Name = "btnDisplayUser"
+        Me.btnDisplayUser.Size = New System.Drawing.Size(93, 36)
+        Me.btnDisplayUser.TabIndex = 2
+        Me.btnDisplayUser.Text = "User"
+        Me.btnDisplayUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDisplayUser.UseVisualStyleBackColor = False
         '
-        'cmdDisplayBookDetails
+        'btnDisplayBookDetails
         '
-        Me.cmdDisplayBookDetails.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdDisplayBookDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdDisplayBookDetails.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDisplayBookDetails.ForeColor = System.Drawing.Color.White
-        Me.cmdDisplayBookDetails.Image = CType(resources.GetObject("cmdDisplayBookDetails.Image"), System.Drawing.Image)
-        Me.cmdDisplayBookDetails.Location = New System.Drawing.Point(250, 3)
-        Me.cmdDisplayBookDetails.Name = "cmdDisplayBookDetails"
-        Me.cmdDisplayBookDetails.Size = New System.Drawing.Size(171, 36)
-        Me.cmdDisplayBookDetails.TabIndex = 3
-        Me.cmdDisplayBookDetails.Text = "Book Details"
-        Me.cmdDisplayBookDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.cmdDisplayBookDetails.UseVisualStyleBackColor = False
+        Me.btnDisplayBookDetails.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDisplayBookDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDisplayBookDetails.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDisplayBookDetails.ForeColor = System.Drawing.Color.White
+        Me.btnDisplayBookDetails.Image = CType(resources.GetObject("btnDisplayBookDetails.Image"), System.Drawing.Image)
+        Me.btnDisplayBookDetails.Location = New System.Drawing.Point(250, 3)
+        Me.btnDisplayBookDetails.Name = "btnDisplayBookDetails"
+        Me.btnDisplayBookDetails.Size = New System.Drawing.Size(171, 36)
+        Me.btnDisplayBookDetails.TabIndex = 3
+        Me.btnDisplayBookDetails.Text = "Book Details"
+        Me.btnDisplayBookDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDisplayBookDetails.UseVisualStyleBackColor = False
         '
-        'cmdDisplayBorrowers
+        'btnDisplayBorrowers
         '
-        Me.cmdDisplayBorrowers.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdDisplayBorrowers.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdDisplayBorrowers.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDisplayBorrowers.ForeColor = System.Drawing.Color.White
-        Me.cmdDisplayBorrowers.Image = CType(resources.GetObject("cmdDisplayBorrowers.Image"), System.Drawing.Image)
-        Me.cmdDisplayBorrowers.Location = New System.Drawing.Point(577, 3)
-        Me.cmdDisplayBorrowers.Name = "cmdDisplayBorrowers"
-        Me.cmdDisplayBorrowers.Size = New System.Drawing.Size(163, 36)
-        Me.cmdDisplayBorrowers.TabIndex = 4
-        Me.cmdDisplayBorrowers.Text = "Borrowers"
-        Me.cmdDisplayBorrowers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.cmdDisplayBorrowers.UseVisualStyleBackColor = False
+        Me.btnDisplayBorrowers.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDisplayBorrowers.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDisplayBorrowers.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDisplayBorrowers.ForeColor = System.Drawing.Color.White
+        Me.btnDisplayBorrowers.Image = CType(resources.GetObject("btnDisplayBorrowers.Image"), System.Drawing.Image)
+        Me.btnDisplayBorrowers.Location = New System.Drawing.Point(577, 3)
+        Me.btnDisplayBorrowers.Name = "btnDisplayBorrowers"
+        Me.btnDisplayBorrowers.Size = New System.Drawing.Size(163, 36)
+        Me.btnDisplayBorrowers.TabIndex = 4
+        Me.btnDisplayBorrowers.Text = "Borrowers"
+        Me.btnDisplayBorrowers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDisplayBorrowers.UseVisualStyleBackColor = False
         '
-        'cmdDisplayBookReturn
+        'btnDisplayBookReturn
         '
-        Me.cmdDisplayBookReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdDisplayBookReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdDisplayBookReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDisplayBookReturn.ForeColor = System.Drawing.Color.White
-        Me.cmdDisplayBookReturn.Image = CType(resources.GetObject("cmdDisplayBookReturn.Image"), System.Drawing.Image)
-        Me.cmdDisplayBookReturn.Location = New System.Drawing.Point(417, 3)
-        Me.cmdDisplayBookReturn.Name = "cmdDisplayBookReturn"
-        Me.cmdDisplayBookReturn.Size = New System.Drawing.Size(163, 36)
-        Me.cmdDisplayBookReturn.TabIndex = 5
-        Me.cmdDisplayBookReturn.Text = "Book Return"
-        Me.cmdDisplayBookReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.cmdDisplayBookReturn.UseVisualStyleBackColor = False
+        Me.btnDisplayBookReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDisplayBookReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDisplayBookReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDisplayBookReturn.ForeColor = System.Drawing.Color.White
+        Me.btnDisplayBookReturn.Image = CType(resources.GetObject("btnDisplayBookReturn.Image"), System.Drawing.Image)
+        Me.btnDisplayBookReturn.Location = New System.Drawing.Point(417, 3)
+        Me.btnDisplayBookReturn.Name = "btnDisplayBookReturn"
+        Me.btnDisplayBookReturn.Size = New System.Drawing.Size(163, 36)
+        Me.btnDisplayBookReturn.TabIndex = 5
+        Me.btnDisplayBookReturn.Text = "Book Return"
+        Me.btnDisplayBookReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDisplayBookReturn.UseVisualStyleBackColor = False
         '
-        'cmdBookIssue
+        'btnBookIssue
         '
-        Me.cmdBookIssue.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdBookIssue.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdBookIssue.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdBookIssue.ForeColor = System.Drawing.Color.White
-        Me.cmdBookIssue.Image = CType(resources.GetObject("cmdBookIssue.Image"), System.Drawing.Image)
-        Me.cmdBookIssue.Location = New System.Drawing.Point(91, 3)
-        Me.cmdBookIssue.Name = "cmdBookIssue"
-        Me.cmdBookIssue.Size = New System.Drawing.Size(163, 36)
-        Me.cmdBookIssue.TabIndex = 6
-        Me.cmdBookIssue.Text = "Book Issue"
-        Me.cmdBookIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.cmdBookIssue.UseVisualStyleBackColor = False
+        Me.btnBookIssue.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBookIssue.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBookIssue.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBookIssue.ForeColor = System.Drawing.Color.White
+        Me.btnBookIssue.Image = CType(resources.GetObject("btnBookIssue.Image"), System.Drawing.Image)
+        Me.btnBookIssue.Location = New System.Drawing.Point(91, 3)
+        Me.btnBookIssue.Name = "btnBookIssue"
+        Me.btnBookIssue.Size = New System.Drawing.Size(163, 36)
+        Me.btnBookIssue.TabIndex = 6
+        Me.btnBookIssue.Text = "Book Issue"
+        Me.btnBookIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBookIssue.UseVisualStyleBackColor = False
         '
-        'cmdDisplayLateReturn
+        'btnDisplayLateReturn
         '
-        Me.cmdDisplayLateReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cmdDisplayLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdDisplayLateReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDisplayLateReturn.ForeColor = System.Drawing.Color.White
-        Me.cmdDisplayLateReturn.Image = CType(resources.GetObject("cmdDisplayLateReturn.Image"), System.Drawing.Image)
-        Me.cmdDisplayLateReturn.Location = New System.Drawing.Point(732, 3)
-        Me.cmdDisplayLateReturn.Name = "cmdDisplayLateReturn"
-        Me.cmdDisplayLateReturn.Size = New System.Drawing.Size(154, 36)
-        Me.cmdDisplayLateReturn.TabIndex = 7
-        Me.cmdDisplayLateReturn.Text = "Late Return"
-        Me.cmdDisplayLateReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.cmdDisplayLateReturn.UseVisualStyleBackColor = False
+        Me.btnDisplayLateReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDisplayLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDisplayLateReturn.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDisplayLateReturn.ForeColor = System.Drawing.Color.White
+        Me.btnDisplayLateReturn.Image = CType(resources.GetObject("btnDisplayLateReturn.Image"), System.Drawing.Image)
+        Me.btnDisplayLateReturn.Location = New System.Drawing.Point(732, 3)
+        Me.btnDisplayLateReturn.Name = "btnDisplayLateReturn"
+        Me.btnDisplayLateReturn.Size = New System.Drawing.Size(154, 36)
+        Me.btnDisplayLateReturn.TabIndex = 7
+        Me.btnDisplayLateReturn.Text = "Late Return"
+        Me.btnDisplayLateReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDisplayLateReturn.UseVisualStyleBackColor = False
         '
         'Timer1
         '
@@ -258,12 +258,12 @@ Partial Class MenuList
         Me.ClientSize = New System.Drawing.Size(886, 637)
         Me.Controls.Add(Me.picLibraryLogo)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.cmdDisplayLateReturn)
-        Me.Controls.Add(Me.cmdBookIssue)
-        Me.Controls.Add(Me.cmdDisplayBookReturn)
-        Me.Controls.Add(Me.cmdDisplayBorrowers)
-        Me.Controls.Add(Me.cmdDisplayBookDetails)
-        Me.Controls.Add(Me.cmdDisplayUser)
+        Me.Controls.Add(Me.btnDisplayLateReturn)
+        Me.Controls.Add(Me.btnBookIssue)
+        Me.Controls.Add(Me.btnDisplayBookReturn)
+        Me.Controls.Add(Me.btnDisplayBorrowers)
+        Me.Controls.Add(Me.btnDisplayBookDetails)
+        Me.Controls.Add(Me.btnDisplayUser)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -284,13 +284,13 @@ Partial Class MenuList
     Friend WithEvents txtDate As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtCurrentUser As TextBox
-    Friend WithEvents cmdExit As Button
-    Friend WithEvents cmdDisplayUser As Button
-    Friend WithEvents cmdDisplayBookDetails As Button
-    Friend WithEvents cmdDisplayBorrowers As Button
-    Friend WithEvents cmdDisplayBookReturn As Button
-    Friend WithEvents cmdBookIssue As Button
-    Friend WithEvents cmdDisplayLateReturn As Button
+    Friend WithEvents btnExit As Button
+    Friend WithEvents btnDisplayUser As Button
+    Friend WithEvents btnDisplayBookDetails As Button
+    Friend WithEvents btnDisplayBorrowers As Button
+    Friend WithEvents btnDisplayBookReturn As Button
+    Friend WithEvents btnBookIssue As Button
+    Friend WithEvents btnDisplayLateReturn As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label4 As Label
     Friend WithEvents picLibraryLogo As PictureBox
