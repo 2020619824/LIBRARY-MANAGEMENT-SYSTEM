@@ -1,10 +1,8 @@
-﻿
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Public Class LateReturnInformation
 
     Dim con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30 ")
-    Dim i As Integer '
-
+    Dim i As Integer 'to store current primary key selected data from data grid
 
     Private Sub LateReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -223,6 +221,4 @@ Public Class LateReturnInformation
                  AND L.DateofPayment is null"
         SQLCommandView(query, dgvLateReturnFine)
     End Sub
-
-
 End Class
