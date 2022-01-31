@@ -87,6 +87,7 @@ Public Class BookIssueInformation
         dtpIssueDate.CustomFormat = "yyyy-MM-dd"
         dtpDueDate.Format = DateTimePickerFormat.Custom
         dtpDueDate.CustomFormat = "yyyy-MM-dd"
+        dtpDueDate.Value = DateTime.Now.AddDays(+7)
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -102,8 +103,7 @@ Public Class BookIssueInformation
 
         Try
             con.Open()
-            Dim query = "select BorrowID as lastID from Borrow
-                    where BorrowID= @@identity"
+            Dim query = "select Max(BorrowID) as lastID from Borrow"
 
             Dim cmd = New SqlCommand(query, con)
             Dim dt = New DataTable()
@@ -118,12 +118,15 @@ Public Class BookIssueInformation
         End Try
     End Sub
     Private Sub btnIssueBook_Click(sender As Object, e As EventArgs) Handles btnIssueBook.Click
-        GetBorrowID()
-        GetBorrowerIC()
 
-        Dim query = "Insert into borrow values (" & intBorrowID & "," & txtISBN.Text & "," &
-            intBorrowerIC & ",'" & dtpIssueDate.Text & "','" & dtpDueDate.Text & "', null, 'no'"
-        SQLCommandBasic(query)
+        If ValidateDueDate() Then
+            GetBorrowID()
+            GetBorrowerIC()
+            Dim query = "Insert into borrow values (" & (intBorrowID + 1) & "," & txtISBN.Text & "," &
+                intBorrowerIC & ",'" & dtpIssueDate.Text & "','" & dtpDueDate.Text & "', null, 'No')"
+            SQLCommandBasic(query)
+            MyMessageBox.ShowMessage("Book has been issued")
+        End If
     End Sub
     Dim intBorrowerIC As Integer
     Private Sub GetBorrowerIC()
@@ -145,4 +148,64 @@ Public Class BookIssueInformation
             MyMessageBox.ShowMessage("Connection Error")
         End Try
     End Sub
+    Private Function ValidateTextBoxes() As Boolean
+        If txtBorrower.Text = "" Or txtISBN.Text = "" Or txtBookTitle.Text = "" Or cboBorrower_SelectedIndex() = Nothing Then
+            MyMessageBox.ShowMessage("Missing Information")
+            txtISBN.Focus()
+            Return False
+        End If
+        Return True
+    End Function
+    Private Sub LateReturnStatus()
+        Dim query = "update Borrow set LateReturnStatus='Yes' where DueDate<'" & TodayDate() & "'"
+        SQLCommandBasic(query)
+
+        query = "update latereturnfines set latereturnfines.latereturnfines = Datesiff(day,borrow.DueDate,GateDate())
+                 from latereturnfines inner join borrow on latereturnfines.BorrowID = borrow.BorrowID
+                 where borrow.latereturnstatus = 'yes'"
+        SQLCommandBasic(query)
+
+        query = "update Borrow set LateReturnStatus='No' where DueDate>='" & TodayDate() & "'"
+        SQLCommandBasic(query)
+
+        query = "update LateReturnFines set latereturnfines = 0 WHERE borrowid IN (SELECT borrowid FROM borrow WHERE latereturnstatus = 'no')"
+        SQLCommandBasic(query)
+    End Sub
+    Public Sub LateReturn()
+        Dim query = "Insert into LateReturnFines (BorrowID, LateReturn, payment, DateOfPayment)
+                     select BorrowID,Datediff(day, DueDate," & TodayDate() & "), null, null from borrow B where latereturnstatus = 'Yes'
+                     and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
+        SQLCommandBasic(query)
+
+        query = "Insert into LateReturnFines (BorrowID, LateReturnFines, payment, DateOfPayment)
+                 select BorrowID, 0, null, null from borrow B where latereturnstatus = 'No'
+                 and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
+        SQLCommandBasic(query)
+    End Sub
+    Private Sub BookIssueInformation_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        LateReturnStatus()
+        LateReturn()
+    End Sub
+    Private Function ValidateDueDate() As Boolean
+        Dim dtIssueDate As Date
+        Dim dtDueDate As Date
+        Dim intDiffDay As Integer
+
+        If ValidateTextBoxes() Then
+            dtIssueDate = Date.Parse(dtpIssueDate.Text)
+            dtDueDate = Date.Parse(dtpDueDate.Text)
+            intDiffDay = DateDiff(DateInterval.Day, dtIssueDate, dtDueDate)
+
+            If intDiffDay < 0 Then
+                MyMessageBox.ShowMessage("Invalid Due Date")
+                Return False
+            End If
+            Return True
+        End If
+        Return False
+    End Function
+    Private Sub dtpIssueDate_CloseUp(sender As Object, e As EventArgs) Handles dtpIssueDate.CloseUp
+        dtpDueDate.Value = dtpIssueDate.Value.AddDays(+7)
+    End Sub
+
 End Class
