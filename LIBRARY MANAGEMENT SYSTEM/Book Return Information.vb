@@ -150,8 +150,26 @@ Public Class BookReturnInformation
     Private Sub Reset()
         txtBorrowerName.Clear()
         txtBorrowerIC.Clear()
+        cboBorrowerName.Text = String.Empty
         btnLateReturn.Visible = False
-        cboBorrowerName.DataSource.Clear
+        Try
+            Con.Open()
+            Dim query = "select Distinct BW.BorrowerName
+                    from Borrow B, Borrower BW
+                    where B.BorrowerIC = BW.BorrowerIC
+                    and BW.BorrowerIC is null"
+            Dim adapter As SqlDataAdapter
+            Dim cmd = New SqlCommand(query, Con)
+            adapter = New SqlDataAdapter(cmd)
+            Dim tbl = New DataTable()
+            adapter.Fill(tbl)
+            cboBorrowerName.DataSource = tbl
+            cboBorrowerName.DisplayMember = "BorrowerName"
+            cboBorrowerName.ValueMember = "BorrowerName"
+            Con.Close()
+        Catch ex As Exception
+            MyMessageBox.ShowMessage("Connection Error")
+        End Try
     End Sub
 
     Private Sub BookReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
