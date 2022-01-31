@@ -46,7 +46,7 @@ Public Class BookIssueInformation
         btnAdd.Visible = True
     End Sub
 
-    Private Sub cboBorrower_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBorrower.SelectionChangeCommitted
+    Private Sub cboBorrower_SelecttionChangeCommitted(sender As Object, e As EventArgs) Handles cboBorrower.SelectionChangeCommitted
         GetBorrowerName()
     End Sub
     Private Sub DisplayBook()
@@ -149,7 +149,7 @@ Public Class BookIssueInformation
         End Try
     End Sub
     Private Function ValidateTextBoxes() As Boolean
-        If txtBorrower.Text = "" Or txtISBN.Text = "" Or txtBookTitle.Text = "" Or cboBorrower_SelectedIndex() = Nothing Then
+        If txtBorrower.Text = "" Or txtISBN.Text = "" Or txtBookTitle.Text = "" Or cboBorrower.SelectedIndex() = Nothing Then
             MyMessageBox.ShowMessage("Missing Information")
             txtISBN.Focus()
             Return False
