@@ -1,29 +1,29 @@
 ﻿Public Class MenuList
-    Private Sub cmdExit_Click(sender As Object, e As EventArgs) Handles cmdExit.Click
+    Private Sub cmdExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
     End Sub
 
-    Private Sub cmdDisplayUser_Click(sender As Object, e As EventArgs) Handles cmdDisplayUser.Click
+    Private Sub cmdDisplayUser_Click(sender As Object, e As EventArgs) Handles btnDisplayUser.Click
         UserInformation.ShowDialog()
     End Sub
 
-    Private Sub cmdDisplayBookDetails_Click(sender As Object, e As EventArgs) Handles cmdDisplayBookDetails.Click
+    Private Sub cmdDisplayBookDetails_Click(sender As Object, e As EventArgs) Handles btnDisplayBookDetails.Click
         BookDetails.ShowDialog()
     End Sub
 
-    Private Sub cmdDisplayBorrowers_Click(sender As Object, e As EventArgs) Handles cmdDisplayBorrowers.Click
+    Private Sub cmdDisplayBorrowers_Click(sender As Object, e As EventArgs) Handles btnDisplayBorrowers.Click
         BorrowerInformation.ShowDialog()
     End Sub
 
-    Private Sub cmdBookIssue_Click(sender As Object, e As EventArgs) Handles cmdBookIssue.Click
+    Private Sub cmdBookIssue_Click(sender As Object, e As EventArgs) Handles btnBookIssue.Click
         BookIssueInformation.ShowDialog()
     End Sub
 
-    Private Sub cmdDisplayBookReturn_Click(sender As Object, e As EventArgs) Handles cmdDisplayBookReturn.Click
+    Private Sub cmdDisplayBookReturn_Click(sender As Object, e As EventArgs) Handles btnDisplayBookReturn.Click
         BookReturnInformation.ShowDialog()
     End Sub
 
-    Private Sub cmdDisplayLateReturn_Click(sender As Object, e As EventArgs) Handles cmdDisplayLateReturn.Click
+    Private Sub cmdDisplayLateReturn_Click(sender As Object, e As EventArgs) Handles btnDisplayLateReturn.Click
         LateReturnInformation.ShowDialog()
     End Sub
 

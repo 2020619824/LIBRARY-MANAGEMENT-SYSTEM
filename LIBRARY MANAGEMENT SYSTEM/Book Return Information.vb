@@ -3,6 +3,7 @@ Public Class BookReturnInformation
 
     Dim Con = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True")
 
+    ' To add all Borrowers' name that has already borrow at least one Book into ComboBox
     Private Sub FillBorrowerName()
         Try
             Con.Open()
@@ -24,6 +25,7 @@ Public Class BookReturnInformation
         End Try
     End Sub
 
+    ' To get and display Borrower's name that is currently being selected
     Private Sub GetBorrowerName()
         Try
             Con.Open()
@@ -43,6 +45,7 @@ Public Class BookReturnInformation
         End Try
     End Sub
 
+    ' To get and display Borrower's IC that is currently being selected
     Private Sub GetBorrowerIC()
         Try
             Con.Open()
@@ -62,6 +65,7 @@ Public Class BookReturnInformation
         End Try
     End Sub
 
+    ' To display all Borrows' information for the current Borrower from Database into DataGridView
     Private Sub DisplayBorrrowedBook()
         Try
             Dim query = "select B.ISBN, B.YearofPublication, B.Title, B.Author, B.Publisher,
@@ -78,6 +82,7 @@ Public Class BookReturnInformation
         End Try
     End Sub
 
+    ' To display the header of borrow's information from Database into DataGridView
     Private Sub DisplayHeader()
         Try
             Dim query = "select B.ISBN, B.YearofPublication, B.Title, B.Author, B.Publisher,
@@ -89,6 +94,7 @@ Public Class BookReturnInformation
                 and B.ISBN is null"
             SQLCommandView(query, dgvBookReturnInfo)
 
+            ' Rename the headers
             dgvBookReturnInfo().Columns(2).HeaderText = "Year"
             dgvBookReturnInfo().Columns(8).HeaderText = "Late Return Status"
             dgvBookReturnInfo().Columns(9).HeaderText = "Late Return Fines"
@@ -97,6 +103,7 @@ Public Class BookReturnInformation
         End Try
     End Sub
 
+    ' To add new column with CheckBoxes
     Private Sub AddColumn()
         Dim newColumn As New DataGridViewCheckBoxColumn
         newColumn.HeaderText = "Select To Return Book"
@@ -105,10 +112,12 @@ Public Class BookReturnInformation
         dgvBookReturnInfo.Columns.Insert(0, newColumn)
     End Sub
 
+    ' To remove the CheckBoxes column
     Private Sub RemoveColumn()
         dgvBookReturnInfo.Columns.RemoveAt(0)
     End Sub
 
+    ' To only enable edit for column with CheckBoxes
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles dgvBookReturnInfo.Click
 
         dgvBookReturnInfo.ReadOnly = False
@@ -119,22 +128,25 @@ Public Class BookReturnInformation
     End Sub
 
     Private Sub LateReturnBook()
-        Dim blnYesDisplayed As Boolean
+        Dim blnYesDisplayed As Boolean 'Flag to indicate the message will only be displayed once
         blnYesDisplayed = False
+
+        ' Check if there any book that want to be returned has a late return fine
         Dim i As Integer
         For i = 0 To dgvBookReturnInfo.Rows.Count - 1
             If CStr(dgvBookReturnInfo.Rows(i).Cells(8).Value) = "Yes" And Not (blnYesDisplayed) Then
                 MyMessageBox.ShowMessage("You have late return fines that need to be settled")
-                btnLateReturn.Visible = True
+                btnLateReturn.Visible = True 'Reveal the btnLateReturn that will redirect the user to Late Return Information Page
                 blnYesDisplayed = True
             End If
         Next
 
         If blnYesDisplayed = False Then
-            btnLateReturn.Visible = False
+            btnLateReturn.Visible = False 'Hide the btnLateReturn that will redirect the user to Late Return Information Page
         End If
     End Sub
 
+    ' To clear/reset all displayed information
     Private Sub Reset()
         txtBorrowerName.Clear()
         txtBorrowerIC.Clear()
@@ -165,6 +177,7 @@ Public Class BookReturnInformation
         DisplayHeader()
     End Sub
 
+    ' To search Borrower's details based on their name and will be displayed into ComboBox
     Private Sub btnSearchBorrower_Click(sender As Object, e As EventArgs) Handles btnSearchBorrower.Click
         FillBorrowerName()
         DisplayHeader()
@@ -174,6 +187,7 @@ Public Class BookReturnInformation
         MyMessageBox.ShowMessage(cboBorrowerName.Items.Count & " Borrower found!")
     End Sub
 
+    ' To show all borrow's details of current selected Borrower
     Private Sub cboBorrowerName_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cboBorrowerName.SelectionChangeCommitted
         GetBorrowerName()
         GetBorrowerIC()
@@ -181,15 +195,16 @@ Public Class BookReturnInformation
         LateReturnBook()
     End Sub
 
+    ' To update the return date of selected Books that has been returned
     Private Sub btnReturnBook_Click(sender As Object, e As EventArgs) Handles btnReturnBook.Click
 
         Dim query
-        Dim blnUpdateMessageDisplayed As Boolean
-        Dim blnFineMessageDisplayed As Boolean
+        Dim blnUpdateMessageDisplayed As Boolean 'Flag to indicate the message will only be displayed once
+        Dim blnFineMessageDisplayed As Boolean 'Flag to indicate the message will only be displayed once
         blnUpdateMessageDisplayed = False
         blnFineMessageDisplayed = False
-        Dim borrowerIC = txtBorrowerIC.Text
 
+        ' Check if the selected Book can be returned or not
         Dim i As Integer
         For i = 0 To dgvBookReturnInfo.Rows.Count - 1
             If CBool(dgvBookReturnInfo.Rows(i).Cells(0).Value) = True Then
@@ -200,10 +215,10 @@ Public Class BookReturnInformation
                     End If
                 Else
                     query = "update borrow set ReturnDate='" & TodayDate() & "' where ISBN=" & dgvBookReturnInfo.Rows(i).Cells(1).Value.ToString &
-                        " and BorrowerIC=" & borrowerIC & " and LateReturnStatus='No'"
+                            " and BorrowerIC=" & txtBorrowerIC.Text & " and LateReturnStatus='No'"
                     SQLCommandBasic(query)
                     If (Not (blnUpdateMessageDisplayed)) Then
-                        MyMessageBox.ShowMessage("Return Date Updated")
+                        MyMessageBox.ShowMessage("The Book Has Been Returned" & ControlChars.CrLf & "Thank You!")
                         blnUpdateMessageDisplayed = True
                     End If
                 End If
@@ -215,6 +230,7 @@ Public Class BookReturnInformation
         End If
     End Sub
 
+    ' To redirect the user to Late Return Information Page
     Private Sub btnLateReturn_Click(sender As Object, e As EventArgs) Handles btnLateReturn.Click
         Reset()
         RemoveColumn()
@@ -222,6 +238,7 @@ Public Class BookReturnInformation
         LateReturnInformation.ShowDialog()
     End Sub
 
+    ' To redirect the user to Menu List Page
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Reset()
         RemoveColumn()
