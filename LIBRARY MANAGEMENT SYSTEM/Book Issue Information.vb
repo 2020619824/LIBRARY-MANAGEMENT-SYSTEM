@@ -149,7 +149,7 @@ Public Class BookIssueInformation
         End Try
     End Sub
     Private Function ValidateTextBoxes() As Boolean
-        If txtBorrower.Text = "" Or txtISBN.Text = "" Or txtBookTitle.Text = "" Or cboBorrower.SelectedIndex() = Nothing Then
+        If txtBorrower.Text = "" Or txtISBN.Text = "" Or txtBookTitle.Text = "" Or cboBorrower.SelectedIndex = Nothing Then
             MyMessageBox.ShowMessage("Missing Information")
             txtISBN.Focus()
             Return False
@@ -160,7 +160,7 @@ Public Class BookIssueInformation
         Dim query = "update Borrow set LateReturnStatus='Yes' where DueDate<'" & TodayDate() & "'"
         SQLCommandBasic(query)
 
-        query = "update latereturnfines set latereturnfines.latereturnfines = Datesiff(day,borrow.DueDate,GateDate())
+        query = "update latereturnfines set latereturnfines.latereturnfines = Datediff(day,borrow.DueDate,GateDate())
                  from latereturnfines inner join borrow on latereturnfines.BorrowID = borrow.BorrowID
                  where borrow.latereturnstatus = 'yes'"
         SQLCommandBasic(query)
