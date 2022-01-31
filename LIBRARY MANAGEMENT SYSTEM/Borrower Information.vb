@@ -6,7 +6,7 @@ Public Class BorrowerInformation
         SQLCommandView(query, dgvBorrowerInfo)
     End Sub
 
-    Private Sub DisplayTableBorrower() 'to get the borrower information from database and show it at the datagrid'
+    Private Sub DisplayTableBorrower() 'to get the borrower information from database and show at the datagrid'
         Dim query = "select * from borrower where borrowername = '" & txtSearchBorrowersName.Text & "'"
         SQLCommandView(query, dgvBorrowerInfo)
     End Sub
@@ -15,7 +15,7 @@ Public Class BorrowerInformation
                     where b.isbn= br.isbn and br.BorrowerIC = " & txtBorrowerIC.Text & ""
         SQLCommandView(query, dgvBorrowerInfo)
     End Sub
-    Private Function ValidateTextBoxes() As Boolean 'to inform user to put the full information'
+    Private Function ValidateTextBoxes() As Boolean 'to inform user put the full information'
         If txtBorrowerIC.Text = "" Or txtBorrowerName.Text = "" Or txtPhoneNum.Text = "" Or txtAddress.Text = "" Then
             MyMessageBox.ShowMessage("Missing Information")
             txtBorrowerName.Focus()
@@ -25,12 +25,12 @@ Public Class BorrowerInformation
         Return True
     End Function
 
-    Dim key = 0 'sellected key bu the user'
+    Dim key = 0 'selected key buy the user'
 
     Private Sub resetKey() 'reset the key equal to 0 = no sellected key from user'
         key = 0
     End Sub
-    'order the text box by the row from borrower table at database'
+    'order the information by the row from borrower table at datagrid'
     Private Sub DataGridViewListofBook_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBorrowerInfo.CellMouseClick
 
         If e.RowIndex >= 0 Then
@@ -46,12 +46,12 @@ Public Class BorrowerInformation
         End If
     End Sub
 
-    Private Sub ValidateSearch() 'to remind the user to put the name before system do the searching'
+    Private Sub ValidateSearch() 'to remind the user put the name before system do the searching'
         If txtSearchBorrowersName.Text = ("") Then
             MyMessageBox.ShowMessage("Please input the name to search")
         End If
     End Sub
-    'button searchborrower display after get click (search by name)'
+    'button searchborrower work after get click (search by name)'
     Private Sub btnSearchBorrower_Click(sender As Object, e As EventArgs) Handles btnSearchBorrower.Click
         ValidateSearch()
         DisplayTableBorrower()
@@ -68,8 +68,8 @@ Public Class BorrowerInformation
         txtSearchBorrowersName.Clear()
         key = 0
     End Sub
-    'button return function'
-    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click 'button for return to menu page'
+    'button for return to menu page'
+    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         reset()
         Me.Close()
     End Sub
@@ -117,7 +117,7 @@ Public Class BorrowerInformation
         Return False
     End Function
 
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click 'function for button add'
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click 'function to add the new borrower'
         If ValidateAddBorrower() = True Then
             Dim query = "insert into borrower values(" & txtBorrowerIC.Text & ",'" & txtBorrowerName.Text & "'," & txtPhoneNum.Text & ",'" & txtAddress.Text & "')"
             SQLCommandBasic(query)
@@ -127,7 +127,7 @@ Public Class BorrowerInformation
         resetKey()
     End Sub
 
-    Private Sub noBooksBorrowed() 'function on get the num of books that has been borrowed by the borrower'
+    Private Sub noBooksBorrowed() 'function on get the num of books that has been borrowed by selected borrower'
 
         Try
             Con.Open()
@@ -201,7 +201,7 @@ Public Class BorrowerInformation
         clearTextBox()
         resetKey()
     End Sub
-    Private Function ValidateUpdatedBorrowerInfo() As Boolean 'inform the user to sellect info from the data grid to do update action'
+    Private Function ValidateUpdatedBorrowerInfo() As Boolean 'inform the user to sellect info from the data grid to do update process'
         If ValidateTextBoxes() Then
 
             If key = 0 Then
@@ -215,7 +215,7 @@ Public Class BorrowerInformation
 
         Return False
     End Function
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click 'update action recall the function involve'
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click 'update action by recall the function involved'
         If ValidateUpdatedBorrowerInfo() Then
             Dim query = "update Borrower set borrowerIC=" & txtBorrowerIC.Text & ",borrowerName='" & txtBorrowerName.Text & "',phoneNum=" & txtPhoneNum.Text & ",Address='" & txtAddress.Text & "' where borrowerIC = " & key & ""
             SQLCommandBasic(query)
@@ -226,7 +226,7 @@ Public Class BorrowerInformation
         resetKey()
     End Sub
 
-    Private Sub BorrowerInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'display table from database at datagrid header'
+    Private Sub BorrowerInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'display header at data grid'
         DisplayHeader()
     End Sub
 End Class
