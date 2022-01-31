@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cmdDisplayUser.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDisplayUser.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAApBJREFUSEul
         Vl1P1EAU7Y/p+r8WRBSNhIBGk62P+mDiiyQ+4INREGKkmnVhN1mxVRYU1oiw4EfcCLtGQtePAHZNFDrj
@@ -135,7 +135,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="cmdDisplayBookDetails.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDisplayBookDetails.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAA+9JREFUSEvt
         lFlMnFUUx6lpNDGaVGtUSkVtCWmaRnxAoSaStLGNieASHkjaaGprkzYRaWxRWwodEaotMLTMTKAMy2ww
@@ -157,7 +157,7 @@
         tp96fUfF0b3P//cf3R+cqa46Vn+4cuZERWn9kb0vvEpvb/K/pKDgd8UCvsXkxsINAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="cmdDisplayBorrowers.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDisplayBorrowers.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gEYDyYFHOw0aQAAAupJREFU
@@ -176,7 +176,7 @@
         iY2NDfFvMkgIEDwq/6Ywz+m25AF8AJi2glaA7WKeAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="cmdDisplayBookReturn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDisplayBookReturn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAOxAAADsQH1g+1JAAAAB3RJ
@@ -206,7 +206,7 @@
         RU5ErkJggg==
 </value>
   </data>
-  <data name="cmdBookIssue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBookIssue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAA8pJREFUSEulletPk3cUx3m3dzNxVy9bghSZMSM4nI5soTA354YI5SIisI4hWmEO
@@ -228,7 +228,7 @@
         A7jatO75CMn6F6T/hw3PrpV417EKCvoPZFp3RnfkYUMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="cmdDisplayLateReturn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDisplayLateReturn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAOxAAADsQH1g+1JAAAAB3RJ

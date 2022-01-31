@@ -2,10 +2,12 @@
 Public Class UserInformation
 
     Dim con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30 ")
-    Dim cmd As New SqlCommand
     Dim key = 0
 
-
+    Private Sub DisplayHeader()
+        Dim query = "select StaffID, StaffName, PhoneNo, Username from Users where StaffID is null"
+        SQLCommandView(query, dgvListOfUsers)
+    End Sub
     Private Sub ClearTextBoxes()
         ' This procedure will clear or empty the textBox of Username, StaffID, StaffName, PhoneNumber and list of user in DataGridView
         txtUsername.Clear()
@@ -73,7 +75,7 @@ Public Class UserInformation
         End If
     End Sub
 
-    Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles cmdUpdate.Click
+    Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If txtUsername.Text = "" Or txtStaffID.Text = "" Or txtStaffName.Text = "" Or txtPhoneNumber.Text = "" Then
             MyMessageBox.ShowMessage("Missing Information")
         Else
@@ -88,7 +90,7 @@ Public Class UserInformation
     End Sub
 
 
-    Private Sub cmdDelete_Click(sender As Object, e As EventArgs) Handles cmdDelete.Click
+    Private Sub cmdDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
         If key = 0 Or (txtUsername.Text = "" Or txtStaffID.Text = "" Or txtStaffName.Text = "" Or txtPhoneNumber.Text = "") Then
             MyMessageBox.ShowMessage("Missing Information")
@@ -102,7 +104,7 @@ Public Class UserInformation
         End If
     End Sub
 
-    Private Sub cmdListOfUsers_Click(sender As Object, e As EventArgs) Handles cmdListOfUsers.Click
+    Private Sub cmdListOfUsers_Click(sender As Object, e As EventArgs) Handles btnListOfUsers.Click
         Dim query = "select StaffID, StaffName, PhoneNo, Username from Users"
         SQLCommandView(query, dgvListOfUsers)
         ClearTextBoxes()
@@ -123,8 +125,12 @@ Public Class UserInformation
         End If
     End Sub
 
-    Private Sub cmdReturn_Click(sender As Object, e As EventArgs) Handles cmdReturn.Click
+    Private Sub cmdReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Me.Close()
         Reset()
+    End Sub
+
+    Private Sub UserInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisplayHeader()
     End Sub
 End Class
