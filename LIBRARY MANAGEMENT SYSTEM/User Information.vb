@@ -126,7 +126,7 @@ Public Class UserInformation
     Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If txtUsername.Text = "" Or txtStaffID.Text = "" Or txtStaffName.Text = "" Or txtPhoneNumber.Text = "" Then
             MyMessageBox.ShowMessage("Missing Information")
-        ElseIf ValidateStaffID Then
+        ElseIf ValidateStaffID() Then
             Dim query = " update Users set StaffID = '" + txtStaffID.Text + "', StaffName = '" + txtStaffName.Text + "', 
                             Username = '" + txtUsername.Text + "', PhoneNo = '" + txtPhoneNumber.Text + "' where StaffID = '" & key & "'"
             SQLCommandBasic(query)
@@ -134,8 +134,6 @@ Public Class UserInformation
             query = "select StaffID, StaffName, PhoneNo, Username from Users"
             SQLCommandView(query, dgvListOfUsers)
             ClearTextBoxes()
-        Else
-
         End If
     End Sub
 
