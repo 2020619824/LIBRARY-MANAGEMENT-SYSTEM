@@ -208,4 +208,5 @@ Public Class Registration
         Me.Hide()
         StartUp.Show()
     End Sub
+
 End Class
