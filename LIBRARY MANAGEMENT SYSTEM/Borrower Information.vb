@@ -126,7 +126,7 @@ Public Class BorrowerInformation
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click 'function to add the new borrower'
         If ValidateAddBorrower() = True Then
-            Dim query = "insert into borrower values(" & txtBorrowerIC.Text & ",'" & txtBorrowerName.Text & "'," & txtPhoneNum.Text & ",'" & txtAddress.Text & "')"
+            Dim query = "insert into borrower values(" & txtBorrowerIC.Text & ",'" & txtBorrowerName.Text & "','" & txtPhoneNum.Text & "','" & txtAddress.Text & "')"
             SQLCommandBasic(query)
             MyMessageBox.ShowMessage("Borrower Info Saved")
             clearTextBox()
@@ -224,7 +224,7 @@ Public Class BorrowerInformation
     End Function
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click 'update action by recall the function involved'
         If ValidateUpdatedBorrowerInfo() Then
-            Dim query = "update Borrower set borrowerIC=" & txtBorrowerIC.Text & ",borrowerName='" & txtBorrowerName.Text & "',phoneNum=" & txtPhoneNum.Text & ",Address='" & txtAddress.Text & "' where borrowerIC = " & key & ""
+            Dim query = "update Borrower set borrowerIC=" & txtBorrowerIC.Text & ",borrowerName='" & txtBorrowerName.Text & "',phoneNum='" & txtPhoneNum.Text & "',Address='" & txtAddress.Text & "' where borrowerIC = " & key & ""
             SQLCommandBasic(query)
             MyMessageBox.ShowMessage("Borrower Information Updated")
             DisplayTableBorrower()
