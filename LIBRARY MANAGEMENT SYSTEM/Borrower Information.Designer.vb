@@ -22,16 +22,15 @@ Partial Class BorrowerInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BorrowerInformation))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnReturn = New System.Windows.Forms.Button()
-        Me.lblBorrowerName = New System.Windows.Forms.Label()
-        Me.lblBorrowerIC = New System.Windows.Forms.Label()
-        Me.lblPhoneNum = New System.Windows.Forms.Label()
-        Me.lblAddress = New System.Windows.Forms.Label()
+        Me.lbllblBorrowerName = New System.Windows.Forms.Label()
+        Me.lbllblBorrowerIC = New System.Windows.Forms.Label()
+        Me.lbllblPhoneNum = New System.Windows.Forms.Label()
+        Me.lbllblAddress = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnSearchBorrower = New System.Windows.Forms.Button()
         Me.txtSearchBorrowersName = New System.Windows.Forms.TextBox()
@@ -66,51 +65,51 @@ Partial Class BorrowerInformation
         Me.btnReturn.Text = "Return"
         Me.btnReturn.UseVisualStyleBackColor = False
         '
-        'lblBorrowerName
+        'lbllblBorrowerName
         '
-        Me.lblBorrowerName.AutoSize = True
-        Me.lblBorrowerName.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBorrowerName.ForeColor = System.Drawing.Color.White
-        Me.lblBorrowerName.Location = New System.Drawing.Point(63, 31)
-        Me.lblBorrowerName.Name = "lblBorrowerName"
-        Me.lblBorrowerName.Size = New System.Drawing.Size(53, 17)
-        Me.lblBorrowerName.TabIndex = 8
-        Me.lblBorrowerName.Text = "Name :"
+        Me.lbllblBorrowerName.AutoSize = True
+        Me.lbllblBorrowerName.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbllblBorrowerName.ForeColor = System.Drawing.Color.White
+        Me.lbllblBorrowerName.Location = New System.Drawing.Point(63, 31)
+        Me.lbllblBorrowerName.Name = "lbllblBorrowerName"
+        Me.lbllblBorrowerName.Size = New System.Drawing.Size(53, 17)
+        Me.lbllblBorrowerName.TabIndex = 8
+        Me.lbllblBorrowerName.Text = "Name :"
         '
-        'lblBorrowerIC
+        'lbllblBorrowerIC
         '
-        Me.lblBorrowerIC.AutoSize = True
-        Me.lblBorrowerIC.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBorrowerIC.ForeColor = System.Drawing.Color.White
-        Me.lblBorrowerIC.Location = New System.Drawing.Point(88, 69)
-        Me.lblBorrowerIC.Name = "lblBorrowerIC"
-        Me.lblBorrowerIC.Size = New System.Drawing.Size(28, 17)
-        Me.lblBorrowerIC.TabIndex = 9
-        Me.lblBorrowerIC.Text = "IC :"
+        Me.lbllblBorrowerIC.AutoSize = True
+        Me.lbllblBorrowerIC.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbllblBorrowerIC.ForeColor = System.Drawing.Color.White
+        Me.lbllblBorrowerIC.Location = New System.Drawing.Point(88, 69)
+        Me.lbllblBorrowerIC.Name = "lbllblBorrowerIC"
+        Me.lbllblBorrowerIC.Size = New System.Drawing.Size(28, 17)
+        Me.lbllblBorrowerIC.TabIndex = 9
+        Me.lbllblBorrowerIC.Text = "IC :"
         '
-        'lblPhoneNum
+        'lbllblPhoneNum
         '
-        Me.lblPhoneNum.AutoSize = True
-        Me.lblPhoneNum.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblPhoneNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPhoneNum.ForeColor = System.Drawing.Color.White
-        Me.lblPhoneNum.Location = New System.Drawing.Point(7, 113)
-        Me.lblPhoneNum.Name = "lblPhoneNum"
-        Me.lblPhoneNum.Size = New System.Drawing.Size(111, 17)
-        Me.lblPhoneNum.TabIndex = 10
-        Me.lblPhoneNum.Text = "Phone Number :"
+        Me.lbllblPhoneNum.AutoSize = True
+        Me.lbllblPhoneNum.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lbllblPhoneNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbllblPhoneNum.ForeColor = System.Drawing.Color.White
+        Me.lbllblPhoneNum.Location = New System.Drawing.Point(7, 113)
+        Me.lbllblPhoneNum.Name = "lbllblPhoneNum"
+        Me.lbllblPhoneNum.Size = New System.Drawing.Size(111, 17)
+        Me.lbllblPhoneNum.TabIndex = 10
+        Me.lbllblPhoneNum.Text = "Phone Number :"
         '
-        'lblAddress
+        'lbllblAddress
         '
-        Me.lblAddress.AutoSize = True
-        Me.lblAddress.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAddress.ForeColor = System.Drawing.Color.White
-        Me.lblAddress.Location = New System.Drawing.Point(48, 157)
-        Me.lblAddress.Name = "lblAddress"
-        Me.lblAddress.Size = New System.Drawing.Size(68, 17)
-        Me.lblAddress.TabIndex = 11
-        Me.lblAddress.Text = "Address :"
+        Me.lbllblAddress.AutoSize = True
+        Me.lbllblAddress.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lbllblAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbllblAddress.ForeColor = System.Drawing.Color.White
+        Me.lbllblAddress.Location = New System.Drawing.Point(48, 157)
+        Me.lbllblAddress.Name = "lbllblAddress"
+        Me.lbllblAddress.Size = New System.Drawing.Size(68, 17)
+        Me.lbllblAddress.TabIndex = 11
+        Me.lbllblAddress.Text = "Address :"
         '
         'GroupBox1
         '
@@ -155,42 +154,42 @@ Partial Class BorrowerInformation
         Me.dgvBorrowerInfo.BackgroundColor = System.Drawing.Color.Black
         Me.dgvBorrowerInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvBorrowerInfo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBorrowerInfo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBorrowerInfo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvBorrowerInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBorrowerInfo.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBorrowerInfo.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvBorrowerInfo.EnableHeadersVisualStyles = False
         Me.dgvBorrowerInfo.Location = New System.Drawing.Point(22, 477)
         Me.dgvBorrowerInfo.Name = "dgvBorrowerInfo"
         Me.dgvBorrowerInfo.ReadOnly = True
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBorrowerInfo.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBorrowerInfo.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvBorrowerInfo.RowHeadersWidth = 51
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
-        Me.dgvBorrowerInfo.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.dgvBorrowerInfo.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvBorrowerInfo.RowTemplate.Height = 24
         Me.dgvBorrowerInfo.Size = New System.Drawing.Size(660, 219)
         Me.dgvBorrowerInfo.TabIndex = 17
@@ -264,12 +263,12 @@ Partial Class BorrowerInformation
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtAddress)
         Me.GroupBox2.Controls.Add(Me.txtBorrowerName)
-        Me.GroupBox2.Controls.Add(Me.lblPhoneNum)
+        Me.GroupBox2.Controls.Add(Me.lbllblPhoneNum)
         Me.GroupBox2.Controls.Add(Me.txtPhoneNum)
-        Me.GroupBox2.Controls.Add(Me.lblBorrowerIC)
+        Me.GroupBox2.Controls.Add(Me.lbllblBorrowerIC)
         Me.GroupBox2.Controls.Add(Me.txtBorrowerIC)
-        Me.GroupBox2.Controls.Add(Me.lblAddress)
-        Me.GroupBox2.Controls.Add(Me.lblBorrowerName)
+        Me.GroupBox2.Controls.Add(Me.lbllblAddress)
+        Me.GroupBox2.Controls.Add(Me.lbllblBorrowerName)
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(22, 186)
         Me.GroupBox2.Name = "GroupBox2"
@@ -350,7 +349,6 @@ Partial Class BorrowerInformation
         Me.Controls.Add(Me.btnReturn)
         Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "BorrowerInformation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Borrower Information"
@@ -365,10 +363,10 @@ Partial Class BorrowerInformation
     End Sub
 
     Friend WithEvents btnReturn As Button
-    Friend WithEvents lblBorrowerName As Label
-    Friend WithEvents lblBorrowerIC As Label
-    Friend WithEvents lblPhoneNum As Label
-    Friend WithEvents lblAddress As Label
+    Friend WithEvents lbllblBorrowerName As Label
+    Friend WithEvents lbllblBorrowerIC As Label
+    Friend WithEvents lbllblPhoneNum As Label
+    Friend WithEvents lbllblAddress As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnSearchBorrower As Button
     Friend WithEvents txtSearchBorrowersName As TextBox
