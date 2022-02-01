@@ -121,6 +121,7 @@ Public Class UserInformation
 
             ClearTextBoxes()
         End If
+
     End Sub
 
     Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
@@ -135,27 +136,41 @@ Public Class UserInformation
             SQLCommandView(query, dgvListOfUsers)
             ClearTextBoxes()
         End If
+        key = ""
     End Sub
 
+    ' To inform and get confirmation from the user to delete user in database (To avoid human error)
+    Private Function ConfirmationOfDeletedUser() As Boolean
+        Select Case MyMessageBox.ShowConfirmation("You will permanently loss the data" & ControlChars.CrLf & "Are you sure to continue?")
+            Case DialogResult.Yes
+                Return True
+            Case DialogResult.No
+                Return False
+        End Select
+
+        Return False
+    End Function
 
     Private Sub cmdDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
         If key = "" Then
             MyMessageBox.ShowMessage("Missing Information")
-        Else
+        ElseIf ConfirmationOfDeletedUser() Then
             Dim query = "delete from Users where StaffID= '" & key & "'"
             SQLCommandBasic(query)
             MyMessageBox.ShowMessage("User Deleted")
             query = "select StaffID, StaffName, PhoneNo, Username from Users"
             SQLCommandView(query, dgvListOfUsers)
-            ClearTextBoxes()
         End If
+        ClearTextBoxes()
+        key = ""
     End Sub
 
     Private Sub cmdListOfUsers_Click(sender As Object, e As EventArgs) Handles btnListOfUsers.Click
         Dim query = "select StaffID, StaffName, PhoneNo, Username from Users"
         SQLCommandView(query, dgvListOfUsers)
         ClearTextBoxes()
+        key = ""
     End Sub
 
     Private Sub DataGridViewListOfUsers_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListOfUsers.CellClick
