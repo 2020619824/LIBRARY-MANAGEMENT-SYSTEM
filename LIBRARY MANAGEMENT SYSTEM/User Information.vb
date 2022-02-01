@@ -106,10 +106,10 @@ Public Class UserInformation
         Else
             Dim query = ""
             If cboSearchBy.SelectedIndex = 0 Then
-                query = "select StaffID, StaffName, PhoneNo, Username from Users where StaffID='" & txtSearchUser.Text & "'"
+                query = "select StaffID, StaffName, PhoneNo, Username from Users where StaffID like '%" & txtSearchUser.Text & "%'"
                 SQLCommandView(query, dgvListOfUsers)
             ElseIf cboSearchBy.SelectedIndex = 1 Then
-                query = "select StaffID, StaffName, PhoneNo, Username from Users where Username='" & txtSearchUser.Text & "'"
+                query = "select StaffID, StaffName, PhoneNo, Username from Users where Username like '%" & txtSearchUser.Text & "%'"
                 SQLCommandView(query, dgvListOfUsers)
             End If
 
@@ -124,7 +124,7 @@ Public Class UserInformation
 
     End Sub
 
-    Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If txtUsername.Text = "" Or txtStaffID.Text = "" Or txtStaffName.Text = "" Or txtPhoneNumber.Text = "" Then
             MyMessageBox.ShowMessage("Missing Information")
         ElseIf ValidateStaffID() Then
@@ -151,7 +151,7 @@ Public Class UserInformation
         Return False
     End Function
 
-    Private Sub cmdDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
         If key = "" Then
             MyMessageBox.ShowMessage("Missing Information")
@@ -166,7 +166,7 @@ Public Class UserInformation
         key = ""
     End Sub
 
-    Private Sub cmdListOfUsers_Click(sender As Object, e As EventArgs) Handles btnListOfUsers.Click
+    Private Sub btnListOfUsers_Click(sender As Object, e As EventArgs) Handles btnListOfUsers.Click
         Dim query = "select StaffID, StaffName, PhoneNo, Username from Users"
         SQLCommandView(query, dgvListOfUsers)
         ClearTextBoxes()
@@ -188,7 +188,7 @@ Public Class UserInformation
         End If
     End Sub
 
-    Private Sub cmdReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
+    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Me.Close()
         Reset()
     End Sub
