@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Public Class BookIssueInformation
     Dim con = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True")
+    'to select borrower name from data
+    'to make user select their name in the combo box before borrow any book
     Public Sub PutBorrowerName()
 
         Try
@@ -19,6 +21,7 @@ Public Class BookIssueInformation
             MyMessageBox.ShowMessage("Connection Error")
         End Try
     End Sub
+    'to show the borrower name in the text box after user select their name
     Public Sub GetBorrowerName()
 
         Try
@@ -38,7 +41,7 @@ Public Class BookIssueInformation
             MyMessageBox.ShowMessage("Connection Error")
         End Try
     End Sub
-
+    'to find list of borrower
     Private Sub btnSearchBorrower_Click(sender As Object, e As EventArgs) Handles btnSearchBorrower.Click
         PutBorrowerName()
         txtBorrower.Clear()
@@ -49,6 +52,7 @@ Public Class BookIssueInformation
     Private Sub cboBorrower_SelecttionChangeCommitted(sender As Object, e As EventArgs) Handles cboBorrower.SelectionChangeCommitted
         GetBorrowerName()
     End Sub
+    'to fisplay list of books from database into data grid view
     Private Sub DisplayBook()
 
         Try
@@ -58,12 +62,14 @@ Public Class BookIssueInformation
             MyMessageBox.ShowMessage("Connection Error")
         End Try
     End Sub
+    'to display the header of book information from database into data grid view
     Private Sub DisplayHeader()
         Dim query = "select * from Book where ISBN is null"
         SQLCommandView(query, dgvBookIssue)
         dgvBookIssue().Columns(1).HeaderText = "Year"
     End Sub
     Dim key = 0
+    'store information of primary key of the current selected row
     Private Sub DataGridViewListofBook_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBookIssue.CellMouseClick
 
         If e.RowIndex >= 0 Then
@@ -76,29 +82,29 @@ Public Class BookIssueInformation
 
         End If
     End Sub
-
+    'to display the list of book from database into data grid view
     Private Sub btnSearchBook_Click(sender As Object, e As EventArgs) Handles btnSearchBook.Click
         DisplayBook()
     End Sub
-
     Private Sub BookIssueInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DisplayHeader()
         dtpIssueDate.Format = DateTimePickerFormat.Custom
-        dtpIssueDate.CustomFormat = "yyyy-MM-dd"
+        dtpIssueDate.CustomFormat = "yyyy-MM-dd" 'to set the format of date to year month day e.g 2021-05-10
         dtpDueDate.Format = DateTimePickerFormat.Custom
         dtpDueDate.CustomFormat = "yyyy-MM-dd"
         dtpDueDate.Value = DateTime.Now.AddDays(+7)
     End Sub
-
+    'to redirect the user to borrower information if they cannot find their name in the combo box
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Me.Hide()
         BorrowerInformation.ShowDialog()
     End Sub
-
+    'to redirect to menu list page
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Me.Close()
     End Sub
     Dim intBorrowID As Integer
+    'to get borrow id
     Private Sub GetBorrowID()
 
         Try
@@ -117,6 +123,7 @@ Public Class BookIssueInformation
             MyMessageBox.ShowMessage("Connection Error")
         End Try
     End Sub
+    'to issue the book the user borrow
     Private Sub btnIssueBook_Click(sender As Object, e As EventArgs) Handles btnIssueBook.Click
 
         If ValidateDueDate() Then
@@ -129,6 +136,7 @@ Public Class BookIssueInformation
         End If
     End Sub
     Dim intBorrowerIC As Integer
+    'to get borrower ic from data
     Private Sub GetBorrowerIC()
 
         Try
@@ -148,6 +156,7 @@ Public Class BookIssueInformation
             MyMessageBox.ShowMessage("Connection Error")
         End Try
     End Sub
+    'to validate text boxes if the text boxes is blank
     Private Function ValidateTextBoxes() As Boolean
         If txtBorrower.Text = "" Or txtISBN.Text = "" Or txtBookTitle.Text = "" Or cboBorrower.SelectedIndex = Nothing Then
             MyMessageBox.ShowMessage("Missing Information")
@@ -156,32 +165,7 @@ Public Class BookIssueInformation
         End If
         Return True
     End Function
-    Private Sub LateReturnStatus()
-        Dim query = "update Borrow set LateReturnStatus='Yes' where DueDate<'" & TodayDate() & "'"
-        SQLCommandBasic(query)
 
-        query = "update latereturnfines set latereturnfines.latereturnfines = Datediff(day,borrow.DueDate,GetDate())
-                 from latereturnfines inner join borrow on latereturnfines.BorrowID = borrow.BorrowID
-                 where borrow.latereturnstatus = 'yes'"
-        SQLCommandBasic(query)
-
-        query = "update Borrow set LateReturnStatus='No' where DueDate>='" & TodayDate() & "'"
-        SQLCommandBasic(query)
-
-        query = "update LateReturnFines set latereturnfines = 0 WHERE borrowid IN (SELECT borrowid FROM borrow WHERE latereturnstatus = 'no')"
-        SQLCommandBasic(query)
-    End Sub
-    Public Sub LateReturn()
-        Dim query = "Insert into LateReturnFines (BorrowID, LateReturnFines, payment, DateOfPayment)
-                     select BorrowID,Datediff(day, DueDate," & TodayDate() & "), null, null from borrow B where latereturnstatus = 'Yes'
-                     and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
-        SQLCommandBasic(query)
-
-        query = "Insert into LateReturnFines (BorrowID, LateReturnFines, payment, DateOfPayment)
-                 select BorrowID, 0, null, null from borrow B where latereturnstatus = 'No'
-                 and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
-        SQLCommandBasic(query)
-    End Sub
     Private Sub BookIssueInformation_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         LateReturnStatus()
         LateReturn()
