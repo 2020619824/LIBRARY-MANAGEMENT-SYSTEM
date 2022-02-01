@@ -7,7 +7,7 @@ Public Class BorrowerInformation
     End Sub
 
     Private Sub DisplayTableBorrower() 'to get the borrower information from database and show at the datagrid'
-        Dim query = "select * from borrower where borrowername = '" & txtSearchBorrowersName.Text & "'"
+        Dim query = "select * from borrower where borrowername like '%" & txtSearchBorrowersName.Text & "%'"
         SQLCommandView(query, dgvBorrowerInfo)
     End Sub
     Private Sub DisplayTableBook() 'to get the numbers of book from book table at database'
@@ -46,16 +46,23 @@ Public Class BorrowerInformation
         End If
     End Sub
 
-    Private Sub ValidateSearch() 'to remind the user put the name before system do the searching'
+    Private Function ValidateSearch() As Boolean  'to remind the user put the name before system do the searching'
         If txtSearchBorrowersName.Text = ("") Then
             MyMessageBox.ShowMessage("Please input the name to search")
+            Return False
         End If
-    End Sub
+        Return True
+    End Function
     'button searchborrower work after get click (search by name)'
     Private Sub btnSearchBorrower_Click(sender As Object, e As EventArgs) Handles btnSearchBorrower.Click
-        ValidateSearch()
-        DisplayTableBorrower()
-        dgvBorrowerInfo.Enabled = True
+        If ValidateSearch() Then
+            DisplayTableBorrower()
+            dgvBorrowerInfo.Enabled = True
+            clearTextBox()
+        Else
+            dgvBorrowerInfo.DataSource.clear
+        End If
+
     End Sub
 
     Private Sub reset() 'clear all the display'

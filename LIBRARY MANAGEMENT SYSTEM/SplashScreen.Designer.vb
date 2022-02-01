@@ -25,11 +25,11 @@ Partial Class SplashScreen
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SplashScreen))
         Me.picLibraryLogo = New System.Windows.Forms.PictureBox()
-        Me.loadingBar = New System.Windows.Forms.Panel()
-        Me.progressBar = New System.Windows.Forms.Panel()
+        Me.pnlBar = New System.Windows.Forms.Panel()
+        Me.pnlProgress = New System.Windows.Forms.Panel()
         Me.timer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.picLibraryLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.loadingBar.SuspendLayout()
+        Me.pnlBar.SuspendLayout()
         Me.SuspendLayout()
         '
         'picLibraryLogo
@@ -44,23 +44,23 @@ Partial Class SplashScreen
         Me.picLibraryLogo.TabIndex = 5
         Me.picLibraryLogo.TabStop = False
         '
-        'loadingBar
+        'pnlBar
         '
-        Me.loadingBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
-        Me.loadingBar.Controls.Add(Me.progressBar)
-        Me.loadingBar.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.loadingBar.Location = New System.Drawing.Point(0, 293)
-        Me.loadingBar.Name = "loadingBar"
-        Me.loadingBar.Size = New System.Drawing.Size(496, 10)
-        Me.loadingBar.TabIndex = 6
+        Me.pnlBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.pnlBar.Controls.Add(Me.pnlProgress)
+        Me.pnlBar.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlBar.Location = New System.Drawing.Point(0, 293)
+        Me.pnlBar.Name = "pnlBar"
+        Me.pnlBar.Size = New System.Drawing.Size(496, 10)
+        Me.pnlBar.TabIndex = 6
         '
-        'progressBar
+        'pnlProgress
         '
-        Me.progressBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.progressBar.Location = New System.Drawing.Point(0, 0)
-        Me.progressBar.Name = "progressBar"
-        Me.progressBar.Size = New System.Drawing.Size(34, 13)
-        Me.progressBar.TabIndex = 7
+        Me.pnlProgress.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.pnlProgress.Location = New System.Drawing.Point(0, 0)
+        Me.pnlProgress.Name = "pnlProgress"
+        Me.pnlProgress.Size = New System.Drawing.Size(34, 13)
+        Me.pnlProgress.TabIndex = 7
         '
         'timer
         '
@@ -74,7 +74,7 @@ Partial Class SplashScreen
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(496, 303)
         Me.ControlBox = False
-        Me.Controls.Add(Me.loadingBar)
+        Me.Controls.Add(Me.pnlBar)
         Me.Controls.Add(Me.picLibraryLogo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -84,13 +84,13 @@ Partial Class SplashScreen
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.picLibraryLogo, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.loadingBar.ResumeLayout(False)
+        Me.pnlBar.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents picLibraryLogo As PictureBox
-    Friend WithEvents loadingBar As Panel
-    Friend WithEvents progressBar As Panel
+    Friend WithEvents pnlBar As Panel
+    Friend WithEvents pnlProgress As Panel
     Friend WithEvents timer As Timer
 End Class
