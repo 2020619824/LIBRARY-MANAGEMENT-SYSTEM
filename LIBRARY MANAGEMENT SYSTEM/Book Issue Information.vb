@@ -165,11 +165,13 @@ Public Class BookIssueInformation
         End If
         Return True
     End Function
-
+    'This function will update the latereturnfine column based on the current date and automatically
+    'insert each borrow data into LateReturnFine table when the form closed 
     Private Sub BookIssueInformation_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         LateReturnStatus()
         LateReturn()
     End Sub
+    'to validate due date
     Private Function ValidateDueDate() As Boolean
         Dim dtIssueDate As Date
         Dim dtDueDate As Date
@@ -180,6 +182,7 @@ Public Class BookIssueInformation
             dtDueDate = Date.Parse(dtpDueDate.Text)
             intDiffDay = DateDiff(DateInterval.Day, dtIssueDate, dtDueDate)
 
+            'if the user put the due date before the issue date then it will display message box
             If intDiffDay < 0 Then
                 MyMessageBox.ShowMessage("Invalid Due Date")
                 dtpDueDate.Focus()
