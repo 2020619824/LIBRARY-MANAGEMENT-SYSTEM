@@ -39,15 +39,6 @@
         txtDate.Text = Date.Now.ToString("dd MMM yyyy") ' this will set the the format of date to day month year, eg: 13 September 2020
     End Sub
 
-    Private Function TodayDate() As String
-        'SQL Date Format: YYYYMMDD
-        Dim dateSQLFormat = Date.Today.Year.ToString & "-"
-        dateSQLFormat += Date.Today.Month.ToString & "-"
-        dateSQLFormat += Date.Today.Day.ToString
-
-        Return dateSQLFormat
-    End Function
-
     'This function will update the status and latereturnfine column based on the current date when the application open 
     'For every one day the borrower late to return the book, the fine will increase by one ringgit
     Private Sub LateReturnStatus()

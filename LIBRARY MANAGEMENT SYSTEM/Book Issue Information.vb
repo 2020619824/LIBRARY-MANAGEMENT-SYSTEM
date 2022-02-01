@@ -160,7 +160,7 @@ Public Class BookIssueInformation
         Dim query = "update Borrow set LateReturnStatus='Yes' where DueDate<'" & TodayDate() & "'"
         SQLCommandBasic(query)
 
-        query = "update latereturnfines set latereturnfines.latereturnfines = Datediff(day,borrow.DueDate,GateDate())
+        query = "update latereturnfines set latereturnfines.latereturnfines = Datediff(day,borrow.DueDate,GetDate())
                  from latereturnfines inner join borrow on latereturnfines.BorrowID = borrow.BorrowID
                  where borrow.latereturnstatus = 'yes'"
         SQLCommandBasic(query)
@@ -172,7 +172,7 @@ Public Class BookIssueInformation
         SQLCommandBasic(query)
     End Sub
     Public Sub LateReturn()
-        Dim query = "Insert into LateReturnFines (BorrowID, LateReturn, payment, DateOfPayment)
+        Dim query = "Insert into LateReturnFines (BorrowID, LateReturnFines, payment, DateOfPayment)
                      select BorrowID,Datediff(day, DueDate," & TodayDate() & "), null, null from borrow B where latereturnstatus = 'Yes'
                      and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
         SQLCommandBasic(query)
@@ -198,6 +198,7 @@ Public Class BookIssueInformation
 
             If intDiffDay < 0 Then
                 MyMessageBox.ShowMessage("Invalid Due Date")
+                dtpDueDate.Focus()
                 Return False
             End If
             Return True
