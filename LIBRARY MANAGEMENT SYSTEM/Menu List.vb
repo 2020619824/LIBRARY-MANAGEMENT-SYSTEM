@@ -35,8 +35,8 @@
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        txtTime.Text = Date.Now.ToString("t") 'this will set the format of time to hour:minute, eg: 10:30
-        txtDate.Text = Date.Now.ToString("D") ' this will set the the format of date to day month year, eg: 13 September 2020
+        txtTime.Text = Date.Now.ToString("t") 'this will set the short format of time 
+        txtDate.Text = Date.Now.ToString("D") ' this will set the long date format of date 
     End Sub
 
     'This function will update the status and latereturnfine column based on the current date when the application open 
