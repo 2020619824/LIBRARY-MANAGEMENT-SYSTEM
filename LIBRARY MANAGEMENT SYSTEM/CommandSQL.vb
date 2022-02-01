@@ -47,7 +47,7 @@ Module CommandSQL
 
     'This function will update the status and latereturnfine column based on the current date when the application open 
     'For every one day the borrower late to return the book, the fine will increase by one ringgit
-    Private Sub LateReturnStatus()
+    Public Sub LateReturnStatus()
         Dim query = "update Borrow set LateReturnStatus='Yes' where DueDate<'" & TodayDate() & "'"
         SQLCommandBasic(query)
         query = "update latereturnfines 
