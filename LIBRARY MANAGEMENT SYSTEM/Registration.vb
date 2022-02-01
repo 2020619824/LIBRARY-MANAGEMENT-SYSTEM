@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class Registration
+    'function to register new user in the system
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
 
         Try
@@ -42,6 +43,8 @@ Public Class Registration
             MyMessageBox.ShowMessage("Connection Error")
         End Try
     End Sub
+    'to validate text boxes
+    'to check if the text boxes is not blank
     Private Function validateTextBoxes() As Boolean
         If txtName.Text = "" Or txtStaffID.Text = "" Or txtPhoneNumber.Text = "" Or txtUsername.Text = "" Or txtPassword.Text = "" Then
             MyMessageBox.ShowMessage("Missing Information")
@@ -50,10 +53,12 @@ Public Class Registration
         End If
         Return True
     End Function
+    'to validate staff id
     Private Function validateStaffID() As Boolean
         Dim strStaffID As String
         strStaffID = txtStaffID.Text
 
+        'staff id need to contain numbers and alphabets only
         Dim intPW_InvalidCharsCount As Integer = 0
         Dim intPW_LettersAndNumbersCount As Integer = 0
 
@@ -71,12 +76,14 @@ Public Class Registration
             End If
         Next
 
+        'to check if there is any bad character
         If intPW_InvalidCharsCount > 0 Then
             MyMessageBox.ShowMessage("Staff ID must contain letters and numbers only")
             txtStaffID.Focus()
             Return False
         End If
 
+        'to check if staff id has alphabet letter or not
         Dim intPWLetterCount As Integer = 0
 
         For i = 0 To strStaffID.Length - 1
@@ -97,6 +104,7 @@ Public Class Registration
             Return False
         End If
 
+        'to check if staff id has number or not
         Dim intPWNumbersCount As Integer = 0
 
         For i = 0 To strStaffID.Length - 1
@@ -115,6 +123,7 @@ Public Class Registration
         Return True
 
     End Function
+    'to validate phone number
     Private Function validatePhoneNo() As Boolean
         Dim decPhoneNo As Decimal
         If Not Decimal.TryParse(txtPhoneNumber.Text, decPhoneNo) Then
@@ -126,21 +135,25 @@ Public Class Registration
         Return True
 
     End Function
+    'to validate password 
     Public Function validatePassword() As Boolean
         Dim strUserPassword As String
         strUserPassword = txtPassword.Text
 
+        'to check that the password check box is not blank
         If strUserPassword = Nothing Then
             MyMessageBox.ShowMessage("Password Missing")
             txtPassword.Focus()
             Return False
         End If
 
+        'to check if the password is 8 characters or longer
         If strUserPassword.Length < 8 Or strUserPassword.Length > 12 Then
             MyMessageBox.ShowMessage("Password must be between 8 to 12 charaters")
             Return False
         End If
-        'To check if the password has bad characters
+
+        'password need to contain letters and numbers only
         Dim intPW_InvalidCharsCount As Integer = 0
         Dim intPW_LettersAndNumbersCount As Integer = 0
 
@@ -165,6 +178,7 @@ Public Class Registration
             Return False
         End If
 
+        'password needs to contain at least one alphabet
         Dim intPWLetterCount As Integer = 0
 
         For i = 0 To strUserPassword.Length - 1
@@ -185,6 +199,7 @@ Public Class Registration
             Return False
         End If
 
+        'password need to contain at least one numbers
         Dim intPWNumbersCount As Integer = 0
         For i = 0 To strUserPassword.Length - 1
             If Asc(strUserPassword.Substring(i, 1)) >= 48 _
@@ -202,6 +217,7 @@ Public Class Registration
         Return True
 
     End Function
+    'to redirect user back to the start-up page
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Reset()
         Me.Hide()
