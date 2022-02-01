@@ -34,8 +34,7 @@ Public Class Login
                 MenuList.ShowDialog()
             Else
                 MyMessageBox.ShowMessage("Invalid Login. Please try Again.")
-                txtGetUserName.Clear()
-                txtGetPassword.Clear()
+                Reset()
             End If
         Catch ex As Exception
             MyMessageBox.ShowMessage("Connection Error")
