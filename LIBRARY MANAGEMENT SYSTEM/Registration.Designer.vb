@@ -23,6 +23,7 @@ Partial Class Registration
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Registration))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtUsername = New System.Windows.Forms.TextBox()
@@ -56,9 +57,9 @@ Partial Class Registration
         Me.GroupBox1.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(30, 120)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(586, 348)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
@@ -70,7 +71,7 @@ Partial Class Registration
         Me.txtPassword.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.White
         Me.txtPassword.Location = New System.Drawing.Point(157, 295)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(405, 26)
         Me.txtPassword.TabIndex = 9
@@ -82,7 +83,7 @@ Partial Class Registration
         Me.txtUsername.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.Color.White
         Me.txtUsername.Location = New System.Drawing.Point(157, 235)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(405, 26)
         Me.txtUsername.TabIndex = 8
@@ -93,7 +94,7 @@ Partial Class Registration
         Me.txtPhoneNumber.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPhoneNumber.ForeColor = System.Drawing.Color.White
         Me.txtPhoneNumber.Location = New System.Drawing.Point(157, 172)
-        Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPhoneNumber.Name = "txtPhoneNumber"
         Me.txtPhoneNumber.Size = New System.Drawing.Size(405, 26)
         Me.txtPhoneNumber.TabIndex = 7
@@ -104,7 +105,7 @@ Partial Class Registration
         Me.txtStaffID.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtStaffID.ForeColor = System.Drawing.Color.White
         Me.txtStaffID.Location = New System.Drawing.Point(157, 110)
-        Me.txtStaffID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtStaffID.Margin = New System.Windows.Forms.Padding(4)
         Me.txtStaffID.Name = "txtStaffID"
         Me.txtStaffID.Size = New System.Drawing.Size(405, 26)
         Me.txtStaffID.TabIndex = 6
@@ -115,7 +116,7 @@ Partial Class Registration
         Me.txtName.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtName.ForeColor = System.Drawing.Color.White
         Me.txtName.Location = New System.Drawing.Point(157, 48)
-        Me.txtName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(405, 26)
         Me.txtName.TabIndex = 5
@@ -193,7 +194,7 @@ Partial Class Registration
         Me.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReturn.Font = New System.Drawing.Font("Arial Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReturn.Location = New System.Drawing.Point(448, 502)
-        Me.btnReturn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReturn.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReturn.Name = "btnReturn"
         Me.btnReturn.Size = New System.Drawing.Size(168, 38)
         Me.btnReturn.TabIndex = 5
@@ -206,7 +207,7 @@ Partial Class Registration
         Me.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnRegister.Font = New System.Drawing.Font("Arial Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegister.Location = New System.Drawing.Point(272, 502)
-        Me.btnRegister.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnRegister.Margin = New System.Windows.Forms.Padding(4)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(168, 38)
         Me.btnRegister.TabIndex = 6
@@ -224,6 +225,7 @@ Partial Class Registration
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Registration"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
