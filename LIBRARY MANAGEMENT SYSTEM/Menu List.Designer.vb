@@ -79,6 +79,7 @@ Partial Class MenuList
         Me.txtTime.ForeColor = System.Drawing.Color.White
         Me.txtTime.Location = New System.Drawing.Point(24, 290)
         Me.txtTime.Name = "txtTime"
+        Me.txtTime.ReadOnly = True
         Me.txtTime.Size = New System.Drawing.Size(139, 27)
         Me.txtTime.TabIndex = 5
         Me.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -97,8 +98,10 @@ Partial Class MenuList
         Me.txtDate.Font = New System.Drawing.Font("Arial", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDate.ForeColor = System.Drawing.Color.White
         Me.txtDate.Location = New System.Drawing.Point(24, 195)
+        Me.txtDate.Multiline = True
         Me.txtDate.Name = "txtDate"
-        Me.txtDate.Size = New System.Drawing.Size(139, 27)
+        Me.txtDate.ReadOnly = True
+        Me.txtDate.Size = New System.Drawing.Size(139, 43)
         Me.txtDate.TabIndex = 3
         Me.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -117,6 +120,7 @@ Partial Class MenuList
         Me.txtCurrentUser.ForeColor = System.Drawing.Color.White
         Me.txtCurrentUser.Location = New System.Drawing.Point(24, 104)
         Me.txtCurrentUser.Name = "txtCurrentUser"
+        Me.txtCurrentUser.ReadOnly = True
         Me.txtCurrentUser.Size = New System.Drawing.Size(139, 27)
         Me.txtCurrentUser.TabIndex = 1
         Me.txtCurrentUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
