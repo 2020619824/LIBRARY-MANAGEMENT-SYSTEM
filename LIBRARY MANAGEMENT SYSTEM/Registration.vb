@@ -7,26 +7,23 @@ Public Class Registration
             Dim cmd As New SqlCommand
             Dim dr As SqlDataReader
 
-
-            If validateStaffID() = True And validatePhoneNo() = True And validatePassword() = True Then
-                con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30"
-                con.Open()
-                cmd.Connection = con
-                cmd.CommandType = CommandType.Text
-                cmd.CommandText = "select * from Users where StaffID = '" & txtStaffID.Text & "'"
-                dr = cmd.ExecuteReader
-                If dr.HasRows Then
-                    MyMessageBox.ShowMessage("Staff ID has been registered")
-                    txtStaffID.Clear()
-                    txtStaffID.Focus()
-                    con.Close()
-                Else
-                    con.Close()
+            If validateTextBoxes() Then
+                If validateStaffID() = True And validatePhoneNo() = True And validatePassword() = True Then
+                    con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30"
                     con.Open()
-                    cmd = New SqlCommand("Insert into Users values('" & txtStaffID.Text & "','" & txtName.Text & "',(')" & txtPhoneNumber.Text & "('),'" & txtUsername.Text & "','" & txtPassword.Text & "')", con)
-                    If (txtName.Text = "" And txtStaffID.Text = "" And txtPhoneNumber.Text = "" And txtUsername.Text = "" And txtPassword.Text = "") Then
+                    cmd.Connection = con
+                    cmd.CommandType = CommandType.Text
+                    cmd.CommandText = "select * from Users where StaffID = '" & txtStaffID.Text & "'"
+                    dr = cmd.ExecuteReader
+                    If dr.HasRows Then
                         MyMessageBox.ShowMessage("Staff ID has been registered")
+                        txtStaffID.Clear()
+                        txtStaffID.Focus()
+                        con.Close()
                     Else
+                        con.Close()
+                        con.Open()
+                        cmd = New SqlCommand("Insert into Users values('" & txtStaffID.Text & "','" & txtName.Text & "',(')" & txtPhoneNumber.Text & "('),'" & txtUsername.Text & "','" & txtPassword.Text & "')", con)
                         cmd.ExecuteNonQuery()
                         MyMessageBox.ShowMessage("Sucessfully Registered")
                         txtName.Clear()
@@ -36,12 +33,11 @@ Public Class Registration
                         txtPassword.Clear()
                         Me.Hide()
                         Login.ShowDialog()
+                        con.Close()
                     End If
                     con.Close()
                 End If
-                con.Close()
             End If
-
         Catch ex As Exception
             MyMessageBox.ShowMessage("Connection Error")
         End Try
