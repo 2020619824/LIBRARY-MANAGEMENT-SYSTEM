@@ -24,6 +24,7 @@ Public Class LateReturnInformation
         dtpDatePaynment.CustomFormat = "yyyy-MM-dd"
 
     End Sub
+
     'This function will update the status and latereturnfine column based on the current date when the application open 
     'For every one day the borrower late to return the book, the fine will increase by one ringgit
     Private Sub LateReturnStatus()
@@ -227,7 +228,6 @@ Public Class LateReturnInformation
         e.Graphics.DrawString("Total late fine: RM" & txtTotalLateReturnFines.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 260)
         e.Graphics.DrawString("Payment: RM" & txtFinePayment.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 290)
         e.Graphics.DrawString("Balance: RM" & txtBalance.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 320)
-
         e.Graphics.DrawString("Date Payment: " & dtpDatePaynment.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 350)
 
         e.Graphics.DrawString("=======================================", New Font("Times New Roman", 24,
@@ -264,5 +264,4 @@ Public Class LateReturnInformation
                  AND L.DateofPayment is null"
         SQLCommandView(query, dgvLateReturnFine)
     End Sub
-
 End Class
