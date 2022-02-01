@@ -23,7 +23,7 @@ Public Class Registration
                 Else
                     con.Close()
                     con.Open()
-                    cmd = New SqlCommand("Insert into Users values('" & txtStaffID.Text & "','" & txtName.Text & "'," & txtPhoneNumber.Text & ",'" & txtUsername.Text & "','" & txtPassword.Text & "')", con)
+                    cmd = New SqlCommand("Insert into Users values('" & txtStaffID.Text & "','" & txtName.Text & "',(')" & txtPhoneNumber.Text & "('),'" & txtUsername.Text & "','" & txtPassword.Text & "')", con)
                     If (txtName.Text = "" And txtStaffID.Text = "" And txtPhoneNumber.Text = "" And txtUsername.Text = "" And txtPassword.Text = "") Then
                         MyMessageBox.ShowMessage("Staff ID has been registered")
                     Else
@@ -70,7 +70,7 @@ Public Class Registration
                 And Asc(strStaffID.Substring(i, 1)) <= 57) Then
                 intPW_LettersAndNumbersCount = intPW_LettersAndNumbersCount + 1
             Else
-                intPW_LettersAndNumbersCount = intPW_LettersAndNumbersCount + 1
+                intPW_InvalidCharsCount = intPW_InvalidCharsCount + 1
                 txtStaffID.Focus()
             End If
         Next
@@ -158,7 +158,7 @@ Public Class Registration
 
                 intPW_LettersAndNumbersCount = intPW_LettersAndNumbersCount + 1
             Else
-                intPW_InvalidCharsCount = intPW_InvalidCharsCount
+                intPW_InvalidCharsCount = intPW_InvalidCharsCount + 1
                 txtPassword.Focus()
             End If
         Next
