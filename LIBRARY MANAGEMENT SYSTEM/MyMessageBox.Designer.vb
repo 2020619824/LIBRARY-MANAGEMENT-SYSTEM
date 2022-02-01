@@ -23,34 +23,34 @@ Partial Class MyMessageBox
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MyMessageBox))
-        Me.OK = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlpOK = New System.Windows.Forms.TableLayoutPanel()
         Me.btnOK = New System.Windows.Forms.Button()
         Me.lblMessage = New System.Windows.Forms.Label()
-        Me.YesNo = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlpYesNo = New System.Windows.Forms.TableLayoutPanel()
         Me.btnNo = New System.Windows.Forms.Button()
         Me.btnYes = New System.Windows.Forms.Button()
         Me.picLibraryLogo = New System.Windows.Forms.PictureBox()
-        Me.OK.SuspendLayout()
-        Me.YesNo.SuspendLayout()
+        Me.tlpOK.SuspendLayout()
+        Me.tlpYesNo.SuspendLayout()
         CType(Me.picLibraryLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'OK
+        'tlpOK
         '
-        Me.OK.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.OK.BackColor = System.Drawing.Color.Transparent
-        Me.OK.ColumnCount = 1
-        Me.OK.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.OK.Controls.Add(Me.btnOK, 0, 0)
-        Me.OK.Location = New System.Drawing.Point(281, 109)
-        Me.OK.Margin = New System.Windows.Forms.Padding(4)
-        Me.OK.Name = "OK"
-        Me.OK.RowCount = 1
-        Me.OK.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.OK.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.OK.Size = New System.Drawing.Size(102, 36)
-        Me.OK.TabIndex = 0
-        Me.OK.Visible = False
+        Me.tlpOK.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tlpOK.BackColor = System.Drawing.Color.Transparent
+        Me.tlpOK.ColumnCount = 1
+        Me.tlpOK.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpOK.Controls.Add(Me.btnOK, 0, 0)
+        Me.tlpOK.Location = New System.Drawing.Point(281, 109)
+        Me.tlpOK.Margin = New System.Windows.Forms.Padding(4)
+        Me.tlpOK.Name = "tlpOK"
+        Me.tlpOK.RowCount = 1
+        Me.tlpOK.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpOK.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlpOK.Size = New System.Drawing.Size(102, 36)
+        Me.tlpOK.TabIndex = 0
+        Me.tlpOK.Visible = False
         '
         'btnOK
         '
@@ -79,24 +79,24 @@ Partial Class MyMessageBox
         Me.lblMessage.Text = """Message"""
         Me.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'YesNo
+        'tlpYesNo
         '
-        Me.YesNo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.YesNo.BackColor = System.Drawing.Color.Transparent
-        Me.YesNo.ColumnCount = 2
-        Me.YesNo.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.YesNo.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102.0!))
-        Me.YesNo.Controls.Add(Me.btnNo, 0, 0)
-        Me.YesNo.Controls.Add(Me.btnYes, 0, 0)
-        Me.YesNo.Location = New System.Drawing.Point(170, 109)
-        Me.YesNo.Margin = New System.Windows.Forms.Padding(4)
-        Me.YesNo.Name = "YesNo"
-        Me.YesNo.RowCount = 1
-        Me.YesNo.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.YesNo.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.YesNo.Size = New System.Drawing.Size(206, 36)
-        Me.YesNo.TabIndex = 3
-        Me.YesNo.Visible = False
+        Me.tlpYesNo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tlpYesNo.BackColor = System.Drawing.Color.Transparent
+        Me.tlpYesNo.ColumnCount = 2
+        Me.tlpYesNo.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpYesNo.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102.0!))
+        Me.tlpYesNo.Controls.Add(Me.btnNo, 0, 0)
+        Me.tlpYesNo.Controls.Add(Me.btnYes, 0, 0)
+        Me.tlpYesNo.Location = New System.Drawing.Point(170, 109)
+        Me.tlpYesNo.Margin = New System.Windows.Forms.Padding(4)
+        Me.tlpYesNo.Name = "tlpYesNo"
+        Me.tlpYesNo.RowCount = 1
+        Me.tlpYesNo.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpYesNo.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlpYesNo.Size = New System.Drawing.Size(206, 36)
+        Me.tlpYesNo.TabIndex = 3
+        Me.tlpYesNo.Visible = False
         '
         'btnNo
         '
@@ -148,8 +148,8 @@ Partial Class MyMessageBox
         Me.ControlBox = False
         Me.Controls.Add(Me.picLibraryLogo)
         Me.Controls.Add(Me.lblMessage)
-        Me.Controls.Add(Me.OK)
-        Me.Controls.Add(Me.YesNo)
+        Me.Controls.Add(Me.tlpOK)
+        Me.Controls.Add(Me.tlpYesNo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -159,17 +159,17 @@ Partial Class MyMessageBox
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MyMessageBox"
-        Me.OK.ResumeLayout(False)
-        Me.YesNo.ResumeLayout(False)
+        Me.tlpOK.ResumeLayout(False)
+        Me.tlpYesNo.ResumeLayout(False)
         CType(Me.picLibraryLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents OK As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents tlpOK As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents btnOK As System.Windows.Forms.Button
     Friend WithEvents lblMessage As Label
     Friend WithEvents picLibraryLogo As PictureBox
-    Friend WithEvents YesNo As TableLayoutPanel
+    Friend WithEvents tlpYesNo As TableLayoutPanel
     Friend WithEvents btnYes As Button
     Friend WithEvents btnNo As Button
 End Class

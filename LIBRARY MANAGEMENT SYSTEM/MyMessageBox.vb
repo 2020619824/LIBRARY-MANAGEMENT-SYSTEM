@@ -5,16 +5,16 @@ Public Class MyMessageBox
     ' To show a simple message to the user with OK button
     Public Sub ShowMessage(ByVal strMessage As String)
         lblMessage.Text = strMessage
-        OK.Visible = True
-        YesNo.Visible = False
+        tlpOK.Visible = True
+        tlpYesNo.Visible = False
         Me.ShowDialog()
     End Sub
 
     ' To show a message to get a confirmation from the user with Yes and No buttons
     Public Function ShowConfirmation(ByVal strMessage As String) As DialogResult
         lblMessage.Text = strMessage
-        YesNo.Visible = True
-        OK.Visible = False
+        tlpYesNo.Visible = True
+        tlpOK.Visible = False
         Me.ShowDialog()
         Return Me.DialogResult
     End Function
