@@ -81,6 +81,7 @@ Partial Class MenuList
         Me.txtTime.Name = "txtTime"
         Me.txtTime.Size = New System.Drawing.Size(139, 27)
         Me.txtTime.TabIndex = 5
+        Me.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -99,6 +100,7 @@ Partial Class MenuList
         Me.txtDate.Name = "txtDate"
         Me.txtDate.Size = New System.Drawing.Size(139, 27)
         Me.txtDate.TabIndex = 3
+        Me.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -117,6 +119,7 @@ Partial Class MenuList
         Me.txtCurrentUser.Name = "txtCurrentUser"
         Me.txtCurrentUser.Size = New System.Drawing.Size(139, 27)
         Me.txtCurrentUser.TabIndex = 1
+        Me.txtCurrentUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnExit
         '
@@ -267,6 +270,7 @@ Partial Class MenuList
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MenuList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menu List"

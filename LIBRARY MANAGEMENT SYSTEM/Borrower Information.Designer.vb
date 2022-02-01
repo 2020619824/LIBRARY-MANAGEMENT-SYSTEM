@@ -26,12 +26,11 @@ Partial Class BorrowerInformation
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BorrowerInformation))
         Me.btnReturn = New System.Windows.Forms.Button()
-        Me.lblBorrowerName = New System.Windows.Forms.Label()
-        Me.lblBorrowerIC = New System.Windows.Forms.Label()
-        Me.lblPhoneNum = New System.Windows.Forms.Label()
-        Me.lblAddress = New System.Windows.Forms.Label()
+        Me.lbllblBorrowerName = New System.Windows.Forms.Label()
+        Me.lbllblBorrowerIC = New System.Windows.Forms.Label()
+        Me.lbllblPhoneNum = New System.Windows.Forms.Label()
+        Me.lbllblAddress = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnSearchBorrower = New System.Windows.Forms.Button()
         Me.txtSearchBorrowersName = New System.Windows.Forms.TextBox()
@@ -66,51 +65,51 @@ Partial Class BorrowerInformation
         Me.btnReturn.Text = "Return"
         Me.btnReturn.UseVisualStyleBackColor = False
         '
-        'lblBorrowerName
+        'lbllblBorrowerName
         '
-        Me.lblBorrowerName.AutoSize = True
-        Me.lblBorrowerName.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBorrowerName.ForeColor = System.Drawing.Color.White
-        Me.lblBorrowerName.Location = New System.Drawing.Point(63, 31)
-        Me.lblBorrowerName.Name = "lblBorrowerName"
-        Me.lblBorrowerName.Size = New System.Drawing.Size(53, 17)
-        Me.lblBorrowerName.TabIndex = 8
-        Me.lblBorrowerName.Text = "Name :"
+        Me.lbllblBorrowerName.AutoSize = True
+        Me.lbllblBorrowerName.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbllblBorrowerName.ForeColor = System.Drawing.Color.White
+        Me.lbllblBorrowerName.Location = New System.Drawing.Point(63, 31)
+        Me.lbllblBorrowerName.Name = "lbllblBorrowerName"
+        Me.lbllblBorrowerName.Size = New System.Drawing.Size(53, 17)
+        Me.lbllblBorrowerName.TabIndex = 8
+        Me.lbllblBorrowerName.Text = "Name :"
         '
-        'lblBorrowerIC
+        'lbllblBorrowerIC
         '
-        Me.lblBorrowerIC.AutoSize = True
-        Me.lblBorrowerIC.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBorrowerIC.ForeColor = System.Drawing.Color.White
-        Me.lblBorrowerIC.Location = New System.Drawing.Point(88, 69)
-        Me.lblBorrowerIC.Name = "lblBorrowerIC"
-        Me.lblBorrowerIC.Size = New System.Drawing.Size(28, 17)
-        Me.lblBorrowerIC.TabIndex = 9
-        Me.lblBorrowerIC.Text = "IC :"
+        Me.lbllblBorrowerIC.AutoSize = True
+        Me.lbllblBorrowerIC.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbllblBorrowerIC.ForeColor = System.Drawing.Color.White
+        Me.lbllblBorrowerIC.Location = New System.Drawing.Point(88, 69)
+        Me.lbllblBorrowerIC.Name = "lbllblBorrowerIC"
+        Me.lbllblBorrowerIC.Size = New System.Drawing.Size(28, 17)
+        Me.lbllblBorrowerIC.TabIndex = 9
+        Me.lbllblBorrowerIC.Text = "IC :"
         '
-        'lblPhoneNum
+        'lbllblPhoneNum
         '
-        Me.lblPhoneNum.AutoSize = True
-        Me.lblPhoneNum.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblPhoneNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPhoneNum.ForeColor = System.Drawing.Color.White
-        Me.lblPhoneNum.Location = New System.Drawing.Point(7, 113)
-        Me.lblPhoneNum.Name = "lblPhoneNum"
-        Me.lblPhoneNum.Size = New System.Drawing.Size(111, 17)
-        Me.lblPhoneNum.TabIndex = 10
-        Me.lblPhoneNum.Text = "Phone Number :"
+        Me.lbllblPhoneNum.AutoSize = True
+        Me.lbllblPhoneNum.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lbllblPhoneNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbllblPhoneNum.ForeColor = System.Drawing.Color.White
+        Me.lbllblPhoneNum.Location = New System.Drawing.Point(7, 113)
+        Me.lbllblPhoneNum.Name = "lbllblPhoneNum"
+        Me.lbllblPhoneNum.Size = New System.Drawing.Size(111, 17)
+        Me.lbllblPhoneNum.TabIndex = 10
+        Me.lbllblPhoneNum.Text = "Phone Number :"
         '
-        'lblAddress
+        'lbllblAddress
         '
-        Me.lblAddress.AutoSize = True
-        Me.lblAddress.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAddress.ForeColor = System.Drawing.Color.White
-        Me.lblAddress.Location = New System.Drawing.Point(48, 157)
-        Me.lblAddress.Name = "lblAddress"
-        Me.lblAddress.Size = New System.Drawing.Size(68, 17)
-        Me.lblAddress.TabIndex = 11
-        Me.lblAddress.Text = "Address :"
+        Me.lbllblAddress.AutoSize = True
+        Me.lbllblAddress.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lbllblAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbllblAddress.ForeColor = System.Drawing.Color.White
+        Me.lbllblAddress.Location = New System.Drawing.Point(48, 157)
+        Me.lbllblAddress.Name = "lbllblAddress"
+        Me.lbllblAddress.Size = New System.Drawing.Size(68, 17)
+        Me.lbllblAddress.TabIndex = 11
+        Me.lbllblAddress.Text = "Address :"
         '
         'GroupBox1
         '
@@ -264,12 +263,12 @@ Partial Class BorrowerInformation
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtAddress)
         Me.GroupBox2.Controls.Add(Me.txtBorrowerName)
-        Me.GroupBox2.Controls.Add(Me.lblPhoneNum)
+        Me.GroupBox2.Controls.Add(Me.lbllblPhoneNum)
         Me.GroupBox2.Controls.Add(Me.txtPhoneNum)
-        Me.GroupBox2.Controls.Add(Me.lblBorrowerIC)
+        Me.GroupBox2.Controls.Add(Me.lbllblBorrowerIC)
         Me.GroupBox2.Controls.Add(Me.txtBorrowerIC)
-        Me.GroupBox2.Controls.Add(Me.lblAddress)
-        Me.GroupBox2.Controls.Add(Me.lblBorrowerName)
+        Me.GroupBox2.Controls.Add(Me.lbllblAddress)
+        Me.GroupBox2.Controls.Add(Me.lbllblBorrowerName)
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(22, 186)
         Me.GroupBox2.Name = "GroupBox2"
@@ -350,7 +349,6 @@ Partial Class BorrowerInformation
         Me.Controls.Add(Me.btnReturn)
         Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "BorrowerInformation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Borrower Information"
@@ -365,10 +363,10 @@ Partial Class BorrowerInformation
     End Sub
 
     Friend WithEvents btnReturn As Button
-    Friend WithEvents lblBorrowerName As Label
-    Friend WithEvents lblBorrowerIC As Label
-    Friend WithEvents lblPhoneNum As Label
-    Friend WithEvents lblAddress As Label
+    Friend WithEvents lbllblBorrowerName As Label
+    Friend WithEvents lbllblBorrowerIC As Label
+    Friend WithEvents lbllblPhoneNum As Label
+    Friend WithEvents lbllblAddress As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnSearchBorrower As Button
     Friend WithEvents txtSearchBorrowersName As TextBox

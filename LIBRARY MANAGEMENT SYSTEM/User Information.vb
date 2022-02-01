@@ -9,7 +9,7 @@ Public Class UserInformation
         SQLCommandView(query, dgvListOfUsers)
     End Sub
     Private Sub ClearTextBoxes()
-        ' This procedure will clear or empty the textBox of Username, StaffID, StaffName, PhoneNumber and list of user in DataGridView
+        ' This function will empty the textBox of Username, StaffID, StaffName, PhoneNumber and list of user in DataGridView
         txtUsername.Clear()
         txtStaffID.Clear()
         txtStaffName.Clear()
@@ -17,8 +17,8 @@ Public Class UserInformation
         dgvListOfUsers.ClearSelection()
     End Sub
 
+    ' This function will be used in return button 
     Private Sub Reset()
-        ' This procedure will clear the textBox and set the index for 
         txtUsername.Clear()
         txtStaffID.Clear()
         txtStaffName.Clear()
@@ -28,6 +28,9 @@ Public Class UserInformation
         dgvListOfUsers.DataSource.Clear()
     End Sub
 
+    Private Sub UserInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisplayHeader()
+    End Sub
 
     Dim decSearchStaffID As Decimal
     Private Function ValidateStaffID() As Boolean
@@ -130,7 +133,4 @@ Public Class UserInformation
         Reset()
     End Sub
 
-    Private Sub UserInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DisplayHeader()
-    End Sub
 End Class
