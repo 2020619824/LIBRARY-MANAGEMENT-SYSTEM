@@ -168,6 +168,7 @@ Partial Class LateReturnInformation
         Me.txtBalance.ForeColor = System.Drawing.Color.White
         Me.txtBalance.Location = New System.Drawing.Point(194, 201)
         Me.txtBalance.Name = "txtBalance"
+        Me.txtBalance.ReadOnly = True
         Me.txtBalance.Size = New System.Drawing.Size(241, 27)
         Me.txtBalance.TabIndex = 15
         '
@@ -186,6 +187,7 @@ Partial Class LateReturnInformation
         Me.txtBorrowerName.ForeColor = System.Drawing.Color.White
         Me.txtBorrowerName.Location = New System.Drawing.Point(194, 32)
         Me.txtBorrowerName.Name = "txtBorrowerName"
+        Me.txtBorrowerName.ReadOnly = True
         Me.txtBorrowerName.Size = New System.Drawing.Size(241, 27)
         Me.txtBorrowerName.TabIndex = 13
         '
@@ -195,6 +197,7 @@ Partial Class LateReturnInformation
         Me.txtTotalLateReturnFines.ForeColor = System.Drawing.Color.White
         Me.txtTotalLateReturnFines.Location = New System.Drawing.Point(194, 120)
         Me.txtTotalLateReturnFines.Name = "txtTotalLateReturnFines"
+        Me.txtTotalLateReturnFines.ReadOnly = True
         Me.txtTotalLateReturnFines.Size = New System.Drawing.Size(241, 27)
         Me.txtTotalLateReturnFines.TabIndex = 11
         '
@@ -204,6 +207,7 @@ Partial Class LateReturnInformation
         Me.txtBorrowerIC.ForeColor = System.Drawing.Color.White
         Me.txtBorrowerIC.Location = New System.Drawing.Point(194, 78)
         Me.txtBorrowerIC.Name = "txtBorrowerIC"
+        Me.txtBorrowerIC.ReadOnly = True
         Me.txtBorrowerIC.Size = New System.Drawing.Size(241, 27)
         Me.txtBorrowerIC.TabIndex = 9
         '

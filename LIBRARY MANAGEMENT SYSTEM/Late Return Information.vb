@@ -6,6 +6,8 @@ Public Class LateReturnInformation
 
     Private Sub LateReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        LateReturnStatus()
+        LateReturn()
         Dim query
         query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
                  B.YearofPublication, B.Title, B.Author, B.Publisher, 
@@ -20,8 +22,39 @@ Public Class LateReturnInformation
         SQLCommandView(query, dgvLateReturnFine)
         dtpDatePaynment.Format = DateTimePickerFormat.Custom
         dtpDatePaynment.CustomFormat = "yyyy-MM-dd"
-    End Sub
 
+    End Sub
+    'This function will update the status and latereturnfine column based on the current date when the application open 
+    'For every one day the borrower late to return the book, the fine will increase by one ringgit
+    Private Sub LateReturnStatus()
+        Dim query = "update Borrow set LateReturnStatus='Yes' where DueDate<'" & TodayDate() & "'"
+        SQLCommandBasic(query)
+        query = "update latereturnfines 
+                 set latereturnfines.latereturnfines = Datediff(day,borrow.DueDate,GetDate())
+                 from latereturnfines 
+                 inner join borrow
+                 on latereturnfines.BorrowID = borrow.BorrowID
+                  where borrow.latereturnstatus = 'yes'"
+        SQLCommandBasic(query)
+
+        query = "update Borrow set LateReturnStatus='No' where DueDate>='" & TodayDate() & "'"
+        SQLCommandBasic(query)
+
+        query = "update LateReturnFines set latereturnfines = 0 WHERE borrowid IN (SELECT borrowid FROM borrow WHERE latereturnstatus = 'no')"
+        SQLCommandBasic(query)
+    End Sub
+    Public Sub LateReturn() 'to automatically insert each borrow data into LateReturnFine table 
+        Dim query = "Insert into LateReturnFines (BorrowID,LateReturnFines,Payment,DateOfPayment)
+                     select BorrowID,Datediff(day,DueDate," & TodayDate() & "),null,null from borrow B where latereturnstatus = 'Yes' 
+                     and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
+        'use not exist because to avoid repeated new data
+        SQLCommandBasic(query)
+
+        query = "Insert into LateReturnFines (BorrowID,LateReturnFines,Payment,DateOfPayment)
+                 select BorrowID,0,null,null from borrow B where latereturnstatus = 'No'
+                 and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
+        SQLCommandBasic(query)
+    End Sub
     Dim decSearchICNumber As Decimal
     Private Function ValidateICNumber() As Boolean
         If Not Decimal.TryParse(txtSearchLateReturnInformation.Text, decSearchICNumber) Then
@@ -82,7 +115,6 @@ Public Class LateReturnInformation
                     MyMessageBox.ShowMessage(dgvLateReturnFine.Rows.Count & " Information found!")
                 End If
             End If
-
         End If
     End Sub
 
@@ -96,17 +128,26 @@ Public Class LateReturnInformation
             i = Convert.ToInt64(row.Cells(1).Value.ToString)
             txtFinePayment.Focus()
         End If
-
     End Sub
 
     ' Function to get the total balance of the paynment
     Private Sub totalBalance()
-        Dim dectotBal As Decimal
+        Dim decTotBal As Decimal
 
-        dectotBal = txtFinePayment.Text - txtTotalLateReturnFines.Text
-        txtBalance.Text = Format(dectotBal, "0.00")
+        decTotBal = CDec(txtFinePayment.Text) - CDec(txtTotalLateReturnFines.Text)
+        txtBalance.Text = decTotBal.ToString("n")
     End Sub
-    Private Sub cmdGenerateReceipt_Click(sender As Object, e As EventArgs) Handles btnGenerateReceipt.Click
+
+    Dim decPayment As Decimal
+    Private Function ValidatePayment() As Boolean
+        If Not Decimal.TryParse(txtFinePayment.Text, decPayment) Then
+            MyMessageBox.ShowMessage("Please input the payment correctly")
+            txtFinePayment.Clear()
+            Return False
+        End If
+        Return True
+    End Function
+    Private Sub btnGenerateReceipt_Click(sender As Object, e As EventArgs) Handles btnGenerateReceipt.Click
 
         If i = 0 Then
             MyMessageBox.ShowMessage("Please fill the boxes by select data from list of Late Return Books! ")
@@ -118,15 +159,17 @@ Public Class LateReturnInformation
             MyMessageBox.ShowMessage("Missing total fine input! ")
         ElseIf txtFinePayment.Text = "" Then
             MyMessageBox.ShowMessage("Missing payment input! ")
-        ElseIf CDec(txtFinePayment.Text) < CDec(txtTotalLateReturnFines.Text) Then 'this condition to compare between total late fine and the amount of payment given
-            MyMessageBox.ShowMessage("Amount is not enough for payment! " & ControlChars.CrLf & "Please put new payment.")
-            txtFinePayment.Clear()
-        Else
-            totalBalance()
-            UpdateBorrow()
-            UpdateDatePayment()
-            UpdatePayment()
-            pdReceipt.Print()
+        ElseIf ValidatePayment() Then
+            If CDec(txtFinePayment.Text) < CDec(txtTotalLateReturnFines.Text) Then 'this condition to compare between total late fine and the amount of payment given
+                MyMessageBox.ShowMessage("Amount is not enough for payment! " & ControlChars.CrLf & "Please put new payment.")
+                txtFinePayment.Clear()
+            Else
+                totalBalance()
+                UpdateBorrow()
+                UpdateDatePayment()
+                UpdatePayment()
+                pdReceipt.Print()
+            End If
         End If
 
     End Sub
@@ -135,7 +178,7 @@ Public Class LateReturnInformation
     Private Sub UpdateBorrow()
         Dim query
         query = "Update Borrow
-                 Set LateReturnStatus = 'Yes', ReturnDate = '" & dtpDatePaynment.Text & "'
+                 Set ReturnDate = '" & dtpDatePaynment.Text & "'
                  Where BorrowerIC = " & txtBorrowerIC.Text & "
                  And BorrowID in (Select BorrowID from LateReturnFines where LateReturnFines = " & txtTotalLateReturnFines.Text & ")"
         SQLCommandBasic(query)
@@ -145,7 +188,7 @@ Public Class LateReturnInformation
     Private Sub UpdatePayment()
         Dim query
         query = "Update LateReturnFines 
-                 Set Payment = " & txtFinePayment.Text & " 
+                 Set Payment = " & decPayment & " 
                  Where BorrowID in (Select BorrowID from Borrow where BorrowerIC = " & txtBorrowerIC.Text & ")
                  And LateReturnFines = " & txtTotalLateReturnFines.Text & ""
         SQLCommandBasic(query)
@@ -181,9 +224,9 @@ Public Class LateReturnInformation
 
         e.Graphics.DrawString("Name: " & txtBorrowerName.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 200)
         e.Graphics.DrawString("IC: " & txtBorrowerIC.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 230)
-        e.Graphics.DrawString("Total late fine: " & txtTotalLateReturnFines.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 260)
-        e.Graphics.DrawString("Payment: " & txtFinePayment.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 290)
-        e.Graphics.DrawString("Balance: " & txtBalance.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 320)
+        e.Graphics.DrawString("Total late fine: RM" & txtTotalLateReturnFines.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 260)
+        e.Graphics.DrawString("Payment: RM" & txtFinePayment.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 290)
+        e.Graphics.DrawString("Balance: RM" & txtBalance.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 320)
 
         e.Graphics.DrawString("Date Payment: " & dtpDatePaynment.Text, New Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, 120, 350)
 
@@ -221,4 +264,5 @@ Public Class LateReturnInformation
                  AND L.DateofPayment is null"
         SQLCommandView(query, dgvLateReturnFine)
     End Sub
+
 End Class
