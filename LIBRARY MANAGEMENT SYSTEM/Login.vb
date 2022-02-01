@@ -17,31 +17,41 @@ Public Class Login
         Con.ConnectionString = ""
         Dim objcon As SqlConnection = Nothing
         Dim objcmd As SqlCommand = Nothing
-        Try
 
-            objcon = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30")
-            objcon.Open()
-            Dim query As String = "Select * From Users Where Username = '" &
-            txtGetUserName.Text & "' AND Password = '" &
-            txtGetPassword.Text & "'"
+        If ValidateTextBoxes() Then
+            Try
 
-            objcmd = New SqlCommand(query, objcon)
-            Dim reader As SqlDataReader = objcmd.ExecuteReader
-            If reader.Read Then
-                MyMessageBox.ShowMessage("Login Successfully")
-                Me.Hide()
-                MenuList.txtCurrentUser.Text = txtGetUserName.Text
-                MenuList.ShowDialog()
-            Else
-                MyMessageBox.ShowMessage("Invalid Login. Please try Again.")
-                Reset()
-            End If
-        Catch ex As Exception
-            MyMessageBox.ShowMessage("Connection Error")
-        End Try
+                objcon = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30")
+                objcon.Open()
+                Dim query As String = "Select * From Users Where Username = '" &
+                txtGetUserName.Text & "' AND Password = '" &
+                txtGetPassword.Text & "'"
 
-
+                objcmd = New SqlCommand(query, objcon)
+                Dim reader As SqlDataReader = objcmd.ExecuteReader
+                If reader.Read Then
+                    MyMessageBox.ShowMessage("Login Successfully")
+                    Me.Hide()
+                    MenuList.txtCurrentUser.Text = txtGetUserName.Text
+                    MenuList.ShowDialog()
+                Else
+                    MyMessageBox.ShowMessage("Invalid Login. Please try Again.")
+                    Reset()
+                End If
+            Catch ex As Exception
+                MyMessageBox.ShowMessage("Connection Error")
+            End Try
+        End If
     End Sub
+    Private Function ValidateTextBoxes() As Boolean 'to inform user put the full information'
+        If txtGetPassword.Text = "" Or txtGetUserName.Text = "" Then
+            MyMessageBox.ShowMessage("Missing Information")
+            txtGetUserName.Focus()
+            Return False
+        End If
+
+        Return True
+    End Function
 
     Private Sub Reset() 'function on clear the data that insert by the user'
         txtGetPassword.Clear()
