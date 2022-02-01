@@ -4,59 +4,9 @@ Public Class LateReturnInformation
     Dim con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30 ")
     Dim i As Integer 'to store current primary key selected data from data grid
 
-    Private Sub LateReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Dim decSearchICNumber As Decimal 'to store the text value user input in txtSearchLateReturnInformation in string
 
-        LateReturnStatus()
-        LateReturn()
-        Dim query
-        query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
-                 B.YearofPublication, B.Title, B.Author, B.Publisher, 
-                 BRW.IssueDate, BRW.DueDate, L.LateReturnFines
-                 From Book B, Borrower BR, Borrow BRW, LateReturnFines L
-                 Where B.ISBN = BRW.ISBN
-                 AND BRW.BorrowerIC = BR.BorrowerIC
-                 AND L.BorrowID = BRW.BorrowID
-                 AND L.LateReturnFines <> 0.00
-                 AND L.Payment is null
-                 AND L.DateofPayment is null"
-        SQLCommandView(query, dgvLateReturnFine)
-        dtpDatePaynment.Format = DateTimePickerFormat.Custom
-        dtpDatePaynment.CustomFormat = "yyyy-MM-dd"
-
-    End Sub
-
-    'This function will update the status and latereturnfine column based on the current date when the application open 
-    'For every one day the borrower late to return the book, the fine will increase by one ringgit
-    Private Sub LateReturnStatus()
-        Dim query = "update Borrow set LateReturnStatus='Yes' where DueDate<'" & TodayDate() & "'"
-        SQLCommandBasic(query)
-        query = "update latereturnfines 
-                 set latereturnfines.latereturnfines = Datediff(day,borrow.DueDate,GetDate())
-                 from latereturnfines 
-                 inner join borrow
-                 on latereturnfines.BorrowID = borrow.BorrowID
-                  where borrow.latereturnstatus = 'yes'"
-        SQLCommandBasic(query)
-
-        query = "update Borrow set LateReturnStatus='No' where DueDate>='" & TodayDate() & "'"
-        SQLCommandBasic(query)
-
-        query = "update LateReturnFines set latereturnfines = 0 WHERE borrowid IN (SELECT borrowid FROM borrow WHERE latereturnstatus = 'no')"
-        SQLCommandBasic(query)
-    End Sub
-    Public Sub LateReturn() 'to automatically insert each borrow data into LateReturnFine table 
-        Dim query = "Insert into LateReturnFines (BorrowID,LateReturnFines,Payment,DateOfPayment)
-                     select BorrowID,Datediff(day,DueDate," & TodayDate() & "),null,null from borrow B where latereturnstatus = 'Yes' 
-                     and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
-        'use not exist because to avoid repeated new data
-        SQLCommandBasic(query)
-
-        query = "Insert into LateReturnFines (BorrowID,LateReturnFines,Payment,DateOfPayment)
-                 select BorrowID,0,null,null from borrow B where latereturnstatus = 'No'
-                 and Not Exists (select * from LateReturnFines L where B.BorrowID = L.BorrowID)"
-        SQLCommandBasic(query)
-    End Sub
-    Dim decSearchICNumber As Decimal
+    'to validate the ic number user input
     Private Function ValidateICNumber() As Boolean
         If Not Decimal.TryParse(txtSearchLateReturnInformation.Text, decSearchICNumber) Then
             MyMessageBox.ShowMessage("Please input the IC number correctly")
@@ -64,72 +14,6 @@ Public Class LateReturnInformation
         End If
         Return True
     End Function
-    Private Sub cmdSearchLateReturnFines_Click(sender As Object, e As EventArgs) Handles btnSearchLateReturnFines.Click
-        Dim strSearchBorrowerName As String
-
-
-        Dim blnInvalidICNum As Boolean
-        blnInvalidICNum = False
-
-        If txtSearchLateReturnInformation.Text = "" Then
-            MyMessageBox.ShowMessage("Missing Information")
-        Else
-            Dim query = ""
-            If cboSearchBy.SelectedIndex = 0 Then
-                strSearchBorrowerName = txtSearchLateReturnInformation.Text
-                query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
-                 B.YearofPublication, B.Title, B.Author, B.Publisher, 
-                 BRW.IssueDate, BRW.DueDate, L.LateReturnFines
-                 From Book B, Borrower BR, Borrow BRW, LateReturnFines L
-                 Where B.ISBN = BRW.ISBN
-                 AND BRW.BorrowerIC = BR.BorrowerIC
-                 AND L.BorrowID = BRW.BorrowID
-                 AND L.LateReturnFines <> 0.00
-                 AND L.Payment is null
-                 AND L.DateofPayment is null
-                 AND BR.BorrowerName like '%" & strSearchBorrowerName & "%'"
-                SQLCommandView(query, dgvLateReturnFine)
-
-            ElseIf cboSearchBy.SelectedIndex = 1 Then
-                If ValidateICNumber() Then
-                    query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
-                 B.YearofPublication, B.Title, B.Author, B.Publisher, 
-                 BRW.IssueDate, BRW.DueDate, L.LateReturnFines
-                 From Book B, Borrower BR, Borrow BRW, LateReturnFines L
-                 Where B.ISBN = BRW.ISBN
-                 AND BRW.BorrowerIC = BR.BorrowerIC
-                 AND L.BorrowID = BRW.BorrowID
-                 AND L.LateReturnFines <> 0.00
-                 AND L.Payment is null
-                 AND L.DateofPayment is null
-                 And BR.BorrowerIC like '%" & decSearchICNumber & "%'"
-                    SQLCommandView(query, dgvLateReturnFine)
-                Else
-                    blnInvalidICNum = True
-                End If
-            End If
-
-            If blnInvalidICNum = False Then
-                If dgvLateReturnFine.Rows.Count = 0 Then
-                    MyMessageBox.ShowMessage("Sorry, no information found")
-                Else
-                    MyMessageBox.ShowMessage(dgvLateReturnFine.Rows.Count & " Information found!")
-                End If
-            End If
-        End If
-    End Sub
-
-    Private Sub DataGridViewLateReturnFine_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvLateReturnFine.CellMouseClick
-
-        If e.RowIndex >= 0 Then
-            Dim row As DataGridViewRow = dgvLateReturnFine.Rows(e.RowIndex)
-            txtBorrowerName.Text = row.Cells(0).Value.ToString
-            txtBorrowerIC.Text = row.Cells(1).Value.ToString
-            txtTotalLateReturnFines.Text = row.Cells(10).Value.ToString
-            i = Convert.ToInt64(row.Cells(1).Value.ToString)
-            txtFinePayment.Focus()
-        End If
-    End Sub
 
     ' Function to get the total balance of the paynment
     Private Sub totalBalance()
@@ -139,7 +23,9 @@ Public Class LateReturnInformation
         txtBalance.Text = decTotBal.ToString("n")
     End Sub
 
-    Dim decPayment As Decimal
+    Dim decPayment As Decimal 'to store the value of payment in decimal
+
+    'To validate the payment user input
     Private Function ValidatePayment() As Boolean
         If Not Decimal.TryParse(txtFinePayment.Text, decPayment) Then
             MyMessageBox.ShowMessage("Please input the payment correctly")
@@ -148,32 +34,6 @@ Public Class LateReturnInformation
         End If
         Return True
     End Function
-    Private Sub btnGenerateReceipt_Click(sender As Object, e As EventArgs) Handles btnGenerateReceipt.Click
-
-        If i = 0 Then
-            MyMessageBox.ShowMessage("Please fill the boxes by select data from list of Late Return Books! ")
-        ElseIf txtBorrowerName.Text = "" Then
-            MyMessageBox.ShowMessage("Missing borrower's name input! ")
-        ElseIf txtBorrowerIC.Text = "" Then
-            MyMessageBox.ShowMessage("Missing borrowers's IC input! ")
-        ElseIf txtTotalLateReturnFines.Text = "" Then
-            MyMessageBox.ShowMessage("Missing total fine input! ")
-        ElseIf txtFinePayment.Text = "" Then
-            MyMessageBox.ShowMessage("Missing payment input! ")
-        ElseIf ValidatePayment() Then
-            If CDec(txtFinePayment.Text) < CDec(txtTotalLateReturnFines.Text) Then 'this condition to compare between total late fine and the amount of payment given
-                MyMessageBox.ShowMessage("Amount is not enough for payment! " & ControlChars.CrLf & "Please put new payment.")
-                txtFinePayment.Clear()
-            Else
-                totalBalance()
-                UpdateBorrow()
-                UpdateDatePayment()
-                UpdatePayment()
-                pdReceipt.Print()
-            End If
-        End If
-
-    End Sub
 
     ' Function to update the status and return date in Borrow database
     Private Sub UpdateBorrow()
@@ -204,6 +64,125 @@ Public Class LateReturnInformation
         SQLCommandBasic(query)
     End Sub
 
+    ' to display information about the late return data when form is load
+    Private Sub LateReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        LateReturnStatus() 'invoke method in module CommandSQL
+        LateReturn() 'invoke method in module CommandSQL
+        Dim query
+        query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
+                 B.YearofPublication, B.Title, B.Author, B.Publisher, 
+                 BRW.IssueDate, BRW.DueDate, L.LateReturnFines
+                 From Book B, Borrower BR, Borrow BRW, LateReturnFines L
+                 Where B.ISBN = BRW.ISBN
+                 AND BRW.BorrowerIC = BR.BorrowerIC
+                 AND L.BorrowID = BRW.BorrowID
+                 AND L.LateReturnFines <> 0.00
+                 AND L.Payment is null
+                 AND L.DateofPayment is null"
+        SQLCommandView(query, dgvLateReturnFine)
+        dtpDatePaynment.Format = DateTimePickerFormat.Custom
+        dtpDatePaynment.CustomFormat = "yyyy-MM-dd"
+
+    End Sub
+
+    ' to search the late return information basedd on text on txtSearchLateReturnInformation
+    Private Sub btnSearchLateReturnFines_Click(sender As Object, e As EventArgs) Handles btnSearchLateReturnFines.Click
+        Dim strSearchBorrowerName As String
+
+        Dim blnInvalidICNum As Boolean
+        blnInvalidICNum = False
+
+        If txtSearchLateReturnInformation.Text = "" Then
+            MyMessageBox.ShowMessage("Missing Information")
+        Else
+            Dim query = ""
+            If cboSearchBy.SelectedIndex = 0 Then
+                strSearchBorrowerName = txtSearchLateReturnInformation.Text
+                query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
+                 B.YearofPublication, B.Title, B.Author, B.Publisher, 
+                 BRW.IssueDate, BRW.DueDate, L.LateReturnFines
+                 From Book B, Borrower BR, Borrow BRW, LateReturnFines L
+                 Where B.ISBN = BRW.ISBN
+                 AND BRW.BorrowerIC = BR.BorrowerIC
+                 AND L.BorrowID = BRW.BorrowID
+                 AND L.LateReturnFines <> 0.00
+                 AND L.Payment is null
+                 AND L.DateofPayment is null
+                 AND BR.BorrowerName like '%" & strSearchBorrowerName & "%'"
+                SQLCommandView(query, dgvLateReturnFine)
+
+            ElseIf cboSearchBy.SelectedIndex = 1 Then
+                If ValidateICNumber() Then
+                    query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
+                    B.YearofPublication, B.Title, B.Author, B.Publisher, 
+                    BRW.IssueDate, BRW.DueDate, L.LateReturnFines
+                    From Book B, Borrower BR, Borrow BRW, LateReturnFines L
+                    Where B.ISBN = BRW.ISBN
+                    AND BRW.BorrowerIC = BR.BorrowerIC
+                    AND L.BorrowID = BRW.BorrowID
+                    AND L.LateReturnFines <> 0.00
+                    AND L.Payment is null
+                    AND L.DateofPayment is null
+                    And BR.BorrowerIC like '%" & decSearchICNumber & "%'"
+                    SQLCommandView(query, dgvLateReturnFine)
+                Else
+                    blnInvalidICNum = True
+                End If
+            End If
+
+            If blnInvalidICNum = False Then
+                If dgvLateReturnFine.Rows.Count = 0 Then
+                    MyMessageBox.ShowMessage("Sorry, no information found")
+                Else
+                    MyMessageBox.ShowMessage(dgvLateReturnFine.Rows.Count & " Information found!")
+                End If
+            End If
+        End If
+    End Sub
+
+    ' to display information about late return data
+    Private Sub DataGridViewLateReturnFine_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvLateReturnFine.CellMouseClick
+
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dgvLateReturnFine.Rows(e.RowIndex)
+            txtBorrowerName.Text = row.Cells(0).Value.ToString
+            txtBorrowerIC.Text = row.Cells(1).Value.ToString
+            txtTotalLateReturnFines.Text = row.Cells(10).Value.ToString
+            i = Convert.ToInt64(row.Cells(1).Value.ToString)
+            txtFinePayment.Focus()
+        End If
+    End Sub
+
+    ' to generate receipt after following condition is passed 
+    Private Sub btnGenerateReceipt_Click(sender As Object, e As EventArgs) Handles btnGenerateReceipt.Click
+
+        If i = 0 Then
+            MyMessageBox.ShowMessage("Please fill the boxes by select data from list of Late Return Books! ")
+        ElseIf txtBorrowerName.Text = "" Then
+            MyMessageBox.ShowMessage("Missing borrower's name input! ")
+        ElseIf txtBorrowerIC.Text = "" Then
+            MyMessageBox.ShowMessage("Missing borrowers's IC input! ")
+        ElseIf txtTotalLateReturnFines.Text = "" Then
+            MyMessageBox.ShowMessage("Missing total fine input! ")
+        ElseIf txtFinePayment.Text = "" Then
+            MyMessageBox.ShowMessage("Missing payment input! ")
+        ElseIf ValidatePayment() Then
+            If CDec(txtFinePayment.Text) < CDec(txtTotalLateReturnFines.Text) Then 'this condition to compare between total late fine and the amount of payment given
+                MyMessageBox.ShowMessage("Amount is not enough for payment! " & ControlChars.CrLf & "Please put new payment.")
+                txtFinePayment.Clear()
+            Else
+                totalBalance()
+                UpdateBorrow()
+                UpdateDatePayment()
+                UpdatePayment()
+                pdReceipt.Print()
+            End If
+        End If
+
+    End Sub
+
+    ' to print the receipt based on the following properties
     Private Sub pdReceipt_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles pdReceipt.PrintPage
 
 
@@ -237,6 +216,7 @@ Public Class LateReturnInformation
             FontStyle.Bold), Brushes.Black, 250, 410)
     End Sub
 
+    'to empty all the text box 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtBorrowerName.Clear()
         txtBorrowerIC.Clear()
@@ -246,10 +226,7 @@ Public Class LateReturnInformation
 
     End Sub
 
-    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
-        Me.Close()
-    End Sub
-
+    ' to list all the latest version of late return information
     Private Sub btnListLateReturn_Click(sender As Object, e As EventArgs) Handles btnListLateReturn.Click
         Dim query
         query = "Select BR.BorrowerName, BRW.BorrowerIC, BR.PhoneNum, BRW.ISBN,
@@ -263,5 +240,10 @@ Public Class LateReturnInformation
                  AND L.Payment is null
                  AND L.DateofPayment is null"
         SQLCommandView(query, dgvLateReturnFine)
+    End Sub
+
+    'to close the form
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        Me.Close()
     End Sub
 End Class
