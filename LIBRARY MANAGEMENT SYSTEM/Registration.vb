@@ -24,7 +24,7 @@ Public Class Registration
                     Else
                         con.Close()
                         con.Open()
-                        cmd = New SqlCommand("Insert into Users values('" & txtStaffID.Text & "','" & txtName.Text & "',(')" & txtPhoneNumber.Text & "('),'" & txtUsername.Text & "','" & txtPassword.Text & "')", con)
+                        cmd = New SqlCommand("Insert into Users values('" & txtStaffID.Text & "','" & txtName.Text & "','" & txtPhoneNumber.Text & "','" & txtUsername.Text & "','" & txtPassword.Text & "')", con)
                         cmd.ExecuteNonQuery()
                         MyMessageBox.ShowMessage("Sucessfully Registered")
                         txtName.Clear()
