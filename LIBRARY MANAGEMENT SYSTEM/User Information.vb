@@ -55,7 +55,7 @@ Public Class UserInformation
             If cboSearchBy.SelectedIndex = 0 Then
 
                 If ValidateStaffID() Then
-                    query = "select StaffID, StaffName, PhoneNo, Username from Users where StaffID=" & decSearchStaffID & ""
+                    query = "select StaffID, StaffName, PhoneNo, Username from Users where StaffID='" & decSearchStaffID & "'"
                     SQLCommandView(query, dgvListOfUsers)
                 Else
                     blnInvalidStaffID = True
@@ -83,7 +83,7 @@ Public Class UserInformation
             MyMessageBox.ShowMessage("Missing Information")
         Else
             Dim query = " update Users set StaffID = '" + txtStaffID.Text + "', StaffName = '" + txtStaffName.Text + "', 
-                            Username = '" + txtUsername.Text + "', PhoneNo = '" + txtPhoneNumber.Text + "' where StaffID = " & key & ""
+                            Username = '" + txtUsername.Text + "', PhoneNo = '" + txtPhoneNumber.Text + "' where StaffID = '" & key & "'"
             SQLCommandBasic(query)
             MyMessageBox.ShowMessage("User Information Updated")
             query = "select StaffID, StaffName, PhoneNo, Username from Users"
@@ -98,7 +98,7 @@ Public Class UserInformation
         If key = 0 Or (txtUsername.Text = "" Or txtStaffID.Text = "" Or txtStaffName.Text = "" Or txtPhoneNumber.Text = "") Then
             MyMessageBox.ShowMessage("Missing Information")
         Else
-            Dim query = "delete from Users where StaffID= " & key & ""
+            Dim query = "delete from Users where StaffID= '" & key & "'"
             SQLCommandBasic(query)
             MyMessageBox.ShowMessage("User Deleted")
             query = "select StaffID, StaffName, PhoneNo, Username from Users"
@@ -123,7 +123,7 @@ Public Class UserInformation
             txtPhoneNumber.Text = row.Cells(2).Value.ToString()
             txtUsername.Text = row.Cells(3).Value.ToString()
 
-            key = Convert.ToInt64(row.Cells(0).Value.ToString)
+            key = row.Cells(0).Value.ToString
 
         End If
     End Sub
