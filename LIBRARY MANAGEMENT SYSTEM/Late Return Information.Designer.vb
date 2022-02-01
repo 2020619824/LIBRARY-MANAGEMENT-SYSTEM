@@ -29,6 +29,7 @@ Partial Class LateReturnInformation
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LateReturnInformation))
         Me.dgvLateReturnFine = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtBalance = New System.Windows.Forms.TextBox()
@@ -217,7 +218,7 @@ Partial Class LateReturnInformation
         'btnClear
         '
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnClear.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.Black
         Me.btnClear.Location = New System.Drawing.Point(91, 304)
@@ -257,7 +258,7 @@ Partial Class LateReturnInformation
         'btnGenerateReceipt
         '
         Me.btnGenerateReceipt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnGenerateReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGenerateReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGenerateReceipt.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGenerateReceipt.ForeColor = System.Drawing.Color.Black
         Me.btnGenerateReceipt.Location = New System.Drawing.Point(266, 304)
@@ -285,7 +286,7 @@ Partial Class LateReturnInformation
         'btnSearchLateReturnFines
         '
         Me.btnSearchLateReturnFines.BackColor = System.Drawing.Color.White
-        Me.btnSearchLateReturnFines.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchLateReturnFines.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSearchLateReturnFines.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchLateReturnFines.ForeColor = System.Drawing.Color.Black
         Me.btnSearchLateReturnFines.Location = New System.Drawing.Point(472, 18)
@@ -344,7 +345,7 @@ Partial Class LateReturnInformation
         'btnBack
         '
         Me.btnBack.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBack.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.Color.Black
         Me.btnBack.Location = New System.Drawing.Point(971, 540)
@@ -357,7 +358,7 @@ Partial Class LateReturnInformation
         'btnListLateReturn
         '
         Me.btnListLateReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnListLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnListLateReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnListLateReturn.Font = New System.Drawing.Font("Arial Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListLateReturn.ForeColor = System.Drawing.Color.Black
         Me.btnListLateReturn.Location = New System.Drawing.Point(661, 540)
@@ -380,6 +381,7 @@ Partial Class LateReturnInformation
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.dgvLateReturnFine)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "LateReturnInformation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Late Return Information"

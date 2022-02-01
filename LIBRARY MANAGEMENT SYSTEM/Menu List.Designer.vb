@@ -81,6 +81,7 @@ Partial Class MenuList
         Me.txtTime.Name = "txtTime"
         Me.txtTime.Size = New System.Drawing.Size(139, 27)
         Me.txtTime.TabIndex = 5
+        Me.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -99,6 +100,7 @@ Partial Class MenuList
         Me.txtDate.Name = "txtDate"
         Me.txtDate.Size = New System.Drawing.Size(139, 27)
         Me.txtDate.TabIndex = 3
+        Me.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -117,6 +119,7 @@ Partial Class MenuList
         Me.txtCurrentUser.Name = "txtCurrentUser"
         Me.txtCurrentUser.Size = New System.Drawing.Size(139, 27)
         Me.txtCurrentUser.TabIndex = 1
+        Me.txtCurrentUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnExit
         '

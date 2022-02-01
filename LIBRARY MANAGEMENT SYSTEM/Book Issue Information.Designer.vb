@@ -26,7 +26,6 @@ Partial Class BookIssueInformation
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BookIssueInformation))
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -122,24 +121,24 @@ Partial Class BookIssueInformation
         'txtBookTitle
         '
         Me.txtBookTitle.BackColor = System.Drawing.Color.Black
-        Me.txtBookTitle.Enabled = False
         Me.txtBookTitle.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBookTitle.ForeColor = System.Drawing.Color.White
         Me.txtBookTitle.Location = New System.Drawing.Point(127, 73)
         Me.txtBookTitle.Margin = New System.Windows.Forms.Padding(4)
         Me.txtBookTitle.Name = "txtBookTitle"
+        Me.txtBookTitle.ReadOnly = True
         Me.txtBookTitle.Size = New System.Drawing.Size(347, 26)
         Me.txtBookTitle.TabIndex = 8
         '
         'txtISBN
         '
         Me.txtISBN.BackColor = System.Drawing.Color.Black
-        Me.txtISBN.Enabled = False
         Me.txtISBN.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtISBN.ForeColor = System.Drawing.Color.White
         Me.txtISBN.Location = New System.Drawing.Point(127, 26)
         Me.txtISBN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtISBN.Name = "txtISBN"
+        Me.txtISBN.ReadOnly = True
         Me.txtISBN.Size = New System.Drawing.Size(347, 26)
         Me.txtISBN.TabIndex = 7
         '
@@ -286,11 +285,11 @@ Partial Class BookIssueInformation
         'txtBorrower
         '
         Me.txtBorrower.BackColor = System.Drawing.Color.Black
-        Me.txtBorrower.Enabled = False
         Me.txtBorrower.ForeColor = System.Drawing.Color.White
         Me.txtBorrower.Location = New System.Drawing.Point(181, 71)
         Me.txtBorrower.Margin = New System.Windows.Forms.Padding(4)
         Me.txtBorrower.Name = "txtBorrower"
+        Me.txtBorrower.ReadOnly = True
         Me.txtBorrower.Size = New System.Drawing.Size(292, 26)
         Me.txtBorrower.TabIndex = 5
         '
@@ -350,6 +349,7 @@ Partial Class BookIssueInformation
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
         Me.dgvBookIssue.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvBookIssue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvBookIssue.Size = New System.Drawing.Size(646, 162)
         Me.dgvBookIssue.TabIndex = 9
         '
@@ -366,9 +366,9 @@ Partial Class BookIssueInformation
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "BookIssueInformation"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Borrower Details"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
