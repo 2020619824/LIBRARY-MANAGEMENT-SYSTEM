@@ -187,7 +187,7 @@ Public Class LateReturnInformation
 
 
         e.Graphics.DrawString("RECEIPT", New Font("Times New Roman", 24,
-            FontStyle.Bold), Brushes.Black, 300, 50)
+            FontStyle.Bold), Brushes.Black, 350, 50)
 
         e.Graphics.DrawString("=======================================", New Font("Times New Roman", 24,
             FontStyle.Bold), Brushes.Black, 50, 80)
