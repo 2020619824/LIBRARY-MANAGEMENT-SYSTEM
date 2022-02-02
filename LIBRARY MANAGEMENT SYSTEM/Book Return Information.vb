@@ -175,6 +175,9 @@ Public Class BookReturnInformation
     Private Sub BookReturnInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddColumn()
         DisplayHeader()
+
+        LateReturnStatus() 'invoke method in module CommandSQL
+        LateReturn() 'invoke method in module CommandSQL
     End Sub
 
     ' To search Borrower's details based on their name and will be displayed into ComboBox
