@@ -2,7 +2,7 @@
 Public Class LateReturnInformation
 
     Dim con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\2020619824\LIBRARY-MANAGEMENT-SYSTEM\LIBRARY MANAGEMENT SYSTEM\Database1.mdf;Integrated Security=True;Connect Timeout=30 ")
-    Dim i As Integer 'to store current primary key selected data from data grid
+    Dim i 'to store current primary key selected data from data grid
 
     Dim decSearchICNumber As Decimal 'to store the text value user input in txtSearchLateReturnInformation in string
 

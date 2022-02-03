@@ -130,12 +130,12 @@ Public Class BookIssueInformation
             GetBorrowID()
             GetBorrowerIC()
             Dim query = "Insert into borrow values (" & (intBorrowID + 1) & "," & txtISBN.Text & "," &
-                intBorrowerIC & ",'" & dtpIssueDate.Text & "','" & dtpDueDate.Text & "', null, 'No')"
+                decBorrowerIC & ",'" & dtpIssueDate.Text & "','" & dtpDueDate.Text & "', null, 'No')"
             SQLCommandBasic(query)
             MyMessageBox.ShowMessage("Book has been issued")
         End If
     End Sub
-    Dim intBorrowerIC As Integer
+    Dim decBorrowerIC As Decimal
     'to get borrower ic from data
     Private Sub GetBorrowerIC()
 
@@ -149,7 +149,7 @@ Public Class BookIssueInformation
             Dim reader As SqlDataReader
             reader = cmd.ExecuteReader()
             While reader.Read
-                intBorrowerIC = CInt("" + reader(0).ToString)
+                decBorrowerIC = CDec("" + reader(0).ToString)
             End While
             con.Close()
         Catch ex As Exception
